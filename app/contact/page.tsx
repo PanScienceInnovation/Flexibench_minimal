@@ -213,39 +213,6 @@ function ContactFormContent({
               </div>
             </CardContent>
           </Card>
-
-          <Card 
-            className="group relative bg-gradient-to-br from-background to-secondary/50 rounded-3xl border-2 border-border/50 p-8 shadow-xl hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:border-primary/40 hover:scale-105 hover:-translate-y-2 animate-fade-in-up"
-            style={{ animationDelay: '0.4s' }}
-          >
-            {/* Animated Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/6 to-emerald-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out rounded-3xl" />
-            <div className="absolute top-0 left-0 w-32 h-32 bg-emerald-500/8 rounded-full blur-3xl -ml-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out" />
-            
-            <CardContent className="relative flex flex-col gap-6 p-0">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="bg-gradient-to-br from-emerald-500/18 to-emerald-500/6 flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border-2 border-emerald-500/25 shadow-lg  group-hover:rotate-6 transition-all duration-[2500ms] ease-out">
-                  <Calendar className="text-emerald-500 h-8 w-8" />
-                </div>
-                <div>
-                  <h3 className="text-foreground font-bold text-xl mb-1 group-hover:text-emerald-500 transition-colors">Schedule a Call</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Book a time that works for you
-                  </p>
-                </div>
-              </div>
-              <Button 
-                asChild 
-                variant="outline" 
-                className="w-full h-14 text-base font-semibold group-hover:border-emerald-500 group-hover:text-emerald-500 group-hover:bg-emerald-500/6 transition-all duration-[2500ms] ease-out"
-              >
-                <Link href="#">
-                  View Calendar
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>
