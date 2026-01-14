@@ -40,13 +40,27 @@ export function Footer1() {
         body: JSON.stringify({ email }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Failed to subscribe");
+        // Handle specific error cases
+        if (response.status === 409) {
+          setStatus({
+            type: "error",
+            message: data.message || "This email is already subscribed to our newsletter.",
+          });
+        } else {
+          setStatus({
+            type: "error",
+            message: data.message || "Failed to subscribe. Please try again.",
+          });
+        }
+        return;
       }
 
       setStatus({
         type: "success",
-        message: "Successfully subscribed to our newsletter!",
+        message: data.message || "Successfully subscribed to our newsletter!",
       });
       setEmail("");
     } catch (error) {
