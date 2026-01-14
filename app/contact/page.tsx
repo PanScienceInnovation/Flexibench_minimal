@@ -25,6 +25,82 @@ function ContactFormContent({
   formType: FormType;
   setFormType: (type: FormType) => void;
 }) {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const payload = {
+        type: formType, // "sales" or "demo"
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone || null,
+        company: formData.company || null,
+        message: formData.message || null,
+        timestamp: new Date().toISOString(),
+      };
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      const result = await response.json();
+
+      setSubmitStatus({
+        type: "success",
+        message: "Thank you! We'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Something went wrong. Please try again or email us directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="relative bg-gradient-to-b from-background via-secondary/30 to-background section-padding-y border-b overflow-hidden">
       {/* Enhanced Background Pattern */}
@@ -95,7 +171,7 @@ function ContactFormContent({
                 </div>
               </div>
 
-              <form className="flex flex-col gap-6">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <Label htmlFor="firstName" className="text-sm font-bold flex items-center gap-2">
@@ -106,6 +182,8 @@ function ContactFormContent({
                       id="firstName" 
                       placeholder="John" 
                       required 
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
                     />
                   </div>
@@ -118,6 +196,8 @@ function ContactFormContent({
                       id="lastName" 
                       placeholder="Doe" 
                       required 
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
                     />
                   </div>
@@ -132,6 +212,8 @@ function ContactFormContent({
                     type="email" 
                     placeholder="john@example.com" 
                     required 
+                    value={formData.email}
+                    onChange={handleInputChange}
                     className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
                   />
                 </div>
@@ -143,6 +225,8 @@ function ContactFormContent({
                     id="phone" 
                     type="tel"
                     placeholder="+1 (555) 000-0000" 
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
                   />
                 </div>
@@ -153,6 +237,8 @@ function ContactFormContent({
                   <Input 
                     id="company" 
                     placeholder="Your Company Name" 
+                    value={formData.company}
+                    onChange={handleInputChange}
                     className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
                   />
                 </div>
@@ -168,17 +254,46 @@ function ContactFormContent({
                         : "Tell us what you'd like to explore in the demo session..."
                     }
                     rows={5}
+                    value={formData.message}
+                    onChange={handleInputChange}
                     className="resize-none text-base border-2 focus:border-primary/50 transition-colors"
                   />
                 </div>
+                {submitStatus.type && (
+                  <div
+                    className={`p-4 rounded-lg border-2 ${
+                      submitStatus.type === "success"
+                        ? "bg-green-50 dark:bg-green-950/20 border-green-500/50 text-green-700 dark:text-green-400"
+                        : "bg-red-50 dark:bg-red-950/20 border-red-500/50 text-red-700 dark:text-red-400"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      {submitStatus.type === "success" ? (
+                        <CheckCircle className="h-5 w-5" />
+                      ) : (
+                        <Mail className="h-5 w-5" />
+                      )}
+                      <p className="text-sm font-medium">{submitStatus.message}</p>
+                    </div>
+                  </div>
+                )}
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="h-14 text-base font-semibold bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-[2500ms] ease-out hover:-translate-y-0.5 mt-2 animate-fade-in-up"
+                  disabled={isSubmitting}
+                  className="h-14 text-base font-semibold bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-[2500ms] ease-out hover:-translate-y-0.5 mt-2 animate-fade-in-up disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ animationDelay: '0.5s' }}
                 >
-                  {formType === "sales" ? "Contact Sales" : "Schedule Demo"}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  {isSubmitting ? (
+                    <>
+                      <span className="animate-pulse">Submitting...</span>
+                    </>
+                  ) : (
+                    <>
+                      {formType === "sales" ? "Contact Sales" : "Schedule Demo"}
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>
