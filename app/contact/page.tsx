@@ -96,17 +96,31 @@ function ContactFormContent({
               </div>
 
               <form className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                  <Label htmlFor="name" className="text-sm font-bold flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    Full Name
-                  </Label>
-                  <Input 
-                    id="name" 
-                    placeholder="John Doe" 
-                    required 
-                    className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                    <Label htmlFor="firstName" className="text-sm font-bold flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      First Name
+                    </Label>
+                    <Input 
+                      id="firstName" 
+                      placeholder="John" 
+                      required 
+                      className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+                    <Label htmlFor="lastName" className="text-sm font-bold flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      Last Name
+                    </Label>
+                    <Input 
+                      id="lastName" 
+                      placeholder="Doe" 
+                      required 
+                      className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-col gap-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                   <Label htmlFor="email" className="text-sm font-bold flex items-center gap-2">
@@ -121,31 +135,39 @@ function ContactFormContent({
                     className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
                   />
                 </div>
+                <div className="flex flex-col gap-2 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
+                  <Label htmlFor="phone" className="text-sm font-medium flex items-center gap-2">
+                    Phone Number
+                  </Label>
+                  <Input 
+                    id="phone" 
+                    type="tel"
+                    placeholder="+1 (555) 000-0000" 
+                    className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
+                  />
+                </div>
                 <div className="flex flex-col gap-2 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                  <Label htmlFor="company" className="text-sm font-bold flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  <Label htmlFor="company" className="text-sm font-medium flex items-center gap-2">
                     Company
                   </Label>
                   <Input 
                     id="company" 
-                    placeholder="Company Name" 
+                    placeholder="Your Company Name" 
                     className="h-14 text-base border-2 focus:border-primary/50 transition-colors" 
                   />
                 </div>
-                <div className="flex flex-col gap-2 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                  <Label htmlFor="message" className="text-sm font-bold flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <div className="flex flex-col gap-2 animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
+                  <Label htmlFor="message" className="text-sm font-medium flex items-center gap-2">
                     Message
                   </Label>
                   <Textarea
                     id="message"
                     placeholder={
                       formType === "sales"
-                        ? "Tell us about your annotation needs..."
-                        : "What would you like to see in the demo?"
+                        ? "Share your specific requirements and how we can help you..."
+                        : "Tell us what you'd like to explore in the demo session..."
                     }
                     rows={5}
-                    required
                     className="resize-none text-base border-2 focus:border-primary/50 transition-colors"
                   />
                 </div>
