@@ -57,18 +57,23 @@ function ContactFormContent({
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
-        phone: formData.phone || null,
-        company: formData.company || null,
-        message: formData.message || null,
-        timestamp: new Date().toISOString(),
+        phone: formData.phone || undefined,
+        company: formData.company || undefined,
+        message: formData.message || undefined,
       };
 
-      const response = await fetch("/api/contact", {
+      // Remove undefined fields to match server expectations
+      const cleanPayload = Object.fromEntries(
+        Object.entries(payload).filter(([_, value]) => value !== undefined && value !== "")
+      );
+
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5010";
+      const response = await fetch(`${apiUrl}/api/flexibench/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(cleanPayload),
       });
 
       if (!response.ok) {

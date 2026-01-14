@@ -5,7 +5,11 @@ This document describes the API endpoint for handling contact form submissions f
 
 ## Endpoint
 
-**POST** `/api/contact`
+**POST** `http://localhost:5010/api/flexibench/contact` (Local Development)
+
+**POST** `https://api.flexibench.com/api/flexibench/contact` (Production)
+
+The base URL is configured via the `NEXT_PUBLIC_API_URL` environment variable.
 
 ## Request
 
@@ -24,10 +28,9 @@ The API expects a JSON payload with the following structure:
   firstName: string,                // Required: User's first name
   lastName: string,                 // Required: User's last name
   email: string,                    // Required: User's email (must be valid format)
-  phone: string | null,             // Optional: User's phone number
-  company: string | null,           // Optional: User's company name
-  message: string | null,           // Optional: User's message/inquiry
-  timestamp: string                 // Required: ISO 8601 timestamp
+  phone?: string,                   // Optional: User's phone number
+  company?: string,                 // Optional: User's company name
+  message?: string                  // Optional: User's message/inquiry
 }
 ```
 
@@ -39,23 +42,35 @@ The API expects a JSON payload with the following structure:
 | `firstName` | string | ✅ Yes | Non-empty string | User's first name |
 | `lastName` | string | ✅ Yes | Non-empty string | User's last name |
 | `email` | string | ✅ Yes | Valid email format | User's email address |
-| `phone` | string \| null | ❌ No | - | User's phone number |
-| `company` | string \| null | ❌ No | - | User's company name |
-| `message` | string \| null | ❌ No | - | User's message or inquiry |
-| `timestamp` | string | ✅ Yes | ISO 8601 format | Submission timestamp |
+| `phone` | string | ❌ No | - | User's phone number (omitted if empty) |
+| `company` | string | ❌ No | - | User's company name (omitted if empty) |
+| `message` | string | ❌ No | - | User's message or inquiry (omitted if empty) |
 
-### Example Request
+### Example Requests
 
+**Demo Request:**
+```json
+{
+  "type": "demo",
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane@example.com",
+  "phone": "+1 (555) 987-6543",
+  "company": "Tech Startup Inc",
+  "message": "I would like to schedule a demo of FlexiBench."
+}
+```
+
+**Sales Inquiry:**
 ```json
 {
   "type": "sales",
   "firstName": "John",
   "lastName": "Doe",
-  "email": "john.doe@example.com",
+  "email": "john@example.com",
   "phone": "+1 (555) 123-4567",
-  "company": "Acme Corporation",
-  "message": "I'm interested in learning more about your data annotation platform for our AI training needs.",
-  "timestamp": "2026-01-14T10:30:00.000Z"
+  "company": "Acme Corp",
+  "message": "I would like to learn more about your pricing plans."
 }
 ```
 
@@ -66,13 +81,11 @@ The API expects a JSON payload with the following structure:
 ```json
 {
   "success": true,
-  "message": "Form submitted successfully",
-  "data": {
-    "id": "sales-1705233000000",
-    "timestamp": "2026-01-14T10:30:00.000Z"
-  }
+  "message": "Form submitted successfully"
 }
 ```
+
+> **Note:** The actual response structure depends on your backend implementation. The frontend will treat any 2xx status code as success.
 
 ### Error Responses
 
@@ -306,27 +319,55 @@ SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR/WEBHOOK/URL
 
 ### Using cURL
 
+**Demo Request:**
 ```bash
-curl -X POST http://localhost:3000/api/contact \
+curl -X POST http://localhost:5010/api/flexibench/contact \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "demo",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane@example.com",
+    "phone": "+1 (555) 987-6543",
+    "company": "Tech Startup Inc",
+    "message": "I would like to schedule a demo of FlexiBench."
+  }'
+```
+
+**Sales Inquiry:**
+```bash
+curl -X POST http://localhost:5010/api/flexibench/contact \
   -H "Content-Type: application/json" \
   -d '{
     "type": "sales",
     "firstName": "John",
     "lastName": "Doe",
-    "email": "john.doe@example.com",
+    "email": "john@example.com",
     "phone": "+1 (555) 123-4567",
     "company": "Acme Corp",
-    "message": "Interested in your platform",
-    "timestamp": "2026-01-14T10:30:00.000Z"
+    "message": "I would like to learn more about your pricing plans."
   }'
 ```
 
 ### Using Postman
 
-1. Create a new POST request to `http://localhost:3000/api/contact`
+1. Create a new POST request to `http://localhost:5010/api/flexibench/contact`
 2. Set header: `Content-Type: application/json`
-3. Add the JSON body as shown in the example above
+3. Add the JSON body as shown in the examples above
 4. Send the request
+
+### Environment Configuration
+
+Create a `.env.local` file in your project root:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5010
+```
+
+For production, update to your production API URL:
+```env
+NEXT_PUBLIC_API_URL=https://api.flexibench.com
+```
 
 ## Security Considerations
 
