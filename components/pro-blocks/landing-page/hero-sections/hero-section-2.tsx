@@ -11,7 +11,7 @@ import { blurPlaceholders } from "@/lib/image-utils";
 export function HeroSection2() {
   return (
     <section
-      className="relative bg-gradient-to-br from-slate-50 via-slate-50/80 to-stone-50/60 dark:from-slate-950 dark:via-slate-950/80 dark:to-stone-950/60 pt-20 pb-24 overflow-hidden border-b"
+      className="relative bg-gradient-to-br from-slate-50 via-slate-50/80 to-stone-50/60 dark:from-slate-950 dark:via-slate-950/80 dark:to-stone-950/60 pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden border-b"
       aria-labelledby="hero-heading"
     >
       {/* Subtle Background Elements */}
@@ -28,11 +28,11 @@ export function HeroSection2() {
         }} />
       </div>
 
-      <div className="container-padding-x container mx-auto relative z-10 pt-0">
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16 lg:items-start pt-0">
+      <div className="container mx-auto relative z-10 px-4 sm:px-6">
+        <div className="flex flex-col items-center gap-8 md:gap-12 lg:flex-row lg:gap-16 lg:items-start">
 
           {/* Left Column - Enhanced with Better Spacing */}
-          <div className="flex flex-1 flex-col gap-6 lg:gap-8 w-full pt-0">
+          <div className="flex flex-1 flex-col gap-4 md:gap-6 lg:gap-8 w-full">
             {/* Tagline with Badge Style */}
               <div className="inline-flex items-center gap-2 w-fit">
               <Tagline className="mb-0">Enterprise Annotation Platform</Tagline>
@@ -43,8 +43,8 @@ export function HeroSection2() {
             </div>
             
             {/* Main Heading with Enhanced Typography */}
-            <div className="space-y-4">
-              <h1 id="hero-heading" className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight">
+            <div className="space-y-3 md:space-y-4">
+              <h1 id="hero-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight">
                 Build{" "}
                 <span className="relative inline-block">
                   Model-Ready
@@ -71,59 +71,59 @@ export function HeroSection2() {
             </div>
             
             {/* Description with Enhanced Styling */}
-            <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl leading-relaxed max-w-2xl font-medium">
+            <p className="text-muted-foreground text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-2xl font-medium">
               Modern multimodal annotation platform for AI model training data with
               quality workflows, AI-assisted labeling, and enterprise-grade governance
             </p>
 
             {/* Enhanced Feature Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="group relative flex items-start gap-4 p-5 rounded-2xl bg-gradient-to-br from-background/80 to-secondary/40 backdrop-blur-md border border-border/50 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-[2500ms] ease-out hover-lift">
-                <div className="bg-gradient-to-br from-primary/18 to-primary/10 rounded-xl p-3 mt-0.5 group-hover:scale-[1.02] transition-transform duration-[2500ms] ease-out">
-                  <Check className="text-primary h-5 w-5 group-hover:rotate-3 transition-transform duration-[2500ms] ease-out" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              <div className="group relative flex items-start gap-3 md:gap-4 p-4 md:p-5 rounded-xl md:rounded-2xl bg-gradient-to-br from-background/80 to-secondary/40 backdrop-blur-md border border-border/50 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-[2500ms] ease-out hover-lift">
+                <div className="bg-gradient-to-br from-primary/18 to-primary/10 rounded-lg md:rounded-xl p-2 md:p-3 mt-0.5 group-hover:scale-[1.02] transition-transform duration-[2500ms] ease-out flex-shrink-0">
+                  <Check className="text-primary h-4 w-4 md:h-5 md:w-5 group-hover:rotate-3 transition-transform duration-[2500ms] ease-out" />
                 </div>
-                <div className="flex-1">
-                  <p className="font-bold text-base mb-1.5 text-foreground">Multimodal Support</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">Text, Image, Video, Audio annotation in one platform</p>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-sm md:text-base mb-1 md:mb-1.5 text-foreground">Multimodal Support</p>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">Text, Image, Video, Audio annotation in one platform</p>
                 </div>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <TrendingUp className="h-4 w-4 text-primary/40" />
                 </div>
               </div>
 
-              <div className="group relative flex items-start gap-4 p-5 rounded-2xl bg-gradient-to-br from-background/80 to-secondary/40 backdrop-blur-md border border-border/50 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-[2500ms] ease-out hover-lift">
-                <div className="bg-gradient-to-br from-primary/18 to-primary/10 rounded-xl p-3 mt-0.5 transition-transform duration-[2500ms] ease-out">
-                  <Zap className="text-primary h-5 w-5" />
+              <div className="group relative flex items-start gap-3 md:gap-4 p-4 md:p-5 rounded-xl md:rounded-2xl bg-gradient-to-br from-background/80 to-secondary/40 backdrop-blur-md border border-border/50 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-[2500ms] ease-out hover-lift">
+                <div className="bg-gradient-to-br from-primary/18 to-primary/10 rounded-lg md:rounded-xl p-2 md:p-3 mt-0.5 transition-transform duration-[2500ms] ease-out flex-shrink-0">
+                  <Zap className="text-primary h-4 w-4 md:h-5 md:w-5" />
                 </div>
-                <div className="flex-1">
-                  <p className="font-bold text-base mb-1.5 text-foreground">AI-Assisted Labeling</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">80% faster with quality workflows built-in</p>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-sm md:text-base mb-1 md:mb-1.5 text-foreground">AI-Assisted Labeling</p>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">80% faster with quality workflows built-in</p>
                 </div>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Sparkles className="h-4 w-4 text-primary/40" />
                 </div>
               </div>
 
-              <div className="group relative flex items-start gap-4 p-5 rounded-2xl bg-gradient-to-br from-background/80 to-secondary/40 backdrop-blur-md border border-border/50 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-[2500ms] ease-out hover-lift">
-                <div className="bg-gradient-to-br from-primary/18 to-primary/10 rounded-xl p-3 mt-0.5 transition-transform duration-[2500ms] ease-out">
-                  <Check className="text-primary h-5 w-5" />
+              <div className="group relative flex items-start gap-3 md:gap-4 p-4 md:p-5 rounded-xl md:rounded-2xl bg-gradient-to-br from-background/80 to-secondary/40 backdrop-blur-md border border-border/50 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-[2500ms] ease-out hover-lift">
+                <div className="bg-gradient-to-br from-primary/18 to-primary/10 rounded-lg md:rounded-xl p-2 md:p-3 mt-0.5 transition-transform duration-[2500ms] ease-out flex-shrink-0">
+                  <Check className="text-primary h-4 w-4 md:h-5 md:w-5" />
                 </div>
-                <div className="flex-1">
-                  <p className="font-bold text-base mb-1.5 text-foreground">Enterprise Governance</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">Full auditability, compliance & quality control</p>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-sm md:text-base mb-1 md:mb-1.5 text-foreground">Enterprise Governance</p>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">Full auditability, compliance & quality control</p>
                 </div>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <TrendingUp className="h-4 w-4 text-primary/40" />
                 </div>
               </div>
 
-              <div className="group relative flex items-start gap-4 p-5 rounded-2xl bg-gradient-to-br from-background/80 to-secondary/40 backdrop-blur-md border border-border/50 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-[2500ms] ease-out hover-lift">
-                <div className="bg-gradient-to-br from-primary/18 to-primary/10 rounded-xl p-3 mt-0.5 group-hover:scale-[1.02] transition-transform duration-[2500ms] ease-out">
-                  <Check className="text-primary h-5 w-5 group-hover:rotate-3 transition-transform duration-[2500ms] ease-out" />
+              <div className="group relative flex items-start gap-3 md:gap-4 p-4 md:p-5 rounded-xl md:rounded-2xl bg-gradient-to-br from-background/80 to-secondary/40 backdrop-blur-md border border-border/50 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-[2500ms] ease-out hover-lift">
+                <div className="bg-gradient-to-br from-primary/18 to-primary/10 rounded-lg md:rounded-xl p-2 md:p-3 mt-0.5 group-hover:scale-[1.02] transition-transform duration-[2500ms] ease-out flex-shrink-0">
+                  <Check className="text-primary h-4 w-4 md:h-5 md:w-5 group-hover:rotate-3 transition-transform duration-[2500ms] ease-out" />
                 </div>
-                <div className="flex-1">
-                  <p className="font-bold text-base mb-1.5 text-foreground">API-First Design</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">Seamless ML pipeline integration & automation</p>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-sm md:text-base mb-1 md:mb-1.5 text-foreground">API-First Design</p>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">Seamless ML pipeline integration & automation</p>
                 </div>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Zap className="h-4 w-4 text-primary/40" />
@@ -132,32 +132,32 @@ export function HeroSection2() {
             </div>
 
             {/* Enhanced CTA Buttons with Better Positioning */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4 md:pt-6 max-w-md">
               <Button 
                 asChild 
                 size="lg" 
-                className="text-base px-8 py-6 h-auto bg-primary hover:bg-primary/90 shadow-md shadow-primary/10 hover:shadow-lg hover:shadow-primary/15 transition-all duration-[2500ms] ease-out hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                className="text-sm md:text-base px-6 md:px-8 py-5 md:py-6 h-auto bg-primary hover:bg-primary/90 shadow-md shadow-primary/10 hover:shadow-lg hover:shadow-primary/15 transition-all duration-[2500ms] ease-out hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 whitespace-nowrap"
               >
-                <Link href="/contact" className="group/btn">
+                <Link href="/contact" className="group/btn flex items-center justify-center">
                   Get Started
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-0.5 transition-transform duration-[2500ms] ease-out" />
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover/btn:translate-x-0.5 transition-transform duration-[2500ms] ease-out" />
                 </Link>
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
                 asChild 
-                className="text-base px-8 py-6 h-auto border-2 hover:border-primary/50 hover:bg-primary/5 transition-all duration-[2500ms] ease-out hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                className="text-sm md:text-base px-6 md:px-8 py-5 md:py-6 h-auto border-2 hover:border-primary/50 hover:bg-primary/5 transition-all duration-[2500ms] ease-out hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 whitespace-nowrap"
               >
-                <Link href="/#platform" className="group/btn">
+                <Link href="/#platform" className="group/btn flex items-center justify-center">
                   Explore Platform
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-0.5 transition-transform duration-[2500ms] ease-out" />
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover/btn:translate-x-0.5 transition-transform duration-[2500ms] ease-out" />
                 </Link>
               </Button>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center gap-6 pt-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-4 md:gap-6 pt-3 md:pt-4 text-xs md:text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
                   <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-primary/80 border-2 border-background" />
@@ -172,7 +172,7 @@ export function HeroSection2() {
           {/* Right Column - Enhanced Visual with Better Design */}
           <div className="w-full flex-1 relative lg:max-w-2xl">
             {/* Data Annotation Workflow Animation - Positioned at Top Right */}
-            <div className="absolute top-4 right-0 z-30 hidden lg:block" style={{ width: '500px', height: '260px', pointerEvents: 'none' }}>
+            <div className="absolute top-0 right-0 z-30 hidden xl:block" style={{ width: '500px', height: '260px', pointerEvents: 'none' }}>
               <svg 
                 width="100%" 
                 height="100%" 
@@ -349,7 +349,7 @@ export function HeroSection2() {
             </div>
             
             {/* Main Image Container with Enhanced Effects - Positioned below animation */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50 group" style={{ marginTop: '272px' }}>
+            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50 group xl:mt-[272px]">
               {/* Decorative Border Glow */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/18 via-primary/15 to-primary/18 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out -z-10" />
               
@@ -368,43 +368,43 @@ export function HeroSection2() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-primary/8" />
                 
                 {/* Floating Stats Cards */}
-                <div className="absolute top-6 left-6 right-6 flex gap-3">
-                  <div className="bg-background/95 backdrop-blur-md rounded-xl p-4 border border-border/50 shadow-xl flex-1 transition-transform duration-[2500ms] ease-out">
-                    <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Active Projects</p>
+                <div className="absolute top-3 md:top-6 left-3 md:left-6 right-3 md:right-6 flex gap-2 md:gap-3">
+                  <div className="bg-background/95 backdrop-blur-md rounded-lg md:rounded-xl p-3 md:p-4 border border-border/50 shadow-xl flex-1 transition-transform duration-[2500ms] ease-out">
+                    <div className="flex items-center gap-1.5 md:gap-2 mb-1 md:mb-2">
+                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary animate-pulse" />
+                      <p className="text-[10px] md:text-xs font-semibold text-muted-foreground uppercase tracking-wide">Active Projects</p>
                     </div>
-                    <p className="text-2xl font-bold text-foreground">1,247</p>
+                    <p className="text-lg md:text-2xl font-bold text-foreground">1,247</p>
                   </div>
-                  <div className="bg-background/95 backdrop-blur-md rounded-xl p-4 border border-border/50 shadow-xl flex-1 transition-transform duration-[2500ms] ease-out">
-                    <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Annotations</p>
+                  <div className="bg-background/95 backdrop-blur-md rounded-lg md:rounded-xl p-3 md:p-4 border border-border/50 shadow-xl flex-1 transition-transform duration-[2500ms] ease-out">
+                    <div className="flex items-center gap-1.5 md:gap-2 mb-1 md:mb-2">
+                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary animate-pulse" />
+                      <p className="text-[10px] md:text-xs font-semibold text-muted-foreground uppercase tracking-wide">Annotations</p>
                     </div>
-                    <p className="text-2xl font-bold text-foreground">2.4M</p>
+                    <p className="text-lg md:text-2xl font-bold text-foreground">2.4M</p>
                   </div>
                 </div>
                 
                 {/* Bottom Info Card */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-background/95 backdrop-blur-md rounded-xl p-5 border border-border/50 shadow-xl group-hover:shadow-2xl transition-all">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="bg-gradient-to-br from-primary/18 to-primary/10 rounded-lg p-2">
-                        <Sparkles className="h-5 w-5 text-primary" />
+                <div className="absolute bottom-3 md:bottom-6 left-3 md:left-6 right-3 md:right-6">
+                  <div className="bg-background/95 backdrop-blur-md rounded-lg md:rounded-xl p-3 md:p-5 border border-border/50 shadow-xl group-hover:shadow-2xl transition-all">
+                    <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
+                      <div className="bg-gradient-to-br from-primary/18 to-primary/10 rounded-md md:rounded-lg p-1.5 md:p-2 flex-shrink-0">
+                        <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                       </div>
-                      <div>
-                        <p className="text-sm font-bold text-foreground">Platform Dashboard</p>
-                        <p className="text-xs text-muted-foreground">Real-time annotation workflows & quality metrics</p>
+                      <div className="min-w-0">
+                        <p className="text-xs md:text-sm font-bold text-foreground truncate">Platform Dashboard</p>
+                        <p className="text-[10px] md:text-xs text-muted-foreground truncate">Real-time annotation workflows & quality metrics</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4 mt-4 pt-4 border-t border-border/50">
-                      <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span className="text-xs text-muted-foreground">99.9% Uptime</span>
+                    <div className="flex items-center gap-2 md:gap-4 mt-2 md:mt-4 pt-2 md:pt-4 border-t border-border/50">
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span className="text-[10px] md:text-xs text-muted-foreground whitespace-nowrap">99.9% Uptime</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span className="text-xs text-muted-foreground">Enterprise Ready</span>
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-primary flex-shrink-0" />
+                        <span className="text-[10px] md:text-xs text-muted-foreground whitespace-nowrap">Enterprise Ready</span>
                       </div>
                     </div>
                   </div>
@@ -417,12 +417,12 @@ export function HeroSection2() {
             <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-slate-300/8 rounded-full blur-3xl" />
             
             {/* Quick Setup Process and Efficiency Badge - Positioned After Image */}
-            <div className="flex flex-col gap-4 mt-8 lg:flex-row lg:items-start lg:justify-end">
+            <div className="flex flex-col gap-3 md:gap-4 mt-6 md:mt-8 lg:flex-row lg:items-start lg:justify-end">
             {/* Quick Setup Process Card */}
-            <div className="relative bg-background/95 backdrop-blur-md rounded-2xl p-6 border border-border/50 shadow-xl w-full lg:w-auto lg:min-w-[280px]">
-              <div className="flex flex-col gap-4">
-                <h3 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-primary" />
+            <div className="relative bg-background/95 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 border border-border/50 shadow-xl w-full lg:w-auto lg:min-w-[280px]">
+              <div className="flex flex-col gap-3 md:gap-4">
+                <h3 className="text-xs md:text-sm font-bold text-foreground mb-1 md:mb-2 flex items-center gap-2">
+                  <Sparkles className="h-3.5 w-3.5 md:h-4 md:w-4 text-primary" />
                   Quick Setup Process
                 </h3>
                 {[
@@ -430,10 +430,10 @@ export function HeroSection2() {
                   { step: "2", label: "Configure Workflows", status: "active" },
                   { step: "3", label: "Start Annotation", status: "pending" },
                 ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3 relative">
+                  <div key={index} className="flex items-center gap-2 md:gap-3 relative">
                     {/* Connection Line */}
                     {index < 2 && (
-                      <div className="absolute left-[13px] top-8 w-0.5 h-8 bg-border">
+                      <div className="absolute left-[11px] md:left-[13px] top-7 md:top-8 w-0.5 h-6 md:h-8 bg-border">
                         <div className={`absolute top-0 left-0 w-full h-full bg-primary transition-all duration-1000 ${
                           item.status === "completed" ? "animate-pulse" : ""
                         }`} style={{
@@ -443,7 +443,7 @@ export function HeroSection2() {
                       </div>
                     )}
                     {/* Step Number */}
-                    <div className={`relative flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-[2500ms] ease-out ${
+                    <div className={`relative flex-shrink-0 w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center font-bold text-xs md:text-sm transition-all duration-[2500ms] ease-out ${
                       item.status === "completed" 
                         ? "bg-primary text-white shadow-lg shadow-primary/50" 
                         : item.status === "active"
@@ -451,14 +451,14 @@ export function HeroSection2() {
                         : "bg-secondary text-muted-foreground border-2 border-border"
                     }`}>
                       {item.status === "completed" ? (
-                        <Check className="h-4 w-4" />
+                        <Check className="h-3 w-3 md:h-4 md:w-4" />
                       ) : (
                         item.step
                       )}
                     </div>
                     {/* Step Label */}
-                    <div className="flex-1">
-                      <p className={`text-sm font-medium transition-colors ${
+                    <div className="flex-1 min-w-0">
+                      <p className={`text-xs md:text-sm font-medium transition-colors ${
                         item.status === "completed" 
                           ? "text-foreground" 
                           : item.status === "active"
@@ -486,12 +486,12 @@ export function HeroSection2() {
             </div>
             
             {/* +40% Efficiency Badge */}
-            <div className="bg-background border-2 border-primary/30 rounded-2xl p-4 shadow-xl backdrop-blur-sm w-full lg:w-auto">
+            <div className="bg-background border-2 border-primary/30 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-xl backdrop-blur-sm w-full lg:w-auto">
               <div className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-primary" />
-                <div>
-                  <p className="text-xs font-semibold text-foreground">+40% Efficiency</p>
-                  <p className="text-xs text-muted-foreground">AI-Powered</p>
+                <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-primary flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-xs md:text-sm font-semibold text-foreground">+40% Efficiency</p>
+                  <p className="text-[10px] md:text-xs text-muted-foreground">AI-Powered</p>
                 </div>
               </div>
             </div>

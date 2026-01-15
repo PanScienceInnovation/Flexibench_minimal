@@ -87,47 +87,51 @@ export function LpNavbar1() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <nav className="bg-background sticky top-0 isolate z-50 border-b h-16 flex items-center">
-      <div className="relative container m-auto flex items-center justify-between gap-6 px-6 w-full">
-        <div className="flex items-center gap-6 h-full">
-          <Link href="/" className="flex items-center justify-center h-full">
+    <nav className="bg-background sticky top-0 isolate z-50 border-b">
+      {/* Main Navbar Container - Logo at absolute left edge */}
+      <div className="container mx-auto relative">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo - positioned at absolute left edge with padding for spacing */}
+          <Link href="/" className="flex items-center h-full py-2 pl-4 sm:pl-6">
             <Logo />
           </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden flex-row gap-3 md:flex md:items-center pr-4 sm:pr-6">
+            <NavMenuItems />
+            <ThemeToggle />
+            <Link href="/contact">
+              <Button className="hover:scale-105 transition-transform duration-200">Get Started</Button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
-            className="flex size-9 items-center justify-center md:hidden"
+            className="flex size-10 items-center justify-center md:hidden p-0 mr-4 sm:mr-6"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMenuOpen ? <X /> : <Menu />}
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden flex-row gap-3 md:flex md:items-center">
-          <NavMenuItems />
-          <ThemeToggle />
-          <Link href="/contact">
-            <Button className="hover:scale-105 transition-transform duration-200">Get Started</Button>
-          </Link>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-background border-b md:hidden z-50">
-          <div className="container m-auto px-6 py-4 flex flex-col gap-4">
-            <NavMenuItems />
-            <div className="flex items-center gap-3">
-              <div className="flex-1" />
-              <ThemeToggle />
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="border-t bg-background md:hidden">
+            <div className="px-4 sm:px-6 py-4 flex flex-col gap-4">
+              <NavMenuItems />
+              <div className="flex items-center justify-between pt-2 border-t">
+                <span className="text-sm text-muted-foreground">Theme</span>
+                <ThemeToggle />
+              </div>
+              <Link href="/contact" className="w-full">
+                <Button className="w-full h-12 hover:scale-105 transition-transform duration-200">Get Started</Button>
+              </Link>
             </div>
-            <Link href="/contact">
-              <Button className="w-full hover:scale-105 transition-transform duration-200">Get Started</Button>
-            </Link>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   );
 }

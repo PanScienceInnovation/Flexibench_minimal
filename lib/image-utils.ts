@@ -26,3 +26,23 @@ export const blurPlaceholders = {
   pink: generateBlurDataURL("#ec4899"), // pink
   default: generateBlurDataURL("#e5e7eb"), // default gray
 };
+
+/**
+ * Get resource image based on category and slug
+ * Uses deterministic hash to ensure same slug always gets same image
+ */
+export const getResourceImage = (
+  category: "Blogs" | "White Papers" | "Announcements",
+  slug: string
+): string => {
+  const categoryImages: Record<typeof category, string[]> = {
+    "Blogs": ["/use-cases/Media.png", "/use-cases/Media3.png", "/use-cases/Legal.png"],
+    "White Papers": ["/use-cases/Legal.png", "/use-cases/legal2.png", "/use-cases/manufacturing3.png"],
+    "Announcements": ["/use-cases/Media.png", "/use-cases/manufacturing3.png", "/use-cases/legal2.png"],
+  };
+
+  // Use slug to deterministically pick an image (hash-based)
+  const images = categoryImages[category];
+  const hash = slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  return images[hash % images.length];
+};

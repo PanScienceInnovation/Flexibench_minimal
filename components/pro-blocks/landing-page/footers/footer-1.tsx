@@ -75,13 +75,13 @@ export function Footer1() {
 
   return (
     <footer
-      className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 section-padding-y border-t border-slate-800 overflow-hidden"
+      className="relative bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 section-padding-y border-t border-slate-200 dark:border-slate-800 overflow-hidden"
       role="contentinfo"
       aria-label="Site footer"
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+      <div className="absolute inset-0 opacity-5 dark:opacity-5" style={{
+        backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
         backgroundSize: '40px 40px'
       }} />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -93,7 +93,7 @@ export function Footer1() {
           {/* Logo Section */}
           <Link href="/" aria-label="Go to homepage" className="group">
             <div className="transform group-hover:scale-105 transition-transform duration-[2500ms] ease-out">
-              <Logo width={160} height={40} className="[&_span]:text-white" />
+              <Logo />
             </div>
           </Link>
 
@@ -104,55 +104,55 @@ export function Footer1() {
           >
             <Link
               href="/"
-              className="text-slate-300 hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
             >
               Home
             </Link>
             <Link
               href="#why-flexibench"
-              className="text-slate-300 hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
             >
               Why Flexibench
             </Link>
             <Link
               href="/platform"
-              className="text-slate-300 hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
             >
               Platform
             </Link>
             <Link
               href="/capabilities"
-              className="text-slate-300 hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
             >
               Capabilities
             </Link>
             <Link
               href="/internal-tools"
-              className="text-slate-300 hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
             >
               Internal Tools
             </Link>
             <Link
               href="/use-cases"
-              className="text-slate-300 hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
             >
               Use Cases
             </Link>
             <Link
               href="#quality-governance"
-              className="text-slate-300 hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
             >
               Quality & Governance
             </Link>
             <Link
               href="/resources"
-              className="text-slate-300 hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
             >
               Resources
             </Link>
             <Link
               href="/contact"
-              className="text-slate-300 hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
             >
               Contact
             </Link>
@@ -164,9 +164,9 @@ export function Footer1() {
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-center gap-2">
               <Mail className="h-5 w-5 text-primary" />
-              <h3 className="text-xl font-bold text-white">Stay Updated</h3>
+              <h3 className="text-xl font-bold text-foreground">Stay Updated</h3>
             </div>
-            <p className="text-slate-400 text-sm">
+            <p className="text-muted-foreground text-sm">
               Subscribe to our newsletter for the latest updates and insights.
             </p>
           </div>
@@ -178,7 +178,7 @@ export function Footer1() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 h-11 bg-slate-800/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-primary/50 focus:ring-primary/20"
+                className="flex-1 h-11 bg-slate-100 dark:bg-slate-800/50 border-slate-300 dark:border-slate-700 text-foreground dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-500 focus:border-primary/50 focus:ring-primary/20"
                 disabled={isSubmitting}
               />
               <Button
@@ -210,12 +210,12 @@ export function Footer1() {
         </div>
 
         {/* Section Divider */}
-        <Separator className="bg-slate-800" role="presentation" />
+        <Separator className="bg-slate-200 dark:bg-slate-800" role="presentation" />
 
         {/* Bottom Section */}
         <div className="flex w-full flex-col-reverse items-center gap-8 text-sm lg:flex-row lg:justify-between lg:gap-6">
           {/* Copyright Text */}
-          <p className="text-slate-400 text-center lg:text-left">
+          <p className="text-muted-foreground text-center lg:text-left">
             © {new Date().getFullYear()} Flexibench. All rights reserved.
           </p>
 
@@ -226,19 +226,19 @@ export function Footer1() {
           >
             <Link
               href="/privacy"
-              className="text-slate-400 hover:text-slate-200 transition-colors"
+              className="text-muted-foreground hover:text-foreground dark:hover:text-slate-200 transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-slate-400 hover:text-slate-200 transition-colors"
+              className="text-muted-foreground hover:text-foreground dark:hover:text-slate-200 transition-colors"
             >
               Terms of Service
             </Link>
             <Link
               href="/cookies"
-              className="text-slate-400 hover:text-slate-200 transition-colors"
+              className="text-muted-foreground hover:text-foreground dark:hover:text-slate-200 transition-colors"
             >
               Cookies Settings
             </Link>
