@@ -35,11 +35,11 @@ export function StatsSection4() {
   const { ref: sectionRef, isVisible } = useScrollAnimation();
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-950 via-cyan-950 to-sky-950 dark:from-blue-950 dark:via-cyan-950 dark:to-sky-950 section-padding-y border-b overflow-hidden">
+    <section className="relative bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 dark:from-slate-900 dark:via-indigo-900 dark:to-slate-900 section-padding-y border-b overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-400/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-400/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-600/5 rounded-full blur-3xl" />
         <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0)`,
           backgroundSize: '32px 32px'
@@ -68,10 +68,10 @@ export function StatsSection4() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
             <Card className={`group relative bg-gradient-to-br from-background to-secondary/40 rounded-2xl border-2 border-border/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:scale-[1.02] hover:-translate-y-1 hover:border-primary/30 hover-lift ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '0ms' }}>
-              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl -mr-12 -mt-12" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-600/10 rounded-full blur-2xl -mr-12 -mt-12" />
               <CardContent className="relative flex flex-col gap-4 p-0">
-                <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 rounded-xl p-3 w-fit">
-                  <h3 className="text-blue-600 dark:text-blue-400 font-bold text-base uppercase tracking-wide">
+                <div className="bg-gradient-to-br from-indigo-600/20 to-indigo-600/5 rounded-xl p-3 w-fit">
+                  <h3 className="text-indigo-600 dark:text-indigo-400 font-bold text-base uppercase tracking-wide">
                     Datasets Annotated
                   </h3>
                 </div>
@@ -88,10 +88,10 @@ export function StatsSection4() {
             </Card>
 
             <Card className={`group relative bg-gradient-to-br from-secondary/40 via-background to-secondary/40 rounded-2xl border-2 border-border/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:scale-[1.02] hover:-translate-y-1 hover:border-primary/30 hover-lift ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-              <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/10 rounded-full blur-2xl -mr-12 -mt-12" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-orange-600/10 rounded-full blur-2xl -mr-12 -mt-12" />
               <CardContent className="relative flex flex-col gap-4 p-0">
-                <div className="bg-gradient-to-br from-green-500/20 to-green-500/5 rounded-xl p-3 w-fit">
-                  <h3 className="text-green-600 dark:text-green-400 font-bold text-base uppercase tracking-wide">
+                <div className="bg-gradient-to-br from-orange-600/20 to-orange-600/5 rounded-xl p-3 w-fit">
+                  <h3 className="text-orange-600 dark:text-orange-400 font-bold text-base uppercase tracking-wide">
                     Quality Score
                   </h3>
                 </div>
@@ -109,10 +109,10 @@ export function StatsSection4() {
             </Card>
 
             <Card className={`group relative bg-gradient-to-br from-background to-secondary/40 rounded-2xl border-2 border-border/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:scale-[1.02] hover:-translate-y-1 hover:border-primary/30 hover-lift ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '400ms' }}>
-              <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl -mr-12 -mt-12" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-slate-600/10 rounded-full blur-2xl -mr-12 -mt-12" />
               <CardContent className="relative flex flex-col gap-4 p-0">
-                <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 rounded-xl p-3 w-fit">
-                  <h3 className="text-purple-600 dark:text-purple-400 font-bold text-base uppercase tracking-wide">
+                <div className="bg-gradient-to-br from-slate-600/20 to-slate-600/5 rounded-xl p-3 w-fit">
+                  <h3 className="text-slate-600 dark:text-slate-400 font-bold text-base uppercase tracking-wide">
                     Time Saved
                   </h3>
                 </div>

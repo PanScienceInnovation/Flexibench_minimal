@@ -12,6 +12,34 @@ import { useState, useEffect } from "react";
 import { getAnnouncementBySlug, type Announcement } from "@/lib/api/resources";
 import { getResourceImage } from "@/lib/image-utils";
 
+// Fallback dates for announcements when createdAt is null
+const announcementDates: Record<string, string> = {
+  "Upcoming Webinar: Best Practices for Multimodal Annotation": "2025-01-15",
+  "Integration Partnership: Seamless Workflow with Leading ML Platforms": "2025-01-03",
+  "Expanding Our Global Annotation Network": "2024-12-20",
+  "New Enterprise Features: Advanced Analytics and Reporting": "2024-12-10",
+  "FlexiBench 3.0: Next-Generation Annotation Platform": "2024-11-28",
+};
+
+// Helper function to format date safely
+const formatDate = (dateString: string | null | undefined, fallbackDate?: string): string => {
+  if (!dateString && !fallbackDate) {
+    return "Invalid Date";
+  }
+  
+  const dateToUse = dateString || fallbackDate || '';
+  if (!dateToUse) {
+    return "Invalid Date";
+  }
+  
+  const date = new Date(dateToUse);
+  if (isNaN(date.getTime())) {
+    return "Invalid Date";
+  }
+  
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
+
 export default function AnnouncementDetailClient() {
   const params = useParams();
   const slug = params?.slug as string;
@@ -112,7 +140,7 @@ export default function AnnouncementDetailClient() {
         <div className="flex flex-wrap items-center gap-4 md:gap-6 text-sm text-muted-foreground mb-8 pb-8 border-b">
           <div className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
-            <span>{new Date(announcement.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            <span>{formatDate(announcement.createdAt, announcementDates[announcement.title])}</span>
           </div>
           <div className="flex items-center gap-2">
             <Clock className="h-4 w-4" />

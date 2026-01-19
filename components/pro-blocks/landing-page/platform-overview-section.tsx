@@ -17,19 +17,19 @@ export function PlatformOverviewSection() {
 
   return (
     <section
-      className="relative bg-gradient-to-br from-rose-50 via-pink-50/60 to-orange-50/40 dark:from-rose-950 dark:via-pink-950/60 dark:to-orange-950/40 section-padding-y border-b overflow-hidden"
+      className="relative bg-gradient-to-br from-slate-50 via-indigo-50/40 to-slate-50 dark:from-slate-950 dark:via-indigo-950/40 dark:to-slate-950 section-padding-y border-b overflow-hidden"
       aria-labelledby="platform-heading"
       id="platform"
     >
       {/* Vibrant Background with Animation */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated Gradient Orbs */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-rose-400/20 via-pink-400/15 to-orange-400/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-orange-400/25 via-rose-400/18 to-pink-400/12 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-indigo-600/20 via-blue-900/15 to-slate-700/10 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-orange-600/25 via-indigo-600/18 to-blue-900/12 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
         
         {/* Floating Shapes */}
-        <div className="absolute top-1/3 right-1/4 w-40 h-40 bg-pink-500/12 rounded-full blur-2xl animate-float" />
-        <div className="absolute bottom-1/4 left-1/3 w-36 h-36 bg-rose-500/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-1/3 right-1/4 w-40 h-40 bg-indigo-600/12 rounded-full blur-2xl animate-float" />
+        <div className="absolute bottom-1/4 left-1/3 w-36 h-36 bg-orange-600/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '3s' }} />
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.06]" style={{
@@ -59,10 +59,10 @@ export function PlatformOverviewSection() {
           {platformModules.map((module, index) => {
             const IconComponent = iconMap[module.icon] || Network;
             const cardColors = [
-              { bg: 'from-rose-100 via-pink-50 to-white dark:from-rose-950/80 dark:via-pink-950/60 dark:to-slate-900', border: 'border-rose-300/60 dark:border-rose-700/60', icon: 'from-rose-500/35 to-pink-500/25 border-rose-400/40', iconColor: 'text-rose-600 dark:text-rose-400', glow: 'bg-rose-400/15' },
-              { bg: 'from-orange-100 via-amber-50 to-white dark:from-orange-950/80 dark:via-amber-950/60 dark:to-slate-900', border: 'border-orange-300/60 dark:border-orange-700/60', icon: 'from-orange-500/35 to-amber-500/25 border-orange-400/40', iconColor: 'text-orange-600 dark:text-orange-400', glow: 'bg-orange-400/15' },
-              { bg: 'from-pink-100 via-rose-50 to-white dark:from-pink-950/80 dark:via-rose-950/60 dark:to-slate-900', border: 'border-pink-300/60 dark:border-pink-700/60', icon: 'from-pink-500/35 to-rose-500/25 border-pink-400/40', iconColor: 'text-pink-600 dark:text-pink-400', glow: 'bg-pink-400/15' },
-              { bg: 'from-amber-100 via-orange-50 to-white dark:from-amber-950/80 dark:via-orange-950/60 dark:to-slate-900', border: 'border-amber-300/60 dark:border-amber-700/60', icon: 'from-amber-500/35 to-orange-500/25 border-amber-400/40', iconColor: 'text-amber-600 dark:text-amber-400', glow: 'bg-amber-400/15' },
+              { bg: 'from-slate-100 via-indigo-50 to-white dark:from-slate-900/80 dark:via-indigo-950/60 dark:to-slate-900', border: 'border-slate-300/60 dark:border-slate-700/60', icon: 'from-indigo-600/35 to-blue-900/25 border-indigo-600/40', iconColor: 'text-indigo-600 dark:text-indigo-400', glow: 'bg-indigo-600/15' },
+              { bg: 'from-orange-100 via-amber-50 to-white dark:from-orange-950/80 dark:via-amber-950/60 dark:to-slate-900', border: 'border-orange-300/60 dark:border-orange-700/60', icon: 'from-orange-600/35 to-amber-600/25 border-orange-600/40', iconColor: 'text-orange-600 dark:text-orange-400', glow: 'bg-orange-600/15' },
+              { bg: 'from-indigo-100 via-blue-50 to-white dark:from-indigo-950/80 dark:via-blue-950/60 dark:to-slate-900', border: 'border-indigo-300/60 dark:border-indigo-700/60', icon: 'from-blue-900/35 to-indigo-900/25 border-blue-900/40', iconColor: 'text-blue-900 dark:text-blue-400', glow: 'bg-blue-900/15' },
+              { bg: 'from-slate-100 via-indigo-50 to-white dark:from-slate-900/80 dark:via-indigo-950/60 dark:to-slate-900', border: 'border-slate-300/60 dark:border-slate-700/60', icon: 'from-slate-600/35 to-indigo-600/25 border-slate-600/40', iconColor: 'text-slate-600 dark:text-slate-400', glow: 'bg-slate-600/15' },
             ];
             const colors = cardColors[index % cardColors.length];
             

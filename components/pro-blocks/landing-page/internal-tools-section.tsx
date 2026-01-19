@@ -18,12 +18,12 @@ export function InternalToolsSection() {
   const { ref: sectionRef, isVisible } = useScrollAnimation();
 
   return (
-    <section className="relative bg-gradient-to-br from-red-50/60 via-rose-50/40 to-pink-50/30 dark:from-red-950 dark:via-rose-950 dark:to-pink-950 section-padding-y border-b overflow-hidden">
+    <section className="relative bg-gradient-to-br from-slate-50 via-indigo-50/40 to-slate-50 dark:from-slate-950 dark:via-indigo-950/40 dark:to-slate-950 section-padding-y border-b overflow-hidden">
       {/* Enhanced Decorative Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-red-400/6 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-rose-400/6 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-red-500/2 via-transparent to-rose-500/2" />
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-indigo-600/6 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-600/6 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/2 via-transparent to-orange-600/2" />
         {/* Subtle Pattern */}
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
@@ -86,7 +86,7 @@ export function InternalToolsSection() {
                     <p className="text-sm text-muted-foreground">Unified dataset repository & pipeline builder</p>
                   </div>
                 </div>
-                <div className="absolute top-4 right-4 w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50" />
+                <div className="absolute top-4 right-4 w-3 h-3 bg-orange-500 rounded-full animate-pulse shadow-lg shadow-orange-500/50" />
               </div>
 
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed">

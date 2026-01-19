@@ -212,6 +212,41 @@ const resourceCategories: ResourceCategory[] = [
   "Announcements",
 ];
 
+// Fallback dates for white papers and announcements when createdAt is null
+const whitePaperDates: Record<string, string> = {
+  "Ontology Governance Strategies": "2024-12-15",
+  "Scaling Annotation Workflows": "2024-11-20",
+  "Annotation for Safety-Critical AI": "2024-10-18",
+  "Enterprise Quality Frameworks": "2024-09-12",
+};
+
+const announcementDates: Record<string, string> = {
+  "Upcoming Webinar: Best Practices for Multimodal Annotation": "2025-01-15",
+  "Integration Partnership: Seamless Workflow with Leading ML Platforms": "2025-01-03",
+  "Expanding Our Global Annotation Network": "2024-12-20",
+  "New Enterprise Features: Advanced Analytics and Reporting": "2024-12-10",
+  "FlexiBench 3.0: Next-Generation Annotation Platform": "2024-11-28",
+};
+
+// Helper function to format date safely
+const formatDate = (dateString: string | null | undefined, fallbackDate?: string): string => {
+  if (!dateString && !fallbackDate) {
+    return "Invalid Date";
+  }
+  
+  const dateToUse = dateString || fallbackDate || '';
+  if (!dateToUse) {
+    return "Invalid Date";
+  }
+  
+  const date = new Date(dateToUse);
+  if (isNaN(date.getTime())) {
+    return "Invalid Date";
+  }
+  
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
+
 export default function ResourcesPage() {
   const [activeTab, setActiveTab] = useState<ResourceCategory>("Blogs");
   const [resources, setResources] = useState<UnifiedResource[]>([]);
@@ -249,7 +284,7 @@ export default function ResourcesPage() {
           category: "Blogs" as ResourceCategory,
           title: blog.title,
           author: blog.author,
-          date: new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+          date: formatDate(blog.date),
           readTime: blog.readTime || 5,
         })),
         ...whitePapers.map((paper) => ({
@@ -257,14 +292,14 @@ export default function ResourcesPage() {
           category: "White Papers" as ResourceCategory,
           title: paper.title,
           source: paper.source,
-          date: new Date(paper.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+          date: formatDate(paper.createdAt, whitePaperDates[paper.title]),
           readTime: paper.readTime || 5,
         })),
         ...announcements.map((announcement) => ({
           slug: announcement.slug,
           category: "Announcements" as ResourceCategory,
           title: announcement.title,
-          date: new Date(announcement.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+          date: formatDate(announcement.createdAt, announcementDates[announcement.title]),
           readTime: announcement.readTime || 5,
         })),
       ];

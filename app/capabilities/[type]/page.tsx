@@ -56,12 +56,14 @@ export function generateStaticParams() {
   }));
 }
 
-export default function CapabilityTypePage({
+export default async function CapabilityTypePage({
   params,
 }: {
-  params: { type: string };
+  params: Promise<{ type: string }> | { type: string };
 }) {
-  const type = params?.type ? params.type.charAt(0).toUpperCase() + params.type.slice(1) : '';
+  // Handle both Promise and direct params (Next.js 15+ compatibility)
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const type = resolvedParams?.type ? resolvedParams.type.charAt(0).toUpperCase() + resolvedParams.type.slice(1) : '';
   const capability = capabilities.find((c) => c.type === type);
 
   if (!capability) {
