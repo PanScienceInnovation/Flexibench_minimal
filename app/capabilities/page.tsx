@@ -3,7 +3,7 @@ import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { capabilities } from "@/lib/flexibench-content";
-import { FileText, Image as ImageIcon, Video, Music, ArrowRight, Sparkles, Layers, CheckCircle } from "lucide-react";
+import { FileText, Image as ImageIcon, Video, Music, ArrowRight, Sparkles, Layers, CheckCircle, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,7 @@ const iconMap: Record<string, typeof FileText> = {
   Music,
 };
 
-// Unique images for each annotation type - closely related to content (Updated with working URLs)
+// Unique images for each annotation type - using local images from public folder
 const capabilityImages: Record<string, {
   hero: string;
   core: string;
@@ -26,28 +26,28 @@ const capabilityImages: Record<string, {
   why: string;
 }> = {
   Text: {
-    hero: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&h=900&fit=crop&q=90", // Language/text processing - NLP/AI
-    core: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop&q=90", // Text annotation interface - code/text
-    clients: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=90", // NLP/AI text models
-    why: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&h=900&fit=crop&q=90", // Language understanding
+    hero: "/text_annotation.png",
+    core: "/capabilties2.png",
+    clients: "/Configurable_Annotator_Workflows.png",
+    why: "/why_text_annotation_matters.png",
   },
   Image: {
-    hero: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1400&h=900&fit=crop&q=90", // Computer vision
-    core: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop&q=90", // Image segmentation
-    clients: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=90", // Visual AI models
-    why: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1400&h=900&fit=crop&q=90", // Image recognition
+    hero: "/image_annotation.png",
+    core: "/capabilities3.png",
+    clients: "/Phonex1.png",
+    why: "/core_capabilities_video.png",
   },
   Video: {
-    hero: "https://images.unsplash.com/photo-1533158326339-7f3cf2404354?w=1400&h=900&fit=crop&q=90", // Video analysis
-    core: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=90", // Video tracking/editing interface - data visualization
-    clients: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=90", // Temporal AI - data visualization/analysis dashboard
-    why: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1400&h=900&fit=crop&q=90", // Video understanding
+    hero: "/video_annotation.png",
+    core: "/core_capabilities_video.png",
+    clients: "/what_client_gets_video.png",
+    why: "/why_video_annotation_matters.png",
   },
   Audio: {
-    hero: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1400&h=900&fit=crop&q=90", // Audio processing
-    core: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=90", // Audio/sound analysis interface - data visualization/spectrum analyzer
-    clients: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=90", // Voice AI - speech recognition/audio
-    why: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1400&h=900&fit=crop&q=90", // Speech recognition
+    hero: "/audio_annotation.png",
+    core: "/Core_capabilities_audio.png",
+    clients: "/what_client_gets_audio.png",
+    why: "/why_audio_annotation_matters.png",
   },
 };
 
@@ -83,7 +83,7 @@ export default function CapabilitiesPage() {
             <div className="flex-1 flex flex-col gap-8 text-white">
               <div className="section-title-gap-lg flex flex-col">
                 <Tagline variant="white" className="mb-4">Capabilities</Tagline>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-white">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
                   Multimodal annotation capabilities built for{" "}
                   <span className="relative inline-block">
                     real-world
@@ -105,7 +105,7 @@ export default function CapabilitiesPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 group">
                 <AspectRatio ratio={16 / 10}>
                   <Image
-                    src="/use-cases/finance3.png"
+                    src="/core_capabilities.jpeg"
                     alt="Multimodal annotation capabilities showing text, image, video, and audio annotation interfaces"
                     fill
                     priority
@@ -157,7 +157,7 @@ export default function CapabilitiesPage() {
                       </span>{" "}
                       Models
                     </h2>
-                    <p className="text-white/90 text-lg lg:text-xl leading-relaxed max-w-2xl">
+                    <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl">
                       {capability.whatItDoes}
                     </p>
                   </div>
@@ -193,7 +193,7 @@ export default function CapabilitiesPage() {
                         <div className="bg-white/20 backdrop-blur-sm flex h-14 w-14 items-center justify-center rounded-xl border-2 border-white/30 shadow-xl">
                           <IconComponent className="text-white h-7 w-7" />
                         </div>
-                        <h3 className="text-white text-2xl font-bold">Core Capabilities</h3>
+                        <h3 className="text-white text-xl md:text-2xl font-bold">Core Capabilities</h3>
                       </div>
                       <ul className="list-disc list-inside text-white/90 space-y-3 pl-4">
                         {capability.coreCapabilities.map((cap, idx) => (
@@ -222,9 +222,9 @@ export default function CapabilitiesPage() {
                         <div className="bg-white/20 backdrop-blur-sm flex h-14 w-14 items-center justify-center rounded-xl border-2 border-white/30 shadow-xl">
                           <Sparkles className="text-white h-7 w-7" />
                         </div>
-                        <h3 className="text-white text-2xl font-bold">What Clients Get</h3>
+                        <h3 className="text-white text-xl md:text-2xl font-bold">What Clients Get</h3>
                       </div>
-                      <p className="text-white/90 text-base leading-relaxed">{capability.whatClientsGet}</p>
+                      <p className="text-white/90 text-base md:text-lg leading-relaxed">{capability.whatClientsGet}</p>
                       
                       {/* Mini Image */}
                       <div className="relative h-40 rounded-xl overflow-hidden border-2 border-white/20 mt-6 group-hover:border-white/40 transition-colors">
@@ -249,9 +249,9 @@ export default function CapabilitiesPage() {
                         <div className="bg-white/20 backdrop-blur-sm flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-white/30 shadow-xl">
                           <IconComponent className="text-white h-8 w-8" />
                         </div>
-                        <h3 className="text-white text-2xl md:text-3xl font-semibold">Why {capability.type} Annotation Matters</h3>
+                        <h3 className="text-white text-xl md:text-2xl font-bold">Why {capability.type} Annotation Matters</h3>
                       </div>
-                      <p className="text-white/90 text-lg md:text-xl leading-relaxed">
+                      <p className="text-white/90 text-base md:text-lg leading-relaxed">
                         {capability.whyItMatters}
                       </p>
                     </div>
@@ -284,8 +284,8 @@ export default function CapabilitiesPage() {
         
         <div className="container-padding-x container mx-auto relative z-10">
           <div className="section-title-gap-lg mx-auto flex max-w-3xl flex-col items-center text-center mb-20">
-            <Tagline>Platform-Wide Capabilities</Tagline>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground">
+            <Tagline className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 border-slate-800 dark:border-slate-200">Platform-Wide Capabilities</Tagline>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-slate-900 dark:text-white">
               Capabilities That{" "}
               <span className="relative inline-block text-primary">
                 Span All Modalities
@@ -294,7 +294,7 @@ export default function CapabilitiesPage() {
                 </svg>
               </span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mt-4">
+            <p className="text-slate-700 dark:text-slate-200 text-base md:text-lg leading-relaxed mt-4">
               Powerful features that work seamlessly across Text, Image, Video, and Audio annotation workflows
             </p>
           </div>
@@ -306,36 +306,43 @@ export default function CapabilitiesPage() {
                 title: "AI-Assisted Pre-Labeling", 
                 desc: "Model suggestions speed up human review", 
                 icon: Sparkles, 
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=90",
+                image: "/capabilties2.png",
                 color: "from-purple-500/15 to-purple-500/8",
               },
               { 
                 title: "Configurable Annotator Workflows", 
                 desc: "Tailor interfaces per task", 
                 icon: Layers, 
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=90",
+                image: "/Configurable_Annotator_Workflows.png",
                 color: "from-blue-500/15 to-blue-500/8",
               },
               { 
                 title: "Dynamic Taxonomy Support", 
                 desc: "Reuse ontologies across projects", 
                 icon: CheckCircle, 
-                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=90",
+                image: "/Dynamic_Taxonomy_Support.png",
                 color: "from-green-500/15 to-green-500/8",
               },
               { 
                 title: "Quality Control and Review Gates", 
                 desc: "Multi-tier validation pipelines", 
                 icon: CheckCircle, 
-                image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop&q=90",
+                image: "/Quality_Control_and_Review_Gates.png",
                 color: "from-orange-500/15 to-orange-500/8",
               },
               { 
                 title: "Unified Data Management", 
                 desc: "Consistent datasets for training and deployment", 
                 icon: Layers, 
-                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop&q=90",
+                image: "/Unified_Data_Management.png",
                 color: "from-indigo-500/15 to-indigo-500/8",
+              },
+              { 
+                title: "Real-time Collaboration", 
+                desc: "Seamless team coordination and workflow management", 
+                icon: Zap, 
+                image: "/capabilities3.png",
+                color: "from-yellow-500/15 to-yellow-500/8",
               },
             ].map((capability, index) => (
               <Card
@@ -364,7 +371,7 @@ export default function CapabilitiesPage() {
                   {/* Number Badge */}
                   <div className="absolute top-5 right-5">
                     <div className="bg-primary/90 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center border-2 border-white/30 shadow-lg">
-                      <span className="text-white font-bold text-sm">{index + 1}</span>
+                      <span className="text-white font-bold text-base">{index + 1}</span>
                     </div>
                   </div>
                 </div>
@@ -375,10 +382,10 @@ export default function CapabilitiesPage() {
                       <capability.icon className="text-primary h-7 w-7" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-foreground text-xl font-bold leading-tight group-hover:text-primary transition-colors mb-2">
+                      <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight group-hover:text-primary transition-colors mb-2">
                         {capability.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
+                      <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                         {capability.desc}
                       </p>
                     </div>
@@ -388,7 +395,7 @@ export default function CapabilitiesPage() {
                   <div className="pt-4 mt-auto border-t border-border/50">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                      <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                      <span className="text-sm font-semibold text-primary uppercase tracking-wider">
                         Platform Feature
                       </span>
                     </div>
@@ -402,9 +409,9 @@ export default function CapabilitiesPage() {
           <div className="relative max-w-6xl mx-auto">
             <div className="relative rounded-3xl overflow-hidden border-4 border-primary/20 shadow-2xl group">
               {/* Background Image with Better Overlay */}
-              <AspectRatio ratio={21 / 9}>
+                <AspectRatio ratio={21 / 9}>
                 <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=800&fit=crop&q=90"
+                  src="/text_annotation.png"
                   alt="Get started with Flexibench capabilities"
                   fill
                   className="object-cover  transition-transform duration-1000"
@@ -431,7 +438,7 @@ export default function CapabilitiesPage() {
                       <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/30 to-transparent max-w-32" />
                     </div>
                     
-                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-6 leading-tight">
                       Ready to Transform Your{" "}
                       <span className="relative inline-block">
                         Annotation Workflows?
@@ -453,11 +460,11 @@ export default function CapabilitiesPage() {
                     
                     {/* Additional CTA Links */}
                     <div className="flex items-center justify-center gap-6 mt-8">
-                      <Link href="/platform" className="text-white/80 hover:text-white text-sm font-medium underline underline-offset-4 transition-colors">
+                      <Link href="/platform" className="text-white/80 hover:text-white text-base font-medium underline underline-offset-4 transition-colors">
                         Learn More
                       </Link>
                       <span className="text-white/40">•</span>
-                      <Link href="/use-cases" className="text-white/80 hover:text-white text-sm font-medium underline underline-offset-4 transition-colors">
+                      <Link href="/use-cases" className="text-white/80 hover:text-white text-base font-medium underline underline-offset-4 transition-colors">
                         View Use Cases
                       </Link>
                     </div>

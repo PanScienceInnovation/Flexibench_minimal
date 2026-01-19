@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const taglineVariants = cva(
-  "flex items-center justify-center text-sm font-medium w-fit gap-1 [&_svg]:size-3.5 [&_svg]:shrink-0",
+  "flex items-center justify-center text-sm md:text-base font-medium w-fit gap-1 [&_svg]:size-3.5 [&_svg]:shrink-0",
   {
     variants: {
       variant: {

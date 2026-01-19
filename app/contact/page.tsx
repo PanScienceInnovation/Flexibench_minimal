@@ -179,7 +179,7 @@ function ContactFormContent({
               <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                   <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                    <Label htmlFor="firstName" className="text-xs md:text-sm font-bold flex items-center gap-2">
+                    <Label htmlFor="firstName" className="text-sm md:text-base font-bold flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                       First Name
                     </Label>
@@ -193,7 +193,7 @@ function ContactFormContent({
                     />
                   </div>
                   <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
-                    <Label htmlFor="lastName" className="text-xs md:text-sm font-bold flex items-center gap-2">
+                    <Label htmlFor="lastName" className="text-sm md:text-base font-bold flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                       Last Name
                     </Label>
@@ -208,7 +208,7 @@ function ContactFormContent({
                   </div>
                 </div>
                 <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                  <Label htmlFor="email" className="text-xs md:text-sm font-bold flex items-center gap-2">
+                  <Label htmlFor="email" className="text-sm md:text-base font-bold flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                     Email
                   </Label>
@@ -223,7 +223,7 @@ function ContactFormContent({
                   />
                 </div>
                 <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
-                  <Label htmlFor="phone" className="text-xs md:text-sm font-medium flex items-center gap-2">
+                  <Label htmlFor="phone" className="text-sm md:text-base font-medium flex items-center gap-2">
                     Phone Number
                   </Label>
                   <Input 
@@ -236,7 +236,7 @@ function ContactFormContent({
                   />
                 </div>
                 <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                  <Label htmlFor="company" className="text-xs md:text-sm font-medium flex items-center gap-2">
+                  <Label htmlFor="company" className="text-sm md:text-base font-medium flex items-center gap-2">
                     Company
                   </Label>
                   <Input 
@@ -248,7 +248,7 @@ function ContactFormContent({
                   />
                 </div>
                 <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
-                  <Label htmlFor="message" className="text-xs md:text-sm font-medium flex items-center gap-2">
+                  <Label htmlFor="message" className="text-sm md:text-base font-medium flex items-center gap-2">
                     Message
                   </Label>
                   <Textarea
@@ -278,7 +278,7 @@ function ContactFormContent({
                       ) : (
                         <Mail className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0 mt-0.5" />
                       )}
-                      <p className="text-xs md:text-sm font-medium flex-1">{submitStatus.message}</p>
+                      <p className="text-sm md:text-base font-medium flex-1">{submitStatus.message}</p>
                     </div>
                   </div>
                 )}
@@ -322,11 +322,11 @@ function ContactFormContent({
                 </div>
                 <div className="min-w-0 flex-1">
                   <h3 className="text-foreground font-bold text-lg md:text-xl mb-1 group-hover:text-blue-500 transition-colors">Email Us</h3>
-                  <p className="text-muted-foreground text-xs md:text-sm truncate">sales@flexibench.com</p>
+                  <p className="text-muted-foreground text-sm md:text-base truncate">sales@flexibench.com</p>
                 </div>
               </div>
               <div className="pt-3 md:pt-4 border-t border-border/30">
-                <div className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 text-sm md:text-base text-muted-foreground">
                   <CheckCircle className="h-3.5 w-3.5 md:h-4 md:w-4 text-blue-500 flex-shrink-0" />
                   <span>Response within 24 hours</span>
                 </div>
@@ -375,7 +375,7 @@ function ContactPageContent() {
             <div className="flex-1 flex flex-col gap-6 md:gap-8 text-white animate-fade-in-up">
               <div className="flex flex-col gap-4 md:gap-6">
                 <Tagline variant="white" className="mb-0">Get Started</Tagline>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
                   Start Building{" "}
                   <span className="relative inline-block">
                     Model-Ready Data
@@ -387,7 +387,7 @@ function ContactPageContent() {
                     Today
                   </span>
                 </h1>
-                <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl font-medium">
+                <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl font-medium">
                   Whether you want a demo, a consultation, or onboarding support, our team is ready to help
                   you succeed with Flexibench.
                 </p>
@@ -397,15 +397,15 @@ function ContactPageContent() {
               <div className="flex flex-wrap gap-2 md:gap-3">
                 <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
                   <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-green-300 flex-shrink-0" />
-                  <span className="text-xs md:text-sm font-semibold text-white whitespace-nowrap">Expert Consultation</span>
+                  <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Expert Consultation</span>
                 </div>
                 <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
                   <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-green-300 flex-shrink-0" />
-                  <span className="text-xs md:text-sm font-semibold text-white whitespace-nowrap">Custom Demo</span>
+                  <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Custom Demo</span>
                 </div>
                 <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
                   <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-green-300 flex-shrink-0" />
-                  <span className="text-xs md:text-sm font-semibold text-white whitespace-nowrap">Fast Onboarding</span>
+                  <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Fast Onboarding</span>
                 </div>
               </div>
             </div>

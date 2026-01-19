@@ -1,11 +1,10 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
 import { whyFlexibenchPoints } from "@/lib/flexibench-content";
 import { Database, Lightbulb, Award, Settings, ArrowRight } from "lucide-react";
-import Image from "next/image";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const iconMap: Record<string, typeof Database> = {
   Database,
@@ -16,197 +15,394 @@ const iconMap: Record<string, typeof Database> = {
 };
 
 export function WhyFlexibenchSection() {
-  const { ref: sectionRef, isVisible } = useScrollAnimation();
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const headerY = useTransform(scrollYProgress, [0, 1], [0, -30]);
+  // Keep opacity at 1 always - no fading
+  const headerOpacity = useTransform(scrollYProgress, [0, 1], [1, 1]);
+
+  const isInView = useInView(sectionRef, { once: true, amount: 0.15 });
+
+  // Split cards into two columns
+  const leftColumnCards = [
+    whyFlexibenchPoints[0],
+    whyFlexibenchPoints[2],
+    whyFlexibenchPoints[4],
+  ];
+  const rightColumnCards = [
+    whyFlexibenchPoints[1],
+    whyFlexibenchPoints[3],
+  ];
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50/80 to-violet-50/60 dark:from-blue-950 dark:via-indigo-950/80 dark:to-violet-950/60 section-padding-y border-b overflow-hidden" id="why-flexibench">
-      {/* Vibrant Background Pattern with Animation */}
+    <section
+      ref={sectionRef}
+      className="relative bg-gradient-to-br from-slate-50 via-indigo-50/40 to-slate-50 dark:from-slate-950 dark:via-indigo-950/40 dark:to-slate-950 section-padding-y border-b overflow-hidden"
+      id="why-flexibench"
+    >
+      {/* Enhanced Ambient Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Animated Gradient Orbs */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/25 via-indigo-400/20 to-violet-400/15 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-violet-400/20 via-purple-400/15 to-indigo-400/12 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
-        
-        {/* Floating Shapes */}
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl animate-float" />
-        <div className="absolute bottom-1/3 right-1/3 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
-        
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.06]" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1.5px, transparent 0)`,
-          backgroundSize: '48px 48px'
-        }} />
-        
-        {/* Animated Waves */}
-        <div className="absolute bottom-0 left-0 right-0 h-40">
-          <div className="absolute inset-0 bg-gradient-to-t from-indigo-400/15 via-blue-400/8 to-transparent animate-wave" />
-          <div className="absolute inset-0 bg-gradient-to-t from-violet-400/12 via-indigo-400/6 to-transparent animate-wave" style={{ animationDelay: '1.5s' }} />
+        {/* Large Animated Gradient Blobs */}
+        <motion.div
+          className="absolute top-1/4 right-1/4 w-[900px] h-[900px] bg-gradient-to-br from-blue-600/15 via-indigo-600/12 to-violet-600/8 rounded-full blur-3xl"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 80, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 left-1/4 w-[800px] h-[800px] bg-gradient-to-tr from-violet-600/15 via-purple-600/12 to-indigo-600/8 rounded-full blur-3xl"
+          animate={{
+            x: [0, -80, 0],
+            y: [0, -100, 0],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3,
+          }}
+        />
+
+        {/* Animated Grid Pattern - Light Theme */}
+        <div className="absolute inset-0 opacity-[0.06] dark:hidden">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)
+              `,
+              backgroundSize: "80px 80px",
+            }}
+          />
         </div>
+        {/* Animated Grid Pattern - Dark Theme */}
+        <div className="absolute inset-0 opacity-[0.04] hidden dark:block">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+              `,
+              backgroundSize: "80px 80px",
+            }}
+          />
+        </div>
+
+        {/* Animated Dots Pattern - Light Theme */}
+        <motion.div
+          className="absolute inset-0 opacity-[0.07] dark:hidden"
+          style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(0,0,0,0.4) 1.5px, transparent 0)`,
+            backgroundSize: "60px 60px",
+          }}
+          animate={{
+            backgroundPosition: ["0% 0%", "100% 100%"],
+          }}
+          transition={{
+            duration: 40,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        {/* Animated Dots Pattern - Dark Theme */}
+        <motion.div
+          className="absolute inset-0 opacity-[0.05] hidden dark:block"
+          style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.4) 1.5px, transparent 0)`,
+            backgroundSize: "60px 60px",
+          }}
+          animate={{
+            backgroundPosition: ["0% 0%", "100% 100%"],
+          }}
+          transition={{
+            duration: 40,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
       </div>
 
-      <div ref={sectionRef} className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 md:gap-16">
-        {/* Section Title with Enhanced Design */}
-        <div className={`mx-auto flex max-w-4xl flex-col items-center text-center gap-6 transition-all duration-[2500ms] ease-out ${isVisible ? 'opacity-100 animate-slide-in-subtle' : 'opacity-0'}`}>
-          <Tagline>Why Flexibench</Tagline>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+      <div className="container-padding-x container mx-auto relative z-10 flex flex-col gap-16 md:gap-20">
+        {/* Section Header - Enhanced with Prominent Animation */}
+        <motion.div
+          style={{ y: headerY }}
+          className="mx-auto flex max-w-5xl flex-col items-center text-center gap-8"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Tagline className="text-slate-600 dark:text-white/90 font-semibold">Why Flexibench</Tagline>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 60, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.9 }}
+            transition={{ 
+              duration: 1.2, 
+              delay: 0.3, 
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-slate-900 dark:text-white"
+            style={{
+              textShadow: "0 0 60px rgba(59, 130, 246, 0.4), 0 0 100px rgba(99, 102, 241, 0.3), 0 4px 20px rgba(0, 0, 0, 0.3)",
+              filter: "brightness(1.1) contrast(1.1)",
+              opacity: 1,
+            }}
+          >
             High-Quality Data Is the{" "}
             <span className="relative inline-block">
-              Foundation
-              <svg className="absolute -bottom-1 left-0 w-full h-2 text-primary/30" viewBox="0 0 200 8" fill="none">
-                <path d="M0 4 Q50 0, 100 4 T200 4" stroke="currentColor" strokeWidth="2" />
-              </svg>
+              <motion.span
+                className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 dark:from-blue-300 dark:via-indigo-300 dark:to-violet-300 bg-clip-text text-transparent font-black"
+                animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                style={{
+                  backgroundSize: "200% 200%",
+                  filter: "drop-shadow(0 0 20px rgba(99, 102, 241, 0.5)) brightness(1.1)",
+                }}
+              >
+                Foundation
+              </motion.span>
+              <motion.svg
+                className="absolute -bottom-3 left-0 w-full h-4 text-blue-600/60 dark:text-blue-400/60"
+                viewBox="0 0 200 16"
+                fill="none"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+                transition={{ duration: 1.5, delay: 1.2, ease: "easeInOut" }}
+              >
+                <path
+                  d="M0 8 Q50 4, 100 8 T200 8"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </motion.svg>
             </span>{" "}
             of Every Successful AI Model
-          </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.95 }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-slate-700 dark:text-white text-base md:text-lg leading-relaxed max-w-4xl font-medium"
+            style={{
+              textShadow: "0 2px 20px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 255, 255, 0.05)",
+              filter: "brightness(1.05)",
+              opacity: 1,
+            }}
+          >
             Most annotation tools treat labeling as a task. We treat it as data engineering because the
             right labels determine whether a model succeeds, fails, or never gets deployed.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        {/* Enhanced Bento Grid - 2-1-2 Layout with Images */}
-        <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-5 lg:grid-rows-3">
-          {/* Row 1: Two cards spanning 2 columns each with image placeholders */}
-          <Card className={`group relative bg-gradient-to-br from-white via-blue-50/60 to-indigo-50/40 dark:from-slate-900 dark:via-blue-950/60 dark:to-indigo-950/40 gap-0 overflow-hidden rounded-2xl border-2 border-blue-200/50 dark:border-blue-800/50 p-8 shadow-xl hover:shadow-2xl hover:border-blue-300/70 dark:hover:border-blue-700/70 transition-all duration-[3000ms] ease-out lg:col-span-2 lg:row-span-2  hover-lift ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '100ms' }}>
-            <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-400/20 to-indigo-500/15 rounded-full blur-2xl -mr-16 -mt-16  transition-transform duration-[3000ms] ease-out" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-violet-400/10 rounded-full blur-xl animate-pulse-slow" />
-            <CardContent className="relative flex flex-col gap-6 p-0 h-full">
-              <div className="flex items-start gap-4">
-                <div className="bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border-2 border-blue-400/30 shadow-lg   transition-all duration-[2500ms] ease-out">
-                  {(() => {
-                    const IconComponent = iconMap[whyFlexibenchPoints[0].icon];
-                    return IconComponent ? <IconComponent className="text-primary h-7 w-7  transition-transform duration-[2500ms] ease-out" /> : null;
-                  })()}
-                </div>
-                <div className="flex-1 min-h-[120px] rounded-lg overflow-hidden border border-border/30 relative group/image">
-                  <Image
-                    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80"
-                    alt="Data engineering and AI model training infrastructure"
-                    fill
-                    className="object-cover  transition-transform duration-[2500ms] ease-out"
+        {/* Bidirectional Scrolling Cards with Fade Effects */}
+        <div className="relative w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto items-start">
+            {/* Left Column - Scrolling Down */}
+            <div className="relative h-[800px] md:h-[1000px] overflow-hidden w-full">
+              {/* Top Fade Mask */}
+              <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-50 via-indigo-50/40 to-transparent dark:from-slate-950 dark:via-indigo-950/40 dark:to-transparent z-20 pointer-events-none" />
+              {/* Bottom Fade Mask */}
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 via-indigo-50/40 to-transparent dark:from-slate-950 dark:via-indigo-950/40 dark:to-transparent z-20 pointer-events-none" />
+              <div className="animate-scroll-down flex flex-col gap-6 w-full">
+                {[...leftColumnCards, ...leftColumnCards].map((point, index) => (
+                  <AnimatedCard
+                    key={`left-${index}`}
+                    point={point}
+                    index={index}
+                    gradientColors="from-blue-500/25 via-indigo-500/20 to-violet-500/15"
+                    borderColor="border-blue-400/40"
+                    glowColor="bg-blue-500/30"
+                    iconColor="text-blue-300"
+                    borderIconColor="border-blue-400/50"
+                    bgIconGradient="from-blue-500/40 to-indigo-500/30"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                  <div className="absolute bottom-2 left-2 right-2">
-                    <p className="text-xs text-foreground font-semibold bg-background/90 backdrop-blur-sm rounded px-2 py-1 text-center">Data Engine Architecture</p>
-                  </div>
-                </div>
+                ))}
               </div>
-              <h3 className="text-foreground text-2xl font-bold leading-tight">
-                {whyFlexibenchPoints[0].title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed flex-1">
-                {whyFlexibenchPoints[0].description}
-              </p>
-            </CardContent>
-          </Card>
+            </div>
 
-          <Card className={`group relative bg-gradient-to-br from-indigo-50/60 via-violet-50/40 to-white dark:from-indigo-950/60 dark:via-violet-950/40 dark:to-slate-900 gap-0 overflow-hidden rounded-2xl border-2 border-indigo-200/50 dark:border-indigo-800/50 p-8 shadow-xl hover:shadow-2xl hover:border-indigo-300/70 dark:hover:border-indigo-700/70 transition-all duration-[3000ms] ease-out lg:col-span-2 lg:row-span-2  hover-lift ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-            <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-indigo-400/20 to-violet-500/15 rounded-full blur-2xl -ml-16 -mb-16  transition-transform duration-[3000ms] ease-out" />
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-xl animate-pulse-slow" style={{ animationDelay: '0.5s' }} />
-            <CardContent className="relative flex flex-col gap-6 p-0 h-full">
-              <div className="flex items-start gap-4">
-                <div className="bg-gradient-to-br from-indigo-500/30 to-violet-500/20 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border-2 border-indigo-400/30 shadow-lg   transition-all duration-[2500ms] ease-out">
-                  {(() => {
-                    const IconComponent = iconMap[whyFlexibenchPoints[1].icon];
-                    return IconComponent ? <IconComponent className="text-indigo-600 dark:text-indigo-400 h-7 w-7" /> : null;
-                  })()}
-                </div>
-                <div className="flex-1 min-h-[120px] rounded-lg overflow-hidden border border-border/30 relative group/image">
-                  <Image
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=400&fit=crop&q=80"
-                    alt="Team collaboration and AI development workspace"
-                    fill
-                    className="object-cover  transition-transform duration-[2500ms] ease-out"
+            {/* Right Column - Scrolling Up */}
+            <div className="relative h-[800px] md:h-[1000px] overflow-hidden w-full">
+              {/* Top Fade Mask */}
+              <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-50 via-indigo-50/40 to-transparent dark:from-slate-950 dark:via-indigo-950/40 dark:to-transparent z-20 pointer-events-none" />
+              {/* Bottom Fade Mask */}
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 via-indigo-50/40 to-transparent dark:from-slate-950 dark:via-indigo-950/40 dark:to-transparent z-20 pointer-events-none" />
+              <div className="animate-scroll-up flex flex-col gap-6 w-full">
+                {[...rightColumnCards, ...rightColumnCards].map((point, index) => (
+                  <AnimatedCard
+                    key={`right-${index}`}
+                    point={point}
+                    index={index}
+                    gradientColors="from-indigo-500/25 via-violet-500/20 to-purple-500/15"
+                    borderColor="border-indigo-400/40"
+                    glowColor="bg-indigo-500/30"
+                    iconColor="text-indigo-300"
+                    borderIconColor="border-indigo-400/50"
+                    bgIconGradient="from-indigo-500/40 to-violet-500/30"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                  <div className="absolute bottom-2 left-2 right-2">
-                    <p className="text-xs text-foreground font-semibold bg-background/90 backdrop-blur-sm rounded px-2 py-1 text-center">Built From Experience</p>
-                  </div>
-                </div>
+                ))}
               </div>
-              <h3 className="text-foreground text-2xl font-bold leading-tight">
-                {whyFlexibenchPoints[1].title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed flex-1">
-                {whyFlexibenchPoints[1].description}
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Center card spanning 1 column, 3 rows - Featured */}
-          <Card className={`group relative bg-gradient-to-b from-violet-100 via-purple-50 to-indigo-100 dark:from-violet-950 dark:via-purple-950 dark:to-indigo-950 gap-0 overflow-hidden rounded-2xl border-2 border-violet-300/60 dark:border-violet-700/60 p-8 shadow-2xl hover:shadow-violet-500/25 dark:hover:shadow-violet-900/50 transition-all duration-[3000ms] ease-out lg:col-span-1 lg:row-span-3 hover:border-violet-400 dark:hover:border-violet-600 hover-lift  ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
-            <div className="absolute inset-0 bg-gradient-to-b from-violet-400/10 via-purple-400/15 to-indigo-400/10 opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl animate-pulse-slow" />
-            <CardContent className="relative flex flex-col gap-6 p-0 h-full justify-center items-center text-center">
-              <div className="bg-gradient-to-br from-violet-500/40 to-purple-500/30 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border-2 border-violet-400/40 shadow-xl mb-4   transition-all duration-[3000ms] ease-out">
-                {(() => {
-                  const IconComponent = iconMap[whyFlexibenchPoints[2].icon];
-                  return IconComponent ? <IconComponent className="text-violet-700 dark:text-violet-300 h-10 w-10" /> : null;
-                })()}
-              </div>
-              <div className="w-full h-32 rounded-xl bg-background/60 backdrop-blur-sm border border-border/40 flex items-center justify-center mb-4">
-                <Award className="h-12 w-12 text-primary/40" />
-              </div>
-              <h3 className="text-foreground text-xl font-bold leading-tight">
-                {whyFlexibenchPoints[2].title}
-              </h3>
-              <p className="text-muted-foreground text-xs leading-relaxed">
-                {whyFlexibenchPoints[2].description}
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Row 3: Two cards spanning 2 columns each */}
-          <Card className={`group relative bg-gradient-to-br from-white via-blue-50/40 to-indigo-50/30 dark:from-slate-900 dark:via-blue-950/40 dark:to-indigo-950/30 gap-0 overflow-hidden rounded-2xl border-2 border-blue-200/50 dark:border-blue-800/50 p-8 shadow-xl hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-[3000ms] ease-out lg:col-span-2  hover-lift ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '400ms' }}>
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/15 to-indigo-400/10 rounded-full blur-xl -mr-12 -mt-12  transition-transform duration-[3000ms] ease-out" />
-            <CardContent className="relative flex flex-row gap-6 p-0">
-              <div className="flex-shrink-0">
-                <div className="bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex h-16 w-16 items-center justify-center rounded-xl border-2 border-blue-400/30   transition-all duration-[2500ms] ease-out">
-                  {(() => {
-                    const IconComponent = iconMap[whyFlexibenchPoints[3].icon];
-                    return IconComponent ? <IconComponent className="text-blue-600 dark:text-blue-400 h-8 w-8" /> : null;
-                  })()}
-                </div>
-                <div className="mt-4 w-20 h-20 rounded-lg bg-background/50 backdrop-blur-sm border border-border/30 flex items-center justify-center">
-                  <Settings className="h-10 w-10 text-primary/40" />
-                </div>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-foreground text-xl font-bold mb-3">
-                  {whyFlexibenchPoints[3].title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {whyFlexibenchPoints[3].description}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className={`group relative bg-gradient-to-br from-indigo-50/40 via-violet-50/30 to-white dark:from-indigo-950/40 dark:via-violet-950/30 dark:to-slate-900 gap-0 overflow-hidden rounded-2xl border-2 border-indigo-200/50 dark:border-indigo-800/50 p-8 shadow-xl hover:shadow-2xl hover:border-indigo-300 dark:hover:border-indigo-700 transition-all duration-[3000ms] ease-out lg:col-span-2  hover-lift ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '500ms' }}>
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-indigo-400/15 to-violet-400/10 rounded-full blur-xl -ml-12 -mb-12  transition-transform duration-[3000ms] ease-out" />
-            <CardContent className="relative flex flex-row gap-6 p-0">
-              <div className="flex-shrink-0">
-                <div className="bg-gradient-to-br from-indigo-500/30 to-violet-500/20 flex h-16 w-16 items-center justify-center rounded-xl border-2 border-indigo-400/30   transition-all duration-[2500ms] ease-out">
-                  {(() => {
-                    const IconComponent = iconMap[whyFlexibenchPoints[4].icon];
-                    return IconComponent ? <IconComponent className="text-indigo-600 dark:text-indigo-400 h-8 w-8" /> : null;
-                  })()}
-                </div>
-                <div className="mt-4 w-20 h-20 rounded-lg bg-background/50 backdrop-blur-sm border border-border/30 flex items-center justify-center">
-                  <ArrowRight className="h-10 w-10 text-primary/40" />
-                </div>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-foreground text-xl font-bold mb-3">
-                  {whyFlexibenchPoints[4].title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {whyFlexibenchPoints[4].description}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* CSS Animations */}
+      <style jsx global>{`
+        @keyframes scroll-down {
+          from {
+            transform: translateY(0);
+          }
+          to {
+            transform: translateY(calc(-50% - 12px));
+          }
+        }
+
+        @keyframes scroll-up {
+          from {
+            transform: translateY(calc(-50% - 12px));
+          }
+          to {
+            transform: translateY(0);
+          }
+        }
+
+        .animate-scroll-down {
+          animation: scroll-down 30s linear infinite;
+        }
+
+        .animate-scroll-up {
+          animation: scroll-up 30s linear infinite;
+        }
+
+        .animate-scroll-down:hover,
+        .animate-scroll-up:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
+  );
+}
+
+// Animated Card Component
+interface AnimatedCardProps {
+  point: typeof whyFlexibenchPoints[0];
+  index: number;
+  gradientColors: string;
+  borderColor: string;
+  glowColor: string;
+  iconColor: string;
+  borderIconColor: string;
+  bgIconGradient: string;
+}
+
+function AnimatedCard({
+  point,
+  gradientColors,
+  borderColor,
+  glowColor,
+  iconColor,
+  borderIconColor,
+  bgIconGradient,
+}: AnimatedCardProps) {
+  return (
+    <motion.div
+      className="group relative"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{
+        scale: 1.02,
+        y: -8,
+        transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
+      }}
+    >
+      <div
+        className="relative rounded-3xl p-8 overflow-hidden h-full bg-white/80 dark:bg-slate-900/90 backdrop-blur-2xl border border-slate-200/50 dark:border-white/10 shadow-xl dark:shadow-2xl"
+        style={{
+          boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)",
+        }}
+      >
+        {/* Gradient Overlay */}
+        <div
+          className={`absolute inset-0 rounded-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-700`}
+          style={{
+            background: `linear-gradient(135deg, ${gradientColors})`,
+          }}
+        />
+
+        {/* Animated Gradient Border */}
+        <motion.div
+          className="absolute inset-0 rounded-3xl"
+          style={{
+            padding: "2px",
+            background: `linear-gradient(135deg, ${gradientColors})`,
+            WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+            WebkitMaskComposite: "xor",
+            maskComposite: "exclude",
+          }}
+          animate={{
+            opacity: [0.3, 0.7, 0.3],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Glow Effect */}
+        <motion.div
+          className={`absolute -inset-2 ${glowColor} rounded-3xl blur-2xl -z-10`}
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col gap-6">
+          {/* Title */}
+          <h3 className="text-slate-900 dark:text-white text-xl md:text-2xl font-bold leading-tight">
+            {point.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">
+            {point.description}
+          </p>
+        </div>
+      </div>
+    </motion.div>
   );
 }

@@ -1,14 +1,15 @@
 "use client";
 
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
+import Image from "next/image";
 
 const brands = [
-  { name: "Krutrim", id: "krutrim", color: "from-purple-500 to-indigo-600" },
-  { name: "Databricks", id: "databricks", color: "from-orange-500 to-red-600" },
-  { name: "Intel", id: "intel", color: "from-blue-500 to-cyan-600" },
-  { name: "Samsung", id: "samsung", color: "from-gray-800 to-gray-900" },
-  { name: "NVIDIA", id: "nvidia", color: "from-green-500 to-emerald-600" },
-  { name: "IBM", id: "ibm", color: "from-blue-600 to-blue-800" },
+  { name: "Krutrim", id: "krutrim", image: "Krutrim.png", color: "from-purple-500 to-indigo-600" },
+  { name: "Databricks", id: "databricks", image: "databricks.png", color: "from-orange-500 to-red-600" },
+  { name: "Intel", id: "intel", image: "Intel.png", color: "from-blue-500 to-cyan-600" },
+  { name: "Samsung", id: "samsung", image: "Samsung.png", color: "from-gray-800 to-gray-900" },
+  { name: "NVIDIA", id: "nvidia", image: "NVIDIA.png", color: "from-green-500 to-emerald-600" },
+  { name: "IBM", id: "ibm", image: "IBM.png", color: "from-blue-600 to-blue-800" },
 ];
 
 export function LogoSection10() {
@@ -57,17 +58,26 @@ export function LogoSection10() {
                       className="flex-shrink-0 group relative"
                     >
                       {/* Brand Container with White Background for Better Contrast */}
-                      <div className="relative px-10 py-6 rounded-2xl bg-white dark:bg-slate-900 border border-border/50 shadow-lg backdrop-blur-sm hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:scale-110 hover:-translate-y-2">
+                      <div className="relative px-8 py-5 rounded-2xl bg-white dark:bg-slate-900 border border-border/50 shadow-lg backdrop-blur-sm hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:scale-110 hover:-translate-y-2">
                         {/* Gradient Glow Effect */}
                         <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-[2500ms] ease-out blur-xl`} />
                         
-                        {/* Brand Name */}
-                        <div className="relative">
-                          <div className="text-slate-900 dark:text-slate-100 group-hover:text-foreground transition-colors duration-[2500ms] ease-out font-bold text-xl md:text-2xl tracking-tight">
-                            {brand.name}
-                          </div>
-                          {/* Underline Effect */}
-                          <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r ${brand.color} w-0 group-hover:w-full transition-all duration-[2500ms] ease-out rounded-full`} />
+                        {/* Brand Logo */}
+                        <div className="relative flex items-center justify-center h-12 md:h-16 w-auto min-w-[120px] md:min-w-[160px]">
+                          <Image
+                            src={`/${brand.image}`}
+                            alt={brand.name}
+                            width={160}
+                            height={64}
+                            className={`object-contain h-full w-auto transition-all duration-[2500ms] ease-out group-hover:scale-105 brightness-0 dark:brightness-0 dark:invert ${
+                              ['samsung', 'ibm', 'nvidia'].includes(brand.id)
+                                ? 'max-h-16 md:max-h-24 scale-150 md:scale-200'
+                                : ['krutrim', 'intel'].includes(brand.id)
+                                ? 'max-h-16 md:max-h-20 scale-125 md:scale-150'
+                                : 'max-h-12 md:max-h-16'
+                            } ${brand.id === 'ibm' ? '-translate-y-1 md:-translate-y-1.5' : ''}`}
+                            priority={index < 6}
+                          />
                         </div>
                         
                         {/* Decorative Elements */}

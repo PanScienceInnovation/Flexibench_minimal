@@ -71,7 +71,7 @@ export function StatsSection4() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl -mr-12 -mt-12" />
               <CardContent className="relative flex flex-col gap-4 p-0">
                 <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 rounded-xl p-3 w-fit">
-                  <h3 className="text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wide">
+                  <h3 className="text-blue-600 dark:text-blue-400 font-bold text-base uppercase tracking-wide">
                     Datasets Annotated
                   </h3>
                 </div>
@@ -81,7 +81,7 @@ export function StatsSection4() {
                   </span>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent my-2" />
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                   Enterprise datasets processed across industries with enterprise-grade quality workflows.
                 </p>
               </CardContent>
@@ -91,7 +91,7 @@ export function StatsSection4() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/10 rounded-full blur-2xl -mr-12 -mt-12" />
               <CardContent className="relative flex flex-col gap-4 p-0">
                 <div className="bg-gradient-to-br from-green-500/20 to-green-500/5 rounded-xl p-3 w-fit">
-                  <h3 className="text-green-600 dark:text-green-400 font-bold text-sm uppercase tracking-wide">
+                  <h3 className="text-green-600 dark:text-green-400 font-bold text-base uppercase tracking-wide">
                     Quality Score
                   </h3>
                 </div>
@@ -102,7 +102,7 @@ export function StatsSection4() {
                   <span className="text-muted-foreground text-2xl font-semibold">/5</span>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent my-2" />
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                   Average annotation quality score across all projects with multi-tier review pipelines.
                 </p>
               </CardContent>
@@ -112,7 +112,7 @@ export function StatsSection4() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl -mr-12 -mt-12" />
               <CardContent className="relative flex flex-col gap-4 p-0">
                 <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 rounded-xl p-3 w-fit">
-                  <h3 className="text-purple-600 dark:text-purple-400 font-bold text-sm uppercase tracking-wide">
+                  <h3 className="text-purple-600 dark:text-purple-400 font-bold text-base uppercase tracking-wide">
                     Time Saved
                   </h3>
                 </div>
@@ -123,7 +123,7 @@ export function StatsSection4() {
                   <span className="text-muted-foreground text-lg font-semibold whitespace-nowrap">hours</span>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent my-2" />
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                   Manual annotation hours saved through AI-assisted labeling and automated workflows.
                 </p>
               </CardContent>

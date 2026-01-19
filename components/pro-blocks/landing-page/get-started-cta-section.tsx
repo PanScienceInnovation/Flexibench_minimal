@@ -49,7 +49,7 @@ export function GetStartedCtaSection() {
               </span>{" "}
               Today
             </h2>
-            <p className="text-slate-300 dark:text-slate-400 text-lg leading-relaxed">
+            <p className="text-slate-300 dark:text-slate-400 text-base md:text-lg leading-relaxed">
               Whether you want a demo, a consultation, or onboarding support, our team is ready to help
               you succeed with Flexibench.
             </p>
@@ -61,10 +61,10 @@ export function GetStartedCtaSection() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-400/10 rounded-full blur-2xl -mr-16 -mt-16" />
               <CardContent className="relative flex flex-col gap-8 p-0">
                 <div className="bg-gradient-to-br from-primary/15 to-orange-400/10 rounded-xl p-4 w-fit border border-primary/25">
-                  <h3 className="text-foreground text-2xl font-bold mb-2">
+                  <h3 className="text-foreground text-xl md:text-2xl font-bold mb-2">
                     Talk to Sales
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xs">
                     Get a tailored demo and learn how Flexibench can fit your annotation needs.
                   </p>
                 </div>
@@ -82,10 +82,10 @@ export function GetStartedCtaSection() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl -mr-16 -mt-16" />
               <CardContent className="relative flex flex-col gap-8 p-0">
                 <div className="bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl p-4 w-fit border border-primary/30">
-                  <h3 className="text-primary text-2xl font-bold mb-2">
+                  <h3 className="text-primary text-xl md:text-2xl font-bold mb-2">
                     Request a Demo
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xs">
                     Choose a time and let us walk you through the platform.
                   </p>
                 </div>

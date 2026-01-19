@@ -200,15 +200,6 @@ export const useCases = [
     solution: "Annotated toxicity signals across multiple languages.",
     impact: "Improved moderation precision in global deployments.",
   },
-  {
-    id: 22,
-    title: "OCR Layout Segmentation for Document AI",
-    industry: "Cross-Industry",
-    modality: "Image",
-    problem: "Models failed to parse document structure.",
-    solution: "Block, table, and field tagging with hierarchy labels.",
-    impact: "Increased document understanding accuracy and reduced rule engineering.",
-  },
 ];
 
 export const industries = [
@@ -244,6 +235,30 @@ export const testimonials = [
     quote: "DataBench and FlexiPod transformed our annotation execution — no more bottlenecks, no more reworks.",
     authorName: "Director of AI",
     authorRole: "Healthcare Platform",
+    avatarSrc: "/placeholder-user.jpg",
+  },
+  {
+    quote: "The AI-assisted labeling feature cut our annotation time in half while maintaining accuracy. Our team can now focus on complex edge cases instead of repetitive tasks.",
+    authorName: "Senior Data Scientist",
+    authorRole: "Autonomous Vehicle Company",
+    avatarSrc: "/placeholder-user.jpg",
+  },
+  {
+    quote: "We've tried multiple annotation platforms, but Flexibench's ontology management is unmatched. The version control and inheritance features saved us months of rework.",
+    authorName: "VP of Engineering",
+    authorRole: "AI Research Lab",
+    avatarSrc: "/placeholder-user.jpg",
+  },
+  {
+    quote: "The API integration was seamless. We can now automate our entire data pipeline from collection to model training without manual intervention.",
+    authorName: "CTO",
+    authorRole: "Computer Vision Startup",
+    avatarSrc: "/placeholder-user.jpg",
+  },
+  {
+    quote: "Flexibench's multi-step review process caught errors we would have missed. Our model performance improved by 15% just from better data quality.",
+    authorName: "Lead ML Engineer",
+    authorRole: "E-commerce Platform",
     avatarSrc: "/placeholder-user.jpg",
   },
 ];

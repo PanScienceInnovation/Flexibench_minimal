@@ -75,7 +75,7 @@ export default function TestimonialsSection1({
             <span className="text-lg font-bold text-foreground">
               {authorName}
             </span>
-            <span className="text-sm text-muted-foreground font-medium">{authorRole}</span>
+            <span className="text-base text-muted-foreground font-medium">{authorRole}</span>
           </div>
         </div>
       </div>

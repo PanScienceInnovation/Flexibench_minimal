@@ -38,13 +38,13 @@ export function HeroSection2() {
               <Tagline className="mb-0">Enterprise Annotation Platform</Tagline>
               <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/12 to-primary/8 border border-primary/20">
                 <Sparkles className="h-3.5 w-3.5 text-primary" />
-                <span className="text-xs font-semibold text-primary">AI-Powered</span>
+                <span className="text-sm font-semibold text-primary">AI-Powered</span>
               </div>
             </div>
             
             {/* Main Heading with Enhanced Typography */}
             <div className="space-y-3 md:space-y-4">
-              <h1 id="hero-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight">
+              <h1 id="hero-heading" className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight">
                 Build{" "}
                 <span className="relative inline-block">
                   Model-Ready
@@ -71,7 +71,7 @@ export function HeroSection2() {
             </div>
             
             {/* Description with Enhanced Styling */}
-            <p className="text-muted-foreground text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-2xl font-medium">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl font-medium">
               Modern multimodal annotation platform for AI model training data with
               quality workflows, AI-assisted labeling, and enterprise-grade governance
             </p>
@@ -84,7 +84,7 @@ export function HeroSection2() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-bold text-sm md:text-base mb-1 md:mb-1.5 text-foreground">Multimodal Support</p>
-                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">Text, Image, Video, Audio annotation in one platform</p>
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">Text, Image, Video, Audio annotation in one platform</p>
                 </div>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <TrendingUp className="h-4 w-4 text-primary/40" />
@@ -97,7 +97,7 @@ export function HeroSection2() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-bold text-sm md:text-base mb-1 md:mb-1.5 text-foreground">AI-Assisted Labeling</p>
-                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">80% faster with quality workflows built-in</p>
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">80% faster with quality workflows built-in</p>
                 </div>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Sparkles className="h-4 w-4 text-primary/40" />
@@ -110,7 +110,7 @@ export function HeroSection2() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-bold text-sm md:text-base mb-1 md:mb-1.5 text-foreground">Enterprise Governance</p>
-                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">Full auditability, compliance & quality control</p>
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">Full auditability, compliance & quality control</p>
                 </div>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <TrendingUp className="h-4 w-4 text-primary/40" />
@@ -123,7 +123,7 @@ export function HeroSection2() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-bold text-sm md:text-base mb-1 md:mb-1.5 text-foreground">API-First Design</p>
-                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">Seamless ML pipeline integration & automation</p>
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">Seamless ML pipeline integration & automation</p>
                 </div>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Zap className="h-4 w-4 text-primary/40" />
@@ -157,7 +157,7 @@ export function HeroSection2() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center gap-4 md:gap-6 pt-3 md:pt-4 text-xs md:text-sm text-muted-foreground">
+            <div className="flex items-center gap-4 md:gap-6 pt-3 md:pt-4 text-sm md:text-base text-muted-foreground">
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
                   <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-primary/80 border-2 border-background" />
@@ -372,14 +372,14 @@ export function HeroSection2() {
                   <div className="bg-background/95 backdrop-blur-md rounded-lg md:rounded-xl p-3 md:p-4 border border-border/50 shadow-xl flex-1 transition-transform duration-[2500ms] ease-out">
                     <div className="flex items-center gap-1.5 md:gap-2 mb-1 md:mb-2">
                         <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary animate-pulse" />
-                      <p className="text-[10px] md:text-xs font-semibold text-muted-foreground uppercase tracking-wide">Active Projects</p>
+                      <p className="text-xs md:text-sm font-semibold text-muted-foreground uppercase tracking-wide">Active Projects</p>
                     </div>
                     <p className="text-lg md:text-2xl font-bold text-foreground">1,247</p>
                   </div>
                   <div className="bg-background/95 backdrop-blur-md rounded-lg md:rounded-xl p-3 md:p-4 border border-border/50 shadow-xl flex-1 transition-transform duration-[2500ms] ease-out">
                     <div className="flex items-center gap-1.5 md:gap-2 mb-1 md:mb-2">
                         <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary animate-pulse" />
-                      <p className="text-[10px] md:text-xs font-semibold text-muted-foreground uppercase tracking-wide">Annotations</p>
+                      <p className="text-xs md:text-sm font-semibold text-muted-foreground uppercase tracking-wide">Annotations</p>
                     </div>
                     <p className="text-lg md:text-2xl font-bold text-foreground">2.4M</p>
                   </div>
@@ -393,18 +393,18 @@ export function HeroSection2() {
                         <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                       </div>
                       <div className="min-w-0">
-                        <p className="text-xs md:text-sm font-bold text-foreground truncate">Platform Dashboard</p>
-                        <p className="text-[10px] md:text-xs text-muted-foreground truncate">Real-time annotation workflows & quality metrics</p>
+                        <p className="text-sm md:text-base font-bold text-foreground truncate">Platform Dashboard</p>
+                        <p className="text-xs md:text-sm text-muted-foreground truncate">Real-time annotation workflows & quality metrics</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2 md:gap-4 mt-2 md:mt-4 pt-2 md:pt-4 border-t border-border/50">
                       <div className="flex items-center gap-1 md:gap-2">
                         <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-primary flex-shrink-0" />
-                        <span className="text-[10px] md:text-xs text-muted-foreground whitespace-nowrap">99.9% Uptime</span>
+                        <span className="text-xs md:text-sm text-muted-foreground whitespace-nowrap">99.9% Uptime</span>
                       </div>
                       <div className="flex items-center gap-1 md:gap-2">
                         <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-primary flex-shrink-0" />
-                        <span className="text-[10px] md:text-xs text-muted-foreground whitespace-nowrap">Enterprise Ready</span>
+                        <span className="text-xs md:text-sm text-muted-foreground whitespace-nowrap">Enterprise Ready</span>
                       </div>
                     </div>
                   </div>
@@ -421,7 +421,7 @@ export function HeroSection2() {
             {/* Quick Setup Process Card */}
             <div className="relative bg-background/95 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 border border-border/50 shadow-xl w-full lg:w-auto lg:min-w-[280px]">
               <div className="flex flex-col gap-3 md:gap-4">
-                <h3 className="text-xs md:text-sm font-bold text-foreground mb-1 md:mb-2 flex items-center gap-2">
+                <h3 className="text-sm md:text-base font-bold text-foreground mb-1 md:mb-2 flex items-center gap-2">
                   <Sparkles className="h-3.5 w-3.5 md:h-4 md:w-4 text-primary" />
                   Quick Setup Process
                 </h3>
@@ -458,7 +458,7 @@ export function HeroSection2() {
                     </div>
                     {/* Step Label */}
                     <div className="flex-1 min-w-0">
-                      <p className={`text-xs md:text-sm font-medium transition-colors ${
+                      <p className={`text-sm md:text-base font-medium transition-colors ${
                         item.status === "completed" 
                           ? "text-foreground" 
                           : item.status === "active"
@@ -472,7 +472,7 @@ export function HeroSection2() {
                           <div className="w-1 h-1 rounded-full bg-primary animate-pulse" />
                           <div className="w-1 h-1 rounded-full bg-primary animate-pulse delay-75" />
                           <div className="w-1 h-1 rounded-full bg-primary animate-pulse delay-150" />
-                          <span className="text-xs text-muted-foreground ml-2">Processing...</span>
+                          <span className="text-sm text-muted-foreground ml-2">Processing...</span>
                         </div>
                       )}
                     </div>
@@ -490,8 +490,8 @@ export function HeroSection2() {
               <div className="flex items-center gap-2">
                 <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-primary flex-shrink-0" />
                 <div className="min-w-0">
-                  <p className="text-xs md:text-sm font-semibold text-foreground">+40% Efficiency</p>
-                  <p className="text-[10px] md:text-xs text-muted-foreground">AI-Powered</p>
+                  <p className="text-sm md:text-base font-semibold text-foreground">+40% Efficiency</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">AI-Powered</p>
                 </div>
               </div>
             </div>

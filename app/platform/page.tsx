@@ -43,7 +43,7 @@ export default function PlatformPage() {
             <div className="flex-1 flex flex-col gap-8 text-white">
               <div className="section-title-gap-lg flex flex-col">
                 <Tagline variant="white" className="mb-4">Platform</Tagline>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-white">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
                   The Enterprise Annotation Control Plane for{" "}
                   <span className="relative inline-block">
                     Model-Ready Data
@@ -52,7 +52,7 @@ export default function PlatformPage() {
                     </svg>
                   </span>
                 </h1>
-                <p className="text-white/90 text-lg lg:text-xl leading-relaxed max-w-2xl">
+                <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl">
                   Flexibench is a unified annotation platform engineered to convert raw data into structured,
                   consistent, and model-aligned datasets. It orchestrates annotation workflows, quality
                   engineering, and tooling across text, image, video, and audio.
@@ -65,13 +65,13 @@ export default function PlatformPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 group">
                 <AspectRatio ratio={16 / 10}>
                   <Image
-                    src="/use-cases/finance.png"
+                    src="/Platform_hero.png"
                     alt="Enterprise annotation platform dashboard showing workflow orchestration, quality metrics, and data pipelines"
                     fill
                     priority
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.blue}
-                    className="object-cover  transition-transform duration-[3000ms] ease-out"
+                    className="object-cover object-top transition-transform duration-[3000ms] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-blue-900/30 to-transparent" />
                 </AspectRatio>
@@ -108,7 +108,7 @@ export default function PlatformPage() {
                   </svg>
                 </span>
               </h2>
-              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                 It is an annotation control plane that enables organizations to produce higher fidelity
                 datasets, more consistent models, and faster iteration cycles.
               </p>
@@ -125,7 +125,7 @@ export default function PlatformPage() {
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm font-semibold text-foreground/80 text-center">
+                  <p className="text-base font-semibold text-foreground/80 text-center">
                     Four Pillars of Platform Value
                   </p>
                 </div>
@@ -140,28 +140,28 @@ export default function PlatformPage() {
                 icon: Network,
                 title: "Enforces Structural Consistency",
                 description: "Through advanced ontology management",
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&q=80",
+                image: "/Dynamic_Taxonomy_Support.png",
                 color: "from-blue-500/15 to-blue-500/8",
               },
               {
                 icon: Sparkles,
                 title: "Improves Speed",
                 description: "Reduces human drudgery with AI-assisted labeling",
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=80",
+                image: "/Configurable_Annotator_Workflows.png",
                 color: "from-purple-500/15 to-purple-500/8",
               },
               {
                 icon: Shield,
                 title: "Embeds Quality Engineering",
                 description: "Into every annotation task",
-                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop&q=80",
+                image: "/Quality_Control_and_Review_Gates.png",
                 color: "from-green-500/15 to-green-500/8",
               },
               {
                 icon: Plug,
                 title: "Integrates Tightly",
                 description: "With engineering and model training workflows via APIs",
-                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&q=80",
+                image: "/Unified_Data_Management.png",
                 color: "from-orange-500/15 to-orange-500/8",
               },
             ].map((value, index) => {
@@ -186,18 +186,18 @@ export default function PlatformPage() {
                           <span className="text-5xl font-black text-primary/20 leading-none">{String(index + 1).padStart(2, '0')}</span>
                           <div className="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
                         </div>
-                        <h3 className="text-3xl md:text-4xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
+                        <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
                           {value.title}
                         </h3>
                       </div>
                     </div>
-                    <p className="text-muted-foreground text-lg leading-relaxed pl-24 max-w-2xl">
+                    <p className="text-muted-foreground text-base md:text-lg leading-relaxed pl-24 max-w-2xl">
                       {value.description}
                     </p>
                     <div className="pl-24 pt-4">
                       <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20 group-hover:bg-primary/20 transition-colors">
                         <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                        <span className="text-sm font-semibold text-foreground">Core Platform Benefit</span>
+                        <span className="text-base font-semibold text-foreground">Core Platform Benefit</span>
                       </div>
                     </div>
                   </div>
@@ -238,7 +238,7 @@ export default function PlatformPage() {
                   <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
                 </div>
                 
-                <p className="text-foreground text-xl md:text-2xl leading-relaxed text-center font-medium mb-6">
+                <p className="text-foreground text-base md:text-lg leading-relaxed text-center font-medium mb-6">
                   This combination enables organizations to produce{" "}
                   <span className="relative inline-block font-bold text-primary">
                     higher fidelity datasets
@@ -265,7 +265,7 @@ export default function PlatformPage() {
                 
                 <div className="flex items-center justify-center gap-3 mt-8">
                   <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-                  <div className="text-xs font-semibold text-primary uppercase tracking-wider">
+                  <div className="text-sm font-semibold text-primary uppercase tracking-wider">
                     Platform Value Proposition
                   </div>
                   <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />

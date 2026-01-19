@@ -40,7 +40,7 @@ export function QualityGovernanceSection() {
             Annotation with{" "}
             <span className="text-emerald-400">Accountability</span>
           </h2>
-          <p className="text-slate-300 dark:text-slate-400 text-lg leading-relaxed">
+          <p className="text-slate-300 dark:text-slate-400 text-base md:text-lg leading-relaxed">
             Built for Trust, Consistency, and Deployable AI. High-quality labels are non-negotiable for reliable models. 
             Flexibench embeds robust quality engineering and governance into every annotation workflow.
           </p>
@@ -68,17 +68,7 @@ export function QualityGovernanceSection() {
                   {/* Visual Element with Image */}
                   <div className="h-24 rounded-lg border border-border/30 overflow-hidden relative group/image">
                     <Image
-                      src={
-                        principle.title.includes("Benchmark")
-                          ? "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop&q=80"
-                          : principle.title.includes("Consensus")
-                          ? "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=300&fit=crop&q=80"
-                          : principle.title.includes("Review")
-                          ? "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop&q=80"
-                          : principle.title.includes("Monitoring")
-                          ? "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop&q=80"
-                          : "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop&q=80"
-                      }
+                      src={`/quality_governance${index + 1}.png`}
                       alt={`${principle.title} - Quality and governance visualization`}
                       fill
                       className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
@@ -86,10 +76,10 @@ export function QualityGovernanceSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                   </div>
 
-                  <h3 className="text-foreground text-xl font-bold leading-tight">
+                  <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight">
                     {principle.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed flex-1">
                     {principle.description}
                   </p>
                 </CardContent>

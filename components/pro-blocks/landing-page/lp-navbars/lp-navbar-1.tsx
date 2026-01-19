@@ -122,7 +122,7 @@ export function LpNavbar1() {
             <div className="px-4 sm:px-6 py-4 flex flex-col gap-4">
               <NavMenuItems />
               <div className="flex items-center justify-between pt-2 border-t">
-                <span className="text-sm text-muted-foreground">Theme</span>
+                <span className="text-base text-muted-foreground">Theme</span>
                 <ThemeToggle />
               </div>
               <Link href="/contact" className="w-full">

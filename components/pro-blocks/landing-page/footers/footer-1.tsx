@@ -99,7 +99,7 @@ export function Footer1() {
 
           {/* Main Navigation */}
           <nav
-            className="flex flex-col items-center gap-6 text-sm md:flex-row md:gap-8"
+            className="flex flex-col items-center gap-6 text-base md:flex-row md:gap-8"
             aria-label="Footer navigation"
           >
             <Link
@@ -166,7 +166,7 @@ export function Footer1() {
               <Mail className="h-5 w-5 text-primary" />
               <h3 className="text-xl font-bold text-foreground">Stay Updated</h3>
             </div>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground text-base">
               Subscribe to our newsletter for the latest updates and insights.
             </p>
           </div>
@@ -192,7 +192,7 @@ export function Footer1() {
             
             {status.type && (
               <div
-                className={`flex items-center gap-2 p-3 rounded-lg text-sm ${
+                className={`flex items-center gap-2 p-3 rounded-lg text-base ${
                   status.type === "success"
                     ? "bg-green-950/30 border border-green-500/30 text-green-400"
                     : "bg-red-950/30 border border-red-500/30 text-red-400"
@@ -213,7 +213,7 @@ export function Footer1() {
         <Separator className="bg-slate-200 dark:bg-slate-800" role="presentation" />
 
         {/* Bottom Section */}
-        <div className="flex w-full flex-col-reverse items-center gap-8 text-sm lg:flex-row lg:justify-between lg:gap-6">
+        <div className="flex w-full flex-col-reverse items-center gap-8 text-base lg:flex-row lg:justify-between lg:gap-6">
           {/* Copyright Text */}
           <p className="text-muted-foreground text-center lg:text-left">
             © {new Date().getFullYear()} Flexibench. All rights reserved.
@@ -221,7 +221,7 @@ export function Footer1() {
 
           {/* Legal Navigation */}
           <nav
-            className="flex flex-col items-center gap-6 text-sm md:flex-row md:gap-8"
+            className="flex flex-col items-center gap-6 text-base md:flex-row md:gap-8"
             aria-label="Legal links"
           >
             <Link

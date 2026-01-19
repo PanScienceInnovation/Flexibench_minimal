@@ -32,6 +32,13 @@ export default function Page() {
         avatarSrc={testimonials[0].avatarSrc}
       />
       <UseCasesPreviewSection />
+      <TestimonialsSection1
+        quote={testimonials[2].quote}
+        authorName={testimonials[2].authorName}
+        authorRole={testimonials[2].authorRole}
+        avatarSrc={testimonials[2].avatarSrc}
+        variant="rose"
+      />
       <QualityGovernanceSection />
       <TestimonialsSection1
         quote={testimonials[1].quote}

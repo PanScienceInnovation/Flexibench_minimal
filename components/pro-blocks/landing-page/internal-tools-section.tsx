@@ -40,7 +40,7 @@ export function InternalToolsSection() {
             <span className="text-primary">Tasks</span> to{" "}
             <span className="text-primary">Strategy</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
             Flexibench is bolstered by internal tools that extend its reach: DataBench for workflow
             orchestration (with advanced modules like Phonex) and FlexiPod for outcome-driven execution.
           </p>
@@ -62,10 +62,10 @@ export function InternalToolsSection() {
                   })()}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-foreground text-3xl font-bold mb-3">
+                  <h3 className="text-foreground text-xl md:text-2xl font-bold mb-3">
                     {internalTools[0].title}
                   </h3>
-                  <p className="text-muted-foreground font-semibold text-base mb-4">
+                  <p className="text-muted-foreground font-semibold text-base md:text-lg mb-4">
                     {internalTools[0].subtitle}
                   </p>
                 </div>
@@ -74,7 +74,7 @@ export function InternalToolsSection() {
               {/* Image/Visual */}
               <div className="relative h-48 rounded-xl border border-border/30 overflow-hidden group/image">
                 <Image
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop&q=80"
+                  src="/databench_hero.jpeg"
                   alt="DataBench workflow orchestration dashboard showing dataset management, workflow builder, and review pipelines"
                   fill
                   className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
@@ -82,27 +82,27 @@ export function InternalToolsSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="bg-background/90 backdrop-blur-sm rounded-lg p-3 border border-border/30">
-                    <p className="text-sm font-semibold text-foreground mb-1">Workflow Orchestration</p>
-                    <p className="text-xs text-muted-foreground">Unified dataset repository & pipeline builder</p>
+                    <p className="text-base font-semibold text-foreground mb-1">Workflow Orchestration</p>
+                    <p className="text-sm text-muted-foreground">Unified dataset repository & pipeline builder</p>
                   </div>
                 </div>
                 <div className="absolute top-4 right-4 w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50" />
               </div>
 
-              <p className="text-muted-foreground text-base leading-relaxed">
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                 {internalTools[0].description}
               </p>
               
               <div className="space-y-4">
                 <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-border/30">
-                  <p className="font-bold mb-2 text-sm text-foreground">Why It Matters</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{internalTools[0].whyItMatters}</p>
+                  <p className="font-bold mb-2 text-base text-foreground">Why It Matters</p>
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed">{internalTools[0].whyItMatters}</p>
                 </div>
                 <div>
-                  <p className="font-bold mb-3 text-sm text-foreground">Core Capabilities</p>
+                  <p className="font-bold mb-3 text-base text-foreground">Core Capabilities</p>
                   <ul className="space-y-2">
                     {internalTools[0].capabilities.map((cap, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-muted-foreground text-sm">
+                      <li key={idx} className="flex items-start gap-3 text-muted-foreground text-base md:text-lg">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                         <span>{cap}</span>
                       </li>
@@ -133,30 +133,30 @@ export function InternalToolsSection() {
                 {/* Visual Element with Image */}
                 <div className="h-32 rounded-lg border border-border/30 overflow-hidden relative group/image">
                   <Image
-                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop&q=80"
+                    src="/Phonex_hero.png"
                     alt="Phonex voice annotation interface showing audio waveforms, speaker diarization, and transcription tools"
                     fill
                     className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
                   <div className="absolute bottom-2 left-2 right-2">
-                    <p className="text-xs text-foreground font-semibold bg-background/90 backdrop-blur-sm rounded px-2 py-1 text-center">Voice Annotation Engine</p>
+                    <p className="text-sm text-foreground font-semibold bg-background/90 backdrop-blur-sm rounded px-2 py-1 text-center">Voice Annotation Engine</p>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-foreground text-2xl font-bold mb-2">
+                  <h3 className="text-foreground text-xl md:text-2xl font-bold mb-2">
                     {internalTools[1].title}
                   </h3>
-                  <p className="text-muted-foreground font-semibold text-sm mb-3">
+                  <p className="text-muted-foreground font-semibold text-base md:text-lg mb-3">
                     {internalTools[1].subtitle}
                   </p>
-                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-4">
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed line-clamp-4">
                     {internalTools[1].description}
                   </p>
                 </div>
                 
-                <Link href="/internal-tools#phonex" className="text-primary text-sm font-semibold hover:underline inline-flex items-center gap-1 mt-auto">
+                <Link href="/internal-tools#phonex" className="text-primary text-base font-semibold hover:underline inline-flex items-center gap-1 mt-auto">
                   Learn more
                   <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -176,30 +176,30 @@ export function InternalToolsSection() {
                 {/* Visual Element with Image */}
                 <div className="h-32 rounded-lg border border-border/30 overflow-hidden relative group/image">
                   <Image
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop&q=80"
+                    src="/Flexipod.png"
                     alt="FlexiPod cross-functional team collaboration showing annotation engineers, data scientists, and domain specialists working together"
                     fill
                     className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
                   <div className="absolute bottom-2 left-2 right-2">
-                    <p className="text-xs text-foreground font-semibold bg-background/90 backdrop-blur-sm rounded px-2 py-1 text-center">Cross-Functional Teams</p>
+                    <p className="text-sm text-foreground font-semibold bg-background/90 backdrop-blur-sm rounded px-2 py-1 text-center">Cross-Functional Teams</p>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-foreground text-2xl font-bold mb-2">
+                  <h3 className="text-foreground text-xl md:text-2xl font-bold mb-2">
                     {internalTools[2].title}
                   </h3>
-                  <p className="text-muted-foreground font-semibold text-sm mb-3">
+                  <p className="text-muted-foreground font-semibold text-base md:text-lg mb-3">
                     {internalTools[2].subtitle}
                   </p>
-                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-4">
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed line-clamp-4">
                     {internalTools[2].description}
                   </p>
                 </div>
                 
-                <Link href="/internal-tools#flexipod" className="text-primary text-sm font-semibold hover:underline inline-flex items-center gap-1 mt-auto">
+                <Link href="/internal-tools#flexipod" className="text-primary text-base font-semibold hover:underline inline-flex items-center gap-1 mt-auto">
                   Learn more
                   <ArrowRight className="h-4 w-4" />
                 </Link>

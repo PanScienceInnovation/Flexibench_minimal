@@ -348,15 +348,15 @@ export default function ResourcesPage() {
             <div className="flex flex-wrap gap-2 sm:gap-3 justify-center px-4 mt-4">
               <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
                 <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-emerald-300 flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-white whitespace-nowrap">Expert Insights</span>
+                <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Expert Insights</span>
               </div>
               <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
                 <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-emerald-300 flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-white whitespace-nowrap">Best Practices</span>
+                <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Best Practices</span>
               </div>
               <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
                 <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-emerald-300 flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-white whitespace-nowrap">Technical Guides</span>
+                <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Technical Guides</span>
               </div>
             </div>
           </div>
@@ -413,7 +413,7 @@ export default function ResourcesPage() {
           ) : filteredResources.length === 0 ? (
             <div className="text-center py-20">
               <p className="text-muted-foreground text-lg mb-2">No {activeTab.toLowerCase()} found.</p>
-              <p className="text-muted-foreground text-sm">Check back soon for new content!</p>
+              <p className="text-muted-foreground text-base md:text-lg">Check back soon for new content!</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
@@ -431,7 +431,7 @@ export default function ResourcesPage() {
                   >
                     <CardContent className="flex flex-col gap-2.5 p-4">
                       {/* Metadata */}
-                      <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-3 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                           <Calendar className="h-3 w-3" />
                           <span>{resource.date}</span>
@@ -448,7 +448,7 @@ export default function ResourcesPage() {
                       <div className="flex items-center justify-between pt-2 border-t border-border/30">
                         <div className="flex items-center gap-1.5">
                           <User className="h-3 w-3 text-muted-foreground" />
-                          <span className="text-xs font-medium text-foreground">
+                          <span className="text-sm font-medium text-foreground">
                             {resource.author || resource.source || 'FlexiBench Team'}
                           </span>
                         </div>
@@ -456,7 +456,7 @@ export default function ResourcesPage() {
                         {/* Read More Link */}
                         <Link 
                           href={`/resources/${resource.category.toLowerCase().replace(/\s+/g, '-')}/${resource.slug}`}
-                          className="text-xs font-semibold text-primary hover:text-primary/80 flex items-center gap-1 group/link transition-colors duration-[2500ms] ease-out"
+                          className="text-sm font-semibold text-primary hover:text-primary/80 flex items-center gap-1 group/link transition-colors duration-[2500ms] ease-out"
                         >
                           Read More
                           <ArrowRight className="h-3 w-3 group-hover/link:translate-x-0.5 transition-transform duration-[2500ms] ease-out" />

@@ -46,7 +46,7 @@ export function CapabilitiesOverviewSection() {
             Multimodal Annotation Built for{" "}
             <span className="text-primary">Real-World</span> Model Training
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
             Flexibench supports deep, configurable, and scalable annotation workflows across Text,
             Image, Video, and Audio with tooling designed for quality, governance, and model-aligned outputs.
           </p>
@@ -75,12 +75,12 @@ export function CapabilitiesOverviewSection() {
                       <Image
                         src={
                           capability.type === "Text"
-                            ? "/use-cases/Textannotation.png"
+                            ? "/text_annotation.png"
                             : capability.type === "Image"
-                            ? "/use-cases/Imageannotation.png"
+                            ? "/image_annotation.png"
                             : capability.type === "Video"
-                            ? "/use-cases/media2.png"
-                            : "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=400&fit=crop&q=80"
+                            ? "/video_annotation.png"
+                            : "/audio_annotation.png"
                         }
                         alt={`${capability.type} annotation interface`}
                         fill
@@ -99,15 +99,15 @@ export function CapabilitiesOverviewSection() {
 
                     {/* Content Section */}
                     <div className="relative p-5 flex flex-col gap-3">
-                      <h3 className="text-foreground font-semibold text-base group-hover:text-primary transition-colors">
+                      <h3 className="text-foreground font-semibold text-xl md:text-2xl group-hover:text-primary transition-colors">
                         {capability.type} Annotation
                       </h3>
-                      <p className="text-muted-foreground text-xs leading-relaxed line-clamp-3">
+                      <p className="text-muted-foreground text-sm md:text-base leading-relaxed line-clamp-3">
                         {capability.whatItDoes}
                       </p>
                       <Link
                         href={`/capabilities/${capability.type.toLowerCase()}`}
-                        className="text-primary text-xs font-semibold hover:underline mt-1 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all"
+                        className="text-primary text-sm font-semibold hover:underline mt-1 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all"
                       >
                         Learn more
                         <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform duration-[2500ms] ease-out" />

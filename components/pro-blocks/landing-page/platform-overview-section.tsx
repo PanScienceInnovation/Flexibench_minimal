@@ -49,7 +49,7 @@ export function PlatformOverviewSection() {
             Built for{" "}
             <span className="text-primary">Enterprise Scale</span>
           </h2>
-          <p className="text-muted-foreground text-base leading-relaxed max-w-2xl">
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl">
             Four core modules that work together to deliver model-ready data with quality, consistency, and governance.
           </p>
         </div>
@@ -81,19 +81,19 @@ export function PlatformOverviewSection() {
                   <div className={`bg-gradient-to-br ${colors.icon} flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border-2 shadow-lg transition-all duration-[2500ms] ease-out`}>
                     <IconComponent className={`${colors.iconColor} h-6 w-6`} />
                   </div>
-                  <h3 className="font-bold text-lg text-foreground leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-current group-hover:to-primary transition-all duration-[2500ms] ease-out">
+                  <h3 className="font-bold text-xl md:text-2xl text-foreground leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-current group-hover:to-primary transition-all duration-[2500ms] ease-out">
                     {module.title}
                   </h3>
                 </div>
                 
                 {/* Description */}
-                <p className="text-sm text-foreground/80 leading-relaxed mb-5 group-hover:text-foreground transition-colors duration-[2500ms] ease-out">
+                <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-5 group-hover:text-foreground transition-colors duration-[2500ms] ease-out">
                   {module.whyItMatters}
                 </p>
                 
                 {/* Key Capabilities with Enhanced Design */}
                 <div className="flex flex-col gap-3 pt-4 border-t border-current/20">
-                  <span className="text-xs font-semibold text-primary uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-1 flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                     Key Features
                   </span>
@@ -101,23 +101,18 @@ export function PlatformOverviewSection() {
                     {module.keyCapabilities.slice(0, 2).map((capability, idx) => (
                       <span
                         key={idx}
-                        className="text-xs font-medium text-foreground/90 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-current/20 shadow-sm transition-transform duration-[2500ms] ease-out"
+                        className="text-sm font-medium text-foreground/90 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-current/20 shadow-sm transition-transform duration-[2500ms] ease-out"
                       >
                         {capability.split(":")[0]}
                       </span>
                     ))}
-                    {module.keyCapabilities.length > 2 && (
-                      <span className="text-xs font-medium text-primary px-3 py-1.5 bg-primary/10 rounded-lg">
-                        +{module.keyCapabilities.length - 2} more
-                      </span>
-                    )}
                   </div>
                 </div>
                 
                 {/* Outcome with Enhanced Styling */}
                 <div className="pt-5 mt-5 border-t border-current/20 relative">
                   <div className="absolute -top-px left-0 w-12 h-px bg-gradient-to-r from-primary to-transparent" />
-                  <p className="text-xs text-foreground/90 font-medium leading-relaxed group-hover:text-foreground transition-colors duration-[2500ms] ease-out">{module.outcome}</p>
+                  <p className="text-sm text-foreground/90 font-medium leading-relaxed group-hover:text-foreground transition-colors duration-[2500ms] ease-out">{module.outcome}</p>
                 </div>
               </div>
             );

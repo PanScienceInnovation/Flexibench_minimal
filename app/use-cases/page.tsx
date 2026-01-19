@@ -171,7 +171,7 @@ export default function UseCasesPage() {
                   <Tagline variant="white" className="mb-0">Use Cases</Tagline>
                   <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
                     <Sparkles className="h-4 w-4 text-pink-300" />
-                    <span className="text-xs font-bold text-white">22 Real-World Cases</span>
+                    <span className="text-sm font-bold text-white">21 Real-World Cases</span>
                   </div>
                 </div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
@@ -186,7 +186,7 @@ export default function UseCasesPage() {
                   </span>{" "}
                   Use Cases
                 </h1>
-                <p className="text-white/90 text-xl lg:text-2xl leading-relaxed max-w-2xl font-medium">
+                <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl font-medium">
                   Discover real-world annotation workflows that solve enterprise challenges across industries and modalities.
                 </p>
               </div>
@@ -196,22 +196,22 @@ export default function UseCasesPage() {
                 <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
                   <TrendingUp className="h-5 w-5 text-pink-300" />
                   <div>
-                    <div className="text-2xl font-bold text-white">22+</div>
-                    <div className="text-xs text-white/70">Use Cases</div>
+                    <div className="text-2xl font-bold text-white">21+</div>
+                    <div className="text-sm text-white/70">Use Cases</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
                   <Zap className="h-5 w-5 text-rose-300" />
                   <div>
                     <div className="text-2xl font-bold text-white">10+</div>
-                    <div className="text-xs text-white/70">Industries</div>
+                    <div className="text-sm text-white/70">Industries</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
                   <Sparkles className="h-5 w-5 text-red-300" />
                   <div>
                     <div className="text-2xl font-bold text-white">4</div>
-                    <div className="text-xs text-white/70">Modalities</div>
+                    <div className="text-sm text-white/70">Modalities</div>
                   </div>
                 </div>
               </div>
@@ -369,11 +369,11 @@ export default function UseCasesPage() {
                       {/* Floating Tags */}
                       <div className="absolute bottom-6 left-6 right-6">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-xs font-bold text-white bg-primary/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-primary/30 shadow-lg transform transition-transform duration-[2500ms] ease-out">
+                          <span className="text-sm font-bold text-white bg-primary/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-primary/30 shadow-lg transform transition-transform duration-[2500ms] ease-out">
                             {useCase.industry.split(" ")[0]}
                           </span>
-                          <span className="text-xs text-white/60">•</span>
-                          <span className="text-xs font-semibold text-slate-800 dark:text-slate-900 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/30 shadow-lg transform transition-transform duration-[2500ms] ease-out">
+                          <span className="text-sm text-white/60">•</span>
+                          <span className="text-sm font-semibold text-slate-800 dark:text-slate-900 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/30 shadow-lg transform transition-transform duration-[2500ms] ease-out">
                             {useCase.modality}
                           </span>
                         </div>
@@ -384,28 +384,18 @@ export default function UseCasesPage() {
                     </div>
                     
                     <CardContent className="relative flex flex-col gap-5 p-8 bg-gradient-to-b from-transparent to-background/50">
-                      <h3 className="text-foreground text-2xl font-bold leading-tight group-hover:text-primary transition-colors duration-[2500ms] ease-out line-clamp-2">
+                      <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight group-hover:text-primary transition-colors duration-[2500ms] ease-out line-clamp-2">
                         {useCase.title}
                       </h3>
                       
                       <div className="space-y-3">
                         <div className="p-4 rounded-xl bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border border-border/30 group-hover:border-primary/30 transition-colors duration-[2500ms] ease-out shadow-lg">
-                          <h4 className="text-xs font-bold text-primary mb-2 uppercase tracking-wider flex items-center gap-2">
+                          <h4 className="text-sm font-bold text-primary mb-2 uppercase tracking-wider flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                             Problem
                           </h4>
-                          <p className="text-slate-800 dark:text-slate-200 text-sm leading-relaxed line-clamp-2 font-medium">{useCase.problem}</p>
+                          <p className="text-slate-800 dark:text-slate-200 text-base md:text-lg leading-relaxed line-clamp-2 font-medium">{useCase.problem}</p>
                         </div>
-                      </div>
-                      
-                      <div className="pt-4 mt-auto border-t border-border/40 group-hover:border-primary/40 transition-colors duration-[2500ms] ease-out">
-                        <Link 
-                          href={`/use-cases/${useCase.id}`} 
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-sm font-bold transition-all duration-[2500ms] ease-out group/link border border-primary/20 hover:border-primary/40"
-                        >
-                          <span>View Full Case Study</span>
-                          <ArrowRight className="h-4 w-4 group-hover/link:translate-x-0.5 transition-transform duration-[2500ms] ease-out" />
-                        </Link>
                       </div>
                     </CardContent>
                   </Card>
@@ -419,8 +409,8 @@ export default function UseCasesPage() {
                   <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
                     <Search className="h-10 w-10 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">No use cases found</h3>
-                  <p className="text-muted-foreground text-lg">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground">No use cases found</h3>
+                  <p className="text-muted-foreground text-base md:text-lg">
                     Try adjusting your search criteria or filters to find what you're looking for.
                   </p>
                 </div>

@@ -74,11 +74,13 @@ export function UseCasesPreviewSection() {
                 <div className="relative mb-6 h-40 rounded-xl border border-border/30 overflow-hidden group/image">
                   <Image
                     src={
-                      useCase.industry.includes("Healthcare") 
-                        ? "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&q=80"
-                        : useCase.industry.includes("Automotive")
-                        ? "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&h=400&fit=crop&q=80"
-                        : "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&h=400&fit=crop&q=80"
+                      useCase.id === 1
+                        ? "/use-cases/Healthcare2.png"
+                        : useCase.id === 2
+                        ? "/use-cases/infrastructure3.jpg"
+                        : useCase.id === 8
+                        ? "/use-cases/Legal.png"
+                        : "/use-cases/Healthcare2.png"
                     }
                     alt={`${useCase.industry} use case: ${useCase.title} showing ${useCase.modality.toLowerCase()} annotation workflow`}
                     fill
@@ -92,11 +94,11 @@ export function UseCasesPreviewSection() {
                   </div>
                   <div className="absolute bottom-3 left-3 right-3">
                     <div className="flex items-center justify-center gap-2">
-                      <span className="text-xs font-semibold text-foreground bg-primary/90 backdrop-blur-sm px-2 py-1 rounded">
+                      <span className="text-sm font-semibold text-foreground bg-primary/90 backdrop-blur-sm px-2 py-1 rounded">
                         {useCase.industry.split(" ")[0]}
                       </span>
-                      <span className="text-xs text-foreground/80">•</span>
-                      <span className="text-xs font-medium text-foreground bg-background/90 backdrop-blur-sm px-2 py-1 rounded">
+                      <span className="text-sm text-foreground/80">•</span>
+                      <span className="text-sm font-medium text-foreground bg-background/90 backdrop-blur-sm px-2 py-1 rounded">
                         {useCase.modality}
                       </span>
                     </div>
@@ -105,27 +107,17 @@ export function UseCasesPreviewSection() {
 
                 <CardContent className="relative flex flex-col gap-4 p-0">
                   <div>
-                    <h3 className="text-foreground text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
+                    <h3 className="text-foreground text-xl md:text-2xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
                       {useCase.title}
                     </h3>
                     <div className="space-y-2">
                       <div>
-                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">Problem</p>
-                        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">
+                        <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-1">Problem</p>
+                        <p className="text-muted-foreground text-base md:text-lg leading-relaxed line-clamp-2">
                           {useCase.problem}
                         </p>
                       </div>
                     </div>
-                  </div>
-                  
-                  <div className="pt-4 mt-auto border-t border-border/30">
-                    <Link
-                      href="/use-cases"
-                      className="text-primary text-sm font-semibold hover:underline inline-flex items-center gap-2 group-hover:gap-3 transition-all"
-                    >
-                      View Case Study
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
                   </div>
                 </CardContent>
               </Card>
