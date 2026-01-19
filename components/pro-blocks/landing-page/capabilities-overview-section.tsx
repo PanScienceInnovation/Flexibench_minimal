@@ -87,7 +87,7 @@ export function CapabilitiesOverviewSection() {
                         placeholder="blur"
                         blurDataURL={blurPlaceholders.default}
                         loading="lazy"
-                        className="object-cover group-hover:scale-110 transition-transform duration-[3000ms] ease-out"
+                        className="object-cover object-top group-hover:scale-110 transition-transform duration-[3000ms] ease-out"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
                       <div className="absolute top-3 left-3">

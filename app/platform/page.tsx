@@ -27,7 +27,10 @@ export default function PlatformPage() {
       </div>
 
       {/* Enhanced Hero Section with Image */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 section-padding-y border-b overflow-hidden" style={{ paddingTop: '80px' }}>
+      <section className="relative section-padding-y border-b overflow-hidden" style={{ 
+        paddingTop: '80px',
+        background: 'linear-gradient(to bottom right, oklch(0.25 0.12 250), oklch(0.30 0.11 248), oklch(0.35 0.11 252))'
+      }}>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
@@ -71,9 +74,9 @@ export default function PlatformPage() {
                     priority
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.blue}
-                    className="object-cover object-top transition-transform duration-[3000ms] ease-out"
+                          className="object-cover object-top transition-transform duration-[3000ms] ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-blue-900/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/30 to-transparent" style={{ background: 'linear-gradient(to top, oklch(0.20 0.12 250 / 0.7), oklch(0.28 0.11 248 / 0.3), transparent)' }} />
                 </AspectRatio>
               </div>
             </div>
@@ -210,7 +213,7 @@ export default function PlatformPage() {
                           src={value.image}
                           alt={value.title}
                           fill
-                          className="object-cover  transition-transform duration-[3000ms] ease-out"
+                          className="object-cover object-top transition-transform duration-[3000ms] ease-out"
                         />
                         <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out`} />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />

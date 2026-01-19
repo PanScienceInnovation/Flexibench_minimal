@@ -68,56 +68,57 @@ export default function UseCasesPage() {
     21: "/use-cases/Media.png", // Multilingual Toxicity - Media landing
   };
 
+  // Unified color scheme with orange accents on navy blue
   const industryColors: Record<string, { gradient: string; glow: string; accent: string }> = {
     "Healthcare & Life Sciences": { 
-      gradient: "from-red-500/18 via-rose-500/12 to-pink-500/18", 
-      glow: "from-red-500/25 to-rose-500/18",
-      accent: "red"
+      gradient: "from-[oklch(0.68_0.15_50)]/18 via-[oklch(0.68_0.15_50)]/12 to-[oklch(0.68_0.15_50)]/18", 
+      glow: "from-[oklch(0.68_0.15_50)]/25 to-[oklch(0.68_0.15_50)]/18",
+      accent: "[oklch(0.68_0.15_50)]"
     },
     "Automotive & Mobility": { 
-      gradient: "from-blue-500/18 via-cyan-500/12 to-indigo-500/18", 
-      glow: "from-blue-500/25 to-cyan-500/18",
-      accent: "blue"
+      gradient: "from-[oklch(0.68_0.15_50)]/18 via-[oklch(0.68_0.15_50)]/12 to-[oklch(0.68_0.15_50)]/18", 
+      glow: "from-[oklch(0.68_0.15_50)]/25 to-[oklch(0.68_0.15_50)]/18",
+      accent: "[oklch(0.68_0.15_50)]"
     },
     "Retail & E-commerce": { 
-      gradient: "from-purple-500/18 via-violet-500/12 to-fuchsia-500/18", 
-      glow: "from-purple-500/25 to-violet-500/18",
-      accent: "purple"
+      gradient: "from-[oklch(0.68_0.15_50)]/18 via-[oklch(0.68_0.15_50)]/12 to-[oklch(0.68_0.15_50)]/18", 
+      glow: "from-[oklch(0.68_0.15_50)]/25 to-[oklch(0.68_0.15_50)]/18",
+      accent: "[oklch(0.68_0.15_50)]"
     },
     "Financial Services": { 
-      gradient: "from-emerald-500/18 via-teal-500/12 to-green-500/18", 
-      glow: "from-emerald-500/25 to-teal-500/18",
-      accent: "emerald"
+      gradient: "from-[oklch(0.68_0.15_50)]/18 via-[oklch(0.68_0.15_50)]/12 to-[oklch(0.68_0.15_50)]/18", 
+      glow: "from-[oklch(0.68_0.15_50)]/25 to-[oklch(0.68_0.15_50)]/18",
+      accent: "[oklch(0.68_0.15_50)]"
     },
     "Manufacturing & Robotics": { 
-      gradient: "from-amber-500/18 via-yellow-500/12 to-orange-500/18", 
-      glow: "from-amber-500/25 to-yellow-500/18",
-      accent: "amber"
+      gradient: "from-[oklch(0.68_0.15_50)]/18 via-[oklch(0.68_0.15_50)]/12 to-[oklch(0.68_0.15_50)]/18", 
+      glow: "from-[oklch(0.68_0.15_50)]/25 to-[oklch(0.68_0.15_50)]/18",
+      accent: "[oklch(0.68_0.15_50)]"
     },
     "Media, Entertainment & Gaming": { 
-      gradient: "from-pink-500/18 via-rose-500/12 to-fuchsia-500/18", 
-      glow: "from-pink-500/25 to-rose-500/18",
-      accent: "pink"
+      gradient: "from-[oklch(0.68_0.15_50)]/18 via-[oklch(0.68_0.15_50)]/12 to-[oklch(0.68_0.15_50)]/18", 
+      glow: "from-[oklch(0.68_0.15_50)]/25 to-[oklch(0.68_0.15_50)]/18",
+      accent: "[oklch(0.68_0.15_50)]"
     },
     "Telecom & Customer Experience": { 
-      gradient: "from-orange-500/18 via-amber-500/12 to-yellow-500/18", 
-      glow: "from-orange-500/25 to-amber-500/18",
-      accent: "orange"
+      gradient: "from-[oklch(0.68_0.15_50)]/18 via-[oklch(0.68_0.15_50)]/12 to-[oklch(0.68_0.15_50)]/18", 
+      glow: "from-[oklch(0.68_0.15_50)]/25 to-[oklch(0.68_0.15_50)]/18",
+      accent: "[oklch(0.68_0.15_50)]"
     },
     "Public Sector & Defense": { 
-      gradient: "from-slate-500/18 via-gray-500/12 to-zinc-500/18", 
-      glow: "from-slate-500/25 to-gray-500/18",
-      accent: "slate"
+      gradient: "from-[oklch(0.68_0.15_50)]/18 via-[oklch(0.68_0.15_50)]/12 to-[oklch(0.68_0.15_50)]/18", 
+      glow: "from-[oklch(0.68_0.15_50)]/25 to-[oklch(0.68_0.15_50)]/18",
+      accent: "[oklch(0.68_0.15_50)]"
     },
     "Logistics & Supply Chain": { 
-      gradient: "from-cyan-500/18 via-teal-500/12 to-blue-500/18", 
-      glow: "from-cyan-500/25 to-teal-500/18",
-      accent: "cyan"
+      gradient: "from-[oklch(0.68_0.15_50)]/18 via-[oklch(0.68_0.15_50)]/12 to-[oklch(0.68_0.15_50)]/18", 
+      glow: "from-[oklch(0.68_0.15_50)]/25 to-[oklch(0.68_0.15_50)]/18",
+      accent: "[oklch(0.68_0.15_50)]"
     },
     "Cross-Industry": { 
-      gradient: "from-indigo-500/18 via-purple-500/12 to-violet-500/18", 
-      glow: "from-indigo-500/25 to-purple-500/18",
-      accent: "indigo"
+      gradient: "from-[oklch(0.68_0.15_50)]/18 via-[oklch(0.68_0.15_50)]/12 to-[oklch(0.68_0.15_50)]/18", 
+      glow: "from-[oklch(0.68_0.15_50)]/25 to-[oklch(0.68_0.15_50)]/18",
+      accent: "[oklch(0.68_0.15_50)]"
     },
   };
 
@@ -131,18 +132,22 @@ export default function UseCasesPage() {
       </div>
       
       {/* Extraordinary Hero Section */}
-      <section className="relative bg-gradient-to-br from-pink-900 via-rose-800 to-red-800 section-padding-y border-b overflow-hidden min-h-[90vh] flex items-center" style={{ paddingTop: '80px' }}>
-        {/* Animated Mesh Gradient Background */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-pink-600/10 via-rose-600/8 to-red-600/10" />
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-orange-600/5 rounded-full blur-3xl" />
+      <section className="relative bg-black section-padding-y border-b overflow-hidden min-h-[90vh] flex items-center" style={{ 
+        paddingTop: '80px'
+      }}>
+        {/* Blue Glow Effects */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-600/20 via-indigo-600/15 to-blue-900/10 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-blue-900/25 via-indigo-600/18 to-blue-600/12 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/8 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl" />
         </div>
         
         {/* Animated Grid Pattern */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: `linear-gradient(to right, rgba(59,130,246,0.3) 1px, transparent 1px),
+                            linear-gradient(to bottom, rgba(59,130,246,0.3) 1px, transparent 1px)`,
           backgroundSize: '60px 60px',
           animation: 'gridMove 20s linear infinite'
         }} />
@@ -170,17 +175,17 @@ export default function UseCasesPage() {
                 <div className="inline-flex items-center gap-3 mb-4">
                   <Tagline variant="white" className="mb-0">Use Cases</Tagline>
                   <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-                    <Sparkles className="h-4 w-4 text-pink-300" />
+                    <Sparkles className="h-4 w-4 text-[oklch(0.68_0.15_50)]" />
                     <span className="text-sm font-bold text-white">21 Real-World Cases</span>
                   </div>
                 </div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
                   Explore{" "}
                   <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-pink-300 via-rose-300 to-red-300 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[oklch(0.68_0.15_50)]/90 via-[oklch(0.68_0.15_50)] to-[oklch(0.68_0.15_50)]/90 bg-clip-text text-transparent">
                       Annotation
                     </span>
-                    <svg className="absolute -bottom-3 left-0 w-full h-4 text-pink-400/40" viewBox="0 0 400 16" fill="none">
+                    <svg className="absolute -bottom-3 left-0 w-full h-4 text-[oklch(0.68_0.15_50)]/40" viewBox="0 0 400 16" fill="none">
                       <path d="M2 12 C100 4, 200 8, 300 12 C350 14, 380 12, 398 12" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
                     </svg>
                   </span>{" "}
@@ -194,21 +199,21 @@ export default function UseCasesPage() {
               {/* Stats Pills */}
               <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                 <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
-                  <TrendingUp className="h-5 w-5 text-pink-300" />
+                  <TrendingUp className="h-5 w-5 text-[oklch(0.68_0.15_50)]" />
                   <div>
                     <div className="text-2xl font-bold text-white">21+</div>
                     <div className="text-sm text-white/70">Use Cases</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
-                  <Zap className="h-5 w-5 text-rose-300" />
+                  <Zap className="h-5 w-5 text-[oklch(0.68_0.15_50)]" />
                   <div>
                     <div className="text-2xl font-bold text-white">10+</div>
                     <div className="text-sm text-white/70">Industries</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
-                  <Sparkles className="h-5 w-5 text-red-300" />
+                  <Sparkles className="h-5 w-5 text-[oklch(0.68_0.15_50)]" />
                   <div>
                     <div className="text-2xl font-bold text-white">4</div>
                     <div className="text-sm text-white/70">Modalities</div>
@@ -220,7 +225,7 @@ export default function UseCasesPage() {
             <div className="flex-1 w-full animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 group">
                 {/* Animated Border Glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/12 via-rose-500/12 to-red-500/12 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out -z-10" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/12 via-primary/12 to-primary/12 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out -z-10" />
                 
                 <AspectRatio ratio={16 / 10}>
                   <Image
@@ -230,10 +235,10 @@ export default function UseCasesPage() {
                     priority
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.pink}
-                    className="object-cover group-hover:scale-[1.02] transition-transform duration-[3500ms] ease-out"
+                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-[3500ms] ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-pink-950/85 via-pink-950/40 to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/12 via-transparent to-red-500/12" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/15 via-transparent to-indigo-600/15" />
                 </AspectRatio>
               </div>
             </div>
@@ -242,10 +247,20 @@ export default function UseCasesPage() {
       </section>
 
       {/* Extraordinary Filters Section */}
-      <section className="relative bg-gradient-to-b from-background via-secondary/30 to-background section-padding-y border-b overflow-visible -mt-20 pb-8">
+      <section className="relative bg-black section-padding-y border-b overflow-visible -mt-20 pb-8">
+        {/* Blue Glow Effects */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-600/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-600/15 rounded-full blur-3xl" />
+        </div>
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(59,130,246,0.3) 1px, transparent 0)`,
+          backgroundSize: '32px 32px'
+        }} />
         <div className="container-padding-x container mx-auto relative z-20">
           {/* Glassmorphism Filter Bar */}
-          <div className="relative bg-background/80 backdrop-blur-xl rounded-3xl border-2 border-border/50 shadow-2xl p-6 md:p-8 animate-fade-in-up mb-6">
+          <div className="relative bg-white/10 dark:bg-slate-900/40 backdrop-blur-xl rounded-3xl border-2 border-white/20 dark:border-white/10 shadow-2xl p-6 md:p-8 animate-fade-in-up mb-6">
             {/* Animated Background Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-[3000ms] ease-out" />
             
@@ -288,7 +303,7 @@ export default function UseCasesPage() {
           
           {/* Results Count Badge - Moved outside filter bar */}
           <div className="flex justify-center">
-            <div className="px-6 py-2 bg-primary/90 backdrop-blur-md rounded-full border-2 border-primary/30 shadow-lg">
+            <div className="px-6 py-2 bg-[oklch(0.68_0.15_50)]/90 backdrop-blur-md rounded-full border-2 border-[oklch(0.68_0.15_50)]/30 shadow-lg">
               <span className="text-sm font-bold text-white">
                 {filteredUseCases.length} of {useCases.length} use cases
               </span>
@@ -298,18 +313,19 @@ export default function UseCasesPage() {
       </section>
 
       {/* Extraordinary Use Cases Grid */}
-      <section className="relative bg-gradient-to-b from-pink-900 via-rose-800 to-red-800 section-padding-y border-b overflow-hidden pt-16">
+      <section className="relative bg-black section-padding-y border-b overflow-hidden pt-16">
+        {/* Blue Glow Effects */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-600/20 via-indigo-600/15 to-blue-900/10 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-blue-900/25 via-indigo-600/18 to-blue-600/12 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/8 rounded-full blur-3xl" />
+        </div>
         {/* Enhanced Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: `linear-gradient(to right, rgba(59,130,246,0.3) 1px, transparent 1px),
+                            linear-gradient(to bottom, rgba(59,130,246,0.3) 1px, transparent 1px)`,
           backgroundSize: '60px 60px'
         }} />
-        
-        {/* Enhanced Floating Gradient Orbs */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-pink-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-pink-500/10 via-transparent to-red-500/10 rounded-full blur-3xl" />
         
         <div className="container-padding-x container mx-auto relative z-10">
           {filteredUseCases.length > 0 ? (
@@ -331,7 +347,7 @@ export default function UseCasesPage() {
                 return (
                   <Card
                     key={useCase.id}
-                    className={`group relative bg-gradient-to-br from-background to-secondary/60 backdrop-blur-sm gap-0 overflow-hidden rounded-3xl border-2 border-border/60 p-0 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-[3000ms] ease-out hover:border-primary/60 use-case-card`}
+                    className={`group relative bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-black backdrop-blur-sm gap-0 overflow-hidden rounded-3xl border-2 border-slate-700/50 hover:border-blue-600/50 p-0 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.3)] transition-all duration-[3000ms] ease-out use-case-card`}
                     style={{
                       animationDelay: `${animationDelay}ms`,
                       animationFillMode: 'both'
@@ -354,22 +370,22 @@ export default function UseCasesPage() {
                         placeholder="blur"
                         blurDataURL={blurPlaceholders.default}
                         loading="lazy"
-                        className="object-cover group-hover:scale-[1.02] transition-transform duration-[3500ms] ease-out"
+                        className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-[3500ms] ease-out"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
-                      <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/15 via-transparent to-indigo-600/15 opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out" />
                       
                       {/* Icon Badge with 3D Transform */}
                       <div className="absolute top-6 left-6">
-                        <div className="bg-background/95 backdrop-blur-md flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-primary/30 shadow-2xl transform group-hover:scale-[1.02] group-hover:rotate-2 transition-all duration-[2500ms] ease-out">
-                          <IconComponent className="text-primary h-8 w-8" />
+                        <div className="bg-background/95 backdrop-blur-md flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-[oklch(0.68_0.15_50)]/40 shadow-2xl transform group-hover:scale-[1.02] group-hover:rotate-2 transition-all duration-[2500ms] ease-out">
+                          <IconComponent className="text-[oklch(0.68_0.15_50)] h-8 w-8" />
                         </div>
                       </div>
                       
                       {/* Floating Tags */}
                       <div className="absolute bottom-6 left-6 right-6">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-sm font-bold text-white bg-primary/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-primary/30 shadow-lg transform transition-transform duration-[2500ms] ease-out">
+                          <span className="text-sm font-bold text-white bg-[oklch(0.68_0.15_50)]/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[oklch(0.68_0.15_50)]/40 shadow-lg transform transition-transform duration-[2500ms] ease-out">
                             {useCase.industry.split(" ")[0]}
                           </span>
                           <span className="text-sm text-white/60">•</span>
@@ -383,15 +399,15 @@ export default function UseCasesPage() {
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[4000ms] ease-out" />
                     </div>
                     
-                    <CardContent className="relative flex flex-col gap-5 p-8 bg-gradient-to-b from-transparent to-background/50">
-                      <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight group-hover:text-primary transition-colors duration-[2500ms] ease-out line-clamp-2">
+                    <CardContent className="relative flex flex-col gap-5 p-8 bg-gradient-to-b from-transparent to-black/50">
+                      <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight group-hover:text-[oklch(0.68_0.15_50)] transition-colors duration-[2500ms] ease-out line-clamp-2">
                         {useCase.title}
                       </h3>
                       
                       <div className="space-y-3">
-                        <div className="p-4 rounded-xl bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border border-border/30 group-hover:border-primary/30 transition-colors duration-[2500ms] ease-out shadow-lg">
-                          <h4 className="text-sm font-bold text-primary mb-2 uppercase tracking-wider flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                        <div className="p-4 rounded-xl bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border border-border/30 group-hover:border-[oklch(0.68_0.15_50)]/30 transition-colors duration-[2500ms] ease-out shadow-lg">
+                          <h4 className="text-sm font-bold text-[oklch(0.68_0.15_50)] mb-2 uppercase tracking-wider flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-[oklch(0.68_0.15_50)] animate-pulse" />
                             Problem
                           </h4>
                           <p className="text-slate-800 dark:text-slate-200 text-base md:text-lg leading-relaxed line-clamp-2 font-medium">{useCase.problem}</p>
@@ -404,13 +420,13 @@ export default function UseCasesPage() {
             </div>
           ) : (
             <div className="text-center py-32">
-              <div className="bg-background/80 backdrop-blur-xl rounded-3xl p-16 border-2 border-border/50 shadow-2xl max-w-2xl mx-auto">
+              <div className="bg-white/10 dark:bg-slate-900/40 backdrop-blur-xl rounded-3xl p-16 border-2 border-white/20 dark:border-white/10 shadow-2xl max-w-2xl mx-auto">
                 <div className="flex flex-col items-center gap-6">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Search className="h-10 w-10 text-primary" />
+                  <div className="w-20 h-20 rounded-full bg-[oklch(0.68_0.15_50)]/20 flex items-center justify-center">
+                    <Search className="h-10 w-10 text-[oklch(0.68_0.15_50)]" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground">No use cases found</h3>
-                  <p className="text-muted-foreground text-base md:text-lg">
+                  <h3 className="text-xl md:text-2xl font-bold text-white">No use cases found</h3>
+                  <p className="text-white/80 text-base md:text-lg">
                     Try adjusting your search criteria or filters to find what you're looking for.
                   </p>
                 </div>

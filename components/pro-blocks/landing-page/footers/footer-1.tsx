@@ -84,8 +84,9 @@ export function Footer1() {
         backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
         backgroundSize: '40px 40px'
       }} />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl" />
       
       <div className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 lg:gap-16">
         {/* Top Section */}
@@ -104,55 +105,55 @@ export function Footer1() {
           >
             <Link
               href="/"
-              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
             >
               Home
             </Link>
             <Link
               href="#why-flexibench"
-              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
             >
               Why Flexibench
             </Link>
             <Link
               href="/platform"
-              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
             >
               Platform
             </Link>
             <Link
               href="/capabilities"
-              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
             >
               Capabilities
             </Link>
             <Link
               href="/internal-tools"
-              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
             >
               Internal Tools
             </Link>
             <Link
               href="/use-cases"
-              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
             >
               Use Cases
             </Link>
             <Link
               href="#quality-governance"
-              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
             >
               Quality & Governance
             </Link>
             <Link
               href="/resources"
-              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
             >
               Resources
             </Link>
             <Link
               href="/contact"
-              className="text-slate-600 dark:text-slate-300 hover:text-foreground dark:hover:text-white transition-colors font-medium"
+              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
             >
               Contact
             </Link>
@@ -163,7 +164,7 @@ export function Footer1() {
         <div className="flex flex-col items-center gap-6 text-center max-w-md mx-auto">
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-center gap-2">
-              <Mail className="h-5 w-5 text-primary" />
+              <Mail className="h-5 w-5 text-[oklch(0.68_0.15_50)]" />
               <h3 className="text-xl font-bold text-foreground">Stay Updated</h3>
             </div>
             <p className="text-muted-foreground text-base">
@@ -178,13 +179,13 @@ export function Footer1() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 h-11 bg-slate-100 dark:bg-slate-800/50 border-slate-300 dark:border-slate-700 text-foreground dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-500 focus:border-primary/50 focus:ring-primary/20"
+                className="flex-1 h-11 bg-slate-100 dark:bg-slate-800/50 border-slate-300 dark:border-slate-700 text-foreground dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-500 focus:border-accent/50 focus:ring-accent/20"
                 disabled={isSubmitting}
               />
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="h-11 px-6 bg-primary hover:bg-primary/90 text-white font-medium transition-all duration-[2500ms] ease-out disabled:opacity-50"
+                className="h-11 px-6 bg-[oklch(0.68_0.15_50)] hover:bg-[oklch(0.68_0.15_50)]/90 text-white font-medium transition-all duration-[2500ms] ease-out disabled:opacity-50 shadow-lg shadow-[oklch(0.68_0.15_50)]/25 hover:shadow-xl hover:shadow-[oklch(0.68_0.15_50)]/30"
               >
                 {isSubmitting ? "Subscribing..." : "Subscribe"}
               </Button>
@@ -226,19 +227,19 @@ export function Footer1() {
           >
             <Link
               href="/privacy"
-              className="text-muted-foreground hover:text-foreground dark:hover:text-slate-200 transition-colors"
+              className="text-muted-foreground hover:text-accent dark:hover:text-accent transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-muted-foreground hover:text-foreground dark:hover:text-slate-200 transition-colors"
+              className="text-muted-foreground hover:text-accent dark:hover:text-accent transition-colors"
             >
               Terms of Service
             </Link>
             <Link
               href="/cookies"
-              className="text-muted-foreground hover:text-foreground dark:hover:text-slate-200 transition-colors"
+              className="text-muted-foreground hover:text-accent dark:hover:text-accent transition-colors"
             >
               Cookies Settings
             </Link>

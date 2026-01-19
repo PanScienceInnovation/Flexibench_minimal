@@ -77,23 +77,28 @@
   --card-foreground: oklch(0.282 0.02 267.935);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.282 0.02 267.935);
-  --primary: oklch(0.68 0.10 50);
+  --primary: oklch(0.35 0.10 250);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.981 0.005 258.335);
   --secondary-foreground: oklch(0.282 0.03 267.935);
   --muted: oklch(0.984 0.005 247.858);
   --muted-foreground: oklch(0.516 0.03 272.586);
-  --accent: oklch(0.968 0.005 247.896);
-  --accent-foreground: oklch(0.208 0.03 265.755);
+  --accent: oklch(0.68 0.15 50);
+  --accent-foreground: oklch(0.15 0.02 250);
   --destructive: oklch(0.577 0.15 27.325);
   --border: oklch(0.929 0.01 255.508);
   --input: oklch(0.929 0.01 255.508);
-  --ring: oklch(0.68 0.10 50 / 0.15);
-  --chart-1: oklch(0.68 0.10 50);
-  --chart-2: oklch(0.65 0.09 45);
-  --chart-3: oklch(0.60 0.08 55);
-  --chart-4: oklch(0.70 0.09 40);
-  --chart-5: oklch(0.72 0.10 48);
+  --ring: oklch(0.35 0.10 250 / 0.15);
+  --chart-1: oklch(0.68 0.15 50);
+  --chart-2: oklch(0.65 0.14 48);
+  --chart-3: oklch(0.70 0.16 52);
+  --chart-4: oklch(0.63 0.13 47);
+  --chart-5: oklch(0.72 0.17 53);
+  
+  /* Orange accent colors for buttons and highlights */
+  --accent-orange: oklch(0.68 0.15 50);
+  --accent-orange-light: oklch(0.75 0.12 50);
+  --accent-orange-dark: oklch(0.58 0.18 48);
   --sidebar: oklch(0.984 0.002 247.858);
   --sidebar-foreground: oklch(0.282 0.02 267.935);
   --sidebar-primary: oklch(0.282 0.02 267.935);
@@ -102,6 +107,21 @@
   --sidebar-accent-foreground: oklch(0.282 0.02 267.935);
   --sidebar-border: oklch(0.929 0.008 255.508);
   --sidebar-ring: oklch(0.929 0.008 255.508);
+  
+  /* Unified gradient shades based on primary color - Navy Blue */
+  --gradient-dark-1: oklch(0.25 0.12 250);
+  --gradient-dark-2: oklch(0.30 0.11 248);
+  --gradient-dark-3: oklch(0.35 0.11 252);
+  --gradient-mid-1: oklch(0.40 0.10 250);
+  --gradient-mid-2: oklch(0.45 0.10 248);
+  --gradient-light-1: oklch(0.55 0.08 250);
+  --gradient-light-2: oklch(0.65 0.06 248);
+  --gradient-light-3: oklch(0.75 0.04 252);
+  
+  /* Orange accent colors for buttons and highlights */
+  --accent-orange: oklch(0.68 0.15 50);
+  --accent-orange-light: oklch(0.75 0.12 50);
+  --accent-orange-dark: oklch(0.58 0.18 48);
 }
 
 .dark {
@@ -111,8 +131,8 @@
   --card-foreground: oklch(0.95 0.005 267.935);
   --popover: oklch(0.18 0.01 267.935);
   --popover-foreground: oklch(0.95 0.005 267.935);
-  --primary: oklch(0.75 0.10 50);
-  --primary-foreground: oklch(0.15 0.01 267.935);
+  --primary: oklch(0.50 0.12 250);
+  --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.25 0.02 267.935);
   --secondary-foreground: oklch(0.95 0.01 267.935);
   --muted: oklch(0.22 0.02 267.935);
@@ -122,12 +142,12 @@
   --destructive: oklch(0.577 0.15 27.325);
   --border: oklch(0.3 0.02 267.935);
   --input: oklch(0.3 0.02 267.935);
-  --ring: oklch(0.75 0.10 50 / 0.3);
-  --chart-1: oklch(0.75 0.10 50);
-  --chart-2: oklch(0.72 0.09 45);
-  --chart-3: oklch(0.65 0.08 55);
-  --chart-4: oklch(0.78 0.09 40);
-  --chart-5: oklch(0.80 0.10 48);
+  --ring: oklch(0.50 0.12 250 / 0.3);
+  --chart-1: oklch(0.68 0.15 50);
+  --chart-2: oklch(0.65 0.14 48);
+  --chart-3: oklch(0.70 0.16 52);
+  --chart-4: oklch(0.63 0.13 47);
+  --chart-5: oklch(0.72 0.17 53);
   --sidebar: oklch(0.18 0.01 267.935);
   --sidebar-foreground: oklch(0.95 0.005 267.935);
   --sidebar-primary: oklch(0.95 0.005 267.935);

@@ -84,7 +84,7 @@ export function UseCasesPreviewSection() {
                     }
                     alt={`${useCase.industry} use case: ${useCase.title} showing ${useCase.modality.toLowerCase()} annotation workflow`}
                     fill
-                    className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                    className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-transparent" />
                   <div className="absolute top-3 left-3">

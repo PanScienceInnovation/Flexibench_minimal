@@ -326,43 +326,45 @@ export default function ResourcesPage() {
       </div>
 
       {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900 pt-8 pb-16 sm:pt-10 sm:pb-20 md:pt-12 md:pb-24 border-b overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary/90 via-primary/80 to-primary/70 pt-8 pb-16 sm:pt-10 sm:pb-20 md:pt-12 md:pb-24 border-b overflow-hidden" style={{ 
+        background: 'linear-gradient(to bottom right, oklch(0.25 0.12 250), oklch(0.30 0.11 248), oklch(0.35 0.11 252))'
+      }}>
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
           backgroundSize: '48px 48px'
         }} />
-        <div className="absolute top-0 right-0 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-emerald-500/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-cyan-500/8 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-primary/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-primary/8 rounded-full blur-3xl" />
 
         <div className="container-padding-x container mx-auto relative z-10">
           <div className="flex flex-col items-center text-center gap-6 sm:gap-8 text-white animate-fade-in-up max-w-4xl mx-auto">
-            {/* Enhanced Resources Badge */}
-            <div className="relative group mb-6 sm:mb-8">
-              {/* Glowing background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 via-cyan-400/20 to-teal-400/20 blur-xl rounded-full group-hover:blur-2xl transition-all duration-500" />
-              
-              {/* Main badge */}
-              <div className="relative flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-teal-500/10 backdrop-blur-sm rounded-full border border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
-                <svg 
-                  className="h-4 w-4 text-emerald-300" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" 
-                  />
-                </svg>
-                <span className="text-sm font-bold tracking-wider uppercase bg-gradient-to-r from-emerald-200 via-cyan-200 to-teal-200 bg-clip-text text-transparent">
-                  Resources
-                </span>
-                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+              {/* Enhanced Resources Badge */}
+              <div className="relative group mb-6 sm:mb-8">
+                {/* Glowing background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.68_0.15_50)]/20 via-[oklch(0.68_0.15_50)]/15 to-[oklch(0.68_0.15_50)]/20 blur-xl rounded-full group-hover:blur-2xl transition-all duration-500" />
+                
+                {/* Main badge */}
+                <div className="relative flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-[oklch(0.68_0.15_50)]/10 via-[oklch(0.68_0.15_50)]/8 to-[oklch(0.68_0.15_50)]/10 backdrop-blur-sm rounded-full border border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
+                  <svg 
+                    className="h-4 w-4 text-[oklch(0.68_0.15_50)]" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" 
+                    />
+                  </svg>
+                  <span className="text-sm font-bold tracking-wider uppercase bg-gradient-to-r from-[oklch(0.68_0.15_50)]/90 via-[oklch(0.68_0.15_50)] to-[oklch(0.68_0.15_50)]/90 bg-clip-text text-transparent">
+                    Resources
+                  </span>
+                  <div className="w-2 h-2 bg-[oklch(0.68_0.15_50)] rounded-full animate-pulse" />
+                </div>
               </div>
-            </div>
             
             {/* Title with animated categories */}
             <div className="flex flex-col items-center gap-4 sm:gap-6 w-full mb-8 sm:mb-12 md:mb-16">
@@ -382,15 +384,15 @@ export default function ResourcesPage() {
             {/* Feature Pills */}
             <div className="flex flex-wrap gap-2 sm:gap-3 justify-center px-4 mt-4">
               <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-emerald-300 flex-shrink-0" />
+                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[oklch(0.68_0.15_50)] flex-shrink-0" />
                 <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Expert Insights</span>
               </div>
               <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-emerald-300 flex-shrink-0" />
+                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[oklch(0.68_0.15_50)] flex-shrink-0" />
                 <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Best Practices</span>
               </div>
               <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-emerald-300 flex-shrink-0" />
+                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[oklch(0.68_0.15_50)] flex-shrink-0" />
                 <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Technical Guides</span>
               </div>
             </div>
@@ -409,13 +411,13 @@ export default function ResourcesPage() {
                 onClick={() => setActiveTab(category)}
                 className={`relative text-base font-semibold px-4 py-2 rounded-full transition-colors duration-300
                   ${activeTab === category
-                    ? "text-primary bg-primary/10 hover:bg-primary/15"
+                    ? "text-[oklch(0.68_0.15_50)] bg-[oklch(0.68_0.15_50)]/10 hover:bg-[oklch(0.68_0.15_50)]/15"
                     : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                   }`}
               >
                 {category}
                 {activeTab === category && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-primary rounded-full animate-fade-in-up" />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-[oklch(0.68_0.15_50)] rounded-full animate-fade-in-up" />
                 )}
               </Button>
             ))}
@@ -435,7 +437,7 @@ export default function ResourcesPage() {
         <div className="container-padding-x container mx-auto relative z-10">
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20 gap-4">
-              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+              <Loader2 className="h-8 w-8 animate-spin text-[oklch(0.68_0.15_50)]" />
               <p className="text-muted-foreground text-lg">Loading resources...</p>
             </div>
           ) : error ? (
@@ -458,7 +460,7 @@ export default function ResourcesPage() {
                 return (
                   <Card
                     key={`${resource.category}-${resource.slug}`}
-                    className="group relative bg-slate-200 dark:bg-background overflow-hidden rounded-lg border border-border/50 hover:border-primary/40 shadow-md hover:shadow-lg transition-all duration-[2500ms] ease-out animate-fade-in-up"
+                    className="group relative bg-slate-200 dark:bg-background overflow-hidden rounded-lg border border-border/50 hover:border-[oklch(0.68_0.15_50)]/40 shadow-md hover:shadow-lg transition-all duration-[2500ms] ease-out animate-fade-in-up"
                     style={{
                       animationDelay: `${animationDelay}ms`,
                       animationFillMode: 'both'
@@ -475,7 +477,7 @@ export default function ResourcesPage() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-base font-bold text-foreground line-clamp-2 leading-snug group-hover:text-primary transition-colors duration-[2500ms] ease-out">
+                      <h3 className="text-base font-bold text-foreground line-clamp-2 leading-snug group-hover:text-[oklch(0.68_0.15_50)] transition-colors duration-[2500ms] ease-out">
                         {resource.title}
                       </h3>
 
@@ -491,7 +493,7 @@ export default function ResourcesPage() {
                         {/* Read More Link */}
                         <Link 
                           href={`/resources/${resource.category.toLowerCase().replace(/\s+/g, '-')}/${resource.slug}`}
-                          className="text-sm font-semibold text-primary hover:text-primary/80 flex items-center gap-1 group/link transition-colors duration-[2500ms] ease-out"
+                          className="text-sm font-semibold text-[oklch(0.68_0.15_50)] hover:text-[oklch(0.68_0.15_50)]/80 flex items-center gap-1 group/link transition-colors duration-[2500ms] ease-out"
                         >
                           Read More
                           <ArrowRight className="h-3 w-3 group-hover/link:translate-x-0.5 transition-transform duration-[2500ms] ease-out" />

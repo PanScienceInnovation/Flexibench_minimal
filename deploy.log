@@ -1,0 +1,80 @@
+[2026-01-19 12:43:44] === Deployment Started ===
+[2026-01-19 12:43:44] Using Node.js v20.19.6 and npm 10.8.2
+[2026-01-19 12:43:44] Installing dependencies...
+[2026-01-19 12:43:49] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-01-19 12:43:49] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 7.4s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 8 blogs to generate
+  Generating static pages using 7 workers (0/34) ...
+  Generating static pages using 7 workers (8/34) 
+  Generating static pages using 7 workers (16/34) 
+  Generating static pages using 7 workers (25/34) 
+✓ Generating static pages using 7 workers (34/34) in 1567.8ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/beyond-the-algorithm-how-data-annotation-engineering-drives-real-ai-results
+│ ├ /resources/blogs/the-flexibench-architecture-a-modular-approach-to-data-quality
+│ ├ /resources/blogs/5-surprising-truths-about-the-high-quality-data-that-powers-modern-ai
+│ └ [+5 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/ontology-governance-strategies
+│ ├ /resources/white-papers/scaling-annotation-workflows
+│ ├ /resources/white-papers/annotation-for-safety-critical-ai
+│ └ /resources/white-papers/enterprise-quality-frameworks
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-01-19 12:44:03] Build completed successfully
+[2026-01-19 12:44:03] File permissions set
+2026/01/19 12:44:03 [warn] 3342074#3342074: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/01/19 12:44:03 [warn] 3342074#3342074: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/01/19 12:44:03 [warn] 3342074#3342074: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/01/19 12:44:03 [warn] 3342074#3342074: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/sandbox.nyaayai.com:84
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-01-19 12:44:03] Nginx configuration valid
+[2026-01-19 12:44:04] Nginx reloaded successfully
+[2026-01-19 12:44:04] Nginx is active
+[2026-01-19 12:44:04] === Deployment Completed Successfully ===
+[2026-01-19 12:44:04] 

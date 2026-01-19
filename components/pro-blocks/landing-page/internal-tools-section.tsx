@@ -77,7 +77,7 @@ export function InternalToolsSection() {
                   src="/databench_hero.jpeg"
                   alt="DataBench workflow orchestration dashboard showing dataset management, workflow builder, and review pipelines"
                   fill
-                  className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                  className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
@@ -136,7 +136,7 @@ export function InternalToolsSection() {
                     src="/Phonex_hero.png"
                     alt="Phonex voice annotation interface showing audio waveforms, speaker diarization, and transcription tools"
                     fill
-                    className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                    className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
                   <div className="absolute bottom-2 left-2 right-2">
@@ -179,7 +179,7 @@ export function InternalToolsSection() {
                     src="/Flexipod.png"
                     alt="FlexiPod cross-functional team collaboration showing annotation engineers, data scientists, and domain specialists working together"
                     fill
-                    className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                    className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
                   <div className="absolute bottom-2 left-2 right-2">

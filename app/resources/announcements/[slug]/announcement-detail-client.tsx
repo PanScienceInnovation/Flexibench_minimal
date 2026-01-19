@@ -164,7 +164,7 @@ export default function AnnouncementDetailClient() {
             src={getResourceImage("Announcements", announcement.slug)}
             alt={announcement.title}
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />

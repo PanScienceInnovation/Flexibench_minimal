@@ -167,7 +167,7 @@ export default function WhitePaperDetailClient() {
             src={getResourceImage("White Papers", whitepaper.slug)}
             alt={whitepaper.title}
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />

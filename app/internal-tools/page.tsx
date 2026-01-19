@@ -26,13 +26,16 @@ export default function InternalToolsPage() {
       </div>
 
       {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-amber-900 via-orange-800 to-red-800 section-padding-y border-b overflow-hidden" style={{ paddingTop: '80px' }}>
+      <section className="relative section-padding-y border-b overflow-hidden" style={{ 
+        paddingTop: '80px',
+        background: 'linear-gradient(to bottom right, oklch(0.25 0.12 250), oklch(0.30 0.11 248), oklch(0.35 0.11 252))'
+      }}>
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
           backgroundSize: '48px 48px'
         }} />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         
         <div className="container-padding-x container mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -66,9 +69,9 @@ export default function InternalToolsPage() {
                     priority
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.primary}
-                    className="object-cover  transition-transform duration-[3000ms] ease-out"
+                    className="object-cover object-top transition-transform duration-[3000ms] ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-amber-900/70 via-amber-900/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/30 to-transparent" style={{ background: 'linear-gradient(to top, oklch(0.20 0.12 250 / 0.7), oklch(0.28 0.11 248 / 0.3), transparent)' }} />
                 </AspectRatio>
               </div>
             </div>
@@ -94,7 +97,7 @@ export default function InternalToolsPage() {
                   src="/Phonex2.png"
                   alt="Phonex voice annotation engine showing audio waveforms and speech recognition interface"
                   fill
-                  className="object-cover  transition-transform duration-[3000ms] ease-out"
+                  className="object-contain object-top transition-transform duration-[3000ms] ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
               </AspectRatio>
@@ -163,7 +166,7 @@ export default function InternalToolsPage() {
                   src="/Flexipod.png"
                   alt="FlexiPod cross-functional team collaboration showing annotation engineers, data scientists, and domain specialists"
                   fill
-                  className="object-cover object-top transition-transform duration-[3000ms] ease-out"
+                  className="object-contain object-top transition-transform duration-[3000ms] ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
               </AspectRatio>

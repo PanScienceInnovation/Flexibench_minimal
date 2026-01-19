@@ -354,20 +354,22 @@ function ContactPageContent() {
       </div>
 
       {/* Enhanced Hero Section with Animations */}
-      <section className="relative bg-gradient-to-br from-green-900 via-emerald-800 to-teal-800 py-12 md:py-16 lg:py-20 border-b overflow-hidden">
+      <section className="relative py-12 md:py-16 lg:py-20 border-b overflow-hidden" style={{
+        background: 'linear-gradient(to bottom right, oklch(0.25 0.12 250), oklch(0.30 0.11 248), oklch(0.35 0.11 252))'
+      }}>
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
           backgroundSize: '48px 48px'
         }} />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-green-500/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-500/8 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-green-500/10 via-transparent to-teal-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/8 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/10 via-transparent to-primary/10 rounded-full blur-3xl" />
         
         {/* Animated Lines */}
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-400/10 to-transparent" />
-          <div className="absolute top-2/4 right-0 w-px h-full bg-gradient-to-b from-transparent via-teal-400/10 to-transparent" />
+          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+          <div className="absolute top-2/4 right-0 w-px h-full bg-gradient-to-b from-transparent via-primary/10 to-transparent" />
         </div>
         
         <div className="container mx-auto relative z-10 px-4 sm:px-6">
@@ -383,7 +385,7 @@ function ContactPageContent() {
                       <path d="M2 8 Q75 4, 150 8 T298 8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                     </svg>
                   </span>{" "}
-                  <span className="bg-gradient-to-r from-green-300 via-emerald-300 to-teal-300 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary/90 via-primary to-primary/90 bg-clip-text text-transparent">
                     Today
                   </span>
                 </h1>
@@ -396,15 +398,15 @@ function ContactPageContent() {
               {/* Feature Pills */}
               <div className="flex flex-wrap gap-2 md:gap-3">
                 <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-green-300 flex-shrink-0" />
+                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-primary flex-shrink-0" />
                   <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Expert Consultation</span>
                 </div>
                 <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-green-300 flex-shrink-0" />
+                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-primary flex-shrink-0" />
                   <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Custom Demo</span>
                 </div>
                 <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-green-300 flex-shrink-0" />
+                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-primary flex-shrink-0" />
                   <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Fast Onboarding</span>
                 </div>
               </div>
@@ -413,7 +415,7 @@ function ContactPageContent() {
             <div className="flex-1 w-full animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 group">
                 {/* Decorative Border Glow */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-green-400/18 via-emerald-400/18 to-teal-400/18 rounded-2xl md:rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out -z-10" />
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/18 via-primary/18 to-primary/18 rounded-2xl md:rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out -z-10" />
                 
                 <AspectRatio ratio={16 / 10}>
                   <Image
@@ -421,10 +423,10 @@ function ContactPageContent() {
                     alt="Contact our team for Flexibench consultation and demo"
                     fill
                     priority
-                    className="object-cover transition-transform duration-[3000ms] ease-out"
+                    className="object-cover object-top transition-transform duration-[3000ms] ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-green-950/85 via-green-950/40 to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-green-500/12 via-transparent to-teal-500/12" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/40 to-transparent" style={{ background: 'linear-gradient(to top, oklch(0.20 0.12 250 / 0.85), oklch(0.28 0.11 248 / 0.4), transparent)' }} />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/12 via-transparent to-primary/12" />
                 </AspectRatio>
               </div>
             </div>

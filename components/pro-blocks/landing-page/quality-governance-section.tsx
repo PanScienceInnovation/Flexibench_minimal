@@ -65,16 +65,18 @@ export function QualityGovernanceSection() {
                     <IconComponent className="text-primary h-8 w-8" />
                   </div>
                   
-                  {/* Visual Element with Image */}
-                  <div className="h-24 rounded-lg border border-border/30 overflow-hidden relative group/image">
-                    <Image
-                      src={`/quality_governance${index + 1}.png`}
-                      alt={`${principle.title} - Quality and governance visualization`}
-                      fill
-                      className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                  </div>
+                  {/* Visual Element with Image - Hidden for Real-Time Quality Monitoring and Auditability cards */}
+                  {principle.title !== "Real-Time Quality Monitoring Dashboards" && principle.title !== "Auditability and Traceability" && (
+                    <div className="h-24 rounded-lg border border-border/30 overflow-hidden relative group/image">
+                      <Image
+                        src={`/quality_governance${index + 1}.png`}
+                        alt={`${principle.title} - Quality and governance visualization`}
+                        fill
+                        className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                    </div>
+                  )}
 
                   <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight">
                     {principle.title}
