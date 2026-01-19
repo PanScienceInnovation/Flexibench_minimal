@@ -36,9 +36,15 @@ export function HeroSection2() {
             {/* Tagline with Badge Style */}
               <div className="inline-flex items-center gap-2 w-fit">
               <Tagline className="mb-0">Enterprise Annotation Platform</Tagline>
-              <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/12 to-primary/8 border border-primary/20">
-                <Sparkles className="h-3.5 w-3.5 text-primary" />
-                <span className="text-sm font-semibold text-primary">AI-Powered</span>
+              <div 
+                className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border"
+                style={{
+                  background: 'linear-gradient(to right, oklch(0.68 0.15 50 / 0.15), oklch(0.68 0.15 50 / 0.1))',
+                  borderColor: 'oklch(0.68 0.15 50 / 0.3)',
+                }}
+              >
+                <Sparkles className="h-3.5 w-3.5" style={{ color: 'oklch(0.68 0.15 50)' }} />
+                <span className="text-sm font-semibold" style={{ color: 'oklch(0.68 0.15 50)' }}>AI-Powered</span>
               </div>
             </div>
             
@@ -49,7 +55,7 @@ export function HeroSection2() {
                 <span className="relative inline-block">
                   Model-Ready
                   <svg
-                    className="absolute -bottom-1 left-0 w-full h-3 text-primary/30"
+                    className="absolute -bottom-1 left-0 w-full h-3 text-accent/30"
                     viewBox="0 0 400 12"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,9 +69,11 @@ export function HeroSection2() {
                   </svg>
                 </span>{" "}
                 Data with{" "}
-                <span className="relative inline-block text-primary">
+                <span className="relative inline-block" style={{ color: 'oklch(0.68 0.15 50)' }}>
                   Precision & Quality
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary/40 via-primary/50 to-primary/40 rounded-full blur-sm" />
+                  <div className="absolute -bottom-2 left-0 right-0 h-1 rounded-full blur-sm" style={{ 
+                    background: 'linear-gradient(to right, oklch(0.68 0.15 50 / 0.4), oklch(0.68 0.15 50 / 0.5), oklch(0.68 0.15 50 / 0.4))'
+                  }} />
                 </span>
               </h1>
             </div>
@@ -136,7 +144,12 @@ export function HeroSection2() {
               <Button 
                 asChild 
                 size="lg" 
-                className="text-sm md:text-base px-6 md:px-8 py-5 md:py-6 h-auto bg-primary hover:bg-primary/90 shadow-md shadow-primary/10 hover:shadow-lg hover:shadow-primary/15 transition-all duration-[2500ms] ease-out hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 whitespace-nowrap"
+                className="text-sm md:text-base px-6 md:px-8 py-5 md:py-6 h-auto text-white shadow-md shadow-accent/20 hover:shadow-lg hover:shadow-accent/30 transition-all duration-[2500ms] ease-out hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 whitespace-nowrap"
+                style={{ 
+                  backgroundColor: 'oklch(0.68 0.15 50)',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'oklch(0.68 0.15 50 / 0.9)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'oklch(0.68 0.15 50)'}
               >
                 <Link href="/contact" className="group/btn flex items-center justify-center">
                   Get Started
@@ -147,9 +160,21 @@ export function HeroSection2() {
                 variant="outline" 
                 size="lg" 
                 asChild 
-                className="text-sm md:text-base px-6 md:px-8 py-5 md:py-6 h-auto border-2 hover:border-primary/50 hover:bg-primary/5 transition-all duration-[2500ms] ease-out hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 whitespace-nowrap"
+                className="text-sm md:text-base px-6 md:px-8 py-5 md:py-6 h-auto border-2 transition-all duration-[2500ms] ease-out hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-offset-2 whitespace-nowrap"
+                style={{ 
+                  borderColor: 'oklch(0.68 0.15 50 / 0.3)',
+                  color: 'oklch(0.68 0.15 50)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'oklch(0.68 0.15 50 / 0.5)';
+                  e.currentTarget.style.backgroundColor = 'oklch(0.68 0.15 50 / 0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'oklch(0.68 0.15 50 / 0.3)';
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
               >
-                <Link href="/#platform" className="group/btn flex items-center justify-center">
+                <Link href="/#platform" className="group/btn flex items-center justify-center" style={{ color: 'oklch(0.68 0.15 50)' }}>
                   Explore Platform
                   <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover/btn:translate-x-0.5 transition-transform duration-[2500ms] ease-out" />
                 </Link>

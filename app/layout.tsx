@@ -24,7 +24,10 @@ export default function RootLayout({
   return (
     <>
       <html lang="en" suppressHydrationWarning className="scroll-smooth">
-        <head />
+        <head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        </head>
         <body className={`${onest.variable} relative antialiased`}>
           {/* Skip to main content link for accessibility */}
           <a

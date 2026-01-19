@@ -6,11 +6,9 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Clock, ArrowLeft, ArrowRight, Share2, BookmarkPlus, Loader2 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { getWhitePaperBySlug, type WhitePaper } from "@/lib/api/resources";
-import { getResourceImage } from "@/lib/image-utils";
 import { Calendar } from "lucide-react";
 
 // Fallback dates for white papers when createdAt is null
@@ -161,23 +159,79 @@ export default function WhitePaperDetailClient() {
           </div>
         </div>
 
-        {/* Featured Image */}
-        <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden mb-12">
-          <Image
-            src={getResourceImage("White Papers", whitepaper.slug)}
-            alt={whitepaper.title}
-            fill
-            className="object-cover object-top"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-        </div>
-
         {/* Article Content */}
         <div 
-          className="prose prose-lg dark:prose-invert max-w-none mb-12"
+          className="prose prose-lg dark:prose-invert max-w-none mb-12 whitepaper-content"
           dangerouslySetInnerHTML={{ __html: whitepaper.body || '' }}
         />
+        <style jsx global>{`
+          .whitepaper-content {
+            line-height: 1.8;
+          }
+          .whitepaper-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+          }
+          .whitepaper-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: inherit;
+          }
+          .whitepaper-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.3;
+            color: inherit;
+          }
+          .whitepaper-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            color: inherit;
+          }
+          .whitepaper-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            color: inherit;
+          }
+          .whitepaper-content ul,
+          .whitepaper-content ol {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+          }
+          .whitepaper-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+          }
+          .whitepaper-content strong {
+            font-weight: 700;
+          }
+          .whitepaper-content em {
+            font-style: italic;
+          }
+          .whitepaper-content a {
+            color: oklch(0.68 0.15 50);
+            text-decoration: underline;
+          }
+          .whitepaper-content a:hover {
+            color: oklch(0.68 0.15 50 / 0.8);
+          }
+          .whitepaper-content img {
+            display: none;
+          }
+        `}</style>
 
         {/* Call to Action */}
         <div className="mt-16 mb-16 p-8 md:p-12 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl text-center">

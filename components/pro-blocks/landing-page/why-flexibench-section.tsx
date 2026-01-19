@@ -46,33 +46,14 @@ export function WhyFlexibenchSection() {
     >
       {/* Enhanced Ambient Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Large Animated Gradient Blobs */}
-        <motion.div
-          className="absolute top-1/4 right-1/4 w-[900px] h-[900px] bg-gradient-to-br from-blue-600/15 via-indigo-600/12 to-violet-600/8 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 80, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+        {/* Large Animated Gradient Blobs - Optimized with CSS */}
+        <div 
+          className="absolute top-1/4 right-1/4 w-[900px] h-[900px] bg-gradient-to-br from-blue-600/15 via-indigo-600/12 to-violet-600/8 rounded-full blur-3xl animate-float-slow"
+          style={{ willChange: 'transform' }}
         />
-        <motion.div
-          className="absolute bottom-1/4 left-1/4 w-[800px] h-[800px] bg-gradient-to-tr from-violet-600/15 via-purple-600/12 to-indigo-600/8 rounded-full blur-3xl"
-          animate={{
-            x: [0, -80, 0],
-            y: [0, -100, 0],
-            scale: [1, 1.15, 1],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 3,
-          }}
+        <div 
+          className="absolute bottom-1/4 left-1/4 w-[800px] h-[800px] bg-gradient-to-tr from-violet-600/15 via-purple-600/12 to-indigo-600/8 rounded-full blur-3xl animate-float-slow-delayed"
+          style={{ willChange: 'transform' }}
         />
 
         {/* Animated Grid Pattern - Light Theme */}
@@ -102,36 +83,22 @@ export function WhyFlexibenchSection() {
           />
         </div>
 
-        {/* Animated Dots Pattern - Light Theme */}
-        <motion.div
-          className="absolute inset-0 opacity-[0.07] dark:hidden"
+        {/* Animated Dots Pattern - Light Theme - Optimized with CSS */}
+        <div
+          className="absolute inset-0 opacity-[0.07] dark:hidden animate-dots-move"
           style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, rgba(0,0,0,0.4) 1.5px, transparent 0)`,
             backgroundSize: "60px 60px",
-          }}
-          animate={{
-            backgroundPosition: ["0% 0%", "100% 100%"],
-          }}
-          transition={{
-            duration: 40,
-            repeat: Infinity,
-            ease: "linear",
+            willChange: 'background-position',
           }}
         />
-        {/* Animated Dots Pattern - Dark Theme */}
-        <motion.div
-          className="absolute inset-0 opacity-[0.05] hidden dark:block"
+        {/* Animated Dots Pattern - Dark Theme - Optimized with CSS */}
+        <div
+          className="absolute inset-0 opacity-[0.05] hidden dark:block animate-dots-move"
           style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.4) 1.5px, transparent 0)`,
             backgroundSize: "60px 60px",
-          }}
-          animate={{
-            backgroundPosition: ["0% 0%", "100% 100%"],
-          }}
-          transition={{
-            duration: 40,
-            repeat: Infinity,
-            ease: "linear",
+            willChange: 'background-position',
           }}
         />
       </div>
@@ -275,28 +242,32 @@ export function WhyFlexibenchSection() {
       <style jsx global>{`
         @keyframes scroll-down {
           from {
-            transform: translateY(0);
+            transform: translateY(calc(-50% - 12px));
           }
           to {
-            transform: translateY(calc(-50% - 12px));
+            transform: translateY(0);
           }
         }
 
         @keyframes scroll-up {
           from {
-            transform: translateY(calc(-50% - 12px));
+            transform: translateY(0);
           }
           to {
-            transform: translateY(0);
+            transform: translateY(calc(-50% - 12px));
           }
         }
 
         .animate-scroll-down {
           animation: scroll-down 30s linear infinite;
+          will-change: transform;
+          transform: translateZ(0);
         }
 
         .animate-scroll-up {
           animation: scroll-up 30s linear infinite;
+          will-change: transform;
+          transform: translateZ(0);
         }
 
         .animate-scroll-down:hover,

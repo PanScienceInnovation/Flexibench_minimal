@@ -134,9 +134,74 @@ export default function BlogDetailClient() {
 
         {/* Article Content */}
         <div 
-          className="prose prose-lg dark:prose-invert max-w-none mb-12"
+          className="prose prose-lg dark:prose-invert max-w-none mb-12 blog-content"
           dangerouslySetInnerHTML={{ __html: blog.body || '' }}
         />
+        <style jsx global>{`
+          .blog-content {
+            line-height: 1.8;
+          }
+          .blog-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+          }
+          .blog-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: inherit;
+          }
+          .blog-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.3;
+            color: inherit;
+          }
+          .blog-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            color: inherit;
+          }
+          .blog-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            color: inherit;
+          }
+          .blog-content ul,
+          .blog-content ol {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+          }
+          .blog-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+          }
+          .blog-content strong {
+            font-weight: 700;
+          }
+          .blog-content em {
+            font-style: italic;
+          }
+          .blog-content a {
+            color: oklch(0.68 0.15 50);
+            text-decoration: underline;
+          }
+          .blog-content a:hover {
+            color: oklch(0.68 0.15 50 / 0.8);
+          }
+        `}</style>
 
         {/* External Link */}
         {blog.link && (

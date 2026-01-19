@@ -46,17 +46,20 @@ export function QualityGovernanceSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
-          {qualityPrinciples.map((principle, index) => {
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {qualityPrinciples
+            .filter(principle => 
+              principle.title !== "Real-Time Quality Monitoring Dashboards" && 
+              principle.title !== "Auditability and Traceability"
+            )
+            .map((principle, index) => {
             const IconComponent = iconMap[principle.icon] || Target;
-            // Last item spans 2 columns on large screens
-            const colSpan = index === 4 ? "lg:col-span-2" : "";
             const animationDelay = index * 120;
             const animations = ['animate-scale-in', 'animate-fade-in-up', 'animate-scale-in', 'animate-fade-in-up', 'animate-scale-in'];
             return (
               <Card
                 key={principle.title}
-                className={`group relative bg-gradient-to-br from-background to-secondary/30 rounded-2xl border-2 border-border/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:scale-105 hover:-translate-y-2 hover:border-primary/30 opacity-0 ${animations[index % animations.length]} ${colSpan}`}
+                className={`group relative bg-gradient-to-br from-background to-secondary/30 rounded-2xl border-2 border-border/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:scale-105 hover:-translate-y-2 hover:border-primary/30 opacity-0 ${animations[index % animations.length]}`}
                 style={{ animationDelay: `${animationDelay}ms` }}
               >
                 <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-full blur-xl -mr-10 -mt-10" />
@@ -65,18 +68,16 @@ export function QualityGovernanceSection() {
                     <IconComponent className="text-primary h-8 w-8" />
                   </div>
                   
-                  {/* Visual Element with Image - Hidden for Real-Time Quality Monitoring and Auditability cards */}
-                  {principle.title !== "Real-Time Quality Monitoring Dashboards" && principle.title !== "Auditability and Traceability" && (
-                    <div className="h-24 rounded-lg border border-border/30 overflow-hidden relative group/image">
-                      <Image
-                        src={`/quality_governance${index + 1}.png`}
-                        alt={`${principle.title} - Quality and governance visualization`}
-                        fill
-                        className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                    </div>
-                  )}
+                  {/* Visual Element with Image */}
+                  <div className="h-24 rounded-lg border border-border/30 overflow-hidden relative group/image">
+                    <Image
+                      src={`/quality_governance${index + 1}.png`}
+                      alt={`${principle.title} - Quality and governance visualization`}
+                      fill
+                      className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                  </div>
 
                   <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight">
                     {principle.title}

@@ -9,9 +9,9 @@ import { Calendar, User, ArrowRight, Sparkles, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { AnimatedResourceCategories } from "@/components/animated-resource-categories";
-import { getBlogs, getWhitePapers, getAnnouncements, type Blog, type WhitePaper, type Announcement } from "@/lib/api/resources";
+import { getBlogs, getWhitePapers, type Blog, type WhitePaper } from "@/lib/api/resources";
 
-type ResourceCategory = "Blogs" | "White Papers" | "Announcements";
+type ResourceCategory = "Blogs" | "White Papers";
 
 interface UnifiedResource {
   slug: string;
@@ -172,60 +172,19 @@ const allResourcesHardcoded: HardcodedResource[] = [
     readTime: "8 min read",
     image: "/use-cases/Legal.png",
   },
-  
-  // Announcements
-  {
-    id: "announcement-1",
-    category: "Announcements",
-    title: "FlexiBench 3.0: Next-Generation Annotation Platform",
-    excerpt: "Introducing FlexiBench 3.0 with AI-assisted labeling, enhanced collaboration tools, and 10x faster processing.",
-    author: "Product Team",
-    date: "January 15, 2026",
-    readTime: "5 min read",
-    image: "/use-cases/Media.png",
-  },
-  {
-    id: "announcement-2",
-    category: "Announcements",
-    title: "New Integration: AWS SageMaker Ground Truth",
-    excerpt: "FlexiBench now integrates seamlessly with AWS SageMaker Ground Truth for enhanced ML workflows.",
-    author: "Product Team",
-    date: "January 3, 2026",
-    readTime: "4 min read",
-    image: "/use-cases/manufacturing3.png",
-  },
-  {
-    id: "announcement-3",
-    category: "Announcements",
-    title: "Enterprise Plan: Advanced Security & Compliance",
-    excerpt: "Announcing our new Enterprise Plan with SOC 2 Type II certification, HIPAA compliance, and dedicated support.",
-    author: "Product Team",
-    date: "December 10, 2025",
-    readTime: "6 min read",
-    image: "/use-cases/legal2.png",
-  },
 ];
 
 const resourceCategories: ResourceCategory[] = [
   "Blogs",
   "White Papers",
-  "Announcements",
 ];
 
-// Fallback dates for white papers and announcements when createdAt is null
+// Fallback dates for white papers when createdAt is null
 const whitePaperDates: Record<string, string> = {
   "Ontology Governance Strategies": "2024-12-15",
   "Scaling Annotation Workflows": "2024-11-20",
   "Annotation for Safety-Critical AI": "2024-10-18",
   "Enterprise Quality Frameworks": "2024-09-12",
-};
-
-const announcementDates: Record<string, string> = {
-  "Upcoming Webinar: Best Practices for Multimodal Annotation": "2025-01-15",
-  "Integration Partnership: Seamless Workflow with Leading ML Platforms": "2025-01-03",
-  "Expanding Our Global Annotation Network": "2024-12-20",
-  "New Enterprise Features: Advanced Analytics and Reporting": "2024-12-10",
-  "FlexiBench 3.0: Next-Generation Annotation Platform": "2024-11-28",
 };
 
 // Helper function to format date safely
@@ -261,22 +220,19 @@ export default function ResourcesPage() {
     setLoading(true);
     setError(null);
     try {
-      const [blogsRes, whitePapersRes, announcementsRes] = await Promise.all([
+      const [blogsRes, whitePapersRes] = await Promise.all([
         getBlogs(),
         getWhitePapers(),
-        getAnnouncements(),
       ]);
 
       console.log('Blogs response:', blogsRes);
       console.log('White papers response:', whitePapersRes);
-      console.log('Announcements response:', announcementsRes);
 
       // Check if responses are successful and have data
       const blogs = blogsRes?.success && blogsRes?.data ? blogsRes.data : [];
       const whitePapers = whitePapersRes?.success && whitePapersRes?.data ? whitePapersRes.data : [];
-      const announcements = announcementsRes?.success && announcementsRes?.data ? announcementsRes.data : [];
 
-      console.log(`Loaded ${blogs.length} blogs, ${whitePapers.length} white papers, ${announcements.length} announcements`);
+      console.log(`Loaded ${blogs.length} blogs, ${whitePapers.length} white papers`);
 
       const unifiedResources: UnifiedResource[] = [
         ...blogs.map((blog) => ({
@@ -294,13 +250,6 @@ export default function ResourcesPage() {
           source: paper.source,
           date: formatDate(paper.createdAt, whitePaperDates[paper.title]),
           readTime: paper.readTime || 5,
-        })),
-        ...announcements.map((announcement) => ({
-          slug: announcement.slug,
-          category: "Announcements" as ResourceCategory,
-          title: announcement.title,
-          date: formatDate(announcement.createdAt, announcementDates[announcement.title]),
-          readTime: announcement.readTime || 5,
         })),
       ];
 

@@ -1,6 +1,47 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Performance-optimized animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(100px, 80px) scale(1.2);
+  }
+}
+
+@keyframes float-slow-delayed {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-80px, -100px) scale(1.15);
+  }
+}
+
+@keyframes dots-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 25s ease-in-out infinite;
+}
+
+.animate-float-slow-delayed {
+  animation: float-slow-delayed 30s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.animate-dots-move {
+  animation: dots-move 40s linear infinite;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

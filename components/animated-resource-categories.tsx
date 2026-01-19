@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 const categories = [
   { name: "Blogs", color: "from-blue-400 via-cyan-400 to-teal-400" },
   { name: "White Papers", color: "from-purple-400 via-pink-400 to-rose-400" },
-  { name: "Announcements", color: "from-indigo-400 via-violet-400 to-purple-400" },
 ];
 
 export function AnimatedResourceCategories() {

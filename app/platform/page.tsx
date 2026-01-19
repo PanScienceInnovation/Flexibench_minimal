@@ -65,7 +65,7 @@ export default function PlatformPage() {
             
             {/* Right Column - Image */}
             <div className="flex-1 w-full">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 group -mt-8 lg:-mt-12">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 group">
                 <AspectRatio ratio={16 / 10}>
                   <Image
                     src="/Platform_hero.png"
@@ -213,7 +213,9 @@ export default function PlatformPage() {
                           src={value.image}
                           alt={value.title}
                           fill
-                          className="object-cover object-top transition-transform duration-[3000ms] ease-out"
+                          className={`object-cover transition-transform duration-[3000ms] ease-out ${
+                            index === 2 ? 'object-left-top' : 'object-top'
+                          }`}
                         />
                         <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out`} />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />

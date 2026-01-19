@@ -15,6 +15,16 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
+  // Performance optimizations
+  compress: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
+  // Optimize production builds
+  productionBrowserSourceMaps: false,
+  // Reduce bundle size
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
 }
 
 export default nextConfig
