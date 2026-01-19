@@ -56,12 +56,14 @@ export function generateStaticParams() {
   }));
 }
 
-export default function CapabilityTypePage({
+export default async function CapabilityTypePage({
   params,
 }: {
-  params: { type: string };
+  params: Promise<{ type: string }> | { type: string };
 }) {
-  const type = params?.type ? params.type.charAt(0).toUpperCase() + params.type.slice(1) : '';
+  // Handle both Promise and direct params (Next.js 15+ compatibility)
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const type = resolvedParams?.type ? resolvedParams.type.charAt(0).toUpperCase() + resolvedParams.type.slice(1) : '';
   const capability = capabilities.find((c) => c.type === type);
 
   if (!capability) {
@@ -95,13 +97,16 @@ export default function CapabilityTypePage({
       </div>
 
       {/* Enhanced Hero Section with Image */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 section-padding-y border-b overflow-hidden" style={{ paddingTop: '80px' }}>
+      <section className="relative section-padding-y border-b overflow-hidden" style={{ 
+        paddingTop: '80px',
+        background: 'linear-gradient(to bottom right, oklch(0.25 0.12 250), oklch(0.30 0.11 248), oklch(0.35 0.11 252))'
+      }}>
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
           backgroundSize: '48px 48px'
         }} />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse delay-1000" />
         
         <div className="container-padding-x container mx-auto relative z-10">
           <Link href="/capabilities" className="text-white/80 text-base mb-8 inline-flex items-center gap-2 hover:text-white hover:underline transition-colors">
@@ -139,9 +144,9 @@ export default function CapabilityTypePage({
                     priority
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.purple}
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-indigo-900/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/30 to-transparent" style={{ background: 'linear-gradient(to top, oklch(0.20 0.12 250 / 0.7), oklch(0.28 0.11 248 / 0.3), transparent)' }} />
                 </AspectRatio>
               </div>
             </div>
@@ -193,7 +198,7 @@ export default function CapabilityTypePage({
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.default}
                     loading="lazy"
-                    className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-500"
+                    className="object-cover object-top opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
                 </div>
@@ -215,7 +220,7 @@ export default function CapabilityTypePage({
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.default}
                     loading="lazy"
-                    className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-500"
+                    className="object-cover object-top opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
                 </div>
@@ -240,7 +245,7 @@ export default function CapabilityTypePage({
                   placeholder="blur"
                   blurDataURL={blurPlaceholders.default}
                   loading="lazy"
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent lg:bg-gradient-to-l" />
               </div>

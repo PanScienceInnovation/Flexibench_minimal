@@ -19,24 +19,24 @@ const iconMap: Record<string, typeof FileText> = {
 export function CapabilitiesOverviewSection() {
   const { ref: sectionRef, isVisible } = useScrollAnimation();
   const capabilityColors = [
-    "from-blue-500/15 to-blue-500/8",
-    "from-purple-500/15 to-purple-500/8",
-    "from-orange-500/15 to-orange-500/8",
-    "from-green-500/15 to-green-500/8",
+    "from-slate-600/15 to-slate-600/8",
+    "from-indigo-600/15 to-indigo-600/8",
+    "from-orange-600/15 to-orange-600/8",
+    "from-blue-900/15 to-blue-900/8",
   ];
 
   return (
     <section
-      className="relative bg-gradient-to-br from-orange-50/50 via-amber-50/35 to-yellow-50/25 dark:from-orange-950 dark:via-amber-950 dark:to-yellow-950 section-padding-y border-b overflow-hidden"
+      className="relative bg-gradient-to-br from-slate-50 via-indigo-50/40 to-slate-50 dark:from-slate-950 dark:via-indigo-950/40 dark:to-slate-950 section-padding-y border-b overflow-hidden"
       id="capabilities"
     >
       {/* Enhanced Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-yellow-400/6 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-900/6 rounded-full blur-3xl" />
         {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/4 via-transparent to-amber-500/4" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/4 via-transparent to-orange-600/4" />
       </div>
 
       <div ref={sectionRef} className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 md:gap-16">
@@ -87,7 +87,7 @@ export function CapabilitiesOverviewSection() {
                         placeholder="blur"
                         blurDataURL={blurPlaceholders.default}
                         loading="lazy"
-                        className="object-cover group-hover:scale-110 transition-transform duration-[3000ms] ease-out"
+                        className="object-cover object-top group-hover:scale-110 transition-transform duration-[3000ms] ease-out"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
                       <div className="absolute top-3 left-3">

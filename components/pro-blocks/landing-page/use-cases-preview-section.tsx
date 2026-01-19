@@ -24,18 +24,18 @@ export function UseCasesPreviewSection() {
   ];
 
   const industryColors: Record<string, string> = {
-    "Healthcare & Life Sciences": "from-blue-500/10 to-blue-500/5",
-    "Automotive & Mobility": "from-orange-500/10 to-orange-500/5",
-    "Retail & E-commerce": "from-purple-500/10 to-purple-500/5",
+    "Healthcare & Life Sciences": "from-slate-600/10 to-slate-600/5",
+    "Automotive & Mobility": "from-orange-600/10 to-orange-600/5",
+    "Retail & E-commerce": "from-indigo-600/10 to-indigo-600/5",
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-violet-950 dark:via-purple-950 dark:to-indigo-950 section-padding-y border-b overflow-hidden">
+    <section className="relative bg-gradient-to-br from-slate-50 via-indigo-50/40 to-slate-50 dark:from-slate-950 dark:via-indigo-950/40 dark:to-slate-950 section-padding-y border-b overflow-hidden">
       {/* Enhanced Background Gradient */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-violet-400/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-400/5 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/2 via-transparent to-purple-500/2" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-600/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/2 via-transparent to-orange-600/2" />
         {/* Mesh Pattern */}
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
@@ -84,7 +84,7 @@ export function UseCasesPreviewSection() {
                     }
                     alt={`${useCase.industry} use case: ${useCase.title} showing ${useCase.modality.toLowerCase()} annotation workflow`}
                     fill
-                    className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                    className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-transparent" />
                   <div className="absolute top-3 left-3">

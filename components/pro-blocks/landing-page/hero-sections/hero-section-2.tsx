@@ -361,7 +361,7 @@ export function HeroSection2() {
                   priority
                   placeholder="blur"
                   blurDataURL={blurPlaceholders.blue}
-                  className="object-cover group-hover:scale-[1.02] transition-transform duration-[3000ms] ease-out"
+                  className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-[3000ms] ease-out"
                 />
                 {/* Enhanced Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent dark:from-slate-950/95 dark:via-slate-950/60" />

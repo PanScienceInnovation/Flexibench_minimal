@@ -22,9 +22,9 @@ export function QualityGovernanceSection() {
     >
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-emerald-500/3 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-teal-500/3 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-500/2 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-indigo-600/3 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-900/3 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-slate-700/2 rounded-full blur-3xl" />
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]" style={{
           backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
@@ -38,7 +38,7 @@ export function QualityGovernanceSection() {
           <Tagline>Quality & Governance</Tagline>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-white">
             Annotation with{" "}
-            <span className="text-emerald-400">Accountability</span>
+            <span className="text-orange-400">Accountability</span>
           </h2>
           <p className="text-slate-300 dark:text-slate-400 text-base md:text-lg leading-relaxed">
             Built for Trust, Consistency, and Deployable AI. High-quality labels are non-negotiable for reliable models. 
@@ -65,16 +65,18 @@ export function QualityGovernanceSection() {
                     <IconComponent className="text-primary h-8 w-8" />
                   </div>
                   
-                  {/* Visual Element with Image */}
-                  <div className="h-24 rounded-lg border border-border/30 overflow-hidden relative group/image">
-                    <Image
-                      src={`/quality_governance${index + 1}.png`}
-                      alt={`${principle.title} - Quality and governance visualization`}
-                      fill
-                      className="object-cover group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                  </div>
+                  {/* Visual Element with Image - Hidden for Real-Time Quality Monitoring and Auditability cards */}
+                  {principle.title !== "Real-Time Quality Monitoring Dashboards" && principle.title !== "Auditability and Traceability" && (
+                    <div className="h-24 rounded-lg border border-border/30 overflow-hidden relative group/image">
+                      <Image
+                        src={`/quality_governance${index + 1}.png`}
+                        alt={`${principle.title} - Quality and governance visualization`}
+                        fill
+                        className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                    </div>
+                  )}
 
                   <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight">
                     {principle.title}

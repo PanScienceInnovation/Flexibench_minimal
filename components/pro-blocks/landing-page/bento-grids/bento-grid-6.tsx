@@ -27,7 +27,7 @@ export function BentoGrid6() {
               alt="AI Meeting Notes"
               width={813}
               height={332}
-              className="hidden h-auto w-full object-cover md:block md:h-[332px]"
+              className="hidden h-auto w-full object-cover object-top md:block md:h-[332px]"
             />
             <Image
               src="/ai-meeting-notes_mobile.png"
@@ -52,7 +52,7 @@ export function BentoGrid6() {
               alt="Universal Search"
               width={480}
               height={332}
-              className="h-auto w-full object-cover md:h-[332px]"
+              className="h-auto w-full object-cover object-top md:h-[332px]"
             />
             <CardContent className="flex flex-col gap-2 p-6">
               <h3 className="text-foreground text-lg font-semibold">
@@ -70,7 +70,7 @@ export function BentoGrid6() {
               alt="AI Meeting Notes"
               width={480}
               height={332}
-              className="h-auto w-full object-cover md:h-[332px]"
+              className="h-auto w-full object-cover object-top md:h-[332px]"
             />
             <CardContent className="flex flex-col gap-2 p-6">
               <h3 className="text-foreground text-lg font-semibold">
@@ -88,14 +88,14 @@ export function BentoGrid6() {
               alt="Team Insights"
               width={813}
               height={332}
-              className="hidden h-[332px] w-full object-cover md:block"
+              className="hidden h-[332px] w-full object-cover object-top md:block"
             />
             <Image
               src="/team-insights_mobile.png"
               alt="Team Insights"
               width={480}
               height={332}
-              className="block h-auto w-full object-cover md:hidden md:h-[332px]"
+              className="block h-auto w-full object-cover object-top md:hidden md:h-[332px]"
             />
             <CardContent className="flex flex-col gap-2 p-6">
               <h3 className="text-foreground text-lg font-semibold">

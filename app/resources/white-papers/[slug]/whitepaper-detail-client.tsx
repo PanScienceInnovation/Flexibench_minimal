@@ -11,6 +11,34 @@ import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { getWhitePaperBySlug, type WhitePaper } from "@/lib/api/resources";
 import { getResourceImage } from "@/lib/image-utils";
+import { Calendar } from "lucide-react";
+
+// Fallback dates for white papers when createdAt is null
+const whitePaperDates: Record<string, string> = {
+  "Ontology Governance Strategies": "2024-12-15",
+  "Scaling Annotation Workflows": "2024-11-20",
+  "Annotation for Safety-Critical AI": "2024-10-18",
+  "Enterprise Quality Frameworks": "2024-09-12",
+};
+
+// Helper function to format date safely
+const formatDate = (dateString: string | null | undefined, fallbackDate?: string): string => {
+  if (!dateString && !fallbackDate) {
+    return "Invalid Date";
+  }
+  
+  const dateToUse = dateString || fallbackDate || '';
+  if (!dateToUse) {
+    return "Invalid Date";
+  }
+  
+  const date = new Date(dateToUse);
+  if (isNaN(date.getTime())) {
+    return "Invalid Date";
+  }
+  
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
 
 export default function WhitePaperDetailClient() {
   const params = useParams();
@@ -114,6 +142,10 @@ export default function WhitePaperDetailClient() {
             <span className="font-medium">{whitepaper.source}</span>
           </div>
           <div className="flex items-center gap-2">
+            <Calendar className="h-4 w-4" />
+            <span>{formatDate(whitepaper.createdAt, whitePaperDates[whitepaper.title])}</span>
+          </div>
+          <div className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
             <span>{whitepaper.readTime} min read</span>
           </div>
@@ -135,7 +167,7 @@ export default function WhitePaperDetailClient() {
             src={getResourceImage("White Papers", whitepaper.slug)}
             alt={whitepaper.title}
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
