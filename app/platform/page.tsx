@@ -65,7 +65,7 @@ export default function PlatformPage() {
             
             {/* Right Column - Image */}
             <div className="flex-1 w-full">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 group">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 group -mt-8 lg:-mt-12">
                 <AspectRatio ratio={16 / 10}>
                   <Image
                     src="/Platform_hero.png"
