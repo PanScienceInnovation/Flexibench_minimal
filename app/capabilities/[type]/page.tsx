@@ -25,12 +25,18 @@ const capabilityImages: Record<string, string> = {
   Audio: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1400&h=900&fit=crop&q=90",
 };
 
+export function generateStaticParams() {
+  return capabilities.map((capability) => ({
+    type: capability.type.toLowerCase(),
+  }));
+}
+
 export default function CapabilityTypePage({
   params,
 }: {
   params: { type: string };
 }) {
-  const type = params.type.charAt(0).toUpperCase() + params.type.slice(1);
+  const type = params?.type ? params.type.charAt(0).toUpperCase() + params.type.slice(1) : '';
   const capability = capabilities.find((c) => c.type === type);
 
   if (!capability) {

@@ -32,7 +32,7 @@ export function Footer1() {
 
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5010";
-      const response = await fetch(`${apiUrl}/api/flexibench/newsletter/subscribe`, {
+      const response = await fetch(`/api/flexibench/newsletter/subscribe`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

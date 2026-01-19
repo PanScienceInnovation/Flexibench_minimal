@@ -68,7 +68,7 @@ function ContactFormContent({
       );
 
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5010";
-      const response = await fetch(`${apiUrl}/api/flexibench/contact`, {
+      const response = await fetch(`/api/flexibench/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

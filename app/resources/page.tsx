@@ -7,8 +7,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, Sparkles, Loader2 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import { blurPlaceholders } from "@/lib/image-utils";
 import { useState, useEffect } from "react";
 import { AnimatedResourceCategories } from "@/components/animated-resource-categories";
 import { getBlogs, getWhitePapers, getAnnouncements, type Blog, type WhitePaper, type Announcement } from "@/lib/api/resources";
@@ -23,17 +21,20 @@ interface UnifiedResource {
   source?: string;
   date: string;
   readTime: number;
+}
+
+interface HardcodedResource {
+  id: string;
+  category: ResourceCategory;
+  title: string;
+  excerpt?: string;
+  author?: string;
+  date: string;
+  readTime: string;
   image: string;
 }
 
-// Default images for categories
-const categoryImages: Record<ResourceCategory, string[]> = {
-  "Blogs": ["/use-cases/Media.png", "/use-cases/Media3.png", "/use-cases/Legal.png"],
-  "White Papers": ["/use-cases/Legal.png", "/use-cases/legal2.png", "/use-cases/manufacturing3.png"],
-  "Announcements": ["/use-cases/Media.png", "/use-cases/manufacturing3.png", "/use-cases/legal2.png"],
-};
-
-const allResourcesHardcoded: UnifiedResource[] = [
+const allResourcesHardcoded: HardcodedResource[] = [
   // Blogs
   {
     id: "blog-1",
@@ -231,32 +232,40 @@ export default function ResourcesPage() {
         getAnnouncements(),
       ]);
 
+      console.log('Blogs response:', blogsRes);
+      console.log('White papers response:', whitePapersRes);
+      console.log('Announcements response:', announcementsRes);
+
+      // Check if responses are successful and have data
+      const blogs = blogsRes?.success && blogsRes?.data ? blogsRes.data : [];
+      const whitePapers = whitePapersRes?.success && whitePapersRes?.data ? whitePapersRes.data : [];
+      const announcements = announcementsRes?.success && announcementsRes?.data ? announcementsRes.data : [];
+
+      console.log(`Loaded ${blogs.length} blogs, ${whitePapers.length} white papers, ${announcements.length} announcements`);
+
       const unifiedResources: UnifiedResource[] = [
-        ...blogsRes.data.map((blog, index) => ({
+        ...blogs.map((blog) => ({
           slug: blog.slug,
           category: "Blogs" as ResourceCategory,
           title: blog.title,
           author: blog.author,
           date: new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-          readTime: blog.readTime,
-          image: categoryImages["Blogs"][index % categoryImages["Blogs"].length],
+          readTime: blog.readTime || 5,
         })),
-        ...whitePapersRes.data.map((paper, index) => ({
+        ...whitePapers.map((paper) => ({
           slug: paper.slug,
           category: "White Papers" as ResourceCategory,
           title: paper.title,
           source: paper.source,
           date: new Date(paper.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-          readTime: paper.readTime,
-          image: categoryImages["White Papers"][index % categoryImages["White Papers"].length],
+          readTime: paper.readTime || 5,
         })),
-        ...announcementsRes.data.map((announcement, index) => ({
+        ...announcements.map((announcement) => ({
           slug: announcement.slug,
           category: "Announcements" as ResourceCategory,
           title: announcement.title,
           date: new Date(announcement.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-          readTime: announcement.readTime,
-          image: categoryImages["Announcements"][index % categoryImages["Announcements"].length],
+          readTime: announcement.readTime || 5,
         })),
       ];
 
@@ -264,6 +273,7 @@ export default function ResourcesPage() {
     } catch (err) {
       console.error('Error fetching resources:', err);
       setError('Failed to load resources. Please try again later.');
+      setResources([]);
     } finally {
       setLoading(false);
     }
@@ -402,7 +412,8 @@ export default function ResourcesPage() {
             </div>
           ) : filteredResources.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-muted-foreground text-lg">No resources found in this category.</p>
+              <p className="text-muted-foreground text-lg mb-2">No {activeTab.toLowerCase()} found.</p>
+              <p className="text-muted-foreground text-sm">Check back soon for new content!</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
@@ -418,17 +429,6 @@ export default function ResourcesPage() {
                       animationFillMode: 'both'
                     }}
                   >
-                    {/* Image */}
-                    <div className="relative h-32 overflow-hidden">
-                      <Image
-                        src={resource.image}
-                        alt={resource.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-[3000ms] ease-out"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-200/90 dark:from-background/80 via-slate-200/30 dark:via-background/20 to-transparent" />
-                    </div>
-
                     <CardContent className="flex flex-col gap-2.5 p-4">
                       {/* Metadata */}
                       <div className="flex items-center gap-3 text-xs text-muted-foreground">

@@ -242,10 +242,10 @@ export default function UseCasesPage() {
       </section>
 
       {/* Extraordinary Filters Section */}
-      <section className="relative bg-gradient-to-b from-background via-secondary/30 to-background section-padding-y border-b overflow-hidden -mt-20">
+      <section className="relative bg-gradient-to-b from-background via-secondary/30 to-background section-padding-y border-b overflow-visible -mt-20 pb-8">
         <div className="container-padding-x container mx-auto relative z-20">
           {/* Glassmorphism Filter Bar */}
-          <div className="relative bg-background/80 backdrop-blur-xl rounded-3xl border-2 border-border/50 shadow-2xl p-6 md:p-8 animate-fade-in-up">
+          <div className="relative bg-background/80 backdrop-blur-xl rounded-3xl border-2 border-border/50 shadow-2xl p-6 md:p-8 animate-fade-in-up mb-6">
             {/* Animated Background Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-[3000ms] ease-out" />
             
@@ -284,9 +284,11 @@ export default function UseCasesPage() {
                 </SelectContent>
               </Select>
             </div>
-            
-            {/* Results Count Badge */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-primary/90 backdrop-blur-md rounded-full border-2 border-primary/30 shadow-lg">
+          </div>
+          
+          {/* Results Count Badge - Moved outside filter bar */}
+          <div className="flex justify-center">
+            <div className="px-6 py-2 bg-primary/90 backdrop-blur-md rounded-full border-2 border-primary/30 shadow-lg">
               <span className="text-sm font-bold text-white">
                 {filteredUseCases.length} of {useCases.length} use cases
               </span>
@@ -296,7 +298,7 @@ export default function UseCasesPage() {
       </section>
 
       {/* Extraordinary Use Cases Grid */}
-      <section className="relative bg-gradient-to-b from-pink-900 via-rose-800 to-red-800 section-padding-y border-b overflow-hidden pt-24">
+      <section className="relative bg-gradient-to-b from-pink-900 via-rose-800 to-red-800 section-padding-y border-b overflow-hidden pt-16">
         {/* Enhanced Animated Background Elements */}
         <div className="absolute inset-0 opacity-20" style={{
           backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
