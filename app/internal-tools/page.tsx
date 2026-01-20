@@ -97,7 +97,7 @@ export default function InternalToolsPage() {
                   src="/Phonex2.png"
                   alt="Phonex voice annotation engine showing audio waveforms and speech recognition interface"
                   fill
-                  className="object-contain object-top transition-transform duration-[3000ms] ease-out"
+                  className="object-cover object-left-top transition-transform duration-[3000ms] ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
               </AspectRatio>

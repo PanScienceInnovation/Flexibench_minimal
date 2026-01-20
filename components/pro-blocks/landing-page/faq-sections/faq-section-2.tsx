@@ -51,145 +51,149 @@ export function FaqSection2() {
             </p>
           </div>
 
-          {/* Right Column - General FAQ */}
-          <div className={`flex flex-1 flex-col gap-2 transition-all duration-[3000ms] ease-out ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-            {/* Section Title */}
-            <h2 className="text-foreground text-lg font-semibold md:text-xl mb-2">
-              General
-            </h2>
-            {/* FAQ Accordion */}
-            <Accordion
-              type="single"
-              collapsible
-              defaultValue="item-1"
-              aria-label="General FAQ items"
-            >
-              {/* FAQ Item 1 */}
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left">
-                  What makes Flexibench different from other annotation platforms?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Flexibench treats annotation as data engineering, not just task management. We
-                  integrate deeply with training workflows, enforce consistent ontologies across
-                  projects, support auditable quality pipelines, and provide feedback signals back
-                  into model training. Our platform is built for enterprise-grade governance and
-                  model-ready datasets.
-                </AccordionContent>
-              </AccordionItem>
+          {/* Right Column - Both FAQ Sections (Aligned) */}
+          <div className={`flex-1 flex flex-col gap-8 min-w-0 transition-all duration-[3000ms] ease-out ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
+            {/* General FAQ Section */}
+            <div className="flex flex-col gap-4">
+              {/* Section Title */}
+              <h2 className="text-foreground text-lg font-semibold md:text-xl">
+                General
+              </h2>
+              {/* FAQ Accordion */}
+              <Accordion
+                type="single"
+                collapsible
+                defaultValue="item-1"
+                aria-label="General FAQ items"
+                className="w-full"
+              >
+                {/* FAQ Item 1 */}
+                <AccordionItem value="item-1" className="border-border/50">
+                  <AccordionTrigger className="text-left pr-8 hover:no-underline">
+                    What makes Flexibench different from other annotation platforms?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Flexibench treats annotation as data engineering, not just task management. We
+                    integrate deeply with training workflows, enforce consistent ontologies across
+                    projects, support auditable quality pipelines, and provide feedback signals back
+                    into model training. Our platform is built for enterprise-grade governance and
+                    model-ready datasets.
+                  </AccordionContent>
+                </AccordionItem>
 
-              {/* FAQ Item 2 */}
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left">
-                  What annotation modalities does Flexibench support?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Flexibench supports comprehensive annotation workflows across Text, Image, Video,
-                  and Audio modalities. Each modality includes specialized tooling and workflows
-                  designed for quality, governance, and model-aligned outputs. Our platform handles
-                  everything from named entity extraction in text to temporal tracking in video.
-                </AccordionContent>
-              </AccordionItem>
+                {/* FAQ Item 2 */}
+                <AccordionItem value="item-2" className="border-border/50">
+                  <AccordionTrigger className="text-left pr-8 hover:no-underline">
+                    What annotation modalities does Flexibench support?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Flexibench supports comprehensive annotation workflows across Text, Image, Video,
+                    and Audio modalities. Each modality includes specialized tooling and workflows
+                    designed for quality, governance, and model-aligned outputs. Our platform handles
+                    everything from named entity extraction in text to temporal tracking in video.
+                  </AccordionContent>
+                </AccordionItem>
 
-              {/* FAQ Item 3 */}
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-left">
-                  How does AI-assisted labeling work?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Flexibench embeds model-driven pre-label suggestions into annotation workflows.
-                  Models generate pre-labels for repetitive tasks with confidence scores that guide
-                  human review priorities. Our active learning integration focuses labeling efforts
-                  on high-impact data, reducing manual effort while maintaining human oversight for
-                  quality.
-                </AccordionContent>
-              </AccordionItem>
+                {/* FAQ Item 3 */}
+                <AccordionItem value="item-3" className="border-border/50">
+                  <AccordionTrigger className="text-left pr-8 hover:no-underline">
+                    How does AI-assisted labeling work?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Flexibench embeds model-driven pre-label suggestions into annotation workflows.
+                    Models generate pre-labels for repetitive tasks with confidence scores that guide
+                    human review priorities. Our active learning integration focuses labeling efforts
+                    on high-impact data, reducing manual effort while maintaining human oversight for
+                    quality.
+                  </AccordionContent>
+                </AccordionItem>
 
-              {/* FAQ Item 4 */}
-              <AccordionItem value="item-4">
-                <AccordionTrigger className="text-left">
-                  What quality control features are available?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Flexibench includes multi-stage review pipelines, consensus scoring across
-                  annotators, benchmark and gold standard comparisons, real-time quality monitoring
-                  dashboards, and full auditability. Every label, edit, and review action is
-                  tracked with metadata (who, when, how) for compliance and governance.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+                {/* FAQ Item 4 */}
+                <AccordionItem value="item-4" className="border-border/50">
+                  <AccordionTrigger className="text-left pr-8 hover:no-underline">
+                    What quality control features are available?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Flexibench includes multi-stage review pipelines, consensus scoring across
+                    annotators, benchmark and gold standard comparisons, real-time quality monitoring
+                    dashboards, and full auditability. Every label, edit, and review action is
+                    tracked with metadata (who, when, how) for compliance and governance.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+
+            {/* Technical FAQ Section - Aligned with General */}
+            <div className="flex flex-col gap-4">
+              {/* Section Title */}
+              <h2 className="text-foreground text-lg font-semibold md:text-xl">
+                Technical
+              </h2>
+              {/* FAQ Accordion */}
+              <Accordion
+                type="single"
+                collapsible
+                defaultValue=""
+                aria-label="Technical FAQ items"
+                className="w-full"
+              >
+                {/* FAQ Item 1 */}
+                <AccordionItem value="technical-1" className="border-border/50">
+                  <AccordionTrigger className="text-left pr-8 hover:no-underline">
+                    How do I integrate Flexibench with my ML training pipeline?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Flexibench provides REST APIs and Python SDK for seamless integration with your
+                    ML workflows. You can import raw data, export annotated datasets with tags and
+                    metadata, and integrate with TensorFlow, PyTorch, and ML orchestration systems.
+                    Our APIs support batch operations and active learning loops for iterative model
+                    development.
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* FAQ Item 2 */}
+                <AccordionItem value="technical-2" className="border-border/50">
+                  <AccordionTrigger className="text-left pr-8 hover:no-underline">
+                    Can I customize annotation workflows for my use case?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Yes, Flexibench is designed to adapt to your specific annotation requirements.
+                    You can configure multi-stage review workflows, define custom ontologies and
+                    taxonomies with version control, set up task routing rules, and customize
+                    annotator interfaces. The platform supports use case-specific configurations
+                    rather than one-size-fits-all solutions.
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* FAQ Item 3 */}
+                <AccordionItem value="technical-3" className="border-border/50">
+                  <AccordionTrigger className="text-left pr-8 hover:no-underline">
+                    What is DataBench and how does it relate to Flexibench?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    DataBench is a central workspace within the Flexibench ecosystem for building,
+                    refining, and governing enterprise datasets. It provides unified dataset
+                    repositories, workflow builders, labelset management, review dashboards, and
+                    experiment integration. DataBench includes specialized modules like Phonex for
+                    voice annotation.
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* FAQ Item 4 */}
+                <AccordionItem value="technical-4" className="border-border/50">
+                  <AccordionTrigger className="text-left pr-8 hover:no-underline">
+                    Does Flexibench support on-premise deployment?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Flexibench is available as a cloud platform with enterprise-grade security and
+                    compliance features. For specific on-premise deployment requirements, please
+                    contact our sales team to discuss custom deployment options tailored to your
+                    security and compliance needs.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
           </div>
-        </div>
-
-        {/* Second Row: Technical FAQ - Centered */}
-        <div className={`flex flex-col gap-2 max-w-4xl mx-auto transition-all duration-[3000ms] ease-out ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '400ms' }}>
-          {/* Section Title */}
-          <h2 className="text-foreground text-lg font-semibold md:text-xl text-center">
-            Technical
-          </h2>
-          {/* FAQ Accordion */}
-          <Accordion
-            type="single"
-            collapsible
-            defaultValue="technical-1"
-            aria-label="Technical FAQ items"
-            className="w-full"
-          >
-            {/* FAQ Item 1 */}
-            <AccordionItem value="technical-1">
-              <AccordionTrigger className="text-left">
-                How do I integrate Flexibench with my ML training pipeline?
-              </AccordionTrigger>
-              <AccordionContent>
-                Flexibench provides REST APIs and Python SDK for seamless integration with your
-                ML workflows. You can import raw data, export annotated datasets with tags and
-                metadata, and integrate with TensorFlow, PyTorch, and ML orchestration systems.
-                Our APIs support batch operations and active learning loops for iterative model
-                development.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* FAQ Item 2 */}
-            <AccordionItem value="technical-2">
-              <AccordionTrigger className="text-left">
-                Can I customize annotation workflows for my use case?
-              </AccordionTrigger>
-              <AccordionContent>
-                Yes, Flexibench is designed to adapt to your specific annotation requirements.
-                You can configure multi-stage review workflows, define custom ontologies and
-                taxonomies with version control, set up task routing rules, and customize
-                annotator interfaces. The platform supports use case-specific configurations
-                rather than one-size-fits-all solutions.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* FAQ Item 3 */}
-            <AccordionItem value="technical-3">
-              <AccordionTrigger className="text-left">
-                What is DataBench and how does it relate to Flexibench?
-              </AccordionTrigger>
-              <AccordionContent>
-                DataBench is a central workspace within the Flexibench ecosystem for building,
-                refining, and governing enterprise datasets. It provides unified dataset
-                repositories, workflow builders, labelset management, review dashboards, and
-                experiment integration. DataBench includes specialized modules like Phonex for
-                voice annotation.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* FAQ Item 4 */}
-            <AccordionItem value="technical-4">
-              <AccordionTrigger className="text-left">
-                Does Flexibench support on-premise deployment?
-              </AccordionTrigger>
-              <AccordionContent>
-                Flexibench is available as a cloud platform with enterprise-grade security and
-                compliance features. For specific on-premise deployment requirements, please
-                contact our sales team to discuss custom deployment options tailored to your
-                security and compliance needs.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
         </div>
       </div>
     </section>

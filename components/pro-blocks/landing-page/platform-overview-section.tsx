@@ -60,7 +60,7 @@ export function PlatformOverviewSection() {
             const IconComponent = iconMap[module.icon] || Network;
             const cardColors = [
               { bg: 'from-slate-100 via-indigo-50 to-white dark:from-slate-900/80 dark:via-indigo-950/60 dark:to-slate-900', border: 'border-slate-300/60 dark:border-slate-700/60', icon: 'from-indigo-600/35 to-blue-900/25 border-indigo-600/40', iconColor: 'text-indigo-600 dark:text-indigo-400', glow: 'bg-indigo-600/15' },
-              { bg: 'from-orange-100 via-amber-50 to-white dark:from-orange-950/80 dark:via-amber-950/60 dark:to-slate-900', border: 'border-orange-300/60 dark:border-orange-700/60', icon: 'from-orange-600/35 to-amber-600/25 border-orange-600/40', iconColor: 'text-orange-600 dark:text-orange-400', glow: 'bg-orange-600/15' },
+              { bg: 'from-blue-100 via-cyan-50 to-white dark:from-blue-950/80 dark:via-cyan-950/60 dark:to-slate-900', border: 'border-blue-300/60 dark:border-blue-700/60', icon: 'from-blue-600/35 to-cyan-600/25 border-blue-600/40', iconColor: 'text-blue-600 dark:text-blue-400', glow: 'bg-blue-600/15' },
               { bg: 'from-indigo-100 via-blue-50 to-white dark:from-indigo-950/80 dark:via-blue-950/60 dark:to-slate-900', border: 'border-indigo-300/60 dark:border-indigo-700/60', icon: 'from-blue-900/35 to-indigo-900/25 border-blue-900/40', iconColor: 'text-blue-900 dark:text-blue-400', glow: 'bg-blue-900/15' },
               { bg: 'from-slate-100 via-indigo-50 to-white dark:from-slate-900/80 dark:via-indigo-950/60 dark:to-slate-900', border: 'border-slate-300/60 dark:border-slate-700/60', icon: 'from-slate-600/35 to-indigo-600/25 border-slate-600/40', iconColor: 'text-slate-600 dark:text-slate-400', glow: 'bg-slate-600/15' },
             ];
@@ -77,11 +77,11 @@ export function PlatformOverviewSection() {
                 <div className={`absolute top-0 right-0 w-24 h-24 ${colors.glow} rounded-full blur-2xl -mr-8 -mt-8 transition-transform duration-[3000ms] ease-out`} />
                 
                 {/* Icon Container */}
-                <div className="flex items-center gap-4 mb-5">
+                <div className="flex items-start gap-4 mb-5">
                   <div className={`bg-gradient-to-br ${colors.icon} flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border-2 shadow-lg transition-all duration-[2500ms] ease-out`}>
                     <IconComponent className={`${colors.iconColor} h-6 w-6`} />
                   </div>
-                  <h3 className="font-bold text-xl md:text-2xl text-foreground leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-current group-hover:to-primary transition-all duration-[2500ms] ease-out">
+                  <h3 className="font-bold text-lg md:text-xl text-foreground leading-tight break-words flex-1 min-w-0 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-current group-hover:to-primary transition-all duration-[2500ms] ease-out">
                     {module.title}
                   </h3>
                 </div>

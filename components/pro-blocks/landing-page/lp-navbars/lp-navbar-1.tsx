@@ -35,7 +35,7 @@ interface NavMenuItemsProps {
 }
 
 const NavMenuItems = ({ className }: NavMenuItemsProps) => (
-  <NavigationMenu className={`${className ?? ""}`}>
+  <NavigationMenu delayDuration={0} viewport={false} className={`${className ?? ""}`}>
     <NavigationMenuList className="flex flex-col gap-1 md:flex-row">
       <NavigationMenuItem>
         <Link href="/">
@@ -51,18 +51,21 @@ const NavMenuItems = ({ className }: NavMenuItemsProps) => (
               <NavigationMenuTrigger className="w-full md:w-auto">
                 {item.label}
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="flex flex-col gap-1 p-2 w-56">
+              <NavigationMenuContent className="!bg-popover !text-popover-foreground !border !shadow-lg !rounded-md !mt-1.5 !overflow-visible !z-[100]">
+                <ul className="flex flex-col gap-1 p-2 w-56 min-w-[200px]">
                   {item.dropdown.map((dropdownItem) => (
-                    <NavigationMenuLink key={dropdownItem.label} asChild>
-                      <Link href={dropdownItem.href}>
-                        <Button variant="ghost" className="w-full justify-start">
+                    <li key={dropdownItem.label}>
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href={dropdownItem.href}
+                          className="block w-full px-3 py-2 text-sm rounded-md text-popover-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground transition-colors cursor-pointer"
+                        >
                           {dropdownItem.label}
-                        </Button>
-                      </Link>
-                    </NavigationMenuLink>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
           );
