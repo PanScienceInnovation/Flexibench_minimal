@@ -30,48 +30,32 @@ export function UseCasesPreviewSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 via-indigo-50/40 to-slate-50 dark:from-slate-950 dark:via-indigo-950/40 dark:to-slate-950 section-padding-y border-b overflow-hidden">
-      {/* Enhanced Background Gradient */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-600/5 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/2 via-transparent to-orange-600/2" />
-        {/* Mesh Pattern */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
-          backgroundSize: '48px 48px'
-        }} />
-      </div>
-
-      <div className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 md:gap-16">
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center gap-6">
-          <Tagline>Use Cases</Tagline>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+    <section className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden">
+      <div className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 sm:gap-16">
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center gap-4 sm:gap-6">
+          <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] text-[#737373] dark:text-[#A3A3A3]">
+            Use Cases
+          </div>
+          <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3]">
             Annotation Use Cases Across{" "}
-            <span className="text-primary">Industries</span>
+            <span className="text-[#1A1AFF]">Industries</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] text-center max-w-2xl">
             Explore real-world annotation workflows that solve enterprise challenges across industries and modalities.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 max-w-7xl mx-auto">
           {featuredUseCases.map((useCase, index) => {
             const IconComponent = modalityIcons[useCase.modality] || FileText;
-            const colorClass = industryColors[useCase.industry] || "from-primary/10 to-primary/5";
-            const animationDelay = index * 150;
-            const animations = ['animate-fade-in-left', 'animate-fade-in-up', 'animate-fade-in-right'];
+            
             return (
-              <Card
+              <div
                 key={useCase.id}
-                className={`group relative bg-gradient-to-br from-background to-secondary/30 gap-0 overflow-hidden rounded-2xl border-2 border-border/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:scale-105 hover:-translate-y-2 hover:border-primary/30 opacity-0 ${animations[index % animations.length]}`}
-                style={{ animationDelay: `${animationDelay}ms` }}
+                className="bg-white border border-[#E3E3E0] rounded-[4px] overflow-hidden hover:border-[#1A1AFF] transition-colors duration-200"
               >
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${colorClass} opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out`} />
-                
                 {/* Image Section */}
-                <div className="relative mb-6 h-40 rounded-xl border border-border/30 overflow-hidden group/image">
+                <div className="relative h-40 overflow-hidden border-b border-[#E3E3E0]">
                   <Image
                     src={
                       useCase.id === 1
@@ -84,50 +68,45 @@ export function UseCasesPreviewSection() {
                     }
                     alt={`${useCase.industry} use case: ${useCase.title} showing ${useCase.modality.toLowerCase()} annotation workflow`}
                     fill
-                    className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                    className="object-cover object-top grayscale-[10%] brightness-[1.05]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-transparent" />
                   <div className="absolute top-3 left-3">
-                    <div className="bg-background/90 backdrop-blur-sm rounded-lg p-2 border border-border/30 shadow-lg">
-                      <IconComponent className="h-6 w-6 text-primary" />
+                    <div className="bg-white rounded-[3px] p-2 border border-[#E3E3E0]">
+                      <IconComponent className="h-5 w-5 text-[#0A0A0A]" />
                     </div>
                   </div>
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <div className="flex items-center justify-center gap-2">
-                      <span className="text-sm font-semibold text-foreground bg-primary/90 backdrop-blur-sm px-2 py-1 rounded">
-                        {useCase.industry.split(" ")[0]}
-                      </span>
-                      <span className="text-sm text-foreground/80">•</span>
-                      <span className="text-sm font-medium text-foreground bg-background/90 backdrop-blur-sm px-2 py-1 rounded">
-                        {useCase.modality}
-                      </span>
-                    </div>
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-start gap-2">
+                    <span className="font-mono text-[10px] border border-[#E3E3E0] bg-[#F7F6F3] px-2 py-1 rounded-[2px] text-[#0A0A0A]">
+                      {useCase.industry.split(" ")[0]}
+                    </span>
+                    <span className="font-mono text-[10px] border border-[#E3E3E0] bg-[#F7F6F3] px-2 py-1 rounded-[2px] text-[#0A0A0A]">
+                      {useCase.modality}
+                    </span>
                   </div>
                 </div>
 
-                <CardContent className="relative flex flex-col gap-4 p-0">
-                  <div>
-                    <h3 className="text-foreground text-xl md:text-2xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
-                      {useCase.title}
-                    </h3>
-                    <div className="space-y-2">
-                      <div>
-                        <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-1">Problem</p>
-                        <p className="text-muted-foreground text-base md:text-lg leading-relaxed line-clamp-2">
-                          {useCase.problem}
-                        </p>
-                      </div>
-                    </div>
+                <div className="p-6 flex flex-col gap-4">
+                  <div className="font-mono text-[11px] text-[#A3A3A3] mb-1">
+                    {String(index + 1).padStart(2, '0')} /
                   </div>
-                </CardContent>
-              </Card>
+                  <h3 className="font-display text-[20px] text-[#0A0A0A] mb-3">
+                    {useCase.title}
+                  </h3>
+                  <div>
+                    <p className="font-mono text-[10px] text-[#A3A3A3] uppercase tracking-widest mb-2">PROBLEM</p>
+                    <p className="font-sans text-[15px] text-[#737373] leading-[1.7]">
+                      {useCase.problem}
+                    </p>
+                  </div>
+                </div>
+              </div>
             );
           })}
         </div>
 
         <div className="flex justify-center pt-4">
           <Link href="/use-cases">
-            <Button variant="outline" size="lg" className="gap-2">
+            <Button variant="outline" size="lg" className="gap-2 border border-[#E3E3E0] text-[#0A0A0A] bg-transparent hover:bg-[#F0EFE9] rounded-[3px] font-mono">
               Explore All {useCases.length} Use Cases
               <ArrowRight className="h-4 w-4" />
             </Button>

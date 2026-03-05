@@ -27,97 +27,81 @@ export function CapabilitiesOverviewSection() {
 
   return (
     <section
-      className="relative bg-gradient-to-br from-slate-50 via-indigo-50/40 to-slate-50 dark:from-slate-950 dark:via-indigo-950/40 dark:to-slate-950 section-padding-y border-b overflow-hidden"
+      className="relative bg-white dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden"
       id="capabilities"
     >
-      {/* Enhanced Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-900/6 rounded-full blur-3xl" />
-        {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/4 via-transparent to-orange-600/4" />
-      </div>
-
-      <div ref={sectionRef} className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 md:gap-16">
-        <div className={`mx-auto flex max-w-3xl flex-col items-center text-center gap-6 transition-all duration-[3000ms] ease-out ${isVisible ? 'opacity-100 animate-slide-in-subtle' : 'opacity-0'}`}>
-          <Tagline>Capabilities</Tagline>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+      <div ref={sectionRef} className="container-padding-x container mx-auto relative z-10 flex flex-col gap-16">
+        <div className={`mx-auto flex max-w-3xl flex-col items-center text-center gap-6 transition-all duration-400 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+          <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] text-[#737373] dark:text-[#A3A3A3]">
+            Capabilities
+          </div>
+          <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3]">
             Multimodal Annotation Built for{" "}
-            <span className="text-primary">Real-World</span> Model Training
+            <span className="text-[#1A1AFF]">Real-World</span> Model Training
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+          <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] text-center max-w-2xl">
             Flexibench supports deep, configurable, and scalable annotation workflows across Text,
             Image, Video, and Audio with tooling designed for quality, governance, and model-aligned outputs.
           </p>
         </div>
 
-        {/* Horizontal marquee-style scroll for capabilities tiles */}
-        <div className="relative w-full">
-          <div className="relative w-full overflow-hidden mask-[linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]">
-            <div className="animate-infinite-scroll flex w-max items-stretch gap-6 py-2">
-              {[...capabilities, ...capabilities].map((capability, index) => {
-                const IconComponent = iconMap[capability.icon] || FileText;
-                const colorClass = capabilityColors[index % capabilityColors.length];
+        {/* Grid Layout - Sharp Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+          {capabilities.map((capability, index) => {
+            const IconComponent = iconMap[capability.icon] || FileText;
 
-                return (
-                  <Card
-                    key={`${capability.type}-${index}`}
-                    className="group relative bg-gradient-to-br from-background to-secondary/40 border border-border/50 overflow-hidden rounded-2xl p-0 shadow-md hover:shadow-lg transition-all duration-[2500ms] ease-out flex-shrink-0 w-72 hover-lift"
-                  >
-                    {/* Background Gradient */}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${colorClass} opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out`}
-                    />
-
-                    {/* Image Header */}
-                    <div className="relative h-40 overflow-hidden">
-                      <Image
-                        src={
-                          capability.type === "Text"
-                            ? "/text_annotation.png"
-                            : capability.type === "Image"
-                            ? "/image_annotation.png"
-                            : capability.type === "Video"
-                            ? "/video_annotation.png"
-                            : "/audio_annotation.png"
-                        }
-                        alt={`${capability.type} annotation interface`}
-                        fill
-                        placeholder="blur"
-                        blurDataURL={blurPlaceholders.default}
-                        loading="lazy"
-                        className="object-cover object-top group-hover:scale-110 transition-transform duration-[3000ms] ease-out"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
-                      <div className="absolute top-3 left-3">
-                        <div className="bg-background/90 backdrop-blur-sm rounded-lg p-2 border border-border/30 shadow group-hover:scale-110 transition-transform duration-[2500ms] ease-out">
-                          <IconComponent className="text-primary h-5 w-5 group-hover:rotate-6 transition-transform duration-[2500ms] ease-out" />
-                        </div>
-                      </div>
+            return (
+              <div
+                key={capability.type}
+                className={`bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] overflow-hidden hover:border-[#1A1AFF] transition-colors duration-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                {/* Image Header */}
+                <div className="relative h-32 sm:h-40 overflow-hidden border-b border-[#E3E3E0] dark:border-[#2A2A2A]">
+                  <Image
+                    src={
+                      capability.type === "Text"
+                        ? "/text_annotation.png"
+                        : capability.type === "Image"
+                        ? "/image_annotation.png"
+                        : capability.type === "Video"
+                        ? "/video_annotation.png"
+                        : "/audio_annotation.png"
+                    }
+                    alt={`${capability.type} annotation interface`}
+                    fill
+                    placeholder="blur"
+                    blurDataURL={blurPlaceholders.default}
+                    loading="lazy"
+                    className="object-cover object-top grayscale-[20%] brightness-[1.05] dark:brightness-[0.9]"
+                  />
+                  <div className="absolute top-2 sm:top-3 left-2 sm:left-3">
+                    <div className="bg-white dark:bg-[#141414] rounded-[3px] p-1.5 sm:p-2 border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                      <IconComponent className="text-[#0A0A0A] dark:text-[#F7F6F3] h-4 w-4 sm:h-5 sm:w-5" />
                     </div>
-
-                    {/* Content Section */}
-                    <div className="relative p-5 flex flex-col gap-3">
-                      <h3 className="text-foreground font-semibold text-xl md:text-2xl group-hover:text-primary transition-colors">
-                        {capability.type} Annotation
-                      </h3>
-                      <p className="text-muted-foreground text-sm md:text-base leading-relaxed line-clamp-3">
-                        {capability.whatItDoes}
-                      </p>
-                      <Link
-                        href={`/capabilities/${capability.type.toLowerCase()}`}
-                        className="text-primary text-sm font-semibold hover:underline mt-1 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all"
-                      >
-                        Learn more
-                        <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform duration-[2500ms] ease-out" />
-                      </Link>
+                  </div>
+                  <div className="absolute top-2 sm:top-3 right-2 sm:right-3">
+                    <div className="font-mono text-[9px] sm:text-[10px] border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-[2px] text-[#0A0A0A] dark:text-[#F7F6F3]">
+                      {capability.type.toUpperCase()}
                     </div>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-4 sm:p-6 flex flex-col gap-2 sm:gap-3">
+                  <div className="font-mono text-[10px] sm:text-[11px] text-[#A3A3A3] dark:text-[#737373] mb-1">
+                    {String(index + 1).padStart(2, '0')} /
+                  </div>
+                  <h3 className="font-display text-[18px] sm:text-[20px] text-[#0A0A0A] dark:text-[#F7F6F3]">
+                    {capability.type} Annotation
+                  </h3>
+                  <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7]">
+                    {capability.whatItDoes}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

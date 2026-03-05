@@ -131,102 +131,61 @@ export default function UseCasesPage() {
         <Breadcrumbs items={[{ label: "Use Cases" }]} />
       </div>
       
-      {/* Extraordinary Hero Section */}
-      <section className="relative bg-black section-padding-y border-b overflow-hidden min-h-[90vh] flex items-center" style={{ 
+      {/* Hero Section */}
+      <section className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden" style={{ 
         paddingTop: '80px'
       }}>
-        {/* Blue Glow Effects */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-600/20 via-indigo-600/15 to-blue-900/10 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-blue-900/25 via-indigo-600/18 to-blue-600/12 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/8 rounded-full blur-3xl" />
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl" />
-        </div>
-        
-        {/* Animated Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: `linear-gradient(to right, rgba(59,130,246,0.3) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(59,130,246,0.3) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-          animation: 'gridMove 20s linear infinite'
-        }} />
-        
-        {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-white/20 rounded-full animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${5 + Math.random() * 5}s`
-              }}
-            />
-          ))}
-        </div>
-        
         <div className="container-padding-x container mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <div className="flex-1 flex flex-col gap-8 text-white">
-              <div className="section-title-gap-lg flex flex-col animate-fade-in-up">
+            <div className="flex-1 flex flex-col gap-8">
+              <div className="section-title-gap-lg flex flex-col">
                 <div className="inline-flex items-center gap-3 mb-4">
-                  <Tagline variant="white" className="mb-0">Use Cases</Tagline>
-                  <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-                    <Sparkles className="h-4 w-4 text-[oklch(0.68_0.15_50)]" />
-                    <span className="text-sm font-bold text-white">21 Real-World Cases</span>
+                  <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] text-[#737373] dark:text-[#A3A3A3]">
+                    Use Cases
+                  </div>
+                  <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-[3px] bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                    <Sparkles className="h-4 w-4 text-[#1A1AFF]" />
+                    <span className="font-mono text-[11px] text-[#737373] dark:text-[#A3A3A3] font-semibold">21 Real-World Cases</span>
                   </div>
                 </div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
-                  Explore{" "}
-                  <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-[oklch(0.68_0.15_50)]/90 via-[oklch(0.68_0.15_50)] to-[oklch(0.68_0.15_50)]/90 bg-clip-text text-transparent">
-                      Annotation
-                    </span>
-                    <svg className="absolute -bottom-3 left-0 w-full h-4 text-[oklch(0.68_0.15_50)]/40" viewBox="0 0 400 16" fill="none">
-                      <path d="M2 12 C100 4, 200 8, 300 12 C350 14, 380 12, 398 12" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-                    </svg>
-                  </span>{" "}
-                  Use Cases
+                <h1 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1]">
+                  <span className="text-[#0A0A0A] dark:text-[#F7F6F3]">Explore</span>{" "}
+                  <span className="text-[#1A1AFF]">Annotation</span>{" "}
+                  <span className="text-[#0A0A0A] dark:text-[#F7F6F3]">Use Cases</span>
                 </h1>
-                <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl font-medium">
+                <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] leading-relaxed max-w-2xl">
                   Discover real-world annotation workflows that solve enterprise challenges across industries and modalities.
                 </p>
               </div>
               
               {/* Stats Pills */}
-              <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
-                  <TrendingUp className="h-5 w-5 text-[oklch(0.68_0.15_50)]" />
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-3 px-5 py-3 bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
+                  <TrendingUp className="h-5 w-5 text-[#1A1AFF]" />
                   <div>
-                    <div className="text-2xl font-bold text-white">21+</div>
-                    <div className="text-sm text-white/70">Use Cases</div>
+                    <div className="font-display text-2xl font-bold text-[#0A0A0A] dark:text-[#F7F6F3]">21+</div>
+                    <div className="font-mono text-[11px] text-[#737373] dark:text-[#A3A3A3] uppercase">Use Cases</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
-                  <Zap className="h-5 w-5 text-[oklch(0.68_0.15_50)]" />
+                <div className="flex items-center gap-3 px-5 py-3 bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
+                  <Zap className="h-5 w-5 text-[#1A1AFF]" />
                   <div>
-                    <div className="text-2xl font-bold text-white">10+</div>
-                    <div className="text-sm text-white/70">Industries</div>
+                    <div className="font-display text-2xl font-bold text-[#0A0A0A] dark:text-[#F7F6F3]">10+</div>
+                    <div className="font-mono text-[11px] text-[#737373] dark:text-[#A3A3A3] uppercase">Industries</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
-                  <Sparkles className="h-5 w-5 text-[oklch(0.68_0.15_50)]" />
+                <div className="flex items-center gap-3 px-5 py-3 bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
+                  <Sparkles className="h-5 w-5 text-[#1A1AFF]" />
                   <div>
-                    <div className="text-2xl font-bold text-white">4</div>
-                    <div className="text-sm text-white/70">Modalities</div>
+                    <div className="font-display text-2xl font-bold text-[#0A0A0A] dark:text-[#F7F6F3]">4</div>
+                    <div className="font-mono text-[11px] text-[#737373] dark:text-[#A3A3A3] uppercase">Modalities</div>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="flex-1 w-full animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 group">
-                {/* Animated Border Glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/12 via-primary/12 to-primary/12 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out -z-10" />
-                
+            <div className="flex-1 w-full">
+              <div className="relative rounded-[4px] overflow-hidden border border-[#E3E3E0]">
                 <AspectRatio ratio={16 / 10}>
                   <Image
                     src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1200&h=900&fit=crop&q=80"
@@ -235,10 +194,8 @@ export default function UseCasesPage() {
                     priority
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.pink}
-                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-[3500ms] ease-out"
+                    className="object-cover object-top grayscale-[10%] brightness-[1.05]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/15 via-transparent to-indigo-600/15" />
                 </AspectRatio>
               </div>
             </div>
@@ -246,50 +203,44 @@ export default function UseCasesPage() {
         </div>
       </section>
 
-      {/* Extraordinary Filters Section */}
-      <section className="relative bg-black section-padding-y border-b overflow-visible -mt-20 pb-8">
-        {/* Blue Glow Effects */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-600/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-600/15 rounded-full blur-3xl" />
-        </div>
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(59,130,246,0.3) 1px, transparent 0)`,
-          backgroundSize: '32px 32px'
-        }} />
+      {/* Filters Section */}
+      <section className="relative bg-white dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-visible -mt-16 sm:-mt-20 pb-6 sm:pb-8">
         <div className="container-padding-x container mx-auto relative z-20">
-          {/* Glassmorphism Filter Bar */}
-          <div className="relative bg-white/10 dark:bg-slate-900/40 backdrop-blur-xl rounded-3xl border-2 border-white/20 dark:border-white/10 shadow-2xl p-6 md:p-8 animate-fade-in-up mb-6">
-            {/* Animated Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-[3000ms] ease-out" />
-            
+          {/* Filter Bar */}
+          <div className="relative bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
             <div className="relative flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
               <div className="relative flex-1">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#737373]" />
                 <Input
                   placeholder="Search use cases..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-12 h-14 text-base border-2 focus:border-primary/50 transition-colors bg-background/50"
+                  className="pl-10 sm:pl-12 h-12 sm:h-14 text-sm sm:text-base border border-[#E3E3E0] dark:border-[#2A2A2A] focus:border-[#1A1AFF] transition-colors bg-white dark:bg-[#0A0A0A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[3px] font-sans"
                 />
               </div>
               <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
-                <SelectTrigger className="w-full md:w-[220px] h-14 text-base border-2 bg-background/50">
+                <SelectTrigger className="w-full md:w-[220px] h-12 sm:h-14 text-sm sm:text-base border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#0A0A0A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[3px] font-sans">
                   <SelectValue placeholder="Industry" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A]">
                   {industries.map((industry) => (
-                    <SelectItem key={industry} value={industry}>
+                    <SelectItem key={industry} value={industry} className="text-[#0A0A0A] dark:text-[#F7F6F3] hover:bg-[#F0EFE9] dark:hover:bg-[#1A1A1A]">
                       {industry}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
               <Select value={selectedModality} onValueChange={setSelectedModality}>
-                <SelectTrigger className="w-full md:w-[220px] h-14 text-base border-2 bg-background/50">
+                <SelectTrigger className="w-full md:w-[220px] h-12 sm:h-14 text-sm sm:text-base border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#0A0A0A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[3px] font-sans">
                   <SelectValue placeholder="Modality" />
                 </SelectTrigger>
+                <SelectContent className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                  {modalities.map((modality) => (
+                    <SelectItem key={modality} value={modality} className="text-[#0A0A0A] dark:text-[#F7F6F3] hover:bg-[#F0EFE9] dark:hover:bg-[#1A1A1A]">
+                      {modality}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
                 <SelectContent>
                   {modalities.map((modality) => (
                     <SelectItem key={modality} value={modality}>
@@ -301,10 +252,10 @@ export default function UseCasesPage() {
             </div>
           </div>
           
-          {/* Results Count Badge - Moved outside filter bar */}
+          {/* Results Count Badge */}
           <div className="flex justify-center">
-            <div className="px-6 py-2 bg-[oklch(0.68_0.15_50)]/90 backdrop-blur-md rounded-full border-2 border-[oklch(0.68_0.15_50)]/30 shadow-lg">
-              <span className="text-sm font-bold text-white">
+            <div className="px-4 sm:px-6 py-1.5 sm:py-2 bg-[#0A0A0A] dark:bg-[#141414] rounded-[3px] border border-[#E3E3E0] dark:border-[#2A2A2A]">
+              <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white dark:text-[#F7F6F3] uppercase">
                 {filteredUseCases.length} of {useCases.length} use cases
               </span>
             </div>
@@ -312,16 +263,9 @@ export default function UseCasesPage() {
         </div>
       </section>
 
-      {/* Extraordinary Use Cases Grid */}
-      <section className="relative bg-black section-padding-y border-b overflow-hidden pt-16">
-        {/* Blue Glow Effects */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-600/20 via-indigo-600/15 to-blue-900/10 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-blue-900/25 via-indigo-600/18 to-blue-600/12 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/8 rounded-full blur-3xl" />
-        </div>
-        {/* Enhanced Animated Background Elements */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
+      {/* Use Cases Grid */}
+      <section className={`relative ${filteredUseCases.length > 0 ? 'bg-[#F7F6F3] dark:bg-[#0A0A0A]' : 'bg-white dark:bg-[#0A0A0A]'} section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden pt-12 sm:pt-16`}>
+        <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `linear-gradient(to right, rgba(59,130,246,0.3) 1px, transparent 1px),
                             linear-gradient(to bottom, rgba(59,130,246,0.3) 1px, transparent 1px)`,
           backgroundSize: '60px 60px'
@@ -345,88 +289,70 @@ export default function UseCasesPage() {
                 const isEvenRow = rowIndex % 2 === 0;
                 
                 return (
-                  <Card
-                    key={useCase.id}
-                    className={`group relative bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-black backdrop-blur-sm gap-0 overflow-hidden rounded-3xl border-2 border-slate-700/50 hover:border-blue-600/50 p-0 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.3)] transition-all duration-[3000ms] ease-out use-case-card`}
-                    style={{
-                      animationDelay: `${animationDelay}ms`,
-                      animationFillMode: 'both'
-                    }}
-                  >
-                    {/* Enhanced Animated Background Glow - Always Visible */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-30 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out rounded-3xl`} />
-                    <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${colors.glow} rounded-full blur-3xl -mr-24 -mt-24 opacity-20 group-hover:opacity-100 transition-opacity duration-[3500ms] ease-out`} />
-                    <div className={`absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr ${colors.glow} rounded-full blur-2xl -ml-20 -mb-20 opacity-20 group-hover:opacity-100 transition-opacity duration-[3500ms] ease-out`} style={{ animationDelay: '0.2s' }} />
-                    
-                    {/* Animated Border Glow */}
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-3xl opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-[3000ms] ease-out -z-10" />
-                    
-                    {/* Enhanced Image Header with 3D Effect */}
-                    <div className="relative h-56 overflow-hidden">
-                      <Image
-                        src={imageUrl}
-                        alt={`${useCase.industry} use case: ${useCase.title}`}
-                        fill
-                        placeholder="blur"
-                        blurDataURL={blurPlaceholders.default}
-                        loading="lazy"
-                        className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-[3500ms] ease-out"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
-                      <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/15 via-transparent to-indigo-600/15 opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out" />
-                      
-                      {/* Icon Badge with 3D Transform */}
-                      <div className="absolute top-6 left-6">
-                        <div className="bg-background/95 backdrop-blur-md flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-[oklch(0.68_0.15_50)]/40 shadow-2xl transform group-hover:scale-[1.02] group-hover:rotate-2 transition-all duration-[2500ms] ease-out">
-                          <IconComponent className="text-[oklch(0.68_0.15_50)] h-8 w-8" />
-                        </div>
-                      </div>
-                      
-                      {/* Floating Tags */}
-                      <div className="absolute bottom-6 left-6 right-6">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-sm font-bold text-white bg-[oklch(0.68_0.15_50)]/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[oklch(0.68_0.15_50)]/40 shadow-lg transform transition-transform duration-[2500ms] ease-out">
-                            {useCase.industry.split(" ")[0]}
-                          </span>
-                          <span className="text-sm text-white/60">•</span>
-                          <span className="text-sm font-semibold text-slate-800 dark:text-slate-900 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/30 shadow-lg transform transition-transform duration-[2500ms] ease-out">
-                            {useCase.modality}
-                          </span>
-                        </div>
-                      </div>
-                      
-                      {/* Shine Effect on Hover */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[4000ms] ease-out" />
+              <div
+                key={useCase.id}
+                className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] overflow-hidden hover:border-[#1A1AFF] transition-colors duration-200"
+              >
+                {/* Image Header */}
+                <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden border-b border-[#E3E3E0] dark:border-[#2A2A2A]">
+                  <Image
+                    src={imageUrl}
+                    alt={`${useCase.industry} use case: ${useCase.title}`}
+                    fill
+                    placeholder="blur"
+                    blurDataURL={blurPlaceholders.default}
+                    loading="lazy"
+                    className="object-cover object-top grayscale-[10%] brightness-[1.05] dark:brightness-[0.9]"
+                  />
+                  
+                  {/* Icon Badge */}
+                  <div className="absolute top-2 sm:top-3 left-2 sm:left-3">
+                    <div className="bg-white dark:bg-[#141414] rounded-[3px] p-1.5 sm:p-2 border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                      <IconComponent className="text-[#0A0A0A] dark:text-[#F7F6F3] h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
-                    
-                    <CardContent className="relative flex flex-col gap-5 p-8 bg-gradient-to-b from-transparent to-black/50">
-                      <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight group-hover:text-[oklch(0.68_0.15_50)] transition-colors duration-[2500ms] ease-out line-clamp-2">
-                        {useCase.title}
-                      </h3>
-                      
-                      <div className="space-y-3">
-                        <div className="p-4 rounded-xl bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border border-border/30 group-hover:border-[oklch(0.68_0.15_50)]/30 transition-colors duration-[2500ms] ease-out shadow-lg">
-                          <h4 className="text-sm font-bold text-[oklch(0.68_0.15_50)] mb-2 uppercase tracking-wider flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-[oklch(0.68_0.15_50)] animate-pulse" />
-                            Problem
-                          </h4>
-                          <p className="text-slate-800 dark:text-slate-200 text-base md:text-lg leading-relaxed line-clamp-2 font-medium">{useCase.problem}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  </div>
+                  
+                  {/* Tags */}
+                  <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3">
+                    <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                      <span className="font-mono text-[9px] sm:text-[10px] bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-[2px] text-[#0A0A0A] dark:text-[#F7F6F3]">
+                        {useCase.industry.split(" ")[0]}
+                      </span>
+                      <span className="text-[#E3E3E0] dark:text-[#2A2A2A]">•</span>
+                      <span className="font-mono text-[9px] sm:text-[10px] bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-[2px] text-[#0A0A0A] dark:text-[#F7F6F3]">
+                        {useCase.modality}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-4 sm:p-5 md:p-6 flex flex-col gap-3 sm:gap-4">
+                  <h3 className="font-display text-[18px] sm:text-[20px] text-[#0A0A0A] dark:text-[#F7F6F3] leading-tight line-clamp-2">
+                    {useCase.title}
+                  </h3>
+                  
+                  <div className="space-y-2">
+                    <div className="p-3 sm:p-4 bg-[#F7F6F3] dark:bg-[#1A1A1A] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
+                      <h4 className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] dark:text-[#737373] mb-2 uppercase tracking-widest">
+                        Problem
+                      </h4>
+                      <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7] line-clamp-2">{useCase.problem}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
                 );
               })}
             </div>
           ) : (
-            <div className="text-center py-32">
-              <div className="bg-white/10 dark:bg-slate-900/40 backdrop-blur-xl rounded-3xl p-16 border-2 border-white/20 dark:border-white/10 shadow-2xl max-w-2xl mx-auto">
-                <div className="flex flex-col items-center gap-6">
-                  <div className="w-20 h-20 rounded-full bg-[oklch(0.68_0.15_50)]/20 flex items-center justify-center">
-                    <Search className="h-10 w-10 text-[oklch(0.68_0.15_50)]" />
+            <div className="text-center py-20 sm:py-32">
+              <div className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] p-12 sm:p-16 max-w-2xl mx-auto">
+                <div className="flex flex-col items-center gap-4 sm:gap-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-[4px] bg-[#F0EFE9] dark:bg-[#1A1A1A] flex items-center justify-center">
+                    <Search className="h-8 w-8 sm:h-10 sm:w-10 text-[#1A1AFF]" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">No use cases found</h3>
-                  <p className="text-white/80 text-base md:text-lg">
+                  <h3 className="font-display text-[24px] sm:text-[28px] text-[#0A0A0A] dark:text-[#F7F6F3]">No use cases found</h3>
+                  <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3]">
                     Try adjusting your search criteria or filters to find what you're looking for.
                   </p>
                 </div>

@@ -18,92 +18,72 @@ export function InternalToolsSection() {
   const { ref: sectionRef, isVisible } = useScrollAnimation();
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 via-indigo-50/40 to-slate-50 dark:from-slate-950 dark:via-indigo-950/40 dark:to-slate-950 section-padding-y border-b overflow-hidden">
-      {/* Enhanced Decorative Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-indigo-600/6 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-600/6 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/2 via-transparent to-orange-600/2" />
-        {/* Subtle Pattern */}
-        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }} />
-      </div>
-
-      <div ref={sectionRef} className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 md:gap-16">
+    <section className="relative bg-white dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden">
+      <div ref={sectionRef} className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 sm:gap-16">
         {/* Section Title */}
-        <div className={`mx-auto flex max-w-3xl flex-col items-center text-center gap-6 transition-all duration-[3000ms] ease-out ${isVisible ? 'opacity-100 animate-slide-in-subtle' : 'opacity-0'}`}>
-          <Tagline>Ecosystem</Tagline>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+        <div className={`mx-auto flex max-w-3xl flex-col items-center text-center gap-4 sm:gap-6 transition-all duration-400 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+          <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] text-[#737373] dark:text-[#A3A3A3]">
+            Ecosystem
+          </div>
+          <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3]">
             Extend Annotation from{" "}
-            <span className="text-primary">Tasks</span> to{" "}
-            <span className="text-primary">Strategy</span>
+            <span className="text-[#1A1AFF]">Tasks</span> to{" "}
+            <span className="text-[#1A1AFF]">Strategy</span>
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+          <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] text-center max-w-2xl">
             Flexibench is bolstered by internal tools that extend its reach: DataBench for workflow
             orchestration (with advanced modules like Phonex) and FlexiPod for outcome-driven execution.
           </p>
         </div>
 
-        {/* Enhanced 1-2 Grid Layout */}
-        <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-3">
-          {/* Wide Card - DataBench with Visual */}
-          <Card className={`group relative bg-gradient-to-br from-secondary/80 via-secondary/40 to-background gap-0 overflow-hidden rounded-2xl border-2 border-border/50 p-10 shadow-xl hover:shadow-2xl transition-all duration-[2500ms] ease-out lg:col-span-2 hover:scale-[1.01] hover:border-primary/30 hover-lift ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '100ms' }}>
-            {/* Decorative Background */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:bg-primary/10 transition-colors" />
-            
-            <CardContent className="relative flex flex-col gap-8 p-0">
-              <div className="flex items-start gap-6">
-                <div className="bg-gradient-to-br from-primary/30 to-primary/10 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border-2 border-primary/30 shadow-lg group-hover:scale-110 transition-transform duration-[2500ms] ease-out">
+        {/* Grid Layout - Sharp Cards */}
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 max-w-7xl mx-auto">
+          {/* Wide Card - DataBench */}
+          <div className={`bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] overflow-hidden hover:border-[#1A1AFF] transition-colors duration-200 lg:col-span-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '100ms' }}>
+            <div className="p-6 sm:p-8 flex flex-col gap-4 sm:gap-6">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="bg-[#F0EFE9] dark:bg-[#1A1A1A] rounded-[3px] p-2 sm:p-3 flex-shrink-0">
                   {(() => {
                     const IconComponent = iconMap[internalTools[0].icon];
-                    return IconComponent ? <IconComponent className="text-primary h-10 w-10 group-hover:rotate-6 transition-transform duration-[2500ms] ease-out" /> : null;
+                    return IconComponent ? <IconComponent className="text-[#0A0A0A] dark:text-[#F7F6F3] h-6 w-6 sm:h-8 sm:w-8" /> : null;
                   })()}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-foreground text-xl md:text-2xl font-bold mb-3">
+                  <div className="font-mono text-[11px] text-[#A3A3A3] dark:text-[#737373] mb-2">01 /</div>
+                  <h3 className="font-display text-[18px] sm:text-[20px] md:text-[22px] text-[#0A0A0A] dark:text-[#F7F6F3] mb-2">
                     {internalTools[0].title}
                   </h3>
-                  <p className="text-muted-foreground font-semibold text-base md:text-lg mb-4">
+                  <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] mb-4">
                     {internalTools[0].subtitle}
                   </p>
                 </div>
               </div>
 
-              {/* Image/Visual */}
-              <div className="relative h-48 rounded-xl border border-border/30 overflow-hidden group/image">
+              {/* Image */}
+              <div className="relative h-40 sm:h-48 rounded-[4px] border border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden">
                 <Image
                   src="/databench_hero.jpeg"
-                  alt="DataBench workflow orchestration dashboard showing dataset management, workflow builder, and review pipelines"
+                  alt="DataBench workflow orchestration dashboard"
                   fill
-                  className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                  className="object-cover object-top grayscale-[10%] brightness-[1.05] dark:brightness-[0.9]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-background/90 backdrop-blur-sm rounded-lg p-3 border border-border/30">
-                    <p className="text-base font-semibold text-foreground mb-1">Workflow Orchestration</p>
-                    <p className="text-sm text-muted-foreground">Unified dataset repository & pipeline builder</p>
-                  </div>
-                </div>
-                <div className="absolute top-4 right-4 w-3 h-3 bg-orange-500 rounded-full animate-pulse shadow-lg shadow-orange-500/50" />
               </div>
 
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+              <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7]">
                 {internalTools[0].description}
               </p>
               
-              <div className="space-y-4">
-                <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-border/30">
-                  <p className="font-bold mb-2 text-base text-foreground">Why It Matters</p>
-                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed">{internalTools[0].whyItMatters}</p>
+              <div className="pt-4 border-t border-[#E3E3E0] dark:border-[#2A2A2A] space-y-4">
+                <div>
+                  <p className="font-mono text-[10px] text-[#A3A3A3] dark:text-[#737373] uppercase tracking-widest mb-2">WHY IT MATTERS</p>
+                  <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7]">{internalTools[0].whyItMatters}</p>
                 </div>
                 <div>
-                  <p className="font-bold mb-3 text-base text-foreground">Core Capabilities</p>
+                  <p className="font-mono text-[10px] text-[#A3A3A3] dark:text-[#737373] uppercase tracking-widest mb-2">CORE CAPABILITIES</p>
                   <ul className="space-y-2">
                     {internalTools[0].capabilities.map((cap, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-muted-foreground text-base md:text-lg">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                      <li key={idx} className="flex items-start gap-3 font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3]">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#0A0A0A] dark:bg-[#F7F6F3] mt-1.5 shrink-0" />
                         <span>{cap}</span>
                       </li>
                     ))}
@@ -111,100 +91,84 @@ export function InternalToolsSection() {
                 </div>
               </div>
               
-              <Link href="/internal-tools" className="text-primary text-base font-semibold hover:underline inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+              <Link href="/internal-tools" className="font-sans text-[14px] sm:text-[15px] text-[#1A1AFF] hover:underline inline-flex items-center gap-2">
                 Learn more about DataBench
                 <ArrowRight className="h-4 w-4" />
               </Link>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
-          {/* Two Stacked Cards - Phonex and FlexiPod */}
-          <div className="flex flex-col gap-6">
-            <Card className="group relative bg-gradient-to-br from-background to-secondary/40 gap-0 overflow-hidden rounded-2xl border border-border/50 p-8 shadow-lg hover:shadow-xl transition-all duration-[2500ms] ease-out flex-1 hover:scale-[1.02] hover:-translate-y-1">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-16 -mt-16" />
-              <CardContent className="relative flex flex-col gap-6 p-0">
-                <div className="bg-gradient-to-br from-primary/20 to-primary/5 flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-primary/20 shadow-md">
+          {/* Two Stacked Cards */}
+          <div className="flex flex-col gap-4">
+            {/* Phonex */}
+            <div className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] overflow-hidden hover:border-[#1A1AFF] transition-colors duration-200">
+              <div className="p-4 sm:p-6 flex flex-col gap-3 sm:gap-4">
+                <div className="bg-[#F0EFE9] dark:bg-[#1A1A1A] rounded-[3px] p-2 w-fit">
                   {(() => {
                     const IconComponent = iconMap[internalTools[1].icon];
-                    return IconComponent ? <IconComponent className="text-primary h-8 w-8" /> : null;
+                    return IconComponent ? <IconComponent className="text-[#0A0A0A] dark:text-[#F7F6F3] h-5 w-5 sm:h-6 sm:w-6" /> : null;
                   })()}
                 </div>
                 
-                {/* Visual Element with Image */}
-                <div className="h-32 rounded-lg border border-border/30 overflow-hidden relative group/image">
+                <div className="font-mono text-[10px] sm:text-[11px] text-[#A3A3A3] dark:text-[#737373] mb-1">02 /</div>
+                
+                <div className="relative h-28 sm:h-32 rounded-[4px] border border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden">
                   <Image
                     src="/Phonex_hero.png"
-                    alt="Phonex voice annotation interface showing audio waveforms, speaker diarization, and transcription tools"
+                    alt="Phonex voice annotation interface"
                     fill
-                    className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                    className="object-cover object-top grayscale-[10%] brightness-[1.05] dark:brightness-[0.9]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
-                  <div className="absolute bottom-2 left-2 right-2">
-                    <p className="text-sm text-foreground font-semibold bg-background/90 backdrop-blur-sm rounded px-2 py-1 text-center">Voice Annotation Engine</p>
-                  </div>
                 </div>
 
-                <div>
-                  <h3 className="text-foreground text-xl md:text-2xl font-bold mb-2">
-                    {internalTools[1].title}
-                  </h3>
-                  <p className="text-muted-foreground font-semibold text-base md:text-lg mb-3">
-                    {internalTools[1].subtitle}
-                  </p>
-                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed line-clamp-4">
-                    {internalTools[1].description}
-                  </p>
-                </div>
+                <h3 className="font-display text-[18px] sm:text-[20px] text-[#0A0A0A] dark:text-[#F7F6F3]">
+                  {internalTools[1].title}
+                </h3>
+                <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7]">
+                  {internalTools[1].subtitle}
+                </p>
                 
-                <Link href="/internal-tools#phonex" className="text-primary text-base font-semibold hover:underline inline-flex items-center gap-1 mt-auto">
+                <Link href="/internal-tools#phonex" className="font-sans text-[14px] sm:text-[15px] text-[#1A1AFF] hover:underline inline-flex items-center gap-1">
                   Learn more
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className={`group relative bg-gradient-to-br from-secondary/40 to-background gap-0 overflow-hidden rounded-2xl border border-border/50 p-8 shadow-lg hover:shadow-xl transition-all duration-[2500ms] ease-out flex-1 hover:scale-[1.02] hover:-translate-y-1 hover-lift ${isVisible ? 'opacity-100 animate-fade-in-scale' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -ml-16 -mb-16" />
-              <CardContent className="relative flex flex-col gap-6 p-0">
-                <div className="bg-gradient-to-br from-primary/20 to-primary/5 flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-primary/20 shadow-md">
+            {/* FlexiPod */}
+            <div className={`bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] overflow-hidden hover:border-[#1A1AFF] transition-colors duration-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '300ms' }}>
+              <div className="p-4 sm:p-6 flex flex-col gap-3 sm:gap-4">
+                <div className="bg-[#F0EFE9] dark:bg-[#1A1A1A] rounded-[3px] p-2 w-fit">
                   {(() => {
                     const IconComponent = iconMap[internalTools[2].icon];
-                    return IconComponent ? <IconComponent className="text-primary h-8 w-8" /> : null;
+                    return IconComponent ? <IconComponent className="text-[#0A0A0A] dark:text-[#F7F6F3] h-5 w-5 sm:h-6 sm:w-6" /> : null;
                   })()}
                 </div>
                 
-                {/* Visual Element with Image */}
-                <div className="h-32 rounded-lg border border-border/30 overflow-hidden relative group/image">
+                <div className="font-mono text-[10px] sm:text-[11px] text-[#A3A3A3] dark:text-[#737373] mb-1">03 /</div>
+                
+                <div className="relative h-28 sm:h-32 rounded-[4px] border border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden">
                   <Image
                     src="/Flexipod.png"
-                    alt="FlexiPod cross-functional team collaboration showing annotation engineers, data scientists, and domain specialists working together"
+                    alt="FlexiPod cross-functional team collaboration"
                     fill
-                    className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
+                    className="object-cover object-top grayscale-[10%] brightness-[1.05] dark:brightness-[0.9]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
-                  <div className="absolute bottom-2 left-2 right-2">
-                    <p className="text-sm text-foreground font-semibold bg-background/90 backdrop-blur-sm rounded px-2 py-1 text-center">Cross-Functional Teams</p>
-                  </div>
                 </div>
 
-                <div>
-                  <h3 className="text-foreground text-xl md:text-2xl font-bold mb-2">
-                    {internalTools[2].title}
-                  </h3>
-                  <p className="text-muted-foreground font-semibold text-base md:text-lg mb-3">
-                    {internalTools[2].subtitle}
-                  </p>
-                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed line-clamp-4">
-                    {internalTools[2].description}
-                  </p>
-                </div>
+                <h3 className="font-display text-[18px] sm:text-[20px] text-[#0A0A0A] dark:text-[#F7F6F3]">
+                  {internalTools[2].title}
+                </h3>
+                <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7]">
+                  {internalTools[2].subtitle}
+                </p>
                 
-                <Link href="/internal-tools#flexipod" className="text-primary text-base font-semibold hover:underline inline-flex items-center gap-1 mt-auto">
+                <Link href="/internal-tools#flexipod" className="font-sans text-[14px] sm:text-[15px] text-[#1A1AFF] hover:underline inline-flex items-center gap-1">
                   Learn more
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </div>

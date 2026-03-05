@@ -27,6 +27,7 @@ export default function RootLayout({
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
         </head>
         <body className={`${onest.variable} relative antialiased`}>
           {/* Skip to main content link for accessibility */}
@@ -38,7 +39,7 @@ export default function RootLayout({
           </a>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem={false}
             disableTransitionOnChange={false}
           >

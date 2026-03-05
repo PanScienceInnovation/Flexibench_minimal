@@ -75,85 +75,76 @@ export function Footer1() {
 
   return (
     <footer
-      className="relative bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 section-padding-y border-t border-slate-200 dark:border-slate-800 overflow-hidden"
+      className="relative bg-[#0A0A0A] section-padding-y border-t border-[#2A2A2A] overflow-hidden"
       role="contentinfo"
       aria-label="Site footer"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 dark:opacity-5" style={{
-        backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
-        backgroundSize: '40px 40px'
-      }} />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl" />
-      
-      <div className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 lg:gap-16">
+      <div className="container-padding-x container mx-auto relative z-10 flex flex-col gap-8 sm:gap-12 lg:gap-16">
         {/* Top Section */}
-        <div className="flex w-full flex-col items-center gap-12 text-center">
+        <div className="flex w-full flex-col items-center gap-8 sm:gap-12 text-center">
           {/* Logo Section */}
           <Link href="/" aria-label="Go to homepage" className="group">
-            <div className="transform group-hover:scale-105 transition-transform duration-[2500ms] ease-out">
-              <Logo />
+            <div className="transform transition-colors duration-400">
+              <Logo className="invert dark:invert-0 h-12 sm:h-14 w-auto" />
             </div>
           </Link>
 
           {/* Main Navigation */}
           <nav
-            className="flex flex-col items-center gap-6 text-base md:flex-row md:gap-8"
+            className="flex flex-col items-center gap-4 sm:gap-6 text-base md:flex-row md:gap-6 lg:gap-8 flex-wrap justify-center"
             aria-label="Footer navigation"
           >
             <Link
               href="/"
-              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
+              className="text-[#A3A3A3] hover:text-white transition-colors font-sans text-[13px] sm:text-[14px]"
             >
               Home
             </Link>
             <Link
               href="#why-flexibench"
-              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
+              className="text-[#A3A3A3] hover:text-white transition-colors font-sans text-[14px]"
             >
               Why Flexibench
             </Link>
             <Link
               href="/platform"
-              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
+              className="text-[#A3A3A3] hover:text-white transition-colors font-sans text-[14px]"
             >
               Platform
             </Link>
             <Link
               href="/capabilities"
-              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
+              className="text-[#A3A3A3] hover:text-white transition-colors font-sans text-[14px]"
             >
               Capabilities
             </Link>
             <Link
               href="/internal-tools"
-              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
+              className="text-[#A3A3A3] hover:text-white transition-colors font-sans text-[14px]"
             >
               Internal Tools
             </Link>
             <Link
               href="/use-cases"
-              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
+              className="text-[#A3A3A3] hover:text-white transition-colors font-sans text-[14px]"
             >
               Use Cases
             </Link>
             <Link
               href="#quality-governance"
-              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
+              className="text-[#A3A3A3] hover:text-white transition-colors font-sans text-[14px]"
             >
               Quality & Governance
             </Link>
             <Link
               href="/resources"
-              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
+              className="text-[#A3A3A3] hover:text-white transition-colors font-sans text-[14px]"
             >
               Resources
             </Link>
             <Link
               href="/contact"
-              className="text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent transition-colors font-medium"
+              className="text-[#A3A3A3] hover:text-white transition-colors font-sans text-[14px]"
             >
               Contact
             </Link>
@@ -164,10 +155,10 @@ export function Footer1() {
         <div className="flex flex-col items-center gap-6 text-center max-w-md mx-auto">
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-center gap-2">
-              <Mail className="h-5 w-5 text-[oklch(0.68_0.15_50)]" />
-              <h3 className="text-xl font-bold text-foreground">Stay Updated</h3>
+              <Mail className="h-5 w-5 text-[#1A1AFF]" />
+              <h3 className="text-xl font-display font-bold text-white">Stay Updated</h3>
             </div>
-            <p className="text-muted-foreground text-base">
+            <p className="text-[#A3A3A3] text-base font-sans">
               Subscribe to our newsletter for the latest updates and insights.
             </p>
           </div>
@@ -179,13 +170,13 @@ export function Footer1() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 h-11 bg-slate-100 dark:bg-slate-800/50 border-slate-300 dark:border-slate-700 text-foreground dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-500 focus:border-accent/50 focus:ring-accent/20"
+                className="flex-1 h-11 bg-[#1A1A1A] border border-[#2A2A2A] text-white placeholder:text-[#737373] focus:border-[#1A1AFF] focus:ring-[#1A1AFF]/20 rounded-[3px]"
                 disabled={isSubmitting}
               />
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="h-11 px-6 bg-[oklch(0.68_0.15_50)] hover:bg-[oklch(0.68_0.15_50)]/90 text-white font-medium transition-all duration-[2500ms] ease-out disabled:opacity-50 shadow-lg shadow-[oklch(0.68_0.15_50)]/25 hover:shadow-xl hover:shadow-[oklch(0.68_0.15_50)]/30"
+                className="h-11 px-6 bg-[#1A1AFF] text-white hover:bg-[#1A1AFF]/90 font-mono rounded-[3px] transition-colors duration-400 disabled:opacity-50"
               >
                 {isSubmitting ? "Subscribing..." : "Subscribe"}
               </Button>
@@ -193,10 +184,10 @@ export function Footer1() {
             
             {status.type && (
               <div
-                className={`flex items-center gap-2 p-3 rounded-lg text-base ${
+                className={`flex items-center gap-2 p-3 rounded-[3px] text-base ${
                   status.type === "success"
-                    ? "bg-green-950/30 border border-green-500/30 text-green-400"
-                    : "bg-red-950/30 border border-red-500/30 text-red-400"
+                    ? "bg-[#0A0A0A] border border-[#0A0A0A] text-white"
+                    : "bg-red-500/10 border border-red-500 text-red-400"
                 }`}
               >
                 {status.type === "success" ? (
@@ -211,12 +202,12 @@ export function Footer1() {
         </div>
 
         {/* Section Divider */}
-        <Separator className="bg-slate-200 dark:bg-slate-800" role="presentation" />
+        <Separator className="bg-[#2A2A2A]" role="presentation" />
 
         {/* Bottom Section */}
         <div className="flex w-full flex-col-reverse items-center gap-8 text-base lg:flex-row lg:justify-between lg:gap-6">
           {/* Copyright Text */}
-          <p className="text-muted-foreground text-center lg:text-left">
+          <p className="text-[#737373] text-center lg:text-left font-mono text-[11px]">
             © {new Date().getFullYear()} Flexibench. All rights reserved.
           </p>
 
@@ -227,19 +218,19 @@ export function Footer1() {
           >
             <Link
               href="/privacy"
-              className="text-muted-foreground hover:text-accent dark:hover:text-accent transition-colors"
+              className="text-[#737373] hover:text-white transition-colors font-mono text-[11px]"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-muted-foreground hover:text-accent dark:hover:text-accent transition-colors"
+              className="text-[#737373] hover:text-white transition-colors font-mono text-[11px]"
             >
               Terms of Service
             </Link>
             <Link
               href="/cookies"
-              className="text-muted-foreground hover:text-accent dark:hover:text-accent transition-colors"
+              className="text-[#737373] hover:text-white transition-colors font-mono text-[11px]"
             >
               Cookies Settings
             </Link>

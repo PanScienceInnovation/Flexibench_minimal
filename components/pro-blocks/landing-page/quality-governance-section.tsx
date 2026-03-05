@@ -17,36 +17,25 @@ const iconMap: Record<string, typeof Target> = {
 export function QualityGovernanceSection() {
   return (
     <section
-      className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 section-padding-y border-b overflow-hidden"
+      className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden"
       id="quality-governance"
     >
-      {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-indigo-600/3 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-900/3 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-slate-700/2 rounded-full blur-3xl" />
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]" style={{
-          backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
-                            linear-gradient(0deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }} />
-      </div>
-
-      <div className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 md:gap-16">
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center gap-6">
-          <Tagline>Quality & Governance</Tagline>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-white">
+      <div className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 sm:gap-16">
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center gap-4 sm:gap-6">
+          <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] text-[#737373] dark:text-[#A3A3A3]">
+            Quality & Governance
+          </div>
+          <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3]">
             Annotation with{" "}
-            <span className="text-orange-400">Accountability</span>
+            <span className="text-[#1A1AFF]">Accountability</span>
           </h2>
-          <p className="text-slate-300 dark:text-slate-400 text-base md:text-lg leading-relaxed">
+          <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] text-center max-w-2xl">
             Built for Trust, Consistency, and Deployable AI. High-quality labels are non-negotiable for reliable models. 
             Flexibench embeds robust quality engineering and governance into every annotation workflow.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
           {qualityPrinciples
             .filter(principle => 
               principle.title !== "Real-Time Quality Monitoring Dashboards" && 
@@ -54,39 +43,26 @@ export function QualityGovernanceSection() {
             )
             .map((principle, index) => {
             const IconComponent = iconMap[principle.icon] || Target;
-            const animationDelay = index * 120;
-            const animations = ['animate-scale-in', 'animate-fade-in-up', 'animate-scale-in', 'animate-fade-in-up', 'animate-scale-in'];
+            
             return (
-              <Card
+              <div
                 key={principle.title}
-                className={`group relative bg-gradient-to-br from-background to-secondary/30 rounded-2xl border-2 border-border/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:scale-105 hover:-translate-y-2 hover:border-primary/30 opacity-0 ${animations[index % animations.length]}`}
-                style={{ animationDelay: `${animationDelay}ms` }}
+                className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] p-6 sm:p-8 hover:border-[#1A1AFF] transition-colors duration-200"
               >
-                <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-full blur-xl -mr-10 -mt-10" />
-                <CardContent className="relative flex flex-col gap-6 p-0">
-                  <div className="bg-gradient-to-br from-primary/20 to-primary/5 flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-primary/20 shadow-md group-hover:scale-110 transition-transform">
-                    <IconComponent className="text-primary h-8 w-8" />
-                  </div>
-                  
-                  {/* Visual Element with Image */}
-                  <div className="h-24 rounded-lg border border-border/30 overflow-hidden relative group/image">
-                    <Image
-                      src={`/quality_governance${index + 1}.png`}
-                      alt={`${principle.title} - Quality and governance visualization`}
-                      fill
-                      className="object-cover object-top group-hover/image:scale-110 transition-transform duration-[2500ms] ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                  </div>
-
-                  <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight">
-                    {principle.title}
-                  </h3>
-                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed flex-1">
-                    {principle.description}
-                  </p>
-                </CardContent>
-              </Card>
+                <div className="font-mono text-[10px] sm:text-[11px] text-[#A3A3A3] dark:text-[#737373] mb-3">
+                  {String(index + 1).padStart(2, '0')} /
+                </div>
+                <div className="bg-[#F0EFE9] dark:bg-[#1A1A1A] rounded-[3px] p-2 sm:p-3 w-fit mb-4">
+                  <IconComponent className="text-[#0A0A0A] dark:text-[#F7F6F3] h-5 w-5 sm:h-6 sm:w-6" />
+                </div>
+                
+                <h3 className="font-display text-[18px] sm:text-[20px] text-[#0A0A0A] dark:text-[#F7F6F3] mb-3">
+                  {principle.title}
+                </h3>
+                <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7]">
+                  {principle.description}
+                </p>
+              </div>
             );
           })}
         </div>

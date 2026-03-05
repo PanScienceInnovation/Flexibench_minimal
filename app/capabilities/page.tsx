@@ -69,38 +69,22 @@ export default function CapabilitiesPage() {
       </div>
 
       {/* Enhanced Hero Section */}
-      <section className="relative bg-black section-padding-y border-b overflow-hidden" style={{ 
-        paddingTop: '80px'
+      <section className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden" style={{ 
+        paddingTop: '60px'
       }}>
-        {/* Blue Glow Effects */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-600/20 via-indigo-600/15 to-blue-900/10 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-blue-900/25 via-indigo-600/18 to-blue-600/12 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/8 rounded-full blur-3xl" />
-        </div>
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(59,130,246,0.3) 1px, transparent 0)`,
-          backgroundSize: '48px 48px'
-        }} />
-        
         <div className="container-padding-x container mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Left Column */}
-            <div className="flex-1 flex flex-col gap-8 text-white">
+            <div className="flex-1 flex flex-col gap-8">
               <div className="section-title-gap-lg flex flex-col">
-                <Tagline variant="white" className="mb-4">Capabilities</Tagline>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
+                <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] bg-white px-3 py-1 rounded-[3px] text-[#737373] inline-block mb-4">
+                  Capabilities
+                </div>
+                <h1 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3]">
                   Multimodal annotation capabilities built for{" "}
-                  <span className="relative inline-block">
-                    real-world
-                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-[oklch(0.68_0.15_50)]/40" viewBox="0 0 300 12" fill="none">
-                      <path d="M2 8 Q75 4, 150 8 T298 8" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                  </span>{" "}
-                  model training
+                  <span className="text-[#1A1AFF]">real-world</span> model training
                 </h1>
-                <p className="text-white/90 text-lg lg:text-xl leading-relaxed max-w-2xl">
+                <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] leading-relaxed max-w-2xl">
                   Flexibench supports deep, configurable, and scalable annotation workflows across Text,
                   Image, Video, and Audio with tooling designed for quality, governance, and model-aligned outputs.
                 </p>
@@ -109,7 +93,7 @@ export default function CapabilitiesPage() {
             
             {/* Right Column - Image */}
             <div className="flex-1 w-full">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 group">
+              <div className="relative rounded-[4px] overflow-hidden border border-[#E3E3E0]">
                 <AspectRatio ratio={16 / 10}>
                   <Image
                     src="/core_capabilities.jpeg"
@@ -118,9 +102,8 @@ export default function CapabilitiesPage() {
                     priority
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.purple}
-                    className="object-cover object-top transition-transform duration-[3000ms] ease-out"
+                    className="object-cover object-top grayscale-[10%] brightness-[1.05]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
                 </AspectRatio>
               </div>
             </div>
@@ -137,45 +120,25 @@ export default function CapabilitiesPage() {
         return (
           <section
             key={capability.type}
-            className="relative bg-black section-padding-y border-b overflow-hidden"
+            className={`relative ${index % 2 === 0 ? 'bg-white dark:bg-[#0A0A0A]' : 'bg-[#F7F6F3] dark:bg-[#0A0A0A]'} section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden`}
           >
-            {/* Blue Glow Effects */}
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-600/20 via-indigo-600/15 to-blue-900/10 rounded-full blur-3xl animate-pulse-slow" />
-              <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-blue-900/25 via-indigo-600/18 to-blue-600/12 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-900/6 rounded-full blur-3xl" />
-            </div>
-            {/* Animated Background Pattern */}
-            <div className="absolute inset-0 opacity-[0.04]" style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(59,130,246,0.3) 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10" style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
-              backgroundSize: '48px 48px'
-            }} />
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse delay-1000" />
-            
             <div className="container-padding-x container mx-auto relative z-10">
               {/* Hero Section for Each Capability */}
               <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-16 ${!isEven ? 'lg:flex-row-reverse' : ''}`}>
                 {/* Text Content */}
-                <div className="flex-1 flex flex-col gap-8 text-white">
+                <div className="flex-1 flex flex-col gap-8">
                   <div className="section-title-gap-lg flex flex-col">
-                    <Tagline variant="white" className="mb-4">{capability.type} Annotation</Tagline>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-white">
+                    <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] text-[#737373] dark:text-[#A3A3A3] inline-block mb-4">
+                      {capability.type} Annotation
+                    </div>
+                    <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3]">
                       {capability.type} Annotation for{" "}
-                      <span className="relative inline-block">
+                      <span className="text-[#1A1AFF]">
                         {capability.type === "Text" ? "Language" : capability.type === "Image" ? "Vision" : capability.type === "Video" ? "Temporal" : "Audio"}
-                        <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary/40" viewBox="0 0 300 12" fill="none">
-                          <path d="M2 8 Q75 4, 150 8 T298 8" stroke="currentColor" strokeWidth="2" />
-                        </svg>
                       </span>{" "}
                       Models
                     </h2>
-                    <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl">
+                    <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] leading-relaxed max-w-2xl">
                       {capability.whatItDoes}
                     </p>
                   </div>
@@ -183,7 +146,7 @@ export default function CapabilitiesPage() {
                 
                 {/* Image */}
                 <div className="flex-1 w-full">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 group">
+                  <div className="relative rounded-[4px] overflow-hidden border border-[#E3E3E0]">
                     <AspectRatio ratio={16 / 10}>
                       <Image
                         src={capabilityImages[capability.type]?.hero || capabilityImages.Text.hero}
@@ -192,141 +155,114 @@ export default function CapabilitiesPage() {
                         priority={index === 0}
                         placeholder="blur"
                         blurDataURL={blurPlaceholders.purple}
-                        className="object-cover object-top transition-transform duration-[3000ms] ease-out"
+                        className="object-cover object-top grayscale-[10%] brightness-[1.05]"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
                     </AspectRatio>
                   </div>
                 </div>
               </div>
 
-              {/* Content Section with Unique Design */}
-              <div className="mt-20 flex flex-col gap-16">
+              {/* Content Section with Sharp Cards */}
+              <div className="mt-20 flex flex-col gap-8">
                 {/* Core Capabilities and What Clients Get - Side by Side */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <Card className="group relative bg-slate-900/80 backdrop-blur-md rounded-2xl border-2 border-slate-700/50 hover:border-blue-600/50 p-8 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.3)] transition-all duration-[2500ms] ease-out hover:scale-105 hover:-translate-y-2 overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 rounded-full blur-2xl -mr-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out" />
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/0 via-blue-600/25 to-blue-600/0 rounded-2xl opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-[2500ms] ease-out -z-10" />
-                    <CardContent className="relative flex flex-col gap-6 p-0">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="bg-blue-600/20 backdrop-blur-sm flex h-14 w-14 items-center justify-center rounded-xl border-2 border-blue-600/30 shadow-xl">
-                          <IconComponent className="text-blue-400 h-7 w-7" />
-                        </div>
-                        <h3 className="text-white text-xl md:text-2xl font-bold">Core Capabilities</h3>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  <div className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] p-6 sm:p-8 hover:border-[#1A1AFF] transition-colors duration-200">
+                    <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                      <div className="bg-[#F0EFE9] dark:bg-[#1A1A1A] rounded-[3px] p-2 sm:p-3">
+                        <IconComponent className="text-[#0A0A0A] dark:text-[#F7F6F3] h-5 w-5 sm:h-6 sm:w-6" />
                       </div>
-                      <ul className="list-disc list-inside text-white/90 space-y-3 pl-4">
-                        {capability.coreCapabilities.map((cap, idx) => (
-                          <li key={idx} className="leading-relaxed">{cap}</li>
-                        ))}
-                      </ul>
-                      
-                      {/* Mini Image */}
-                      <div className="relative h-40 rounded-xl overflow-hidden border-2 border-white/20 mt-6 group-hover:border-white/40 transition-colors">
-                        <Image
-                          src={capabilityImages[capability.type]?.core || capabilityImages.Text.core}
-                          alt="Core capabilities visualization"
-                          fill
-                          className="object-cover object-top opacity-80 group-hover:opacity-100 transition-all duration-[2500ms] ease-out"
-                          unoptimized
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      </div>
-                    </CardContent>
-                  </Card>
+                      <h3 className="font-display text-[18px] sm:text-[20px] md:text-[22px] text-[#0A0A0A] dark:text-[#F7F6F3]">Core Capabilities</h3>
+                    </div>
+                    <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                      {capability.coreCapabilities.map((cap, idx) => (
+                        <li key={idx} className="flex items-start gap-3 font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7]">
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#0A0A0A] dark:bg-[#F7F6F3] mt-1.5 shrink-0" />
+                          <span>{cap}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    {/* Mini Image */}
+                    <div className="relative h-32 sm:h-40 rounded-[4px] overflow-hidden border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                      <Image
+                        src={capabilityImages[capability.type]?.core || capabilityImages.Text.core}
+                        alt="Core capabilities visualization"
+                        fill
+                        className="object-cover object-top grayscale-[10%] brightness-[1.05] dark:brightness-[0.9]"
+                        unoptimized
+                      />
+                    </div>
+                  </div>
 
-                  <Card className="group relative bg-slate-900/80 backdrop-blur-md rounded-2xl border-2 border-slate-700/50 hover:border-blue-600/50 p-8 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.3)] transition-all duration-[2500ms] ease-out hover:scale-105 hover:-translate-y-2 overflow-hidden">
-                    <div className="absolute top-0 left-0 w-32 h-32 bg-indigo-600/20 rounded-full blur-2xl -ml-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out" />
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/0 via-blue-600/25 to-blue-600/0 rounded-2xl opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-[2500ms] ease-out -z-10" />
-                    <CardContent className="relative flex flex-col gap-6 p-0">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="bg-white/20 backdrop-blur-sm flex h-14 w-14 items-center justify-center rounded-xl border-2 border-white/30 shadow-xl">
-                          <Sparkles className="text-white h-7 w-7" />
-                        </div>
-                        <h3 className="text-white text-xl md:text-2xl font-bold">What Clients Get</h3>
+                  <div className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] p-6 sm:p-8 hover:border-[#1A1AFF] transition-colors duration-200">
+                    <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                      <div className="bg-[#F0EFE9] dark:bg-[#1A1A1A] rounded-[3px] p-2 sm:p-3">
+                        <Sparkles className="text-[#0A0A0A] dark:text-[#F7F6F3] h-5 w-5 sm:h-6 sm:w-6" />
                       </div>
-                      <p className="text-white/90 text-base md:text-lg leading-relaxed">{capability.whatClientsGet}</p>
-                      
-                      {/* Mini Image */}
-                      <div className="relative h-64 rounded-xl overflow-hidden border-2 border-slate-700/50 hover:border-blue-600/50 mt-6 transition-colors">
-                        <Image
-                          src={capabilityImages[capability.type]?.clients || capabilityImages.Text.clients}
-                          alt="Client benefits visualization"
-                          fill
-                          className="object-cover object-top opacity-80 group-hover:opacity-100 transition-all duration-[2500ms] ease-out"
-                          unoptimized
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                      </div>
-                    </CardContent>
-                  </Card>
+                      <h3 className="font-display text-[18px] sm:text-[20px] md:text-[22px] text-[#0A0A0A] dark:text-[#F7F6F3]">What Clients Get</h3>
+                    </div>
+                    <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7] mb-4 sm:mb-6">{capability.whatClientsGet}</p>
+                    
+                    {/* Mini Image */}
+                    <div className="relative h-48 sm:h-64 rounded-[4px] overflow-hidden border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                      <Image
+                        src={capabilityImages[capability.type]?.clients || capabilityImages.Text.clients}
+                        alt="Client benefits visualization"
+                        fill
+                        className="object-cover object-top grayscale-[10%] brightness-[1.05] dark:brightness-[0.9]"
+                        unoptimized
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                {/* Why It Matters Section - Full Width with Large Image */}
-                <Card className="group relative bg-slate-900/80 backdrop-blur-md rounded-3xl border-2 border-slate-700/50 hover:border-blue-600/50 p-0 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.3)] transition-all duration-[2500ms] ease-out overflow-hidden">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/0 via-blue-600/30 to-blue-600/0 rounded-3xl opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-[2500ms] ease-out -z-10" />
+                {/* Why It Matters Section - Full Width */}
+                <div className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] overflow-hidden hover:border-[#1A1AFF] transition-colors duration-200">
                   <div className="flex flex-col lg:flex-row">
-                    <div className="flex-1 p-8 lg:p-12 flex flex-col gap-6">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="bg-white/20 backdrop-blur-sm flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-white/30 shadow-xl">
-                          <IconComponent className="text-white h-8 w-8" />
+                    <div className="flex-1 p-6 sm:p-8 lg:p-12 flex flex-col gap-4 sm:gap-6">
+                      <div className="flex items-center gap-3 sm:gap-4 mb-4">
+                        <div className="bg-[#F0EFE9] dark:bg-[#1A1A1A] rounded-[3px] p-2 sm:p-3">
+                          <IconComponent className="text-[#0A0A0A] dark:text-[#F7F6F3] h-6 w-6 sm:h-8 sm:w-8" />
                         </div>
-                        <h3 className="text-white text-xl md:text-2xl font-bold">Why {capability.type} Annotation Matters</h3>
+                        <h3 className="font-display text-[18px] sm:text-[20px] md:text-[22px] text-[#0A0A0A] dark:text-[#F7F6F3]">Why {capability.type} Annotation Matters</h3>
                       </div>
-                      <p className="text-white/90 text-base md:text-lg leading-relaxed">
+                      <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7]">
                         {capability.whyItMatters}
                       </p>
                     </div>
-                    <div className="flex-1 relative h-64 lg:h-auto min-h-[400px]">
+                    <div className="flex-1 relative h-48 sm:h-64 lg:h-auto min-h-[300px] sm:min-h-[400px] border-t lg:border-t-0 lg:border-l border-[#E3E3E0] dark:border-[#2A2A2A]">
                       <Image
                         src={capabilityImages[capability.type]?.why || capabilityImages.Text.why}
                         alt="Why it matters visualization"
                         fill
-                        className="object-cover object-top transition-transform duration-[3000ms] ease-out"
+                        className="object-cover object-top grayscale-[10%] brightness-[1.05] dark:brightness-[0.9]"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-transparent to-transparent lg:bg-gradient-to-l" />
                     </div>
                   </div>
-                </Card>
+                </div>
               </div>
             </div>
           </section>
         );
       })}
 
-      {/* Platform-Wide Capabilities Section - Redesigned */}
-      <section className="relative bg-black section-padding-y border-b overflow-hidden">
-        {/* Blue Glow Effects */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-600/20 via-indigo-600/15 to-blue-900/10 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-blue-900/25 via-indigo-600/18 to-blue-600/12 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-900/6 rounded-full blur-3xl" />
-        </div>
-        {/* Enhanced Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(59,130,246,0.3) 1px, transparent 0),
-                            linear-gradient(45deg, transparent 30%, rgba(59,130,246,0.1) 50%, transparent 70%), 
-                            linear-gradient(-45deg, transparent 30%, rgba(59,130,246,0.1) 50%, transparent 70%)`,
-          backgroundSize: '32px 32px, 60px 60px, 60px 60px'
-        }} />
-        
+      {/* Platform-Wide Capabilities Section */}
+      <section className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden">
         <div className="container-padding-x container mx-auto relative z-10">
-          <div className="section-title-gap-lg mx-auto flex max-w-3xl flex-col items-center text-center mb-20 relative z-10">
-            <Tagline className="bg-white/10 backdrop-blur-md text-white border-white/20">Platform-Wide Capabilities</Tagline>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-white">
+          <div className="section-title-gap-lg mx-auto flex max-w-3xl flex-col items-center text-center mb-16 relative z-10">
+            <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] text-[#737373] dark:text-[#A3A3A3] inline-block mb-4">
+              Platform-Wide Capabilities
+            </div>
+            <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3]">
               Capabilities That{" "}
-              <span className="relative inline-block text-[oklch(0.68_0.15_50)]">
-                Span All Modalities
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-[oklch(0.68_0.15_50)]/40" viewBox="0 0 300 12" fill="none">
-                  <path d="M2 8 Q75 4, 150 8 T298 8" stroke="currentColor" strokeWidth="2" />
-                </svg>
-              </span>
+              <span className="text-[#1A1AFF]">Span All Modalities</span>
             </h2>
-            <p className="text-white/90 text-base md:text-lg leading-relaxed mt-4">
+            <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] leading-relaxed mt-4 max-w-2xl">
               Powerful features that work seamlessly across Text, Image, Video, and Audio annotation workflows
             </p>
           </div>
 
-          {/* Enhanced Capabilities Grid - Redesigned */}
+          {/* Enhanced Capabilities Grid - Sharp Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
             {[
               { 
@@ -372,141 +308,83 @@ export default function CapabilitiesPage() {
                 color: "from-[oklch(0.68_0.15_50)]/20 to-[oklch(0.68_0.15_50)]/10",
               },
             ].map((capability, index) => (
-              <Card
+              <div
                 key={index}
-                className="group relative bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-black rounded-3xl border-2 border-slate-700/50 hover:border-blue-600/50 p-0 shadow-xl hover:shadow-2xl hover:shadow-blue-600/20 transition-all duration-[2500ms] ease-out hover:-translate-y-3 overflow-hidden"
+                className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] overflow-hidden hover:border-[#1A1AFF] transition-colors duration-200"
               >
-                {/* Blue Glow Effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-indigo-600/8 to-blue-900/6 opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out rounded-3xl" />
-                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl -mr-20 -mt-20 opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out" />
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/0 via-blue-600/30 to-blue-600/0 rounded-3xl opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-[3000ms] ease-out -z-10" />
-                
-                {/* Enhanced Image Header */}
-                <div className="relative h-56 overflow-hidden">
+                {/* Image Header */}
+                <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden border-b border-[#E3E3E0] dark:border-[#2A2A2A]">
                   <Image
                     src={capability.image}
                     alt={capability.title}
                     fill
-                    className="object-cover object-top transition-transform duration-1000"
+                    className="object-cover object-top grayscale-[10%] brightness-[1.05] dark:brightness-[0.9]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                  {/* Icon Badge */}
-                  <div className="absolute top-5 left-5">
-                    <div className="bg-background/95 backdrop-blur-md rounded-xl p-3 border-2 border-[oklch(0.68_0.15_50)]/40 shadow-2xl transform group-hover:rotate-6 transition-all duration-[2500ms] ease-out">
-                      <capability.icon className="text-[oklch(0.68_0.15_50)] h-7 w-7" />
+                  <div className="absolute top-2 sm:top-3 left-2 sm:left-3">
+                    <div className="bg-white dark:bg-[#141414] rounded-[3px] p-1.5 sm:p-2 border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                      <capability.icon className="text-[#0A0A0A] dark:text-[#F7F6F3] h-4 w-4 sm:h-5 sm:w-5" />
                     </div>
                   </div>
-                  {/* Number Badge */}
-                  <div className="absolute top-5 right-5">
-                    <div className="bg-[oklch(0.68_0.15_50)]/95 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center border-2 border-white/30 shadow-lg">
-                      <span className="text-white font-bold text-base">{index + 1}</span>
+                  <div className="absolute top-2 sm:top-3 right-2 sm:right-3">
+                    <div className="font-mono text-[10px] sm:text-[11px] border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-[2px] text-[#0A0A0A] dark:text-[#F7F6F3]">
+                      {String(index + 1).padStart(2, '0')}
                     </div>
                   </div>
                 </div>
                 
-                <CardContent className="relative flex flex-col gap-5 p-8 bg-slate-900/95">
-                  <div className="flex items-start gap-4">
-                    <div className={`bg-gradient-to-br ${capability.color} flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border-2 border-[oklch(0.68_0.15_50)]/30 group-hover:border-[oklch(0.68_0.15_50)]/60 transition-all duration-[2500ms] ease-out`}>
-                      <capability.icon className="text-[oklch(0.68_0.15_50)] h-7 w-7" />
+                <div className="p-4 sm:p-6 md:p-8 flex flex-col gap-3 sm:gap-4">
+                  <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+                    <div className="bg-[#F0EFE9] dark:bg-[#1A1A1A] rounded-[3px] p-2 sm:p-3 flex-shrink-0">
+                      <capability.icon className="text-[#0A0A0A] dark:text-[#F7F6F3] h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-foreground text-xl md:text-2xl font-bold leading-tight group-hover:text-[oklch(0.68_0.15_50)] transition-colors mb-2">
+                      <h3 className="font-display text-[18px] sm:text-[20px] text-[#0A0A0A] dark:text-[#F7F6F3] mb-2">
                         {capability.title}
                       </h3>
-                      <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                      <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7]">
                         {capability.desc}
                       </p>
                     </div>
                   </div>
-                  
-                  {/* Feature Badge */}
-                  <div className="pt-4 mt-auto border-t border-border/50">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-[oklch(0.68_0.15_50)] animate-pulse" />
-                      <span className="text-sm font-semibold text-[oklch(0.68_0.15_50)] uppercase tracking-wider">
-                        Platform Feature
-                      </span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
 
-          {/* Enhanced CTA Section - Redesigned */}
+          {/* CTA Section */}
           <div className="relative max-w-6xl mx-auto">
-            <div className="relative rounded-3xl overflow-hidden border-4 border-[oklch(0.68_0.15_50)]/30 shadow-2xl group">
-              {/* Background Image with Better Overlay */}
-                <AspectRatio ratio={21 / 9}>
-                <Image
-                  src="/text_annotation.png"
-                  alt="Get started with Flexibench capabilities"
-                  fill
-                  className="object-cover object-top transition-transform duration-1000"
-                />
-                {/* Subtle Background Pattern */}
-                <div className="absolute inset-0 opacity-[0.03]" style={{
-                  backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-                  backgroundSize: '32px 32px'
-                }} />
-                {/* Enhanced Gradient Overlay with Blue Glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/90 to-black/85" />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/25 via-indigo-600/20 to-blue-900/25" />
-                
-                {/* Animated Background Pattern */}
-                <div className="absolute inset-0 opacity-10" style={{
-                  backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-                  backgroundSize: '40px 40px'
-                }} />
-                
-                {/* Content */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative z-10 text-center px-6 py-12">
-                    {/* Decorative Elements */}
-                    <div className="flex items-center justify-center gap-3 mb-6">
-                      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/30 to-transparent max-w-32" />
-                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 border-2 border-white/30">
-                        <Sparkles className="h-6 w-6 text-white" />
-                      </div>
-                      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/30 to-transparent max-w-32" />
-                    </div>
-                    
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-6 leading-tight">
-                      Ready to Transform Your{" "}
-                      <span className="relative inline-block">
-                        Annotation Workflows?
-                        <svg className="absolute -bottom-2 left-0 w-full h-3 text-white/40" viewBox="0 0 300 12" fill="none">
-                          <path d="M2 8 Q75 4, 150 8 T298 8" stroke="currentColor" strokeWidth="3" />
-                        </svg>
-                      </span>
-                    </h3>
-                    <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-                      Start building model-ready datasets with Flexibench's enterprise-grade annotation platform
-                    </p>
-                    
-                    <Button asChild size="lg" className="text-base h-14 px-8 bg-[oklch(0.68_0.15_50)] text-white hover:bg-[oklch(0.68_0.15_50)]/90 shadow-2xl hover:shadow-[oklch(0.68_0.15_50)]/30 hover:scale-105 transition-all duration-[2500ms] ease-out">
-                      <Link href="/contact">
-                        Get Started
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Link>
-                    </Button>
-                    
-                    {/* Additional CTA Links */}
-                    <div className="flex items-center justify-center gap-6 mt-8">
-                      <Link href="/platform" className="text-white/80 hover:text-white text-base font-medium underline underline-offset-4 transition-colors">
-                        Learn More
-                      </Link>
-                      <span className="text-white/40">•</span>
-                      <Link href="/use-cases" className="text-white/80 hover:text-white text-base font-medium underline underline-offset-4 transition-colors">
-                        View Use Cases
-                      </Link>
-                    </div>
-                  </div>
+            <div className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] p-8 sm:p-10 md:p-12 text-center">
+              <div className="flex items-center justify-center gap-4 mb-4 sm:mb-6">
+                <div className="bg-[#F0EFE9] dark:bg-[#1A1A1A] rounded-[3px] p-2 sm:p-3">
+                  <Sparkles className="h-5 w-5 sm:h-6 sm:w-6 text-[#0A0A0A] dark:text-[#F7F6F3]" />
                 </div>
-                
-                {/* Animated Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              </AspectRatio>
+              </div>
+              
+              <h3 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3] mb-4 sm:mb-6">
+                Ready to Transform Your{" "}
+                <span className="text-[#1A1AFF]">Annotation Workflows?</span>
+              </h3>
+              <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+                Start building model-ready datasets with Flexibench's enterprise-grade annotation platform
+              </p>
+              
+              <Button asChild size="lg" className="text-sm sm:text-base h-12 sm:h-14 px-6 sm:px-8 bg-[#0A0A0A] dark:bg-[#F7F6F3] text-white dark:text-[#0A0A0A] hover:bg-[#1A1AFF] dark:hover:bg-[#1A1AFF] dark:hover:text-white rounded-[3px] font-mono transition-colors duration-400">
+                <Link href="/contact" className="flex items-center justify-center">
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                </Link>
+              </Button>
+              
+              {/* Additional CTA Links */}
+              <div className="flex items-center justify-center gap-4 sm:gap-6 mt-6 sm:mt-8 flex-wrap">
+                <Link href="/platform" className="font-sans text-[13px] sm:text-[14px] md:text-[15px] text-[#737373] dark:text-[#A3A3A3] hover:text-[#0A0A0A] dark:hover:text-[#F7F6F3] underline underline-offset-4 transition-colors">
+                  Learn More
+                </Link>
+                <span className="text-[#E3E3E0] dark:text-[#2A2A2A]">•</span>
+                <Link href="/use-cases" className="font-sans text-[13px] sm:text-[14px] md:text-[15px] text-[#737373] dark:text-[#A3A3A3] hover:text-[#0A0A0A] dark:hover:text-[#F7F6F3] underline underline-offset-4 transition-colors">
+                  View Use Cases
+                </Link>
+              </div>
             </div>
           </div>
         </div>

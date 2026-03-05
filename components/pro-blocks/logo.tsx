@@ -7,7 +7,8 @@ export const Logo: React.FC<LogoProps> = ({ className }) => {
     <img
       src="/flexibench-logo-optimized.svg"
       alt="FlexiBench Logo"
-      className={`h-14 w-auto object-contain object-left invert dark:invert-0 ${className || ""}`}
+      className={`h-14 w-auto object-contain object-left ${className || ""}`}
+      style={{ filter: 'none' }}
       decoding="async"
     />
   );

@@ -271,78 +271,53 @@ export default function ResourcesPage() {
 
       {/* Breadcrumbs */}
       <div className="container-padding-x container mx-auto pt-8 pb-4">
-        <Breadcrumbs items={[{ label: "Resources" }]} />
+        <div className="font-mono text-[12px] text-[#A3A3A3] [&_a]:text-[#A3A3A3] [&_a:hover]:text-[#0A0A0A] [&_span]:text-[#A3A3A3] [&_svg]:text-[#E3E3E0]">
+          <Breadcrumbs items={[{ label: "Resources" }]} />
+        </div>
       </div>
 
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/90 via-primary/80 to-primary/70 pt-8 pb-16 sm:pt-10 sm:pb-20 md:pt-12 md:pb-24 border-b overflow-hidden" style={{ 
-        background: 'linear-gradient(to bottom right, oklch(0.25 0.12 250), oklch(0.30 0.11 248), oklch(0.35 0.11 252))'
-      }}>
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
-          backgroundSize: '48px 48px'
-        }} />
-        <div className="absolute top-0 right-0 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-primary/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-primary/8 rounded-full blur-3xl" />
-
+      {/* Hero Section */}
+      <section className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] pt-12 sm:pt-16 pb-16 sm:pb-20 border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden">
         <div className="container-padding-x container mx-auto relative z-10">
-          <div className="flex flex-col items-center text-center gap-6 sm:gap-8 text-white animate-fade-in-up max-w-4xl mx-auto">
-              {/* Enhanced Resources Badge */}
-              <div className="relative group mb-6 sm:mb-8">
-                {/* Glowing background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.68_0.15_50)]/20 via-[oklch(0.68_0.15_50)]/15 to-[oklch(0.68_0.15_50)]/20 blur-xl rounded-full group-hover:blur-2xl transition-all duration-500" />
-                
-                {/* Main badge */}
-                <div className="relative flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-[oklch(0.68_0.15_50)]/10 via-[oklch(0.68_0.15_50)]/8 to-[oklch(0.68_0.15_50)]/10 backdrop-blur-sm rounded-full border border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
-                  <svg 
-                    className="h-4 w-4 text-[oklch(0.68_0.15_50)]" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" 
-                    />
-                  </svg>
-                  <span className="text-sm font-bold tracking-wider uppercase bg-gradient-to-r from-[oklch(0.68_0.15_50)]/90 via-[oklch(0.68_0.15_50)] to-[oklch(0.68_0.15_50)]/90 bg-clip-text text-transparent">
-                    Resources
-                  </span>
-                  <div className="w-2 h-2 bg-[oklch(0.68_0.15_50)] rounded-full animate-pulse" />
-                </div>
-              </div>
-            
-            {/* Title with animated categories */}
-            <div className="flex flex-col items-center gap-4 sm:gap-6 w-full mb-8 sm:mb-12 md:mb-16">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+            {/* Section Label */}
+            <div className="border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] font-mono text-[11px] text-[#737373] dark:text-[#A3A3A3] uppercase tracking-widest mb-4 sm:mb-6 inline-block">
+              RESOURCES
+            </div>
+
+            {/* Headline */}
+            <div className="flex flex-col items-center gap-0 mb-8">
+              <h1 className="font-display text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3]">
                 Explore Our
               </h1>
-              <div className="w-full flex justify-center px-4">
+              <div className="relative inline-block min-h-[70px] flex items-center justify-center">
                 <AnimatedResourceCategories />
               </div>
             </div>
 
-            <p className="text-white/90 text-base sm:text-lg lg:text-xl leading-relaxed font-medium max-w-3xl px-4 mt-4">
-              Comprehensive content curated to accelerate your understanding of high-quality annotation
-              workflows, best practices, and real-world implementation strategies.
+            {/* Divider */}
+            <div className="border-t border-[#E3E3E0] dark:border-[#2A2A2A] mt-6 sm:mt-8 mb-6 sm:mb-8 max-w-xs mx-auto w-full" />
+
+            {/* Body Text */}
+            <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7] max-w-2xl mx-auto font-light">
+              Comprehensive content curated to accelerate your understanding of
+              high-quality annotation workflows, best practices, and real-world
+              implementation strategies.
             </p>
 
-            {/* Feature Pills */}
-            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center px-4 mt-4">
-              <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[oklch(0.68_0.15_50)] flex-shrink-0" />
-                <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Expert Insights</span>
+            {/* Stats Row */}
+            <div className="mt-8 sm:mt-10 flex flex-row justify-center gap-0 border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] bg-white dark:bg-[#141414] inline-flex mx-auto flex-wrap sm:flex-nowrap">
+              <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-r border-[#E3E3E0] dark:border-[#2A2A2A] text-center">
+                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A] dark:text-[#F7F6F3]">12+</div>
+                <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] dark:text-[#737373] uppercase tracking-widest mt-1">Blogs</div>
               </div>
-              <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[oklch(0.68_0.15_50)] flex-shrink-0" />
-                <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Best Practices</span>
+              <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-r border-[#E3E3E0] dark:border-[#2A2A2A] text-center">
+                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A] dark:text-[#F7F6F3]">8+</div>
+                <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] dark:text-[#737373] uppercase tracking-widest mt-1">White Papers</div>
               </div>
-              <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[oklch(0.68_0.15_50)] flex-shrink-0" />
-                <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Technical Guides</span>
+              <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-center">
+                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A] dark:text-[#F7F6F3]">6+</div>
+                <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] dark:text-[#737373] uppercase tracking-widest mt-1">Best Practices</div>
               </div>
             </div>
           </div>
