@@ -22,12 +22,19 @@ export const Logo: React.FC<LogoProps> = ({ className }) => {
     ? "/flexibench-logo-optimized.svg" 
     : "/flexibench-logo.svg";
 
+  // Apply filter to make logo black in light theme (if logo is white/light)
+  // For light theme: make it black using brightness(0) or invert if needed
+  // For dark theme: no filter needed (logo should be light/white)
+  const logoFilter = mounted && theme === "light" 
+    ? "brightness(0)" // Makes logo black
+    : "none";
+
   return (
     <img
       src={logoSrc}
       alt="FlexiBench Logo"
       className={`h-14 w-auto object-contain object-left ${className || ""}`}
-      style={{ filter: 'none' }}
+      style={{ filter: logoFilter }}
       decoding="async"
     />
   );
