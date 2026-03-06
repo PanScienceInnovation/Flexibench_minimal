@@ -38,7 +38,7 @@ export function LogoSection10() {
                   alt={brand.name}
                   width={160}
                   height={64}
-                  className="object-contain h-12 sm:h-16 w-auto grayscale brightness-0 opacity-40 dark:opacity-30 hover:opacity-70 dark:hover:opacity-60 transition-opacity duration-200"
+                  className="object-contain h-12 sm:h-16 w-auto grayscale brightness-0 opacity-40 dark:brightness-0 dark:invert dark:opacity-60 hover:opacity-70 dark:hover:opacity-80 transition-opacity duration-200"
                   priority={index < 6}
                 />
               </div>

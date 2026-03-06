@@ -3,14 +3,11 @@
 import { LpNavbar1 } from "@/components/pro-blocks/landing-page/lp-navbars/lp-navbar-1";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
-import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Mail, Calendar, Sparkles, CheckCircle, Zap } from "lucide-react";
-import Link from "next/link";
 import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
@@ -107,68 +104,54 @@ function ContactFormContent({
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-background via-secondary/30 to-background py-12 md:py-16 lg:py-20 border-b overflow-hidden">
-      {/* Enhanced Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
-        backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
-                          linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
-        backgroundSize: '48px 48px'
-      }} />
-      
-      {/* Animated Gradient Orbs */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-      
-      <div className="container mx-auto relative z-10 flex flex-col gap-8 md:gap-12 lg:flex-row lg:gap-16 px-4 sm:px-6">
+    <section className="relative bg-white dark:bg-[#0A0A0A] py-12 md:py-16 lg:py-20 border-b border-[#E3E3E0] dark:border-[#2A2A2A]">
+      <div className="container mx-auto flex flex-col gap-8 md:gap-12 lg:flex-row lg:gap-16 px-4 sm:px-6">
         {/* Contact Form */}
-        <div className="flex-1 animate-fade-in-up">
+        <div className="flex-1">
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
-            <Button
-              variant={formType === "sales" ? "default" : "outline"}
+            <button
               onClick={() => setFormType("sales")}
-              className={`flex-1 h-12 md:h-14 text-sm md:text-base font-semibold transition-all duration-[2500ms] ease-out ${
+              className={`flex-1 h-12 md:h-14 text-[14px] sm:text-[15px] md:text-[16px] font-medium rounded-[4px] border transition-colors ${
                 formType === "sales"
-                  ? "bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg shadow-primary/25"
-                  : "hover:border-primary/50 hover:bg-primary/5"
+                  ? "bg-[#1A1AFF] text-white border-[#1A1AFF] hover:bg-[#0000E6]"
+                  : "bg-white dark:bg-[#141414] text-[#0A0A0A] dark:text-[#F7F6F3] border-[#E3E3E0] dark:border-[#2A2A2A] hover:border-[#1A1AFF]"
               }`}
             >
-              <Zap className="mr-2 h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
-              <span className="truncate">Talk to Sales</span>
-            </Button>
-            <Button
-              variant={formType === "demo" ? "default" : "outline"}
+              <div className="flex items-center justify-center gap-2">
+                <Zap className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+                <span className="truncate">Talk to Sales</span>
+              </div>
+            </button>
+            <button
               onClick={() => setFormType("demo")}
-              className={`flex-1 h-12 md:h-14 text-sm md:text-base font-semibold transition-all duration-[2500ms] ease-out ${
+              className={`flex-1 h-12 md:h-14 text-[14px] sm:text-[15px] md:text-[16px] font-medium rounded-[4px] border transition-colors ${
                 formType === "demo"
-                  ? "bg-gradient-to-r from-[oklch(0.68_0.15_50)] to-[oklch(0.68_0.15_50)]/80 hover:from-[oklch(0.68_0.15_50)]/90 hover:to-[oklch(0.68_0.15_50)]/70 text-white shadow-lg shadow-[oklch(0.68_0.15_50)]/25"
-                  : "hover:border-[oklch(0.68_0.15_50)]/50 hover:bg-[oklch(0.68_0.15_50)]/5"
+                  ? "bg-[#1A1AFF] text-white border-[#1A1AFF] hover:bg-[#0000E6]"
+                  : "bg-white dark:bg-[#141414] text-[#0A0A0A] dark:text-[#F7F6F3] border-[#E3E3E0] dark:border-[#2A2A2A] hover:border-[#1A1AFF]"
               }`}
             >
-              <Calendar className="mr-2 h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
-              <span className="truncate">Request Demo</span>
-            </Button>
+              <div className="flex items-center justify-center gap-2">
+                <Calendar className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+                <span className="truncate">Request Demo</span>
+              </div>
+            </button>
           </div>
 
-          <Card className="group relative bg-gradient-to-br from-background to-secondary/50 rounded-2xl md:rounded-3xl border-2 border-border/50 p-4 sm:p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:border-[oklch(0.68_0.15_50)]/40 ">
-            {/* Animated Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.68_0.15_50)]/5 to-[oklch(0.68_0.15_50)]/2 opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out rounded-2xl md:rounded-3xl" />
-            <div className="absolute top-0 right-0 w-40 h-40 bg-[oklch(0.68_0.15_50)]/10 rounded-full blur-3xl -mr-20 -mt-20 opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[oklch(0.68_0.15_50)]/10 rounded-full blur-2xl -ml-16 -mb-16 opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out" style={{ animationDelay: '0.2s' }} />
-            
-            <CardContent className="relative flex flex-col gap-6 md:gap-8 p-0">
+          <Card className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] p-4 sm:p-6 md:p-8 hover:border-[#1A1AFF] transition-colors">
+            <CardContent className="flex flex-col gap-6 md:gap-8 p-0">
               <div className="flex items-start gap-3 md:gap-4">
-                <div className="bg-gradient-to-br from-[oklch(0.68_0.15_50)]/20 to-[oklch(0.68_0.15_50)]/5 flex h-12 w-12 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-xl md:rounded-2xl border-2 border-[oklch(0.68_0.15_50)]/30 shadow-lg  group-hover:rotate-6 transition-all duration-[2500ms] ease-out">
+                <div className="bg-[#F7F6F3] dark:bg-[#1A1A1A] flex h-12 w-12 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-[4px] border border-[#E3E3E0] dark:border-[#2A2A2A]">
                   {formType === "sales" ? (
-                    <Zap className="text-[oklch(0.68_0.15_50)] h-6 w-6 md:h-8 md:w-8" />
+                    <Zap className="text-[#1A1AFF] h-6 w-6 md:h-8 md:w-8" />
                   ) : (
-                    <Calendar className="text-[oklch(0.68_0.15_50)] h-6 w-6 md:h-8 md:w-8" />
+                    <Calendar className="text-[#1A1AFF] h-6 w-6 md:h-8 md:w-8" />
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h2 className="text-foreground text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 group-hover:text-[oklch(0.68_0.15_50)] transition-colors">
+                  <h2 className="text-[#0A0A0A] dark:text-[#F7F6F3] text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-display font-bold mb-2 md:mb-3">
                     {formType === "sales" ? "Talk to Sales" : "Request a Demo"}
                   </h2>
-                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                  <p className="text-[#737373] dark:text-[#A3A3A3] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
                     {formType === "sales"
                       ? "Get a tailored demo and learn how Flexibench can fit your annotation needs."
                       : "Choose a time and let us walk you through the platform."}
@@ -178,9 +161,8 @@ function ContactFormContent({
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                  <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                    <Label htmlFor="firstName" className="text-sm md:text-base font-bold flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.68_0.15_50)] flex-shrink-0" />
+                  <div className="flex flex-col gap-1.5 md:gap-2">
+                    <Label htmlFor="firstName" className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-[#0A0A0A] dark:text-[#F7F6F3]">
                       First Name
                     </Label>
                     <Input 
@@ -189,12 +171,11 @@ function ContactFormContent({
                       required 
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="h-11 md:h-14 text-sm md:text-base border-2 focus:border-[oklch(0.68_0.15_50)]/50 transition-colors" 
+                      className="h-11 md:h-14 text-[14px] sm:text-[15px] md:text-[16px] border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#1A1A1A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[4px] focus:border-[#1A1AFF] focus:ring-0 transition-colors" 
                     />
                   </div>
-                  <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
-                    <Label htmlFor="lastName" className="text-sm md:text-base font-bold flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.68_0.15_50)] flex-shrink-0" />
+                  <div className="flex flex-col gap-1.5 md:gap-2">
+                    <Label htmlFor="lastName" className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-[#0A0A0A] dark:text-[#F7F6F3]">
                       Last Name
                     </Label>
                     <Input 
@@ -203,13 +184,12 @@ function ContactFormContent({
                       required 
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="h-11 md:h-14 text-sm md:text-base border-2 focus:border-[oklch(0.68_0.15_50)]/50 transition-colors" 
+                      className="h-11 md:h-14 text-[14px] sm:text-[15px] md:text-[16px] border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#1A1A1A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[4px] focus:border-[#1A1AFF] focus:ring-0 transition-colors" 
                     />
                   </div>
                 </div>
-                <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                  <Label htmlFor="email" className="text-sm md:text-base font-bold flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.68_0.15_50)] flex-shrink-0" />
+                <div className="flex flex-col gap-1.5 md:gap-2">
+                  <Label htmlFor="email" className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-[#0A0A0A] dark:text-[#F7F6F3]">
                     Email
                   </Label>
                   <Input 
@@ -219,11 +199,11 @@ function ContactFormContent({
                     required 
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="h-11 md:h-14 text-sm md:text-base border-2 focus:border-[oklch(0.68_0.15_50)]/50 transition-colors" 
+                    className="h-11 md:h-14 text-[14px] sm:text-[15px] md:text-[16px] border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#1A1A1A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[4px] focus:border-[#1A1AFF] focus:ring-0 transition-colors" 
                   />
                 </div>
-                <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
-                  <Label htmlFor="phone" className="text-sm md:text-base font-medium flex items-center gap-2">
+                <div className="flex flex-col gap-1.5 md:gap-2">
+                  <Label htmlFor="phone" className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-[#0A0A0A] dark:text-[#F7F6F3]">
                     Phone Number
                   </Label>
                   <Input 
@@ -232,11 +212,11 @@ function ContactFormContent({
                     placeholder="+1 (555) 000-0000" 
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="h-11 md:h-14 text-sm md:text-base border-2 focus:border-[oklch(0.68_0.15_50)]/50 transition-colors" 
+                    className="h-11 md:h-14 text-[14px] sm:text-[15px] md:text-[16px] border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#1A1A1A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[4px] focus:border-[#1A1AFF] focus:ring-0 transition-colors" 
                   />
                 </div>
-                <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                  <Label htmlFor="company" className="text-sm md:text-base font-medium flex items-center gap-2">
+                <div className="flex flex-col gap-1.5 md:gap-2">
+                  <Label htmlFor="company" className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-[#0A0A0A] dark:text-[#F7F6F3]">
                     Company
                   </Label>
                   <Input 
@@ -244,11 +224,11 @@ function ContactFormContent({
                     placeholder="Your Company Name" 
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="h-11 md:h-14 text-sm md:text-base border-2 focus:border-[oklch(0.68_0.15_50)]/50 transition-colors" 
+                    className="h-11 md:h-14 text-[14px] sm:text-[15px] md:text-[16px] border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#1A1A1A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[4px] focus:border-[#1A1AFF] focus:ring-0 transition-colors" 
                   />
                 </div>
-                <div className="flex flex-col gap-1.5 md:gap-2 animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
-                  <Label htmlFor="message" className="text-sm md:text-base font-medium flex items-center gap-2">
+                <div className="flex flex-col gap-1.5 md:gap-2">
+                  <Label htmlFor="message" className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-[#0A0A0A] dark:text-[#F7F6F3]">
                     Message
                   </Label>
                   <Textarea
@@ -261,15 +241,15 @@ function ContactFormContent({
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="resize-none text-sm md:text-base border-2 focus:border-[oklch(0.68_0.15_50)]/50 transition-colors min-h-[100px] md:min-h-[120px]"
+                    className="resize-none text-[14px] sm:text-[15px] md:text-[16px] border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#1A1A1A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[4px] focus:border-[#1A1AFF] focus:ring-0 transition-colors min-h-[100px] md:min-h-[120px]"
                   />
                 </div>
                 {submitStatus.type && (
                   <div
-                    className={`p-3 md:p-4 rounded-lg border-2 ${
+                    className={`p-3 md:p-4 rounded-[4px] border ${
                       submitStatus.type === "success"
-                        ? "bg-green-50 dark:bg-green-950/20 border-green-500/50 text-green-700 dark:text-green-400"
-                        : "bg-red-50 dark:bg-red-950/20 border-red-500/50 text-red-700 dark:text-red-400"
+                        ? "bg-[#F0FDF4] dark:bg-[#0A2E1A] border-[#86EFAC] dark:border-[#22C55E] text-[#166534] dark:text-[#86EFAC]"
+                        : "bg-[#FEF2F2] dark:bg-[#2E0A0A] border-[#FCA5A5] dark:border-[#EF4444] text-[#991B1B] dark:text-[#FCA5A5]"
                     }`}
                   >
                     <div className="flex items-start gap-2">
@@ -278,28 +258,24 @@ function ContactFormContent({
                       ) : (
                         <Mail className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0 mt-0.5" />
                       )}
-                      <p className="text-sm md:text-base font-medium flex-1">{submitStatus.message}</p>
+                      <p className="text-[14px] sm:text-[15px] md:text-[16px] font-medium flex-1">{submitStatus.message}</p>
                     </div>
                   </div>
                 )}
-                <Button 
+                <button 
                   type="submit" 
-                  size="lg" 
                   disabled={isSubmitting}
-                  className="h-12 md:h-14 text-sm md:text-base font-semibold bg-gradient-to-r from-[oklch(0.68_0.15_50)] to-[oklch(0.68_0.15_50)]/80 hover:from-[oklch(0.68_0.15_50)]/90 hover:to-[oklch(0.68_0.15_50)]/70 text-white shadow-lg shadow-[oklch(0.68_0.15_50)]/25 hover:shadow-xl hover:shadow-[oklch(0.68_0.15_50)]/30 transition-all duration-[2500ms] ease-out hover:-translate-y-0.5 mt-2 animate-fade-in-up disabled:opacity-50 disabled:cursor-not-allowed w-full"
-                  style={{ animationDelay: '0.5s' }}
+                  className="h-12 md:h-14 text-[14px] sm:text-[15px] md:text-[16px] font-medium bg-[#1A1AFF] text-white border border-[#1A1AFF] rounded-[4px] hover:bg-[#0000E6] transition-colors disabled:opacity-50 disabled:cursor-not-allowed w-full flex items-center justify-center gap-2 mt-2"
                 >
                   {isSubmitting ? (
-                    <>
-                      <span className="animate-pulse">Submitting...</span>
-                    </>
+                    <span className="animate-pulse">Submitting...</span>
                   ) : (
                     <>
                       <span className="truncate">{formType === "sales" ? "Contact Sales" : "Schedule Demo"}</span>
-                      <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                      <ArrowRight className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
                     </>
                   )}
-                </Button>
+                </button>
               </form>
             </CardContent>
           </Card>
@@ -308,26 +284,21 @@ function ContactFormContent({
         {/* Contact Options */}
         <div className="flex flex-col gap-4 md:gap-6 lg:w-96">
           <Card 
-            className="group relative bg-gradient-to-br from-background to-secondary/50 rounded-2xl md:rounded-3xl border-2 border-border/50 p-4 sm:p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-[2500ms] ease-out hover:border-[oklch(0.68_0.15_50)]/40 lg:hover:scale-105 lg:hover:-translate-y-2 animate-fade-in-up"
-            style={{ animationDelay: '0.2s' }}
+            className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] p-4 sm:p-6 md:p-8 hover:border-[#1A1AFF] transition-colors"
           >
-            {/* Animated Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.68_0.15_50)]/6 to-[oklch(0.68_0.15_50)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out rounded-2xl md:rounded-3xl" />
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[oklch(0.68_0.15_50)]/8 rounded-full blur-3xl -mr-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity duration-[3000ms] ease-out" />
-            
-            <CardContent className="relative flex flex-col gap-4 md:gap-6 p-0">
+            <CardContent className="flex flex-col gap-4 md:gap-6 p-0">
               <div className="flex items-center gap-3 md:gap-4">
-                <div className="bg-gradient-to-br from-[oklch(0.68_0.15_50)]/18 to-[oklch(0.68_0.15_50)]/6 flex h-12 w-12 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-xl md:rounded-2xl border-2 border-[oklch(0.68_0.15_50)]/25 shadow-lg  group-hover:rotate-6 transition-all duration-[2500ms] ease-out">
-                  <Mail className="text-[oklch(0.68_0.15_50)] h-6 w-6 md:h-8 md:w-8" />
+                <div className="bg-[#F7F6F3] dark:bg-[#1A1A1A] flex h-12 w-12 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-[4px] border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                  <Mail className="text-[#1A1AFF] h-6 w-6 md:h-8 md:w-8" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-foreground font-bold text-lg md:text-xl mb-1 group-hover:text-[oklch(0.68_0.15_50)] transition-colors">Email Us</h3>
-                  <p className="text-muted-foreground text-sm md:text-base truncate">sales@flexibench.com</p>
+                  <h3 className="text-[#0A0A0A] dark:text-[#F7F6F3] font-display font-bold text-[18px] sm:text-[20px] md:text-[22px] mb-1">Email Us</h3>
+                  <p className="text-[#737373] dark:text-[#A3A3A3] text-[14px] sm:text-[15px] md:text-[16px] truncate">sales@flexibench.com</p>
                 </div>
               </div>
-              <div className="pt-3 md:pt-4 border-t border-border/30">
-                <div className="flex items-center gap-2 text-sm md:text-base text-muted-foreground">
-                  <CheckCircle className="h-3.5 w-3.5 md:h-4 md:w-4 text-[oklch(0.68_0.15_50)] flex-shrink-0" />
+              <div className="pt-3 md:pt-4 border-t border-[#E3E3E0] dark:border-[#2A2A2A]">
+                <div className="flex items-center gap-2 text-[13px] sm:text-[14px] md:text-[15px] text-[#737373] dark:text-[#A3A3A3]">
+                  <CheckCircle className="h-3.5 w-3.5 md:h-4 md:w-4 text-[#1A1AFF] flex-shrink-0" />
                   <span>Response within 24 hours</span>
                 </div>
               </div>
@@ -353,43 +324,21 @@ function ContactPageContent() {
         <Breadcrumbs items={[{ label: "Contact" }]} />
       </div>
 
-      {/* Enhanced Hero Section with Animations */}
-      <section className="relative py-12 md:py-16 lg:py-20 border-b overflow-hidden" style={{
-        background: 'linear-gradient(to bottom right, oklch(0.25 0.12 250), oklch(0.30 0.11 248), oklch(0.35 0.11 252))'
-      }}>
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
-          backgroundSize: '48px 48px'
-        }} />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/8 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/10 via-transparent to-primary/10 rounded-full blur-3xl" />
-        
-        {/* Animated Lines */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
-          <div className="absolute top-2/4 right-0 w-px h-full bg-gradient-to-b from-transparent via-primary/10 to-transparent" />
-        </div>
-        
-        <div className="container mx-auto relative z-10 px-4 sm:px-6">
+      {/* Hero Section */}
+      <section className="relative py-12 md:py-16 lg:py-20 border-b border-[#E3E3E0] dark:border-[#2A2A2A] bg-[#F7F6F3] dark:bg-[#0A0A0A]">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
-            <div className="flex-1 flex flex-col gap-6 md:gap-8 text-white animate-fade-in-up">
+            <div className="flex-1 flex flex-col gap-6 md:gap-8">
               <div className="flex flex-col gap-4 md:gap-6">
-                <Tagline variant="white" className="mb-0">Get Started</Tagline>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
+                <div className="inline-block border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] mb-2">
+                  <span className="font-mono text-[11px] text-[#A3A3A3] dark:text-[#737373] uppercase tracking-widest">Get Started</span>
+                </div>
+                <h1 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3] font-bold">
                   Start Building{" "}
-                  <span className="relative inline-block">
-                    Model-Ready Data
-                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary/50" viewBox="0 0 300 12" fill="none">
-                      <path d="M2 8 Q75 4, 150 8 T298 8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                    </svg>
-                  </span>{" "}
-                  <span className="bg-gradient-to-r from-primary/90 via-primary to-primary/90 bg-clip-text text-transparent">
-                    Today
-                  </span>
+                  <span className="text-[#1A1AFF]">Model-Ready Data</span>{" "}
+                  Today
                 </h1>
-                <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl font-medium">
+                <p className="text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7] max-w-2xl font-light">
                   Whether you want a demo, a consultation, or onboarding support, our team is ready to help
                   you succeed with Flexibench.
                 </p>
@@ -397,36 +346,31 @@ function ContactPageContent() {
               
               {/* Feature Pills */}
               <div className="flex flex-wrap gap-2 md:gap-3">
-                <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-primary flex-shrink-0" />
-                  <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Expert Consultation</span>
+                <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
+                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-[#1A1AFF] flex-shrink-0" />
+                  <span className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-[#0A0A0A] dark:text-[#F7F6F3] whitespace-nowrap">Expert Consultation</span>
                 </div>
-                <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-primary flex-shrink-0" />
-                  <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Custom Demo</span>
+                <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
+                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-[#1A1AFF] flex-shrink-0" />
+                  <span className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-[#0A0A0A] dark:text-[#F7F6F3] whitespace-nowrap">Custom Demo</span>
                 </div>
-                <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-primary flex-shrink-0" />
-                  <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">Fast Onboarding</span>
+                <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
+                  <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-[#1A1AFF] flex-shrink-0" />
+                  <span className="text-[13px] sm:text-[14px] md:text-[15px] font-medium text-[#0A0A0A] dark:text-[#F7F6F3] whitespace-nowrap">Fast Onboarding</span>
                 </div>
               </div>
             </div>
             
-            <div className="flex-1 w-full animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 group">
-                {/* Decorative Border Glow */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/18 via-primary/18 to-primary/18 rounded-2xl md:rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-[2500ms] ease-out -z-10" />
-                
+            <div className="flex-1 w-full">
+              <div className="relative rounded-[4px] overflow-hidden border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414]">
                 <AspectRatio ratio={16 / 10}>
                   <Image
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=900&fit=crop&q=80"
                     alt="Contact our team for Flexibench consultation and demo"
                     fill
                     priority
-                    className="object-cover object-top transition-transform duration-[3000ms] ease-out"
+                    className="object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/40 to-transparent" style={{ background: 'linear-gradient(to top, oklch(0.20 0.12 250 / 0.85), oklch(0.28 0.11 248 / 0.4), transparent)' }} />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/12 via-transparent to-primary/12" />
                 </AspectRatio>
               </div>
             </div>
@@ -437,23 +381,6 @@ function ContactPageContent() {
       <ContactFormContent formType={formType} setFormType={setFormType} />
       <Footer1 />
       
-      {/* Enhanced Animation Styles */}
-      <style jsx global>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px) scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
-      `}</style>
     </>
   );
 }

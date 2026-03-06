@@ -3,6 +3,7 @@ import { LpNavbar1 } from "@/components/pro-blocks/landing-page/lp-navbars/lp-na
 import { HeroSection2 } from "@/components/pro-blocks/landing-page/hero-sections/hero-section-2";
 import { LogoSection10 } from "@/components/pro-blocks/landing-page/logo-sections/logo-section-7";
 import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
+import { ChatbotWidget } from "@/components/chatbot-widget";
 
 // Lazy load below-the-fold sections for better performance
 const WhyFlexibenchSection = dynamic(
@@ -57,21 +58,26 @@ const FaqSection2 = dynamic(
 
 export default function Page() {
   return (
-    <main id="main-content">
-      <LpNavbar1 />
-      <HeroSection2 />
-      <LogoSection10 />
-      <WhyFlexibenchSection />
-      <PlatformOverviewSection />
-      <CapabilitiesOverviewSection />
-      <InternalToolsSection />
-      <StatsSection4 />
-      <UseCasesPreviewSection />
-      <QualityGovernanceSection />
-      <GetStartedCtaSection />
-      <TestimonialsCarousel />
-      <FaqSection2 />
-      <Footer1 />
-    </main>
+    <>
+      {/* Chatbot Widget */}
+      <ChatbotWidget />
+      
+      <main id="main-content">
+        <LpNavbar1 />
+        <HeroSection2 />
+        <LogoSection10 />
+        <WhyFlexibenchSection />
+        <PlatformOverviewSection />
+        <CapabilitiesOverviewSection />
+        <InternalToolsSection />
+        <StatsSection4 />
+        <UseCasesPreviewSection />
+        <QualityGovernanceSection />
+        <GetStartedCtaSection />
+        <TestimonialsCarousel />
+        <FaqSection2 />
+        <Footer1 />
+      </main>
+    </>
   );
 }
