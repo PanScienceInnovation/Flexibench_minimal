@@ -161,7 +161,7 @@ export default function WhitePaperDetailClient() {
 
         {/* Article Content */}
         <div 
-          className="prose prose-lg dark:prose-invert max-w-none mb-12 whitepaper-content"
+          className="prose prose-lg max-w-none mb-12 whitepaper-content"
           dangerouslySetInnerHTML={{ __html: whitepaper.body || '' }}
         />
         <style jsx global>{`

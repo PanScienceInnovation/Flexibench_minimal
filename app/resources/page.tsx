@@ -277,17 +277,17 @@ export default function ResourcesPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] pt-12 sm:pt-16 pb-16 sm:pb-20 border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden">
+      <section className="relative bg-[#F7F6F3] pt-12 sm:pt-16 pb-16 sm:pb-20 border-b border-[#E3E3E0] overflow-hidden">
         <div className="container-padding-x container mx-auto relative z-10">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
             {/* Section Label */}
-            <div className="border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] font-mono text-[11px] text-[#737373] dark:text-[#A3A3A3] uppercase tracking-widest mb-4 sm:mb-6 inline-block">
+            <div className="border border-[#E3E3E0] bg-white px-3 py-1 rounded-[3px] font-mono text-[11px] text-[#737373] uppercase tracking-widest mb-4 sm:mb-6 inline-block">
               RESOURCES
             </div>
 
             {/* Headline */}
             <div className="flex flex-col items-center gap-0 mb-8">
-              <h1 className="font-display text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3]">
+              <h1 className="font-display text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] leading-[1.1] text-[#0A0A0A]">
                 Explore Our
               </h1>
               <div className="relative inline-block min-h-[70px] flex items-center justify-center">
@@ -296,28 +296,28 @@ export default function ResourcesPage() {
             </div>
 
             {/* Divider */}
-            <div className="border-t border-[#E3E3E0] dark:border-[#2A2A2A] mt-6 sm:mt-8 mb-6 sm:mb-8 max-w-xs mx-auto w-full" />
+            <div className="border-t border-[#E3E3E0] mt-6 sm:mt-8 mb-6 sm:mb-8 max-w-xs mx-auto w-full" />
 
             {/* Body Text */}
-            <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7] max-w-2xl mx-auto font-light">
+            <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] leading-[1.7] max-w-2xl mx-auto font-light">
               Comprehensive content curated to accelerate your understanding of
               high-quality annotation workflows, best practices, and real-world
               implementation strategies.
             </p>
 
             {/* Stats Row */}
-            <div className="mt-8 sm:mt-10 flex flex-row justify-center gap-0 border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] bg-white dark:bg-[#141414] inline-flex mx-auto flex-wrap sm:flex-nowrap">
-              <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-r border-[#E3E3E0] dark:border-[#2A2A2A] text-center">
-                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A] dark:text-[#F7F6F3]">12+</div>
-                <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] dark:text-[#737373] uppercase tracking-widest mt-1">Blogs</div>
+            <div className="mt-8 sm:mt-10 flex flex-row justify-center gap-0 border border-[#E3E3E0] rounded-[4px] bg-white inline-flex mx-auto flex-wrap sm:flex-nowrap">
+              <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-r border-[#E3E3E0] text-center">
+                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A]">12+</div>
+                <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] uppercase tracking-widest mt-1">Blogs</div>
               </div>
-              <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-r border-[#E3E3E0] dark:border-[#2A2A2A] text-center">
-                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A] dark:text-[#F7F6F3]">8+</div>
-                <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] dark:text-[#737373] uppercase tracking-widest mt-1">White Papers</div>
+              <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-r border-[#E3E3E0] text-center">
+                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A]">8+</div>
+                <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] uppercase tracking-widest mt-1">White Papers</div>
               </div>
               <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-center">
-                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A] dark:text-[#F7F6F3]">6+</div>
-                <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] dark:text-[#737373] uppercase tracking-widest mt-1">Best Practices</div>
+                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A]">6+</div>
+                <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] uppercase tracking-widest mt-1">Best Practices</div>
               </div>
             </div>
           </div>
@@ -352,7 +352,7 @@ export default function ResourcesPage() {
       {/* Resources Grid */}
       <section className="relative bg-gradient-to-b from-background via-secondary/30 to-background py-12 md:py-16">
         {/* Enhanced Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
+        <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
                             linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
           backgroundSize: '48px 48px'
@@ -384,7 +384,7 @@ export default function ResourcesPage() {
                 return (
                   <Card
                     key={`${resource.category}-${resource.slug}`}
-                    className="group relative bg-slate-200 dark:bg-background overflow-hidden rounded-lg border border-border/50 hover:border-[oklch(0.68_0.15_50)]/40 shadow-md hover:shadow-lg transition-all duration-[2500ms] ease-out animate-fade-in-up"
+                    className="group relative bg-slate-200 overflow-hidden rounded-lg border border-border/50 hover:border-[oklch(0.68_0.15_50)]/40 shadow-md hover:shadow-lg transition-all duration-[2500ms] ease-out animate-fade-in-up"
                     style={{
                       animationDelay: `${animationDelay}ms`,
                       animationFillMode: 'both'

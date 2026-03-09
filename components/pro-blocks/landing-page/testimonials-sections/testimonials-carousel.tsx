@@ -69,7 +69,7 @@ export default function TestimonialsCarousel() {
       aria-labelledby="testimonials-title"
     >
       {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]" style={{
+      <div className="absolute inset-0 opacity-[0.02]" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
         backgroundSize: '32px 32px'
       }} />

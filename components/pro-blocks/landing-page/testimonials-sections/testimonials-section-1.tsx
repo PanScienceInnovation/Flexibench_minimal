@@ -20,8 +20,8 @@ export default function TestimonialsSection1({
 }: TestimonialsSection1Props) {
   const { ref: sectionRef, isVisible } = useScrollAnimation();
   const gradientClass = variant === "rose" 
-    ? "from-rose-50/60 via-pink-50/40 to-fuchsia-50/30 dark:from-rose-950 dark:via-pink-950 dark:to-fuchsia-950"
-    : "from-orange-50/55 via-amber-50/35 to-yellow-50/25 dark:from-orange-950 dark:via-amber-950 dark:to-yellow-950";
+    ? "from-rose-50/60 via-pink-50/40 to-fuchsia-50/30"
+    : "from-orange-50/55 via-amber-50/35 to-yellow-50/25";
   
   const orbColor = variant === "rose"
     ? "bg-rose-400/15"

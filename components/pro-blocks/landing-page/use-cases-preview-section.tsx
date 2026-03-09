@@ -17,10 +17,11 @@ const modalityIcons: Record<string, typeof FileText> = {
 
 export function UseCasesPreviewSection() {
   // Get 3 featured use cases (first from different industries)
+  const voiceAssistantUseCase = useCases.find(uc => uc.id === 22);
   const featuredUseCases = [
-    useCases[0], // Healthcare - Text
-    useCases[1], // Automotive - Video (Pedestrian Occlusion Track Annotation)
-    useCases[7], // Retail - Image
+    useCases[0], // Healthcare - Text (ID 1)
+    useCases[1], // Automotive - Video (ID 2 - Pedestrian Occlusion Track Annotation)
+    voiceAssistantUseCase || useCases[7], // Voice Assistant Intent Classification (ID 22) or fallback
   ];
 
   const industryColors: Record<string, string> = {
@@ -30,17 +31,17 @@ export function UseCasesPreviewSection() {
   };
 
   return (
-    <section className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden">
+    <section className="relative bg-[#F7F6F3] section-padding-y border-b border-[#E3E3E0] overflow-hidden">
       <div className="container-padding-x container mx-auto relative z-10 flex flex-col gap-12 sm:gap-16">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center gap-4 sm:gap-6">
-          <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] text-[#737373] dark:text-[#A3A3A3]">
+          <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] bg-white px-3 py-1 rounded-[3px] text-[#737373]">
             Use Cases
           </div>
-          <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A] dark:text-[#F7F6F3]">
+          <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1] text-[#0A0A0A]">
             Annotation Use Cases Across{" "}
             <span className="text-[#1A1AFF]">Industries</span>
           </h2>
-          <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] text-center max-w-2xl">
+          <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] text-center max-w-2xl">
             Explore real-world annotation workflows that solve enterprise challenges across industries and modalities.
           </p>
         </div>
@@ -62,6 +63,8 @@ export function UseCasesPreviewSection() {
                         ? "/use-cases/Healthcare2.png"
                         : useCase.id === 2
                         ? "/use-cases/infrastructure3.jpg"
+                        : useCase.id === 22
+                        ? "/voice.png"
                         : useCase.id === 8
                         ? "/use-cases/Legal.png"
                         : "/use-cases/Healthcare2.png"

@@ -31,10 +31,10 @@ const capabilityImages: Record<string, {
     why: "/why_text_annotation_matters.png",
   },
   Image: {
-    hero: "/image_annotation.png",
+    hero: "/image_annotation_hero.png",
     core: "/capabilities3.png",
-    clients: "/Phonex1.png",
-    why: "/core_capabilities_video.png",
+    clients: "/whatclientgets.png",
+    why: "/image_annotation.png",
   },
   Video: {
     hero: "/video_annotation.png",
@@ -97,7 +97,7 @@ export default async function CapabilityTypePage({
       </div>
 
       {/* Enhanced Hero Section with Image */}
-      <section className="relative section-padding-y border-b overflow-hidden" style={{ 
+      <section className="relative section-padding-y border-b overflow-hidden" style={{
         paddingTop: '80px',
         background: 'linear-gradient(to bottom right, oklch(0.25 0.12 250), oklch(0.30 0.11 248), oklch(0.35 0.11 252))'
       }}>
@@ -107,13 +107,13 @@ export default async function CapabilityTypePage({
         }} />
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse delay-1000" />
-        
+
         <div className="container-padding-x container mx-auto relative z-10">
           <Link href="/capabilities" className="text-white/80 text-base mb-8 inline-flex items-center gap-2 hover:text-white hover:underline transition-colors">
             <ArrowLeft className="h-4 w-4" />
             Back to Capabilities
           </Link>
-          
+
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="flex-1 flex flex-col gap-8 text-white">
               <div className="section-title-gap-lg flex flex-col">
@@ -133,7 +133,7 @@ export default async function CapabilityTypePage({
                 </p>
               </div>
             </div>
-            
+
             <div className="flex-1 w-full">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 group">
                 <AspectRatio ratio={16 / 10}>
@@ -144,7 +144,7 @@ export default async function CapabilityTypePage({
                     priority
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.purple}
-                        className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/30 to-transparent" style={{ background: 'linear-gradient(to top, oklch(0.20 0.12 250 / 0.7), oklch(0.28 0.11 248 / 0.3), transparent)' }} />
                 </AspectRatio>
@@ -160,7 +160,7 @@ export default async function CapabilityTypePage({
           backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
           backgroundSize: '32px 32px'
         }} />
-        
+
         <div className="container-padding-x container mx-auto relative z-10 flex flex-col gap-16">
           {/* Icon Header with Image Background */}
           <div className="relative flex items-center justify-center">
@@ -188,7 +188,7 @@ export default async function CapabilityTypePage({
                     <li key={idx} className="leading-relaxed">{cap}</li>
                   ))}
                 </ul>
-                
+
                 {/* Mini Image */}
                 <div className="relative h-40 rounded-xl overflow-hidden border border-border/30 mt-4 group-hover:border-primary/30 transition-colors">
                   <Image
@@ -210,7 +210,7 @@ export default async function CapabilityTypePage({
               <CardContent className="relative flex flex-col gap-6 p-0">
                 <h2 className="text-foreground text-xl md:text-2xl font-bold">What Clients Get</h2>
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed">{capability.whatClientsGet}</p>
-                
+
                 {/* Mini Image */}
                 <div className="relative h-40 rounded-xl overflow-hidden border border-border/30 mt-4 group-hover:border-primary/30 transition-colors">
                   <Image
@@ -237,7 +237,7 @@ export default async function CapabilityTypePage({
                   {capability.whyItMatters}
                 </p>
               </div>
-              <div className="flex-1 relative h-64 lg:h-auto min-h-[300px]">
+              <div className="flex-1 relative h-64 lg:h-auto min-h-[400px]">
                 <Image
                   src={capabilityImages[capability.type]?.why || capabilityImages.Text.why}
                   alt="Why it matters visualization"
@@ -245,7 +245,7 @@ export default async function CapabilityTypePage({
                   placeholder="blur"
                   blurDataURL={blurPlaceholders.default}
                   loading="lazy"
-                  className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                  className="object-contain object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent lg:bg-gradient-to-l" />
               </div>

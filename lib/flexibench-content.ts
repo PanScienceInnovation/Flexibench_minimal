@@ -20,25 +20,7 @@ export const useCases = [
     solution: "Frame-level tracking with temporal identity continuity.",
     impact: "Reduced false negatives and strengthened AV detection fidelity.",
   },
-  {
-    id: 3,
-    title: "Telehealth Risk Signal Annotation",
-    industry: "Healthcare & Life Sciences",
-    modality: "Text",
-    problem: "Telehealth calls contained ambiguous patient symptom descriptions.",
-    solution: "Tagged safety risk phrases and escalation indicators.",
-    impact: "Reduced misclassification of critical cases by AI triage systems.",
-  },
   // Automotive & Mobility
-  {
-    id: 4,
-    title: "Radiology Tumor Boundary Segmentation",
-    industry: "Healthcare & Life Sciences",
-    modality: "Image",
-    problem: "Automated models could not delineate tumor margins precisely.",
-    solution: "Pixel-level segmentation with expert QA protocol.",
-    impact: "Enabled higher accuracy in detection models and surgical planning tools.",
-  },
   {
     id: 5,
     title: "Road Sign Condition Classification for ADAS",
@@ -48,25 +30,7 @@ export const useCases = [
     solution: "Annotated sign visibility conditions alongside type.",
     impact: "Improved ADAS accuracy and reduced nighttime misreads.",
   },
-  // Retail & E-commerce
-  {
-    id: 6,
-    title: "Product Attribute Extraction for Search Ranking",
-    industry: "Retail & E-commerce",
-    modality: "Text",
-    problem: "Search relevance suffered due to missing structured product metadata.",
-    solution: "Text and image combined annotation for attributes like color, size, material.",
-    impact: "Increased search-to-cart conversion and reduced bounce rates.",
-  },
-  {
-    id: 7,
-    title: "Shelf Planogram Compliance Analytics",
-    industry: "Retail & E-commerce",
-    modality: "Image",
-    problem: "Retail stores struggled to measure placement fidelity.",
-    solution: "Image segmentation and detection of product facings.",
-    impact: "Enhanced compliance insights and improved merchandising ROI.",
-  },
+  // Retail & E-commerce - Removed use cases 6 and 7 due to image mismatch
   // Financial Services
   {
     id: 8,
@@ -88,15 +52,6 @@ export const useCases = [
   },
   // Manufacturing & Robotics
   {
-    id: 10,
-    title: "Solder Joint Defect Mapping in PCBs",
-    industry: "Manufacturing & Robotics",
-    modality: "Image",
-    problem: "Vision models misread subtle PCB joint anomalies.",
-    solution: "High-resolution segmentation of defect patterns.",
-    impact: "Decreased quality failures and improved yield consistency.",
-  },
-  {
     id: 11,
     title: "Worker Safety Zone Breach Annotation",
     industry: "Manufacturing & Robotics",
@@ -115,63 +70,17 @@ export const useCases = [
     solution: "Tracking and semantic tagging of player actions.",
     impact: "Enabled advanced performance insights for coaching tools.",
   },
-  {
-    id: 13,
-    title: "Game Chat Toxicity Annotation",
-    industry: "Media, Entertainment & Gaming",
-    modality: "Text",
-    problem: "In-game voice and text chat moderation was ineffective.",
-    solution: "Multimodal toxic language and behavior tagging.",
-    impact: "Improved moderation accuracy and community safety.",
-  },
   // Telecom & Customer Experience
   {
-    id: 14,
-    title: "Support Ticket Intent & Escalation Tagging",
-    industry: "Telecom & Customer Experience",
-    modality: "Text",
-    problem: "Automated support routing lacked context.",
-    solution: "Intent, sentiment, urgency, and escalation labels on ticket text.",
-    impact: "Increased first-contact resolution and reduced support cycle times.",
-  },
-  {
-    id: 15,
-    title: "Call Center Diarization & Emotion Annotation",
+    id: 22,
+    title: "Voice Assistant Intent Classification",
     industry: "Telecom & Customer Experience",
     modality: "Audio",
-    problem: "Voice analytics missed customer emotion signals.",
-    solution: "Diarization with sentiment and stress annotations.",
-    impact: "Better agent coaching insights and improved CSAT scores.",
-  },
-  // Public Sector & Defense
-  {
-    id: 16,
-    title: "Satellite Crop Health Segmentation for Aid Planning",
-    industry: "Public Sector & Defense",
-    modality: "Image",
-    problem: "Disaster response models lacked structured agricultural data.",
-    solution: "Pixel-level segmentation of crop stress zones.",
-    impact: "Allowed prioritization of resources in impacted regions.",
-  },
-  {
-    id: 17,
-    title: "Surveillance Behavior Pattern Annotation",
-    industry: "Public Sector & Defense",
-    modality: "Video",
-    problem: "Automated public safety systems generated high false alarms.",
-    solution: "Behavioral sequence tagging with event context.",
-    impact: "Reduced alarm noise and improved situational awareness.",
+    problem: "Voice assistants misclassified user intents, leading to poor response accuracy.",
+    solution: "Annotated speech segments with intent labels and context markers.",
+    impact: "Improved intent recognition accuracy and enhanced user experience.",
   },
   // Logistics & Supply Chain
-  {
-    id: 18,
-    title: "Package Damage Detection in Sorting Lines",
-    industry: "Logistics & Supply Chain",
-    modality: "Image",
-    problem: "Misrouted or damaged parcels slowed fulfillment.",
-    solution: "Image and video annotation of package condition metrics.",
-    impact: "Faster claim processing and reduced operational disruptions.",
-  },
   {
     id: 19,
     title: "Conveyor Jam Event Annotation",
@@ -181,25 +90,7 @@ export const useCases = [
     solution: "Temporal tagging of stoppage events and object flow patterns.",
     impact: "Reduced downtime and improved throughput.",
   },
-  // Cross-Industry
-  {
-    id: 20,
-    title: "Grounding Signal Annotation for LLM Safety",
-    industry: "Cross-Industry",
-    modality: "Text",
-    problem: "LLMs hallucinated unsupported facts in enterprise Q&A.",
-    solution: "Tagged grounding requirements with source citations.",
-    impact: "Reduced hallucination and improved trust metrics.",
-  },
-  {
-    id: 21,
-    title: "Multilingual Toxicity Detection",
-    industry: "Cross-Industry",
-    modality: "Text",
-    problem: "Harmful content in regional languages was under-detected.",
-    solution: "Annotated toxicity signals across multiple languages.",
-    impact: "Improved moderation precision in global deployments.",
-  },
+  // Cross-Industry - Removed use case 20 due to image mismatch
 ];
 
 export const industries = [

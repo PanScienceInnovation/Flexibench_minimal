@@ -16,11 +16,11 @@ export function LogoSection10() {
   const marqueeBrands = [...brands, ...brands];
 
   return (
-    <section className="relative border-t border-b border-[#E3E3E0] dark:border-[#2A2A2A] py-8 sm:py-12 overflow-hidden bg-white dark:bg-[#0A0A0A]">
+    <section className="relative border-t border-b border-[#E3E3E0] py-8 sm:py-12 overflow-hidden bg-white">
       <div className="container-padding-x container mx-auto relative z-10">
         {/* Label Row */}
         <div className="text-center mb-8 sm:mb-12">
-          <div className="font-mono text-[10px] sm:text-[11px] text-[#A3A3A3] dark:text-[#737373] tracking-widest uppercase">
+          <div className="font-mono text-[10px] sm:text-[11px] text-[#A3A3A3] tracking-widest uppercase">
             TRUSTED BY INDUSTRY LEADERS
           </div>
         </div>
@@ -38,7 +38,7 @@ export function LogoSection10() {
                   alt={brand.name}
                   width={160}
                   height={64}
-                  className="object-contain h-12 sm:h-16 w-auto grayscale brightness-0 opacity-40 dark:brightness-0 dark:invert dark:opacity-60 hover:opacity-70 dark:hover:opacity-80 transition-opacity duration-200"
+                  className="object-contain h-12 sm:h-16 w-auto grayscale brightness-0 opacity-40 hover:opacity-70 transition-opacity duration-200"
                   priority={index < 6}
                 />
               </div>

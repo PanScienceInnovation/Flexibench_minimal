@@ -44,28 +44,17 @@ export default function UseCasesPage() {
   }, [selectedIndustry, selectedModality, searchQuery]);
 
   // Unique images for each use case - using local images from public/use-cases folder
+  // Only keeping use cases with images that match their context
   const useCaseImages: Record<number, string> = {
     1: "/use-cases/Healthcare2.png", // Clinical notes - Diagnostic Report
     2: "/use-cases/infrastructure3.jpg", // Pedestrian tracking - AV Safety (Smart vehicle)
-    3: "/use-cases/Healthcare.png", // Telehealth - Training Dashboard
-    4: "/use-cases/Healthcare2.png", // Radiology - Diagnostic Report
     5: "/use-cases/infrastructure2.png", // Road Sign - Infrastructure monitoring
-    6: "/use-cases/finance3.png", // Product Attribute - Finance dashboard
-    7: "/use-cases/finance2.png", // Shelf Planogram - Finance dashboard
     8: "/use-cases/Legal.png", // Contract Clause - Legal case
     9: "/use-cases/legal2.png", // KYC Document - Legal document
-    10: "/use-cases/manufacturing.png", // Solder Joint - Manufacturing dashboard
     11: "/use-cases/manufacturing2.png", // Worker Safety - Maintenance system
     12: "/use-cases/Media3.png", // Sports Player - Video analytics
-    13: "/use-cases/media2.png", // Game Chat - AI-Enhanced Video Editing
-    14: "/use-cases/finance.png", // Support Ticket - Finance dashboard (dark)
-    15: "/use-cases/Media.png", // Call Center - Media landing
-    16: "/use-cases/infrastructure.png", // Satellite Crop - Urban Flood Prediction
-    17: "/use-cases/infrastructure2.png", // Surveillance - Infrastructure monitoring
-    18: "/use-cases/manufacturing3.png", // Package Damage - Training Modules
     19: "/use-cases/manufacturing2.png", // Conveyor Jam - Maintenance system (logistics)
-    20: "/use-cases/finance2.png", // Grounding Signal - Finance dashboard
-    21: "/use-cases/Media.png", // Multilingual Toxicity - Media landing
+    22: "/voice.png", // Voice Assistant - Audio/Voice annotation
   };
 
   // Unified color scheme with orange accents on navy blue
@@ -132,7 +121,7 @@ export default function UseCasesPage() {
       </div>
       
       {/* Hero Section */}
-      <section className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden" style={{ 
+      <section className="relative bg-[#F7F6F3] section-padding-y border-b border-[#E3E3E0] overflow-hidden" style={{ 
         paddingTop: '80px'
       }}>
         <div className="container-padding-x container mx-auto relative z-10">
@@ -140,45 +129,45 @@ export default function UseCasesPage() {
             <div className="flex-1 flex flex-col gap-8">
               <div className="section-title-gap-lg flex flex-col">
                 <div className="inline-flex items-center gap-3 mb-4">
-                  <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] px-3 py-1 rounded-[3px] text-[#737373] dark:text-[#A3A3A3]">
+                  <div className="font-mono text-[11px] uppercase tracking-widest border border-[#E3E3E0] bg-white px-3 py-1 rounded-[3px] text-[#737373]">
                     Use Cases
                   </div>
-                  <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-[3px] bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                  <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-[3px] bg-white border border-[#E3E3E0]">
                     <Sparkles className="h-4 w-4 text-[#1A1AFF]" />
-                    <span className="font-mono text-[11px] text-[#737373] dark:text-[#A3A3A3] font-semibold">21 Real-World Cases</span>
+                    <span className="font-mono text-[11px] text-[#737373] font-semibold">{useCases.length} Real-World Cases</span>
                   </div>
                 </div>
                 <h1 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-display leading-[1.1]">
-                  <span className="text-[#0A0A0A] dark:text-[#F7F6F3]">Explore</span>{" "}
+                  <span className="text-[#0A0A0A]">Explore</span>{" "}
                   <span className="text-[#1A1AFF]">Annotation</span>{" "}
-                  <span className="text-[#0A0A0A] dark:text-[#F7F6F3]">Use Cases</span>
+                  <span className="text-[#0A0A0A]">Use Cases</span>
                 </h1>
-                <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3] leading-relaxed max-w-2xl">
+                <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] leading-relaxed max-w-2xl">
                   Discover real-world annotation workflows that solve enterprise challenges across industries and modalities.
                 </p>
               </div>
               
               {/* Stats Pills */}
               <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-3 px-5 py-3 bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
+                <div className="flex items-center gap-3 px-5 py-3 bg-white border border-[#E3E3E0] rounded-[4px]">
                   <TrendingUp className="h-5 w-5 text-[#1A1AFF]" />
                   <div>
-                    <div className="font-display text-2xl font-bold text-[#0A0A0A] dark:text-[#F7F6F3]">21+</div>
-                    <div className="font-mono text-[11px] text-[#737373] dark:text-[#A3A3A3] uppercase">Use Cases</div>
+                    <div className="font-display text-2xl font-bold text-[#0A0A0A]">{useCases.length}+</div>
+                    <div className="font-mono text-[11px] text-[#737373] uppercase">Use Cases</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 px-5 py-3 bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
+                <div className="flex items-center gap-3 px-5 py-3 bg-white border border-[#E3E3E0] rounded-[4px]">
                   <Zap className="h-5 w-5 text-[#1A1AFF]" />
                   <div>
-                    <div className="font-display text-2xl font-bold text-[#0A0A0A] dark:text-[#F7F6F3]">10+</div>
-                    <div className="font-mono text-[11px] text-[#737373] dark:text-[#A3A3A3] uppercase">Industries</div>
+                    <div className="font-display text-2xl font-bold text-[#0A0A0A]">10+</div>
+                    <div className="font-mono text-[11px] text-[#737373] uppercase">Industries</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 px-5 py-3 bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
+                <div className="flex items-center gap-3 px-5 py-3 bg-white border border-[#E3E3E0] rounded-[4px]">
                   <Sparkles className="h-5 w-5 text-[#1A1AFF]" />
                   <div>
-                    <div className="font-display text-2xl font-bold text-[#0A0A0A] dark:text-[#F7F6F3]">4</div>
-                    <div className="font-mono text-[11px] text-[#737373] dark:text-[#A3A3A3] uppercase">Modalities</div>
+                    <div className="font-display text-2xl font-bold text-[#0A0A0A]">4</div>
+                    <div className="font-mono text-[11px] text-[#737373] uppercase">Modalities</div>
                   </div>
                 </div>
               </div>
@@ -204,10 +193,10 @@ export default function UseCasesPage() {
       </section>
 
       {/* Filters Section */}
-      <section className="relative bg-white dark:bg-[#0A0A0A] section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-visible -mt-16 sm:-mt-20 pb-6 sm:pb-8">
+      <section className="relative bg-white section-padding-y border-b border-[#E3E3E0] overflow-visible -mt-16 sm:-mt-20 pb-6 sm:pb-8">
         <div className="container-padding-x container mx-auto relative z-20">
           {/* Filter Bar */}
-          <div className="relative bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
+          <div className="relative bg-white border border-[#E3E3E0] rounded-[4px] p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
             <div className="relative flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
               <div className="relative flex-1">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#737373]" />
@@ -215,28 +204,28 @@ export default function UseCasesPage() {
                   placeholder="Search use cases..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 sm:pl-12 h-12 sm:h-14 text-sm sm:text-base border border-[#E3E3E0] dark:border-[#2A2A2A] focus:border-[#1A1AFF] transition-colors bg-white dark:bg-[#0A0A0A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[3px] font-sans"
+                  className="pl-10 sm:pl-12 h-12 sm:h-14 text-sm sm:text-base border border-[#E3E3E0] focus:border-[#1A1AFF] transition-colors bg-white text-[#0A0A0A] rounded-[3px] font-sans"
                 />
               </div>
               <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
-                <SelectTrigger className="w-full md:w-[220px] h-12 sm:h-14 text-sm sm:text-base border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#0A0A0A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[3px] font-sans">
+                <SelectTrigger className="w-full md:w-[220px] h-12 sm:h-14 text-sm sm:text-base border border-[#E3E3E0] bg-white text-[#0A0A0A] rounded-[3px] font-sans">
                   <SelectValue placeholder="Industry" />
                 </SelectTrigger>
-                <SelectContent className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                <SelectContent className="bg-white border border-[#E3E3E0]">
                   {industries.map((industry) => (
-                    <SelectItem key={industry} value={industry} className="text-[#0A0A0A] dark:text-[#F7F6F3] hover:bg-[#F0EFE9] dark:hover:bg-[#1A1A1A]">
+                    <SelectItem key={industry} value={industry} className="text-[#0A0A0A] hover:bg-[#F0EFE9]">
                       {industry}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
               <Select value={selectedModality} onValueChange={setSelectedModality}>
-                <SelectTrigger className="w-full md:w-[220px] h-12 sm:h-14 text-sm sm:text-base border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#0A0A0A] text-[#0A0A0A] dark:text-[#F7F6F3] rounded-[3px] font-sans">
+                <SelectTrigger className="w-full md:w-[220px] h-12 sm:h-14 text-sm sm:text-base border border-[#E3E3E0] bg-white text-[#0A0A0A] rounded-[3px] font-sans">
                   <SelectValue placeholder="Modality" />
                 </SelectTrigger>
-                <SelectContent className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A]">
+                <SelectContent className="bg-white border border-[#E3E3E0]">
                   {modalities.map((modality) => (
-                    <SelectItem key={modality} value={modality} className="text-[#0A0A0A] dark:text-[#F7F6F3] hover:bg-[#F0EFE9] dark:hover:bg-[#1A1A1A]">
+                    <SelectItem key={modality} value={modality} className="text-[#0A0A0A] hover:bg-[#F0EFE9]">
                       {modality}
                     </SelectItem>
                   ))}
@@ -254,8 +243,8 @@ export default function UseCasesPage() {
           
           {/* Results Count Badge */}
           <div className="flex justify-center">
-            <div className="px-4 sm:px-6 py-1.5 sm:py-2 bg-[#0A0A0A] dark:bg-[#141414] rounded-[3px] border border-[#E3E3E0] dark:border-[#2A2A2A]">
-              <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white dark:text-[#F7F6F3] uppercase">
+            <div className="px-4 sm:px-6 py-1.5 sm:py-2 bg-[#0A0A0A] rounded-[3px] border border-[#E3E3E0]">
+              <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white uppercase">
                 {filteredUseCases.length} of {useCases.length} use cases
               </span>
             </div>
@@ -264,7 +253,7 @@ export default function UseCasesPage() {
       </section>
 
       {/* Use Cases Grid */}
-      <section className={`relative ${filteredUseCases.length > 0 ? 'bg-[#F7F6F3] dark:bg-[#0A0A0A]' : 'bg-white dark:bg-[#0A0A0A]'} section-padding-y border-b border-[#E3E3E0] dark:border-[#2A2A2A] overflow-hidden pt-12 sm:pt-16`}>
+      <section className={`relative ${filteredUseCases.length > 0 ? 'bg-[#F7F6F3]' : 'bg-white'} section-padding-y border-b border-[#E3E3E0] overflow-hidden pt-12 sm:pt-16`}>
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `linear-gradient(to right, rgba(59,130,246,0.3) 1px, transparent 1px),
                             linear-gradient(to bottom, rgba(59,130,246,0.3) 1px, transparent 1px)`,
@@ -291,10 +280,10 @@ export default function UseCasesPage() {
                 return (
               <div
                 key={useCase.id}
-                className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] overflow-hidden hover:border-[#1A1AFF] transition-colors duration-200"
+                className="bg-white border border-[#E3E3E0] rounded-[4px] overflow-hidden hover:border-[#1A1AFF] transition-colors duration-200"
               >
                 {/* Image Header */}
-                <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden border-b border-[#E3E3E0] dark:border-[#2A2A2A]">
+                <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden border-b border-[#E3E3E0]">
                   <Image
                     src={imageUrl}
                     alt={`${useCase.industry} use case: ${useCase.title}`}
@@ -302,24 +291,24 @@ export default function UseCasesPage() {
                     placeholder="blur"
                     blurDataURL={blurPlaceholders.default}
                     loading="lazy"
-                    className="object-cover object-top grayscale-[10%] brightness-[1.05] dark:brightness-[0.9]"
+                    className="object-cover object-top grayscale-[10%] brightness-[1.05]"
                   />
                   
                   {/* Icon Badge */}
                   <div className="absolute top-2 sm:top-3 left-2 sm:left-3">
-                    <div className="bg-white dark:bg-[#141414] rounded-[3px] p-1.5 sm:p-2 border border-[#E3E3E0] dark:border-[#2A2A2A]">
-                      <IconComponent className="text-[#0A0A0A] dark:text-[#F7F6F3] h-5 w-5 sm:h-6 sm:w-6" />
+                    <div className="bg-white rounded-[3px] p-1.5 sm:p-2 border border-[#E3E3E0]">
+                      <IconComponent className="text-[#0A0A0A] h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                   </div>
                   
                   {/* Tags */}
                   <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3">
                     <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-                      <span className="font-mono text-[9px] sm:text-[10px] bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-[2px] text-[#0A0A0A] dark:text-[#F7F6F3]">
+                      <span className="font-mono text-[9px] sm:text-[10px] bg-white border border-[#E3E3E0] px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-[2px] text-[#0A0A0A]">
                         {useCase.industry.split(" ")[0]}
                       </span>
-                      <span className="text-[#E3E3E0] dark:text-[#2A2A2A]">•</span>
-                      <span className="font-mono text-[9px] sm:text-[10px] bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-[2px] text-[#0A0A0A] dark:text-[#F7F6F3]">
+                      <span className="text-[#E3E3E0]">•</span>
+                      <span className="font-mono text-[9px] sm:text-[10px] bg-white border border-[#E3E3E0] px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-[2px] text-[#0A0A0A]">
                         {useCase.modality}
                       </span>
                     </div>
@@ -327,16 +316,16 @@ export default function UseCasesPage() {
                 </div>
                 
                 <div className="p-4 sm:p-5 md:p-6 flex flex-col gap-3 sm:gap-4">
-                  <h3 className="font-display text-[18px] sm:text-[20px] text-[#0A0A0A] dark:text-[#F7F6F3] leading-tight line-clamp-2">
+                  <h3 className="font-display text-[18px] sm:text-[20px] text-[#0A0A0A] leading-tight line-clamp-2">
                     {useCase.title}
                   </h3>
                   
                   <div className="space-y-2">
-                    <div className="p-3 sm:p-4 bg-[#F7F6F3] dark:bg-[#1A1A1A] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px]">
-                      <h4 className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] dark:text-[#737373] mb-2 uppercase tracking-widest">
+                    <div className="p-3 sm:p-4 bg-[#F7F6F3] border border-[#E3E3E0] rounded-[4px]">
+                      <h4 className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] mb-2 uppercase tracking-widest">
                         Problem
                       </h4>
-                      <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] dark:text-[#A3A3A3] leading-[1.7] line-clamp-2">{useCase.problem}</p>
+                      <p className="font-sans text-[14px] sm:text-[15px] text-[#737373] leading-[1.7] line-clamp-2">{useCase.problem}</p>
                     </div>
                   </div>
                 </div>
@@ -346,13 +335,13 @@ export default function UseCasesPage() {
             </div>
           ) : (
             <div className="text-center py-20 sm:py-32">
-              <div className="bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[4px] p-12 sm:p-16 max-w-2xl mx-auto">
+              <div className="bg-white border border-[#E3E3E0] rounded-[4px] p-12 sm:p-16 max-w-2xl mx-auto">
                 <div className="flex flex-col items-center gap-4 sm:gap-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-[4px] bg-[#F0EFE9] dark:bg-[#1A1A1A] flex items-center justify-center">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-[4px] bg-[#F0EFE9] flex items-center justify-center">
                     <Search className="h-8 w-8 sm:h-10 sm:w-10 text-[#1A1AFF]" />
                   </div>
-                  <h3 className="font-display text-[24px] sm:text-[28px] text-[#0A0A0A] dark:text-[#F7F6F3]">No use cases found</h3>
-                  <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373] dark:text-[#A3A3A3]">
+                  <h3 className="font-display text-[24px] sm:text-[28px] text-[#0A0A0A]">No use cases found</h3>
+                  <p className="font-sans text-[15px] sm:text-[16px] md:text-[17px] text-[#737373]">
                     Try adjusting your search criteria or filters to find what you're looking for.
                   </p>
                 </div>

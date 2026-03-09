@@ -134,7 +134,7 @@ export default function BlogDetailClient() {
 
         {/* Article Content */}
         <div 
-          className="prose prose-lg dark:prose-invert max-w-none mb-12 blog-content"
+          className="prose prose-lg max-w-none mb-12 blog-content"
           dangerouslySetInnerHTML={{ __html: blog.body || '' }}
         />
         <style jsx global>{`

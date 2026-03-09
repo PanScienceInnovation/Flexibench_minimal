@@ -85,7 +85,7 @@ export function Footer1() {
           {/* Logo Section */}
           <Link href="/" aria-label="Go to homepage" className="group">
             <div className="transform transition-colors duration-400">
-              <Logo className="invert dark:invert-0 h-12 sm:h-14 w-auto" />
+              <Logo className="h-12 sm:h-14 w-auto invert" />
             </div>
           </Link>
 

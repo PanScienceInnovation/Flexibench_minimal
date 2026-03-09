@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const onest = Onest({
   subsets: ["latin"],
@@ -13,7 +12,15 @@ export const metadata: Metadata = {
   title: "Flexibench — Enterprise Data Annotation Platform",
   description:
     "Modern multimodal annotation platform for AI model training data with quality workflows and integrated tooling.",
-  generator: 'v0.app'
+  generator: 'v0.app',
+  icons: {
+    icon: [
+      { url: '/fb-feviconlogo.png', type: 'image/png', sizes: 'any' },
+      { url: '/fb-feviconlogo.png', type: 'image/png', sizes: '32x32' },
+      { url: '/fb-feviconlogo.png', type: 'image/png', sizes: '16x16' },
+    ],
+    apple: '/fb-feviconlogo.png',
+  },
 };
 
 export default function RootLayout({
@@ -23,8 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <html lang="en" suppressHydrationWarning className="scroll-smooth light">
         <head>
+          <link rel="icon" href="/fb-feviconlogo.png" type="image/png" sizes="any" />
+          <link rel="icon" href="/fb-feviconlogo.png" type="image/png" sizes="32x32" />
+          <link rel="icon" href="/fb-feviconlogo.png" type="image/png" sizes="16x16" />
+          <link rel="apple-touch-icon" href="/fb-feviconlogo.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -37,14 +48,7 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem={false}
-            disableTransitionOnChange={false}
-          >
-            {children}
-          </ThemeProvider>
+          {children}
         </body>
       </html>
     </>

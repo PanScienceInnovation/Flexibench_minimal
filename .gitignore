@@ -25,3 +25,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python virtual environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# deployment files (local)
+nginx-minimal.conf
+deploy.log
+DEPLOYMENT_COMPLETE.md
+
+# temporary files
+dummy.ipynb
+remove_bg.py
