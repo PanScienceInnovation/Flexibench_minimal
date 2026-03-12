@@ -15,7 +15,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-PROJECT_DIR="/home/ubuntu/Flexibench_website"
+PROJECT_DIR="/home/ubuntu/Flexibench_new/Flexibench_minimal"
 BUILD_DIR="${PROJECT_DIR}/out"
 NGINX_CONFIG="/etc/nginx/sites-available/flexibench.io"
 LOG_FILE="${PROJECT_DIR}/deploy.log"

@@ -4,27 +4,18 @@ interface LogoProps {
 
 export const Logo: React.FC<LogoProps> = ({ className }) => {
   return (
-    <div
-      className={`flex items-center ${className || ""}`}
-      style={{
-        height: '36px',
-        backgroundColor: 'transparent',
-      }}
-    >
+    <div className={`flex items-center ${className || ""}`} style={{ height: '28px' }}>
       <img
-        src="/Flexibench-logo.png"
+        src="/Flexibench-logo-transparent.png"
         alt="FlexiBench Logo"
         className="h-full w-auto object-contain object-left"
         style={{
-          maxHeight: '36px',
-          height: '36px',
+          maxHeight: '28px',
+          height: '28px',
           width: 'auto',
           objectFit: 'contain',
           objectPosition: 'left center',
           display: 'block',
-          backgroundColor: 'transparent',
-          mixBlendMode: 'multiply',
-          filter: 'contrast(1.3) brightness(0.9) saturate(1.2)',
         }}
         decoding="async"
       />

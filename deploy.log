@@ -78,3 +78,252 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 [2026-01-19 12:44:04] Nginx is active
 [2026-01-19 12:44:04] === Deployment Completed Successfully ===
 [2026-01-19 12:44:04] 
+[2026-03-09 10:22:59] === Deployment Started ===
+[2026-03-09 10:22:59] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-09 10:22:59] Installing dependencies...
+[2026-03-09 10:23:03] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-09 10:23:03] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.8s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 8 blogs to generate
+  Generating static pages using 7 workers (0/34) ...
+  Generating static pages using 7 workers (8/34) 
+  Generating static pages using 7 workers (16/34) 
+  Generating static pages using 7 workers (25/34) 
+✓ Generating static pages using 7 workers (34/34) in 1023.8ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/beyond-the-algorithm-how-data-annotation-engineering-drives-real-ai-results
+│ ├ /resources/blogs/the-flexibench-architecture-a-modular-approach-to-data-quality
+│ ├ /resources/blogs/5-surprising-truths-about-the-high-quality-data-that-powers-modern-ai
+│ └ [+5 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/ontology-governance-strategies
+│ ├ /resources/white-papers/scaling-annotation-workflows
+│ ├ /resources/white-papers/annotation-for-safety-critical-ai
+│ └ /resources/white-papers/enterprise-quality-frameworks
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-09 10:23:14] Build completed successfully
+[2026-03-09 10:23:14] File permissions set
+2026/03/09 10:23:14 [warn] 855395#855395: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/09 10:23:14 [warn] 855395#855395: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/09 10:23:14 [warn] 855395#855395: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/09 10:23:14 [warn] 855395#855395: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/09 10:23:14 [warn] 855395#855395: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-09 10:23:14] Nginx configuration valid
+[2026-03-09 10:23:15] Nginx reloaded successfully
+[2026-03-09 10:23:15] Nginx is active
+[2026-03-09 10:23:15] === Deployment Completed Successfully ===
+[2026-03-09 10:23:15] 
+[2026-03-10 05:10:04] === Deployment Started ===
+[2026-03-10 05:10:04] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-10 05:10:04] Installing dependencies...
+[2026-03-10 05:10:08] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-10 05:10:08] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.5s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 8 blogs to generate
+  Generating static pages using 7 workers (0/34) ...
+  Generating static pages using 7 workers (8/34) 
+  Generating static pages using 7 workers (16/34) 
+  Generating static pages using 7 workers (25/34) 
+✓ Generating static pages using 7 workers (34/34) in 780.7ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/beyond-the-algorithm-how-data-annotation-engineering-drives-real-ai-results
+│ ├ /resources/blogs/the-flexibench-architecture-a-modular-approach-to-data-quality
+│ ├ /resources/blogs/5-surprising-truths-about-the-high-quality-data-that-powers-modern-ai
+│ └ [+5 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/ontology-governance-strategies
+│ ├ /resources/white-papers/scaling-annotation-workflows
+│ ├ /resources/white-papers/annotation-for-safety-critical-ai
+│ └ /resources/white-papers/enterprise-quality-frameworks
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-10 05:10:18] Build completed successfully
+[2026-03-10 05:10:18] File permissions set
+2026/03/10 05:10:18 [warn] 2756704#2756704: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/10 05:10:18 [warn] 2756704#2756704: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/10 05:10:18 [warn] 2756704#2756704: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/10 05:10:18 [warn] 2756704#2756704: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/10 05:10:18 [warn] 2756704#2756704: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-10 05:10:18] Nginx configuration valid
+[2026-03-10 05:10:18] Nginx reloaded successfully
+[2026-03-10 05:10:18] Nginx is active
+[2026-03-10 05:10:18] === Deployment Completed Successfully ===
+[2026-03-10 05:10:18] 
+[2026-03-10 05:30:52] === Deployment Started ===
+[2026-03-10 05:30:52] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-10 05:30:52] Installing dependencies...
+[2026-03-10 05:30:56] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-10 05:30:57] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.8s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 8 blogs to generate
+  Generating static pages using 7 workers (0/34) ...
+  Generating static pages using 7 workers (8/34) 
+  Generating static pages using 7 workers (16/34) 
+  Generating static pages using 7 workers (25/34) 
+✓ Generating static pages using 7 workers (34/34) in 770.5ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/beyond-the-algorithm-how-data-annotation-engineering-drives-real-ai-results
+│ ├ /resources/blogs/the-flexibench-architecture-a-modular-approach-to-data-quality
+│ ├ /resources/blogs/5-surprising-truths-about-the-high-quality-data-that-powers-modern-ai
+│ └ [+5 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/ontology-governance-strategies
+│ ├ /resources/white-papers/scaling-annotation-workflows
+│ ├ /resources/white-papers/annotation-for-safety-critical-ai
+│ └ /resources/white-papers/enterprise-quality-frameworks
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-10 05:31:07] Build completed successfully
+[2026-03-10 05:31:07] File permissions set
+2026/03/10 05:31:07 [warn] 2791072#2791072: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/10 05:31:07 [warn] 2791072#2791072: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/10 05:31:07 [warn] 2791072#2791072: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/10 05:31:07 [warn] 2791072#2791072: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/10 05:31:07 [warn] 2791072#2791072: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-10 05:31:07] Nginx configuration valid
+[2026-03-10 05:31:07] Nginx reloaded successfully
+[2026-03-10 05:31:07] Nginx is active
+[2026-03-10 05:31:07] === Deployment Completed Successfully ===
+[2026-03-10 05:31:07] 
