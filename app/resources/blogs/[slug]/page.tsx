@@ -1,4 +1,5 @@
 import BlogDetailClient from "./blog-detail-client";
+import { slugifyTitle } from "@/lib/api/resources";
 
 export async function generateStaticParams() {
   try {
@@ -9,7 +10,8 @@ export async function generateStaticParams() {
     
     if (!token) {
       console.warn('[generateStaticParams] CMS API token not found');
-      return [];
+      // Return placeholder to avoid build error with static export
+      return [{ slug: 'placeholder' }];
     }
 
     const response = await fetch(`${CMS_API_BASE_URL}?limit=100&includeAssetUrls=true`, {
@@ -24,8 +26,9 @@ export async function generateStaticParams() {
     if (response.ok) {
       const data = await response.json();
       if (data.success && data.data && Array.isArray(data.data)) {
-        const slugs = data.data.map((blog: { slug: string }) => ({
-          slug: blog.slug,
+        const slugs = data.data.map((blog: { slug?: string; title?: string }) => ({
+          // Use kebab-case slug derived from title so URLs are stable
+          slug: slugifyTitle(blog.slug || blog.title || ""),
         }));
         console.log(`[generateStaticParams] Found ${slugs.length} CMS blogs to generate`);
         return slugs;
@@ -37,8 +40,8 @@ export async function generateStaticParams() {
     console.error('[generateStaticParams] Error fetching CMS blogs:', error);
   }
   
-  // Return empty array - will fallback to 404 for unknown slugs
-  return [];
+  // Return placeholder to avoid build error with static export
+  return [{ slug: 'placeholder' }];
 }
 
 export default function BlogDetailPage({

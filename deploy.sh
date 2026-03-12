@@ -116,6 +116,16 @@ fi
 
 print_success "Build output found at ${BUILD_DIR}"
 
+# Create URL-encoded symlinks for resource files
+print_info "Creating URL-encoded symlinks for resource files..."
+if [ -f "${PROJECT_DIR}/create-url-encoded-symlinks.sh" ]; then
+    "${PROJECT_DIR}/create-url-encoded-symlinks.sh" 2>&1 | tee -a "$LOG_FILE"
+    print_success "Symlinks created"
+    log_message "URL-encoded symlinks created"
+else
+    print_warning "Symlink script not found, skipping"
+fi
+
 # Set proper permissions
 print_info "Setting file permissions..."
 chmod -R 755 "$BUILD_DIR"

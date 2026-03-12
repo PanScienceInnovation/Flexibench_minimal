@@ -251,15 +251,8 @@ export default function ResourcesPage() {
       // Convert CMS white papers to internal WhitePaper format
       const convertedCmsWhitePapers = cmsWhitePapers.map(convertCmsWhitePaperToWhitePaper);
 
+      // Build unified list using CMS content only (for consistent slugs/URLs)
       const unifiedResources: UnifiedResource[] = [
-        ...blogs.map((blog) => ({
-          slug: typeof blog.slug === 'string' ? blog.slug : String(blog.slug || ''),
-          category: "Blogs" as ResourceCategory,
-          title: blog.title,
-          author: blog.author,
-          date: formatDate(blog.date),
-          readTime: blog.readTime || 5,
-        })),
         ...convertedCmsBlogs.map((blog) => {
           // Use the CMS slug directly - it's the full title: "Beyond the Algorithm: How Data Annotation Engineering Drives Real AI Results"
           // The slug will be URL-encoded when used in the link, so spaces and special chars are fine
@@ -299,14 +292,6 @@ export default function ResourcesPage() {
             readTime: blog.readTime || 5,
           };
         }),
-        ...whitePapers.map((paper) => ({
-          slug: paper.slug,
-          category: "White Papers" as ResourceCategory,
-          title: paper.title,
-          source: paper.source,
-          date: formatDate(paper.createdAt, whitePaperDates[paper.title]),
-          readTime: paper.readTime || 5,
-        })),
         ...convertedCmsWhitePapers.map((paper) => {
           // Use the CMS slug directly - it's the full title
           let slug = typeof paper.slug === 'string' ? paper.slug : String(paper.slug || '');
@@ -404,11 +389,11 @@ export default function ResourcesPage() {
             {/* Stats Row */}
             <div className="mt-8 sm:mt-10 flex flex-row justify-center gap-0 border border-[#E3E3E0] rounded-[4px] bg-white inline-flex mx-auto flex-wrap sm:flex-nowrap">
               <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-r border-[#E3E3E0] text-center">
-                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A]">12+</div>
+                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A]">5+</div>
                 <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] uppercase tracking-widest mt-1">Blogs</div>
               </div>
               <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-r border-[#E3E3E0] text-center">
-                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A]">8+</div>
+                <div className="font-display text-[20px] sm:text-[24px] md:text-[28px] text-[#0A0A0A]">3+</div>
                 <div className="font-mono text-[9px] sm:text-[10px] text-[#A3A3A3] uppercase tracking-widest mt-1">White Papers</div>
               </div>
               <div className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-center">
@@ -443,6 +428,13 @@ export default function ResourcesPage() {
 
       {/* Resources Grid */}
       <section className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] py-12 md:py-16">
+        <style jsx global>{`
+          .resource-card,
+          .resource-card * {
+            list-style: none !important;
+            list-style-type: none !important;
+          }
+        `}</style>
         <div className="container-padding-x container mx-auto">
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20 gap-4">
@@ -470,7 +462,7 @@ export default function ResourcesPage() {
                 return (
                   <div
                     key={`${resource.category}-${resource.slug}`}
-                    className="group relative bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[3px] overflow-hidden hover:border-[#0A0A0A] dark:hover:border-[#F7F6F3] transition-colors duration-200"
+                    className="resource-card group relative bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[3px] overflow-hidden hover:border-[#0A0A0A] dark:hover:border-[#F7F6F3] transition-colors duration-200"
                   >
                     <div className="flex flex-col gap-3 p-5">
                       {/* Metadata */}
@@ -484,7 +476,7 @@ export default function ResourcesPage() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-display text-[18px] leading-[1.2] text-[#0A0A0A] dark:text-[#F7F6F3] line-clamp-2 group-hover:text-[#1A1AFF] dark:group-hover:text-[#1A1AFF] transition-colors duration-200">
+                      <h3 className="font-display text-[18px] leading-[1.2] text-[#0A0A0A] dark:text-[#F7F6F3] line-clamp-2 group-hover:text-[#1A1AFF] dark:group-hover:text-[#1A1AFF] transition-colors duration-200" style={{ listStyle: 'none', listStyleType: 'none' }}>
                         {typeof resource.title === 'string' && resource.title.includes('<') 
                           ? resource.title.replace(/<[^>]*>/g, '').trim()
                           : resource.title}
@@ -501,7 +493,7 @@ export default function ResourcesPage() {
 
                         {/* Read More Link */}
                         <Link 
-                          href={`/resources/${resource.category.toLowerCase().replace(/\s+/g, '-')}/${encodeURIComponent(resource.slug)}`}
+                          href={`/resources/${resource.category.toLowerCase().replace(/\s+/g, '-')}/${resource.slug}`}
                           className="font-mono text-[10px] uppercase tracking-widest text-[#0A0A0A] dark:text-[#F7F6F3] hover:text-[#1A1AFF] dark:hover:text-[#1A1AFF] flex items-center gap-1.5 group/link transition-colors duration-200"
                         >
                           Read More

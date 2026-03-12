@@ -488,21 +488,31 @@ export const getCmsBlogBySlug = async (
         // CMS slug is the full title: "Beyond the Algorithm: How Data Annotation Engineering Drives Real AI Results"
         // Try to find by exact slug match first
         let found = response.data.find(item => {
-          const itemSlug = item.slug || '';
-          // Try exact match (CMS slug is the full title)
-          if (itemSlug === slugString) return true;
-          // Try case-insensitive match
-          if (itemSlug.toLowerCase() === slugString.toLowerCase()) return true;
+          const itemSlug = (item.slug || '') as string;
+          const itemTitle = stripHtmlTags((item.title || '') as string);
+          const titleSlug = slugifyTitle(itemTitle);
+
+          // Try exact match on stored slug
+          if (itemSlug && itemSlug.toLowerCase() === slugString.toLowerCase()) return true;
+
+          // Try match on slug derived from title (kebab-case)
+          if (titleSlug && titleSlug === slugString.toLowerCase()) return true;
+
           return false;
         });
         
         // If not found, try matching against title (in case slug field is empty or different)
         if (!found) {
           found = response.data.find(item => {
-            const itemTitle = (item.title || '').replace(/<[^>]*>/g, '').trim();
-            // Try matching title against slug (slug might be URL-encoded title)
-            return itemTitle === slugString || 
-                   itemTitle.toLowerCase() === slugString.toLowerCase();
+            const itemTitle = stripHtmlTags((item.title || '') as string);
+            const titleSlug = slugifyTitle(itemTitle);
+
+            // Match against clean title or its slug
+            return (
+              itemTitle === slugString ||
+              itemTitle.toLowerCase() === slugString.toLowerCase() ||
+              titleSlug === slugString.toLowerCase()
+            );
           });
         }
         
@@ -540,6 +550,28 @@ export const getCmsBlogBySlug = async (
     console.error(`Error fetching CMS blog by slug ${slug}:`, error);
     return { success: false, data: null };
   }
+};
+
+// Helper function to generate a URL-safe slug from a title
+export const slugifyTitle = (value: string): string => {
+  if (!value || typeof value !== 'string') return '';
+
+  // Remove HTML tags and decode common entities
+  const clean = value
+    .replace(/<[^>]*>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .trim();
+
+  return clean
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 };
 
 // Helper function to strip HTML tags from text (works on both client and server)
@@ -623,53 +655,17 @@ export const convertCmsBlogToBlog = (cmsItem: CmsBlogItem): Blog => {
     title = cleanTitle; // Use cleaned title
   }
 
-  // Extract slug - CMS slug is the full title: "Beyond the Algorithm: How Data Annotation Engineering Drives Real AI Results"
-  let slug = '';
+  // Generate URL slug from cleaned title so it is consistent everywhere
+  let slug = slugifyTitle(cleanTitle || (cmsItem.slug as string) || '');
   
-  // First, try to get slug from cmsItem.slug field
-  if (cmsItem.slug) {
-    if (typeof cmsItem.slug === 'string') {
-      slug = cmsItem.slug.trim();
-    } else if (typeof cmsItem.slug === 'object' && cmsItem.slug !== null) {
-      // If slug is an object, try to extract a string value
-      const slugObj = cmsItem.slug as any;
-      if (slugObj.value) slug = String(slugObj.value).trim();
-      else if (slugObj.slug) slug = String(slugObj.slug).trim();
-      else slug = String(slugObj).trim();
-    } else {
-      slug = String(cmsItem.slug).trim();
-    }
-  }
-  
-  // Strip HTML from slug if it contains HTML (shouldn't happen, but safety check)
-  if (slug && (slug.includes('<') || slug.includes('>'))) {
-    console.warn('Slug contains HTML, stripping:', slug);
-    slug = stripHtmlTags(slug);
-  }
-  
-  // Validate slug - CMS slug is the full title with spaces and special chars
-  // It should be: "Beyond the Algorithm: How Data Annotation Engineering Drives Real AI Results"
-  const isValidSlug = slug && 
-    slug !== '[object Object]' && 
-    slug !== 'object-object' && 
-    !slug.includes('<') && 
-    !slug.includes('>') &&
-    slug.length > 0;
-  
-  if (!isValidSlug) {
+  if (!slug) {
     console.warn('CMS slug field is invalid or empty, using cleaned title as slug:', {
       id: cmsItem.id,
       rawSlug: cmsItem.slug,
       slugType: typeof cmsItem.slug,
-      attemptedSlug: slug,
       cleanTitle: cleanTitle
     });
-    // Use cleaned title as slug (CMS slug should be the title)
-    slug = cleanTitle || 'unknown';
-    
-    console.log('Using cleaned title as slug:', slug);
-  } else {
-    console.log('Using CMS slug field (full title):', slug);
+    slug = slugifyTitle(cleanTitle || 'unknown');
   }
 
   // Format date - ensure it's a valid date string
@@ -885,43 +881,16 @@ export const convertCmsWhitePaperToWhitePaper = (cmsItem: CmsWhitePaperItem): Wh
     title = cleanTitle;
   }
 
-  // Extract slug - CMS slug is the full title
-  let slug = '';
+  // Generate URL slug from cleaned title so it is consistent everywhere
+  let slug = slugifyTitle(cleanTitle || (cmsItem.slug as string) || '');
   
-  if (cmsItem.slug) {
-    if (typeof cmsItem.slug === 'string') {
-      slug = cmsItem.slug.trim();
-    } else if (typeof cmsItem.slug === 'object' && cmsItem.slug !== null) {
-      const slugObj = cmsItem.slug as any;
-      if (slugObj.value) slug = String(slugObj.value).trim();
-      else if (slugObj.slug) slug = String(slugObj.slug).trim();
-      else slug = String(slugObj).trim();
-    } else {
-      slug = String(cmsItem.slug).trim();
-    }
-  }
-  
-  // Strip HTML from slug if it contains HTML
-  if (slug && (slug.includes('<') || slug.includes('>'))) {
-    console.warn('White paper slug contains HTML, stripping:', slug);
-    slug = stripHtmlTags(slug);
-  }
-  
-  // Validate slug
-  const isValidSlug = slug && 
-    slug !== '[object Object]' && 
-    slug !== 'object-object' && 
-    !slug.includes('<') && 
-    !slug.includes('>') &&
-    slug.length > 0;
-  
-  if (!isValidSlug) {
+  if (!slug) {
     console.warn('CMS white paper slug field is invalid or empty, using cleaned title as slug:', {
       id: cmsItem.id,
       rawSlug: cmsItem.slug,
       cleanTitle: cleanTitle
     });
-    slug = cleanTitle || 'unknown';
+    slug = slugifyTitle(cleanTitle || 'unknown');
   }
 
   // Format date - ensure it's a valid date string

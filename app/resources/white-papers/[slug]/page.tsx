@@ -1,4 +1,5 @@
 import WhitePaperDetailClient from "./whitepaper-detail-client";
+import { slugifyTitle } from "@/lib/api/resources";
 
 export async function generateStaticParams() {
   try {
@@ -9,7 +10,8 @@ export async function generateStaticParams() {
     
     if (!token) {
       console.warn('[generateStaticParams] CMS API token not found');
-      return [];
+      // Return placeholder to avoid build error with static export
+      return [{ slug: 'placeholder' }];
     }
 
     const response = await fetch(`${CMS_API_BASE_URL}?limit=100&includeAssetUrls=true`, {
@@ -24,8 +26,9 @@ export async function generateStaticParams() {
     if (response.ok) {
       const data = await response.json();
       if (data.success && data.data && Array.isArray(data.data)) {
-        const slugs = data.data.map((paper: { slug: string }) => ({
-          slug: paper.slug,
+        const slugs = data.data.map((paper: { slug?: string; title?: string }) => ({
+          // Use kebab-case slug derived from title
+          slug: slugifyTitle(paper.slug || paper.title || ""),
         }));
         console.log(`[generateStaticParams] Found ${slugs.length} CMS white papers to generate`);
         return slugs;
@@ -37,8 +40,8 @@ export async function generateStaticParams() {
     console.error('[generateStaticParams] Error fetching CMS white papers:', error);
   }
   
-  // Return empty array - will fallback to 404 for unknown slugs
-  return [];
+  // Return placeholder to avoid build error with static export
+  return [{ slug: 'placeholder' }];
 }
 
 export default function WhitePaperDetailPage({

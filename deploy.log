@@ -327,3 +327,1445 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 [2026-03-10 05:31:07] Nginx is active
 [2026-03-10 05:31:07] === Deployment Completed Successfully ===
 [2026-03-10 05:31:07] 
+[2026-03-12 08:31:10] === Deployment Started ===
+[2026-03-12 08:31:10] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 08:31:10] Installing dependencies...
+[2026-03-12 08:31:14] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 08:31:14] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.6s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] CMS API token not found
+
+> Build error occurred
+Error: Page "/resources/white-papers/[slug]" is missing "generateStaticParams()" so it cannot be used with "output: export" config.
+    at ignore-listed frames
+[2026-03-12 08:31:23] Build completed successfully
+[2026-03-12 08:31:23] File permissions set
+2026/03/12 08:31:23 [warn] 3728002#3728002: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 08:31:23 [warn] 3728002#3728002: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 08:31:23 [warn] 3728002#3728002: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 08:31:23 [warn] 3728002#3728002: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 08:31:23 [warn] 3728002#3728002: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 08:31:23] Nginx configuration valid
+[2026-03-12 08:31:23] Nginx reloaded successfully
+[2026-03-12 08:31:23] Nginx is active
+[2026-03-12 08:31:23] === Deployment Completed Successfully ===
+[2026-03-12 08:31:23] 
+[2026-03-12 08:31:56] === Deployment Started ===
+[2026-03-12 08:31:56] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 08:31:56] Installing dependencies...
+[2026-03-12 08:31:58] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 08:31:58] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.6s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] CMS API token not found
+[generateStaticParams] CMS API token not found
+  Generating static pages using 7 workers (0/24) ...
+Error occurred prerendering page "/capabilities/text". Read more: https://nextjs.org/docs/messages/prerender-error
+ReferenceError: ThemeProvider is not defined
+    at e (.next/server/chunks/ssr/[root-of-the-server]__bcac0b32._.js:1:1670)
+    at stringify (<anonymous>) {
+  digest: '1719855863'
+}
+Export encountered an error on /capabilities/[type]/page: /capabilities/text, exiting the build.
+⨯ Next.js build worker exited with code: 1 and signal: null
+[2026-03-12 08:32:06] Build completed successfully
+[2026-03-12 08:32:06] File permissions set
+2026/03/12 08:32:06 [warn] 3729612#3729612: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 08:32:06 [warn] 3729612#3729612: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 08:32:06 [warn] 3729612#3729612: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 08:32:06 [warn] 3729612#3729612: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 08:32:06 [warn] 3729612#3729612: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 08:32:06] Nginx configuration valid
+[2026-03-12 08:32:06] Nginx reloaded successfully
+[2026-03-12 08:32:06] Nginx is active
+[2026-03-12 08:32:07] === Deployment Completed Successfully ===
+[2026-03-12 08:32:07] 
+[2026-03-12 08:32:34] === Deployment Started ===
+[2026-03-12 08:32:34] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 08:32:34] Installing dependencies...
+[2026-03-12 08:32:36] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 08:32:36] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.6s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] CMS API token not found
+[generateStaticParams] CMS API token not found
+  Generating static pages using 7 workers (0/24) ...
+  Generating static pages using 7 workers (6/24) 
+  Generating static pages using 7 workers (12/24) 
+BlogDetailClient - slug: placeholder params: { slug: 'placeholder' } URL: N/A
+WhitePaperDetailClient - slug: placeholder params: { slug: 'placeholder' }
+  Generating static pages using 7 workers (18/24) 
+✓ Generating static pages using 7 workers (24/24) in 936.6ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ └ /resources/blogs/placeholder
+├ ● /resources/white-papers/[slug]
+│ └ /resources/white-papers/placeholder
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 08:32:46] Build completed successfully
+[2026-03-12 08:32:46] File permissions set
+2026/03/12 08:32:46 [warn] 3731203#3731203: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 08:32:46 [warn] 3731203#3731203: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 08:32:46 [warn] 3731203#3731203: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 08:32:46 [warn] 3731203#3731203: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 08:32:46 [warn] 3731203#3731203: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 08:32:46] Nginx configuration valid
+[2026-03-12 08:32:46] Nginx reloaded successfully
+[2026-03-12 08:32:46] Nginx is active
+[2026-03-12 08:32:46] === Deployment Completed Successfully ===
+[2026-03-12 08:32:46] 
+[2026-03-12 08:35:40] === Deployment Started ===
+[2026-03-12 08:35:41] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 08:35:41] Installing dependencies...
+[2026-03-12 08:35:43] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 08:35:43] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.4s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 4 CMS white papers to generate
+[generateStaticParams] Found 7 CMS blogs to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data params: {
+  slug: 'Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data params: {
+  slug: 'The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop params: {
+  slug: 'The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop'
+} URL: N/A
+BlogDetailClient - slug: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI params: {
+  slug: '5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI'
+} URL: N/A
+BlogDetailClient - slug: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality params: {
+  slug: 'The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality'
+} URL: N/A
+BlogDetailClient - slug: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation params: {
+  slug: 'Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+BlogDetailClient - slug: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results params: {
+  slug: 'Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results'
+} URL: N/A
+WhitePaperDetailClient - slug: Enterprise%20Quality%20Frameworks params: { slug: 'Enterprise%20Quality%20Frameworks' }
+  Generating static pages using 7 workers (16/33) 
+WhitePaperDetailClient - slug: Annotation%20for%20Safety-Critical%20AI params: { slug: 'Annotation%20for%20Safety-Critical%20AI' }
+WhitePaperDetailClient - slug: Ontology%20Governance%20Strategies params: { slug: 'Ontology%20Governance%20Strategies' }
+WhitePaperDetailClient - slug: Scaling%20Annotation%20Workflows params: { slug: 'Scaling%20Annotation%20Workflows' }
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 826.0ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/Why Most AI Projects Fail: It is Not the Model, It is the Data
+│ ├ /resources/blogs/Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation
+│ ├ /resources/blogs/The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/Enterprise Quality Frameworks
+│ ├ /resources/white-papers/Annotation for Safety-Critical AI
+│ ├ /resources/white-papers/Scaling Annotation Workflows
+│ └ /resources/white-papers/Ontology Governance Strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 08:35:52] Build completed successfully
+[2026-03-12 08:35:52] File permissions set
+2026/03/12 08:35:52 [warn] 3737384#3737384: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 08:35:52 [warn] 3737384#3737384: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 08:35:52 [warn] 3737384#3737384: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 08:35:52 [warn] 3737384#3737384: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 08:35:52 [warn] 3737384#3737384: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 08:35:52] Nginx configuration valid
+[2026-03-12 08:35:52] Nginx reloaded successfully
+[2026-03-12 08:35:52] Nginx is active
+[2026-03-12 08:35:52] === Deployment Completed Successfully ===
+[2026-03-12 08:35:52] 
+[2026-03-12 08:40:16] === Deployment Started ===
+[2026-03-12 08:40:16] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 08:40:17] Installing dependencies...
+[2026-03-12 08:40:19] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 08:40:19] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.3s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 7 CMS blogs to generate
+[generateStaticParams] Found 4 CMS white papers to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation params: {
+  slug: 'Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation'
+} URL: N/A
+BlogDetailClient - slug: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data params: {
+  slug: 'Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data params: {
+  slug: 'The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop params: {
+  slug: 'The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop'
+} URL: N/A
+BlogDetailClient - slug: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI params: {
+  slug: '5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI'
+} URL: N/A
+BlogDetailClient - slug: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality params: {
+  slug: 'The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+  Generating static pages using 7 workers (16/33) 
+BlogDetailClient - slug: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results params: {
+  slug: 'Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results'
+} URL: N/A
+WhitePaperDetailClient - slug: Enterprise%20Quality%20Frameworks params: { slug: 'Enterprise%20Quality%20Frameworks' }
+WhitePaperDetailClient - slug: Annotation%20for%20Safety-Critical%20AI params: { slug: 'Annotation%20for%20Safety-Critical%20AI' }
+WhitePaperDetailClient - slug: Scaling%20Annotation%20Workflows params: { slug: 'Scaling%20Annotation%20Workflows' }
+WhitePaperDetailClient - slug: Ontology%20Governance%20Strategies params: { slug: 'Ontology%20Governance%20Strategies' }
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 966.9ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/Why Most AI Projects Fail: It is Not the Model, It is the Data
+│ ├ /resources/blogs/Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation
+│ ├ /resources/blogs/The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/Enterprise Quality Frameworks
+│ ├ /resources/white-papers/Annotation for Safety-Critical AI
+│ ├ /resources/white-papers/Scaling Annotation Workflows
+│ └ /resources/white-papers/Ontology Governance Strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 08:40:30] Build completed successfully
+[2026-03-12 08:40:30] File permissions set
+2026/03/12 08:40:30 [warn] 3746324#3746324: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 08:40:30 [warn] 3746324#3746324: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 08:40:30 [warn] 3746324#3746324: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 08:40:30 [warn] 3746324#3746324: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 08:40:30 [warn] 3746324#3746324: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 08:40:30] Nginx configuration valid
+[2026-03-12 08:40:30] Nginx reloaded successfully
+[2026-03-12 08:40:30] Nginx is active
+[2026-03-12 08:40:30] === Deployment Completed Successfully ===
+[2026-03-12 08:40:30] 
+[2026-03-12 08:41:19] === Deployment Started ===
+[2026-03-12 08:41:19] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 08:41:19] Installing dependencies...
+[2026-03-12 08:41:21] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 08:41:21] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.2s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 4 CMS white papers to generate
+[generateStaticParams] Found 7 CMS blogs to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data params: {
+  slug: 'Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data'
+} URL: N/A
+BlogDetailClient - slug: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation params: {
+  slug: 'Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation'
+} URL: N/A
+BlogDetailClient - slug: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data params: {
+  slug: 'The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop params: {
+  slug: 'The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop'
+} URL: N/A
+BlogDetailClient - slug: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI params: {
+  slug: '5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI'
+} URL: N/A
+BlogDetailClient - slug: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality params: {
+  slug: 'The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+  Generating static pages using 7 workers (16/33) 
+BlogDetailClient - slug: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results params: {
+  slug: 'Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results'
+} URL: N/A
+WhitePaperDetailClient - slug: Enterprise%20Quality%20Frameworks params: { slug: 'Enterprise%20Quality%20Frameworks' }
+WhitePaperDetailClient - slug: Annotation%20for%20Safety-Critical%20AI params: { slug: 'Annotation%20for%20Safety-Critical%20AI' }
+WhitePaperDetailClient - slug: Scaling%20Annotation%20Workflows params: { slug: 'Scaling%20Annotation%20Workflows' }
+WhitePaperDetailClient - slug: Ontology%20Governance%20Strategies params: { slug: 'Ontology%20Governance%20Strategies' }
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 790.3ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/Why Most AI Projects Fail: It is Not the Model, It is the Data
+│ ├ /resources/blogs/Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation
+│ ├ /resources/blogs/The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/Enterprise Quality Frameworks
+│ ├ /resources/white-papers/Annotation for Safety-Critical AI
+│ ├ /resources/white-papers/Scaling Annotation Workflows
+│ └ /resources/white-papers/Ontology Governance Strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 08:41:31] Build completed successfully
+[2026-03-12 08:41:31] File permissions set
+2026/03/12 08:41:31 [warn] 3748506#3748506: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 08:41:31 [warn] 3748506#3748506: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 08:41:31 [warn] 3748506#3748506: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 08:41:31 [warn] 3748506#3748506: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 08:41:31 [warn] 3748506#3748506: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 08:41:31] Nginx configuration valid
+[2026-03-12 08:41:31] Nginx reloaded successfully
+[2026-03-12 08:41:31] Nginx is active
+[2026-03-12 08:41:31] === Deployment Completed Successfully ===
+[2026-03-12 08:41:31] 
+[2026-03-12 08:44:22] === Deployment Started ===
+[2026-03-12 08:44:22] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 08:44:22] Installing dependencies...
+[2026-03-12 08:44:25] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 08:44:25] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.5s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 7 CMS blogs to generate
+[generateStaticParams] Found 4 CMS white papers to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data params: {
+  slug: 'Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data'
+} URL: N/A
+BlogDetailClient - slug: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation params: {
+  slug: 'Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation'
+} URL: N/A
+BlogDetailClient - slug: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data params: {
+  slug: 'The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop params: {
+  slug: 'The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop'
+} URL: N/A
+BlogDetailClient - slug: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI params: {
+  slug: '5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI'
+} URL: N/A
+BlogDetailClient - slug: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality params: {
+  slug: 'The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+BlogDetailClient - slug: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results params: {
+  slug: 'Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results'
+} URL: N/A
+WhitePaperDetailClient - slug: Enterprise%20Quality%20Frameworks params: { slug: 'Enterprise%20Quality%20Frameworks' }
+WhitePaperDetailClient - slug: Annotation%20for%20Safety-Critical%20AI params: { slug: 'Annotation%20for%20Safety-Critical%20AI' }
+WhitePaperDetailClient - slug: Scaling%20Annotation%20Workflows params: { slug: 'Scaling%20Annotation%20Workflows' }
+WhitePaperDetailClient - slug: Ontology%20Governance%20Strategies params: { slug: 'Ontology%20Governance%20Strategies' }
+  Generating static pages using 7 workers (16/33) 
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 951.3ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/Why Most AI Projects Fail: It is Not the Model, It is the Data
+│ ├ /resources/blogs/Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation
+│ ├ /resources/blogs/The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/Enterprise Quality Frameworks
+│ ├ /resources/white-papers/Annotation for Safety-Critical AI
+│ ├ /resources/white-papers/Scaling Annotation Workflows
+│ └ /resources/white-papers/Ontology Governance Strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 08:44:35] Build completed successfully
+[2026-03-12 08:44:35] File permissions set
+2026/03/12 08:44:35 [warn] 3754600#3754600: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 08:44:35 [warn] 3754600#3754600: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 08:44:35 [warn] 3754600#3754600: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 08:44:35 [warn] 3754600#3754600: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 08:44:35 [warn] 3754600#3754600: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 08:44:35] Nginx configuration valid
+[2026-03-12 08:44:35] Nginx reloaded successfully
+[2026-03-12 08:44:35] Nginx is active
+[2026-03-12 08:44:35] === Deployment Completed Successfully ===
+[2026-03-12 08:44:35] 
+[2026-03-12 08:48:25] === Deployment Started ===
+[2026-03-12 08:48:25] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 08:48:25] Installing dependencies...
+[2026-03-12 08:48:29] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 08:48:29] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.9s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 4 CMS white papers to generate
+[generateStaticParams] Found 7 CMS blogs to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data params: {
+  slug: 'Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop params: {
+  slug: 'The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop'
+} URL: N/A
+BlogDetailClient - slug: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation params: {
+  slug: 'Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation'
+} URL: N/A
+BlogDetailClient - slug: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality params: {
+  slug: 'The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality'
+} URL: N/A
+BlogDetailClient - slug: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI params: {
+  slug: '5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI'
+} URL: N/A
+BlogDetailClient - slug: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data params: {
+  slug: 'The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+  Generating static pages using 7 workers (16/33) 
+BlogDetailClient - slug: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results params: {
+  slug: 'Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results'
+} URL: N/A
+WhitePaperDetailClient - slug: Annotation%20for%20Safety-Critical%20AI params: { slug: 'Annotation%20for%20Safety-Critical%20AI' }
+WhitePaperDetailClient - slug: Enterprise%20Quality%20Frameworks params: { slug: 'Enterprise%20Quality%20Frameworks' }
+WhitePaperDetailClient - slug: Scaling%20Annotation%20Workflows params: { slug: 'Scaling%20Annotation%20Workflows' }
+WhitePaperDetailClient - slug: Ontology%20Governance%20Strategies params: { slug: 'Ontology%20Governance%20Strategies' }
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 1227.2ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/Why Most AI Projects Fail: It is Not the Model, It is the Data
+│ ├ /resources/blogs/Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation
+│ ├ /resources/blogs/The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/Enterprise Quality Frameworks
+│ ├ /resources/white-papers/Annotation for Safety-Critical AI
+│ ├ /resources/white-papers/Scaling Annotation Workflows
+│ └ /resources/white-papers/Ontology Governance Strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 08:48:40] Build completed successfully
+[2026-03-12 08:48:40] File permissions set
+2026/03/12 08:48:40 [warn] 3762511#3762511: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 08:48:40 [warn] 3762511#3762511: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 08:48:40 [warn] 3762511#3762511: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 08:48:40 [warn] 3762511#3762511: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 08:48:40 [warn] 3762511#3762511: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 08:48:40] Nginx configuration valid
+[2026-03-12 08:48:40] Nginx reloaded successfully
+[2026-03-12 08:48:40] Nginx is active
+[2026-03-12 08:48:40] === Deployment Completed Successfully ===
+[2026-03-12 08:48:40] 
+[2026-03-12 08:54:12] === Deployment Started ===
+[2026-03-12 08:54:13] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 08:54:13] Installing dependencies...
+[2026-03-12 08:54:16] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 08:54:16] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.1s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 4 CMS white papers to generate
+[generateStaticParams] Found 7 CMS blogs to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation params: {
+  slug: 'Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation'
+} URL: N/A
+BlogDetailClient - slug: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data params: {
+  slug: 'Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop params: {
+  slug: 'The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop'
+} URL: N/A
+BlogDetailClient - slug: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality params: {
+  slug: 'The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality'
+} URL: N/A
+BlogDetailClient - slug: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI params: {
+  slug: '5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI'
+} URL: N/A
+BlogDetailClient - slug: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data params: {
+  slug: 'The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+BlogDetailClient - slug: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results params: {
+  slug: 'Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results'
+} URL: N/A
+WhitePaperDetailClient - slug: Annotation%20for%20Safety-Critical%20AI params: { slug: 'Annotation%20for%20Safety-Critical%20AI' }
+  Generating static pages using 7 workers (16/33) 
+WhitePaperDetailClient - slug: Ontology%20Governance%20Strategies params: { slug: 'Ontology%20Governance%20Strategies' }
+WhitePaperDetailClient - slug: Enterprise%20Quality%20Frameworks params: { slug: 'Enterprise%20Quality%20Frameworks' }
+WhitePaperDetailClient - slug: Scaling%20Annotation%20Workflows params: { slug: 'Scaling%20Annotation%20Workflows' }
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 824.3ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/Why Most AI Projects Fail: It is Not the Model, It is the Data
+│ ├ /resources/blogs/Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation
+│ ├ /resources/blogs/The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/Enterprise Quality Frameworks
+│ ├ /resources/white-papers/Annotation for Safety-Critical AI
+│ ├ /resources/white-papers/Scaling Annotation Workflows
+│ └ /resources/white-papers/Ontology Governance Strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 08:54:27] Build completed successfully
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/blogs
+Created symlink: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data.html -> Why Most AI Projects Fail: It is Not the Model, It is the Data.html
+Created symlink: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data.html -> The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data.html
+Created symlink: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI.html -> 5 Surprising Truths About the High-Quality Data That Powers Modern AI.html
+Created symlink: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop.html -> The Best Systems Create a Human-AI Feedback Loop.html
+Created symlink: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation.html -> Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation.html
+Created symlink: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality.html -> The Flexibench Architecture: A Modular Approach to Data Quality.html
+Created symlink: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results.html -> Beyond the Algorithm: How Data Annotation Engineering Drives Real AI Results.html
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/white-papers
+Created symlink: Enterprise%20Quality%20Frameworks.html -> Enterprise Quality Frameworks.html
+Created symlink: Ontology%20Governance%20Strategies.html -> Ontology Governance Strategies.html
+Created symlink: Annotation%20for%20Safety-Critical%20AI.html -> Annotation for Safety-Critical AI.html
+Created symlink: Scaling%20Annotation%20Workflows.html -> Scaling Annotation Workflows.html
+Symlink creation complete!
+[2026-03-12 08:54:27] URL-encoded symlinks created
+[2026-03-12 08:54:27] File permissions set
+2026/03/12 08:54:27 [warn] 3774096#3774096: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 08:54:27 [warn] 3774096#3774096: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 08:54:27 [warn] 3774096#3774096: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 08:54:27 [warn] 3774096#3774096: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 08:54:27 [warn] 3774096#3774096: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 08:54:27] Nginx configuration valid
+[2026-03-12 08:54:27] Nginx reloaded successfully
+[2026-03-12 08:54:27] Nginx is active
+[2026-03-12 08:54:27] === Deployment Completed Successfully ===
+[2026-03-12 08:54:27] 
+[2026-03-12 08:59:13] === Deployment Started ===
+[2026-03-12 08:59:13] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 08:59:13] Installing dependencies...
+[2026-03-12 08:59:15] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 08:59:15] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.0s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 4 CMS white papers to generate
+[generateStaticParams] Found 7 CMS blogs to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data params: {
+  slug: 'Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data'
+} URL: N/A
+BlogDetailClient - slug: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation params: {
+  slug: 'Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation'
+} URL: N/A
+BlogDetailClient - slug: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data params: {
+  slug: 'The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop params: {
+  slug: 'The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop'
+} URL: N/A
+BlogDetailClient - slug: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI params: {
+  slug: '5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI'
+} URL: N/A
+BlogDetailClient - slug: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality params: {
+  slug: 'The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+BlogDetailClient - slug: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results params: {
+  slug: 'Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results'
+} URL: N/A
+WhitePaperDetailClient - slug: Annotation%20for%20Safety-Critical%20AI params: { slug: 'Annotation%20for%20Safety-Critical%20AI' }
+WhitePaperDetailClient - slug: Scaling%20Annotation%20Workflows params: { slug: 'Scaling%20Annotation%20Workflows' }
+WhitePaperDetailClient - slug: Ontology%20Governance%20Strategies params: { slug: 'Ontology%20Governance%20Strategies' }
+  Generating static pages using 7 workers (16/33) 
+WhitePaperDetailClient - slug: Enterprise%20Quality%20Frameworks params: { slug: 'Enterprise%20Quality%20Frameworks' }
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 1047.5ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/Why Most AI Projects Fail: It is Not the Model, It is the Data
+│ ├ /resources/blogs/Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation
+│ ├ /resources/blogs/The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/Enterprise Quality Frameworks
+│ ├ /resources/white-papers/Annotation for Safety-Critical AI
+│ ├ /resources/white-papers/Scaling Annotation Workflows
+│ └ /resources/white-papers/Ontology Governance Strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 08:59:26] Build completed successfully
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/blogs
+Created symlink: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data.html -> Why Most AI Projects Fail: It is Not the Model, It is the Data.html
+Created symlink: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data.html -> The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data.html
+Created symlink: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI.html -> 5 Surprising Truths About the High-Quality Data That Powers Modern AI.html
+Created symlink: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop.html -> The Best Systems Create a Human-AI Feedback Loop.html
+Created symlink: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation.html -> Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation.html
+Created symlink: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality.html -> The Flexibench Architecture: A Modular Approach to Data Quality.html
+Created symlink: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results.html -> Beyond the Algorithm: How Data Annotation Engineering Drives Real AI Results.html
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/white-papers
+Created symlink: Enterprise%20Quality%20Frameworks.html -> Enterprise Quality Frameworks.html
+Created symlink: Ontology%20Governance%20Strategies.html -> Ontology Governance Strategies.html
+Created symlink: Annotation%20for%20Safety-Critical%20AI.html -> Annotation for Safety-Critical AI.html
+Created symlink: Scaling%20Annotation%20Workflows.html -> Scaling Annotation Workflows.html
+Symlink creation complete!
+[2026-03-12 08:59:26] URL-encoded symlinks created
+[2026-03-12 08:59:26] File permissions set
+2026/03/12 08:59:26 [warn] 3784165#3784165: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 08:59:26 [warn] 3784165#3784165: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 08:59:26 [warn] 3784165#3784165: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 08:59:26 [warn] 3784165#3784165: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 08:59:26 [warn] 3784165#3784165: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 08:59:27] Nginx configuration valid
+[2026-03-12 08:59:27] Nginx reloaded successfully
+[2026-03-12 08:59:27] Nginx is active
+[2026-03-12 08:59:27] === Deployment Completed Successfully ===
+[2026-03-12 08:59:27] 
+[2026-03-12 09:01:47] === Deployment Started ===
+[2026-03-12 09:01:47] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 09:01:47] Installing dependencies...
+[2026-03-12 09:01:49] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 09:01:50] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.6s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 7 CMS blogs to generate
+[generateStaticParams] Found 4 CMS white papers to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data params: {
+  slug: 'Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data'
+} URL: N/A
+BlogDetailClient - slug: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation params: {
+  slug: 'Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation'
+} URL: N/A
+BlogDetailClient - slug: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data params: {
+  slug: 'The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop params: {
+  slug: 'The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop'
+} URL: N/A
+BlogDetailClient - slug: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI params: {
+  slug: '5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI'
+} URL: N/A
+BlogDetailClient - slug: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality params: {
+  slug: 'The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+BlogDetailClient - slug: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results params: {
+  slug: 'Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results'
+} URL: N/A
+WhitePaperDetailClient - slug: Scaling%20Annotation%20Workflows params: { slug: 'Scaling%20Annotation%20Workflows' }
+  Generating static pages using 7 workers (16/33) 
+WhitePaperDetailClient - slug: Ontology%20Governance%20Strategies params: { slug: 'Ontology%20Governance%20Strategies' }
+WhitePaperDetailClient - slug: Enterprise%20Quality%20Frameworks params: { slug: 'Enterprise%20Quality%20Frameworks' }
+WhitePaperDetailClient - slug: Annotation%20for%20Safety-Critical%20AI params: { slug: 'Annotation%20for%20Safety-Critical%20AI' }
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 886.0ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/Why Most AI Projects Fail: It is Not the Model, It is the Data
+│ ├ /resources/blogs/Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation
+│ ├ /resources/blogs/The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/Enterprise Quality Frameworks
+│ ├ /resources/white-papers/Annotation for Safety-Critical AI
+│ ├ /resources/white-papers/Scaling Annotation Workflows
+│ └ /resources/white-papers/Ontology Governance Strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 09:01:59] Build completed successfully
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/blogs
+Created symlink: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data.html -> Why Most AI Projects Fail: It is Not the Model, It is the Data.html
+Created symlink: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data.html -> The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data.html
+Created symlink: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI.html -> 5 Surprising Truths About the High-Quality Data That Powers Modern AI.html
+Created symlink: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop.html -> The Best Systems Create a Human-AI Feedback Loop.html
+Created symlink: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation.html -> Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation.html
+Created symlink: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality.html -> The Flexibench Architecture: A Modular Approach to Data Quality.html
+Created symlink: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results.html -> Beyond the Algorithm: How Data Annotation Engineering Drives Real AI Results.html
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/white-papers
+Created symlink: Enterprise%20Quality%20Frameworks.html -> Enterprise Quality Frameworks.html
+Created symlink: Ontology%20Governance%20Strategies.html -> Ontology Governance Strategies.html
+Created symlink: Annotation%20for%20Safety-Critical%20AI.html -> Annotation for Safety-Critical AI.html
+Created symlink: Scaling%20Annotation%20Workflows.html -> Scaling Annotation Workflows.html
+Symlink creation complete!
+[2026-03-12 09:02:00] URL-encoded symlinks created
+[2026-03-12 09:02:00] File permissions set
+2026/03/12 09:02:00 [warn] 3790351#3790351: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 09:02:00 [warn] 3790351#3790351: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 09:02:00 [warn] 3790351#3790351: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 09:02:00 [warn] 3790351#3790351: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 09:02:00 [warn] 3790351#3790351: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 09:02:00] Nginx configuration valid
+[2026-03-12 09:02:00] Nginx reloaded successfully
+[2026-03-12 09:02:00] Nginx is active
+[2026-03-12 09:02:00] === Deployment Completed Successfully ===
+[2026-03-12 09:02:00] 
+[2026-03-12 09:03:24] === Deployment Started ===
+[2026-03-12 09:03:24] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 09:03:24] Installing dependencies...
+[2026-03-12 09:03:26] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 09:03:27] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.5s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 7 CMS blogs to generate
+[generateStaticParams] Found 4 CMS white papers to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data params: {
+  slug: 'Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data'
+} URL: N/A
+BlogDetailClient - slug: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation params: {
+  slug: 'Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation'
+} URL: N/A
+BlogDetailClient - slug: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data params: {
+  slug: 'The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data'
+} URL: N/A
+BlogDetailClient - slug: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop params: {
+  slug: 'The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop'
+} URL: N/A
+BlogDetailClient - slug: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI params: {
+  slug: '5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI'
+} URL: N/A
+BlogDetailClient - slug: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality params: {
+  slug: 'The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+BlogDetailClient - slug: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results params: {
+  slug: 'Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results'
+} URL: N/A
+WhitePaperDetailClient - slug: Enterprise%20Quality%20Frameworks params: { slug: 'Enterprise%20Quality%20Frameworks' }
+WhitePaperDetailClient - slug: Annotation%20for%20Safety-Critical%20AI params: { slug: 'Annotation%20for%20Safety-Critical%20AI' }
+WhitePaperDetailClient - slug: Scaling%20Annotation%20Workflows params: { slug: 'Scaling%20Annotation%20Workflows' }
+WhitePaperDetailClient - slug: Ontology%20Governance%20Strategies params: { slug: 'Ontology%20Governance%20Strategies' }
+  Generating static pages using 7 workers (16/33) 
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 954.0ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/Why Most AI Projects Fail: It is Not the Model, It is the Data
+│ ├ /resources/blogs/Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation
+│ ├ /resources/blogs/The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/Enterprise Quality Frameworks
+│ ├ /resources/white-papers/Annotation for Safety-Critical AI
+│ ├ /resources/white-papers/Scaling Annotation Workflows
+│ └ /resources/white-papers/Ontology Governance Strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 09:03:36] Build completed successfully
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/blogs
+Created symlink: Why%20Most%20AI%20Projects%20Fail%3A%20It%20is%20Not%20the%20Model%2C%20It%20is%20the%20Data.html -> Why Most AI Projects Fail: It is Not the Model, It is the Data.html
+Created symlink: The%20Engineering%20of%20Trust%3A%20A%20Methodology%20for%20High-Quality%2C%20Model-Ready%20Data.html -> The Engineering of Trust: A Methodology for High-Quality, Model-Ready Data.html
+Created symlink: 5%20Surprising%20Truths%20About%20the%20High-Quality%20Data%20That%20Powers%20Modern%20AI.html -> 5 Surprising Truths About the High-Quality Data That Powers Modern AI.html
+Created symlink: The%20Best%20Systems%20Create%20a%20Human-AI%20Feedback%20Loop.html -> The Best Systems Create a Human-AI Feedback Loop.html
+Created symlink: Beyond%20the%20Label%3A%20Why%20Your%20AI%20Strategy%20Depends%20on%20Data%20Engineering%2C%20Not%20Just%20Data%20Annotation.html -> Beyond the Label: Why Your AI Strategy Depends on Data Engineering, Not Just Data Annotation.html
+Created symlink: The%20Flexibench%20Architecture%3A%20A%20Modular%20Approach%20to%20Data%20Quality.html -> The Flexibench Architecture: A Modular Approach to Data Quality.html
+Created symlink: Beyond%20the%20Algorithm%3A%20How%20Data%20Annotation%20Engineering%20Drives%20Real%20AI%20Results.html -> Beyond the Algorithm: How Data Annotation Engineering Drives Real AI Results.html
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/white-papers
+Created symlink: Enterprise%20Quality%20Frameworks.html -> Enterprise Quality Frameworks.html
+Created symlink: Ontology%20Governance%20Strategies.html -> Ontology Governance Strategies.html
+Created symlink: Annotation%20for%20Safety-Critical%20AI.html -> Annotation for Safety-Critical AI.html
+Created symlink: Scaling%20Annotation%20Workflows.html -> Scaling Annotation Workflows.html
+Symlink creation complete!
+[2026-03-12 09:03:37] URL-encoded symlinks created
+[2026-03-12 09:03:37] File permissions set
+2026/03/12 09:03:37 [warn] 3794438#3794438: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 09:03:37 [warn] 3794438#3794438: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 09:03:37 [warn] 3794438#3794438: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 09:03:37 [warn] 3794438#3794438: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 09:03:37 [warn] 3794438#3794438: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 09:03:37] Nginx configuration valid
+[2026-03-12 09:03:37] Nginx reloaded successfully
+[2026-03-12 09:03:37] Nginx is active
+[2026-03-12 09:03:37] === Deployment Completed Successfully ===
+[2026-03-12 09:03:37] 
+[2026-03-12 09:13:05] === Deployment Started ===
+[2026-03-12 09:13:06] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 09:13:06] Installing dependencies...
+[2026-03-12 09:13:08] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 09:13:08] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.0s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 4 CMS white papers to generate
+[generateStaticParams] Found 7 CMS blogs to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: beyond-the-label-why-your-ai-strategy-depends-on-data-engineering-not-just-data-annotation params: {
+  slug: 'beyond-the-label-why-your-ai-strategy-depends-on-data-engineering-not-just-data-annotation'
+} URL: N/A
+BlogDetailClient - slug: the-engineering-of-trust-a-methodology-for-high-quality-model-ready-data params: {
+  slug: 'the-engineering-of-trust-a-methodology-for-high-quality-model-ready-data'
+} URL: N/A
+BlogDetailClient - slug: the-best-systems-create-a-human-ai-feedback-loop params: { slug: 'the-best-systems-create-a-human-ai-feedback-loop' } URL: N/A
+BlogDetailClient - slug: 5-surprising-truths-about-the-high-quality-data-that-powers-modern-ai params: {
+  slug: '5-surprising-truths-about-the-high-quality-data-that-powers-modern-ai'
+} URL: N/A
+BlogDetailClient - slug: the-flexibench-architecture-a-modular-approach-to-data-quality params: {
+  slug: 'the-flexibench-architecture-a-modular-approach-to-data-quality'
+} URL: N/A
+BlogDetailClient - slug: why-most-ai-projects-fail-it-is-not-the-model-it-is-the-data params: {
+  slug: 'why-most-ai-projects-fail-it-is-not-the-model-it-is-the-data'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+  Generating static pages using 7 workers (16/33) 
+WhitePaperDetailClient - slug: enterprise-quality-frameworks params: { slug: 'enterprise-quality-frameworks' }
+WhitePaperDetailClient - slug: annotation-for-safety-critical-ai params: { slug: 'annotation-for-safety-critical-ai' }
+WhitePaperDetailClient - slug: scaling-annotation-workflows params: { slug: 'scaling-annotation-workflows' }
+WhitePaperDetailClient - slug: ontology-governance-strategies params: { slug: 'ontology-governance-strategies' }
+BlogDetailClient - slug: beyond-the-algorithm-how-data-annotation-engineering-drives-real-ai-results params: {
+  slug: 'beyond-the-algorithm-how-data-annotation-engineering-drives-real-ai-results'
+} URL: N/A
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 848.2ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/why-most-ai-projects-fail-it-is-not-the-model-it-is-the-data
+│ ├ /resources/blogs/beyond-the-label-why-your-ai-strategy-depends-on-data-engineering-not-just-data-annotation
+│ ├ /resources/blogs/the-engineering-of-trust-a-methodology-for-high-quality-model-ready-data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/enterprise-quality-frameworks
+│ ├ /resources/white-papers/annotation-for-safety-critical-ai
+│ ├ /resources/white-papers/scaling-annotation-workflows
+│ └ /resources/white-papers/ontology-governance-strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 09:13:19] Build completed successfully
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/blogs
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/white-papers
+Symlink creation complete!
+[2026-03-12 09:13:19] URL-encoded symlinks created
+[2026-03-12 09:13:19] File permissions set
+2026/03/12 09:13:19 [warn] 3813236#3813236: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 09:13:19 [warn] 3813236#3813236: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 09:13:19 [warn] 3813236#3813236: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 09:13:19 [warn] 3813236#3813236: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 09:13:19 [warn] 3813236#3813236: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 09:13:19] Nginx configuration valid
+[2026-03-12 09:13:19] Nginx reloaded successfully
+[2026-03-12 09:13:19] Nginx is active
+[2026-03-12 09:13:19] === Deployment Completed Successfully ===
+[2026-03-12 09:13:19] 
+[2026-03-12 09:16:41] === Deployment Started ===
+[2026-03-12 09:16:42] Using Node.js v20.19.6 and npm 10.8.2
+[2026-03-12 09:16:42] Installing dependencies...
+[2026-03-12 09:16:44] Dependencies installed successfully
+
+> my-v0-project@0.1.0 lint
+> eslint .
+
+sh: 1: eslint: not found
+[2026-03-12 09:16:44] Building project...
+
+> my-v0-project@0.1.0 build
+> next build
+
+▲ Next.js 16.1.2 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.7s
+  Skipping validation of types
+  Collecting page data using 7 workers ...
+[generateStaticParams] Found 7 CMS blogs to generate
+[generateStaticParams] Found 4 CMS white papers to generate
+  Generating static pages using 7 workers (0/33) ...
+BlogDetailClient - slug: why-most-ai-projects-fail-it-is-not-the-model-it-is-the-data params: {
+  slug: 'why-most-ai-projects-fail-it-is-not-the-model-it-is-the-data'
+} URL: N/A
+BlogDetailClient - slug: beyond-the-label-why-your-ai-strategy-depends-on-data-engineering-not-just-data-annotation params: {
+  slug: 'beyond-the-label-why-your-ai-strategy-depends-on-data-engineering-not-just-data-annotation'
+} URL: N/A
+BlogDetailClient - slug: the-engineering-of-trust-a-methodology-for-high-quality-model-ready-data params: {
+  slug: 'the-engineering-of-trust-a-methodology-for-high-quality-model-ready-data'
+} URL: N/A
+BlogDetailClient - slug: the-best-systems-create-a-human-ai-feedback-loop params: { slug: 'the-best-systems-create-a-human-ai-feedback-loop' } URL: N/A
+BlogDetailClient - slug: 5-surprising-truths-about-the-high-quality-data-that-powers-modern-ai params: {
+  slug: '5-surprising-truths-about-the-high-quality-data-that-powers-modern-ai'
+} URL: N/A
+BlogDetailClient - slug: the-flexibench-architecture-a-modular-approach-to-data-quality params: {
+  slug: 'the-flexibench-architecture-a-modular-approach-to-data-quality'
+} URL: N/A
+  Generating static pages using 7 workers (8/33) 
+  Generating static pages using 7 workers (16/33) 
+BlogDetailClient - slug: beyond-the-algorithm-how-data-annotation-engineering-drives-real-ai-results params: {
+  slug: 'beyond-the-algorithm-how-data-annotation-engineering-drives-real-ai-results'
+} URL: N/A
+WhitePaperDetailClient - slug: annotation-for-safety-critical-ai params: { slug: 'annotation-for-safety-critical-ai' }
+WhitePaperDetailClient - slug: enterprise-quality-frameworks params: { slug: 'enterprise-quality-frameworks' }
+WhitePaperDetailClient - slug: scaling-annotation-workflows params: { slug: 'scaling-annotation-workflows' }
+WhitePaperDetailClient - slug: ontology-governance-strategies params: { slug: 'ontology-governance-strategies' }
+  Generating static pages using 7 workers (24/33) 
+✓ Generating static pages using 7 workers (33/33) in 755.3ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /capabilities
+├ ● /capabilities/[type]
+│ ├ /capabilities/text
+│ ├ /capabilities/image
+│ ├ /capabilities/video
+│ └ /capabilities/audio
+├ ○ /contact
+├ ○ /cookies
+├ ○ /internal-tools
+├ ○ /platform
+├ ○ /privacy
+├ ○ /resources
+├ ● /resources/announcements/[slug]
+│ ├ /resources/announcements/upcoming-webinar-best-practices-for-multimodal-annotation
+│ ├ /resources/announcements/integration-partnership-seamless-workflow-with-leading-ml-platforms
+│ ├ /resources/announcements/expanding-our-global-annotation-network
+│ └ [+2 more paths]
+├ ● /resources/blogs/[slug]
+│ ├ /resources/blogs/why-most-ai-projects-fail-it-is-not-the-model-it-is-the-data
+│ ├ /resources/blogs/beyond-the-label-why-your-ai-strategy-depends-on-data-engineering-not-just-data-annotation
+│ ├ /resources/blogs/the-engineering-of-trust-a-methodology-for-high-quality-model-ready-data
+│ └ [+4 more paths]
+├ ● /resources/white-papers/[slug]
+│ ├ /resources/white-papers/enterprise-quality-frameworks
+│ ├ /resources/white-papers/annotation-for-safety-critical-ai
+│ ├ /resources/white-papers/scaling-annotation-workflows
+│ └ /resources/white-papers/ontology-governance-strategies
+├ ○ /terms
+└ ○ /use-cases
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[2026-03-12 09:16:55] Build completed successfully
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/blogs
+Processing directory: /home/ubuntu/Flexibench_new/Flexibench_minimal/out/resources/white-papers
+Symlink creation complete!
+[2026-03-12 09:16:55] URL-encoded symlinks created
+[2026-03-12 09:16:55] File permissions set
+2026/03/12 09:16:55 [warn] 3820096#3820096: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/botza.panscience.xyz:12
+2026/03/12 09:16:55 [warn] 3820096#3820096: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/dms.nyaayai.com:75
+2026/03/12 09:16:55 [warn] 3820096#3820096: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:24
+2026/03/12 09:16:55 [warn] 3820096#3820096: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/plugin.nyaayai.com:25
+2026/03/12 09:16:55 [warn] 3820096#3820096: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/proteus:66
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[2026-03-12 09:16:55] Nginx configuration valid
+[2026-03-12 09:16:55] Nginx reloaded successfully
+[2026-03-12 09:16:55] Nginx is active
+[2026-03-12 09:16:55] === Deployment Completed Successfully ===
+[2026-03-12 09:16:55] 
