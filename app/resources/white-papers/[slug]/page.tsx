@@ -2,32 +2,53 @@ import WhitePaperDetailClient from "./whitepaper-detail-client";
 
 export async function generateStaticParams() {
   try {
-    // Fetch all white papers at build time to generate static routes
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://flexibench.io';
-    const response = await fetch(`${API_URL}/api/flexibench/resources/whitepapers`, {
-      cache: 'force-cache',
+    // Fetch CMS white papers for static generation
+    // Collection name: news-flexibench (for white papers)
+    const CMS_API_BASE_URL = 'https://botza.panscience.xyz/api/v1/public/cms/news-flexibench';
+    const token = process.env.NEXT_PUBLIC_CMS_API_TOKEN || process.env.VITE_CMS_API_TOKEN;
+    
+    if (!token) {
+      console.warn('[generateStaticParams] CMS API token not found');
+      return [];
+    }
+
+    const response = await fetch(`${CMS_API_BASE_URL}?limit=100&includeAssetUrls=true`, {
+      headers: {
+        'X-API-Token': token,
+        'Content-Type': 'application/json',
+      },
+      // Don't cache during build - fetch fresh data
+      cache: 'no-store',
     });
     
     if (response.ok) {
       const data = await response.json();
       if (data.success && data.data && Array.isArray(data.data)) {
-        return data.data.map((paper: { slug: string }) => ({
+        const slugs = data.data.map((paper: { slug: string }) => ({
           slug: paper.slug,
         }));
+        console.log(`[generateStaticParams] Found ${slugs.length} CMS white papers to generate`);
+        return slugs;
       }
+    } else {
+      console.warn(`[generateStaticParams] CMS API returned ${response.status}: ${response.statusText}`);
     }
   } catch (error) {
-    console.error('Error fetching white papers for static generation:', error);
+    console.error('[generateStaticParams] Error fetching CMS white papers:', error);
   }
   
-  // Fallback: return placeholder if API fails
-  return [{ slug: 'placeholder' }];
+  // Return empty array - will fallback to 404 for unknown slugs
+  return [];
 }
 
 export default function WhitePaperDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }> | { slug: string };
 }) {
+  // Handle both Promise and direct params (Next.js 15+ uses Promise)
+  if (params instanceof Promise) {
+    return <WhitePaperDetailClient />;
+  }
   return <WhitePaperDetailClient />;
 }

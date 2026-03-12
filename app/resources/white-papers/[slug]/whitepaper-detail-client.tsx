@@ -8,7 +8,7 @@ import { Clock, ArrowLeft, ArrowRight, Share2, BookmarkPlus, Loader2 } from "luc
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
-import { getWhitePaperBySlug, type WhitePaper } from "@/lib/api/resources";
+import { getWhitePaperBySlug, getCmsWhitePaperBySlug, getFlexibenchCmsWhitePapers, convertCmsWhitePaperToWhitePaper, type WhitePaper } from "@/lib/api/resources";
 import { Calendar } from "lucide-react";
 
 // Fallback dates for white papers when createdAt is null
@@ -40,7 +40,32 @@ const formatDate = (dateString: string | null | undefined, fallbackDate?: string
 
 export default function WhitePaperDetailClient() {
   const params = useParams();
-  const slug = params?.slug as string;
+  // Ensure slug is a string, not an object
+  let slug = typeof params?.slug === 'string' ? params.slug : String(params?.slug || '');
+  
+  // Decode URL-encoded slug (in case it was encoded in the URL)
+  if (slug && typeof window !== 'undefined') {
+    try {
+      slug = decodeURIComponent(slug);
+    } catch (e) {
+      console.warn('Failed to decode slug:', slug, e);
+    }
+  }
+  
+  // Fix common slug issues
+  if (slug === 'object-object' || slug === '[object Object]' || !slug) {
+    console.error('Invalid slug detected:', params?.slug);
+    if (typeof window !== 'undefined') {
+      const pathParts = window.location.pathname.split('/');
+      const slugIndex = pathParts.indexOf('white-papers');
+      if (slugIndex >= 0 && pathParts[slugIndex + 1]) {
+        slug = decodeURIComponent(pathParts[slugIndex + 1]);
+        console.log('Extracted slug from URL:', slug);
+      }
+    }
+  }
+  
+  console.log('WhitePaperDetailClient - slug:', slug, 'params:', params);
   const [whitepaper, setWhitepaper] = useState<WhitePaper | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -55,11 +80,99 @@ export default function WhitePaperDetailClient() {
     setLoading(true);
     setError(null);
     try {
-      const response = await getWhitePaperBySlug(slug);
-      setWhitepaper(response.data);
+      // Decode the slug from URL (CMS slug is the full title, URL-encoded)
+      let decodedSlug = slug;
+      try {
+        decodedSlug = decodeURIComponent(slug);
+        if (decodedSlug !== slug) {
+          console.log('Decoded slug from URL:', slug, '->', decodedSlug);
+        }
+      } catch (e) {
+        console.log('Slug does not need decoding:', slug);
+      }
+      
+      // Check if this is an old slug format
+      const isOldSlug = slug.includes('h2-class') || slug.includes('cms-richtext') || slug.includes('cms-heading');
+      
+      // If it's an old slug, fetch all white papers and find the correct one
+      if (isOldSlug) {
+        console.log('Detected old slug format, fetching all white papers to find correct slug:', slug);
+        const allCmsWhitePapers = await getFlexibenchCmsWhitePapers({ includeAssetUrls: true });
+        if (allCmsWhitePapers.success && allCmsWhitePapers.data && allCmsWhitePapers.data.length > 0) {
+          const foundPaper = allCmsWhitePapers.data[0];
+          const convertedPaper = convertCmsWhitePaperToWhitePaper(foundPaper);
+          
+          // Redirect to correct URL
+          const correctSlug = encodeURIComponent(convertedPaper.slug);
+          if (typeof window !== 'undefined' && window.location.pathname !== `/resources/white-papers/${correctSlug}`) {
+            console.log('Redirecting from old slug to correct slug:', slug, '->', convertedPaper.slug);
+            window.history.replaceState(null, '', `/resources/white-papers/${correctSlug}`);
+            setWhitepaper(convertedPaper);
+            return;
+          }
+          setWhitepaper(convertedPaper);
+          return;
+        }
+      }
+      
+      // First try internal API
+      const internalResponse = await getWhitePaperBySlug(decodedSlug);
+      if (internalResponse.success && internalResponse.data) {
+        setWhitepaper(internalResponse.data);
+        return;
+      }
+      
+      console.log('Internal API did not find white paper, trying CMS...');
+
+      // If not found in internal API, try CMS with decoded slug
+      const cmsResponse = await getCmsWhitePaperBySlug(decodedSlug);
+      if (cmsResponse.success && cmsResponse.data) {
+        const convertedPaper = convertCmsWhitePaperToWhitePaper(cmsResponse.data);
+        console.log('CMS white paper fetched:', {
+          title: convertedPaper.title,
+          slug: convertedPaper.slug,
+          bodyLength: convertedPaper.body?.length,
+        });
+        setWhitepaper(convertedPaper);
+        return;
+      }
+
+      // If still not found, try fetching all CMS white papers and finding by slug
+      console.log('Fetching all CMS white papers to find by slug:', decodedSlug);
+      const allCmsWhitePapers = await getFlexibenchCmsWhitePapers({ includeAssetUrls: true });
+      if (allCmsWhitePapers.success && allCmsWhitePapers.data) {
+        let foundPaper = allCmsWhitePapers.data.find((item) => {
+          const itemSlug = item.slug || '';
+          if (itemSlug === decodedSlug || itemSlug === slug) return true;
+          if (itemSlug.toLowerCase() === decodedSlug.toLowerCase() || itemSlug.toLowerCase() === slug.toLowerCase()) return true;
+          return false;
+        });
+        
+        if (!foundPaper) {
+          foundPaper = allCmsWhitePapers.data.find((item) => {
+            const itemTitle = (item.title || '').replace(/<[^>]*>/g, '').trim();
+            return itemTitle === decodedSlug || itemTitle === slug || 
+                   itemTitle.toLowerCase() === decodedSlug.toLowerCase() || 
+                   itemTitle.toLowerCase() === slug.toLowerCase();
+          });
+        }
+        
+        if (foundPaper) {
+          const convertedPaper = convertCmsWhitePaperToWhitePaper(foundPaper);
+          console.log('CMS white paper found in list:', {
+            title: convertedPaper.title,
+            slug: convertedPaper.slug,
+            requestedSlug: slug,
+          });
+          setWhitepaper(convertedPaper);
+          return;
+        }
+      }
+
+      setError(`White paper not found. Requested slug: "${slug}"`);
     } catch (err) {
       console.error('Error fetching white paper:', err);
-      setError('White paper not found');
+      setError('Failed to load white paper. Please try again later.');
     } finally {
       setLoading(false);
     }

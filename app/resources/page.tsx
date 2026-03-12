@@ -3,13 +3,11 @@
 import { LpNavbar1 } from "@/components/pro-blocks/landing-page/lp-navbars/lp-navbar-1";
 import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, Sparkles, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { AnimatedResourceCategories } from "@/components/animated-resource-categories";
-import { getBlogs, getWhitePapers, type Blog, type WhitePaper } from "@/lib/api/resources";
+import { getBlogs, getWhitePapers, getFlexibenchCmsBlogs, getFlexibenchCmsWhitePapers, convertCmsBlogToBlog, convertCmsWhitePaperToWhitePaper, type Blog, type WhitePaper } from "@/lib/api/resources";
 
 type ResourceCategory = "Blogs" | "White Papers";
 
@@ -220,29 +218,87 @@ export default function ResourcesPage() {
     setLoading(true);
     setError(null);
     try {
-      const [blogsRes, whitePapersRes] = await Promise.all([
+      // Use Promise.allSettled to handle failures gracefully
+      const [blogsRes, whitePapersRes, cmsBlogsRes, cmsWhitePapersRes] = await Promise.allSettled([
         getBlogs(),
         getWhitePapers(),
+        getFlexibenchCmsBlogs({ includeAssetUrls: true }),
+        getFlexibenchCmsWhitePapers({ includeAssetUrls: true }),
       ]);
+
+      // Extract successful results
+      const blogs = blogsRes.status === 'fulfilled' && blogsRes.value?.success && blogsRes.value?.data 
+        ? blogsRes.value.data 
+        : [];
+      const whitePapers = whitePapersRes.status === 'fulfilled' && whitePapersRes.value?.success && whitePapersRes.value?.data 
+        ? whitePapersRes.value.data 
+        : [];
+      const cmsBlogs = cmsBlogsRes.status === 'fulfilled' && cmsBlogsRes.value?.success && cmsBlogsRes.value?.data 
+        ? cmsBlogsRes.value.data 
+        : [];
+      const cmsWhitePapers = cmsWhitePapersRes.status === 'fulfilled' && cmsWhitePapersRes.value?.success && cmsWhitePapersRes.value?.data 
+        ? cmsWhitePapersRes.value.data 
+        : [];
 
       console.log('Blogs response:', blogsRes);
       console.log('White papers response:', whitePapersRes);
+      console.log('CMS blogs response:', cmsBlogsRes);
+      console.log('CMS white papers response:', cmsWhitePapersRes);
+      console.log(`Loaded ${blogs.length} blogs, ${whitePapers.length} white papers, ${cmsBlogs.length} CMS blogs, ${cmsWhitePapers.length} CMS white papers`);
 
-      // Check if responses are successful and have data
-      const blogs = blogsRes?.success && blogsRes?.data ? blogsRes.data : [];
-      const whitePapers = whitePapersRes?.success && whitePapersRes?.data ? whitePapersRes.data : [];
-
-      console.log(`Loaded ${blogs.length} blogs, ${whitePapers.length} white papers`);
+      // Convert CMS blogs to internal Blog format
+      const convertedCmsBlogs = cmsBlogs.map(convertCmsBlogToBlog);
+      // Convert CMS white papers to internal WhitePaper format
+      const convertedCmsWhitePapers = cmsWhitePapers.map(convertCmsWhitePaperToWhitePaper);
 
       const unifiedResources: UnifiedResource[] = [
         ...blogs.map((blog) => ({
-          slug: blog.slug,
+          slug: typeof blog.slug === 'string' ? blog.slug : String(blog.slug || ''),
           category: "Blogs" as ResourceCategory,
           title: blog.title,
           author: blog.author,
           date: formatDate(blog.date),
           readTime: blog.readTime || 5,
         })),
+        ...convertedCmsBlogs.map((blog) => {
+          // Use the CMS slug directly - it's the full title: "Beyond the Algorithm: How Data Annotation Engineering Drives Real AI Results"
+          // The slug will be URL-encoded when used in the link, so spaces and special chars are fine
+          let slug = typeof blog.slug === 'string' ? blog.slug : String(blog.slug || '');
+          
+          // Final safety check - strip any HTML that might have slipped through
+          if (slug && (slug.includes('<') || slug.includes('>'))) {
+            console.warn('Slug contains HTML, stripping:', slug);
+            slug = slug.replace(/<[^>]*>/g, '').trim();
+          }
+          
+          // Validate slug - CMS slug should be the full title, so it might have spaces and special chars
+          if (!slug || slug === '[object Object]' || slug === 'object-object' || slug.length === 0) {
+            console.error('Invalid slug after conversion:', {
+              title: blog.title,
+              slug: blog.slug,
+              slugType: typeof blog.slug,
+              blogId: blog.id
+            });
+            // Use title as fallback slug (CMS slug might be the title)
+            slug = (blog.title || '').replace(/<[^>]*>/g, '').trim() || 'unknown';
+            console.log('Using title as slug:', slug);
+          }
+          
+          console.log('Final slug for blog (will be URL-encoded in link):', {
+            title: blog.title,
+            slug: slug,
+            id: blog.id
+          });
+          
+          return {
+            slug: slug, // This is the CMS slug (full title), will be URL-encoded in the link
+            category: "Blogs" as ResourceCategory,
+            title: blog.title,
+            author: blog.author,
+            date: formatDate(blog.date),
+            readTime: blog.readTime || 5,
+          };
+        }),
         ...whitePapers.map((paper) => ({
           slug: paper.slug,
           category: "White Papers" as ResourceCategory,
@@ -251,7 +307,42 @@ export default function ResourcesPage() {
           date: formatDate(paper.createdAt, whitePaperDates[paper.title]),
           readTime: paper.readTime || 5,
         })),
+        ...convertedCmsWhitePapers.map((paper) => {
+          // Use the CMS slug directly - it's the full title
+          let slug = typeof paper.slug === 'string' ? paper.slug : String(paper.slug || '');
+          
+          // Final safety check - strip any HTML that might have slipped through
+          if (slug && (slug.includes('<') || slug.includes('>'))) {
+            console.warn('White paper slug contains HTML, stripping:', slug);
+            slug = slug.replace(/<[^>]*>/g, '').trim();
+          }
+          
+          // Validate slug
+          if (!slug || slug === '[object Object]' || slug === 'object-object' || slug.length === 0) {
+            console.error('Invalid white paper slug after conversion:', {
+              title: paper.title,
+              slug: paper.slug,
+              slugType: typeof paper.slug,
+              paperId: paper.id
+            });
+            slug = (paper.title || '').replace(/<[^>]*>/g, '').trim() || 'unknown';
+          }
+          
+          return {
+            slug: slug, // This is the CMS slug (full title), will be URL-encoded in the link
+            category: "White Papers" as ResourceCategory,
+            title: paper.title,
+            source: paper.source,
+            date: formatDate(paper.createdAt),
+            readTime: paper.readTime || 5,
+          };
+        }),
       ];
+
+      // Only show error if ALL sources failed
+      if (unifiedResources.length === 0) {
+        setError('No resources available. Please check your connection and try again.');
+      }
 
       setResources(unifiedResources);
     } catch (err) {
@@ -264,6 +355,11 @@ export default function ResourcesPage() {
   };
 
   const filteredResources = resources.filter((resource) => resource.category === activeTab);
+
+  // Debug: Log current state
+  if (typeof window !== 'undefined') {
+    console.log('ResourcesPage render:', { loading, error, resourcesCount: resources.length, filteredCount: filteredResources.length });
+  }
 
   return (
     <main id="main-content">
@@ -325,106 +421,95 @@ export default function ResourcesPage() {
       </section>
 
       {/* Category Filter Bar */}
-      <section className="bg-background border-b py-6 sticky top-[64px] z-40 backdrop-blur-sm bg-background/95">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+      <section className="bg-[#F7F6F3] dark:bg-[#0A0A0A] border-b border-[#E3E3E0] dark:border-[#2A2A2A] py-6 sticky top-[64px] z-40">
+        <div className="container-padding-x container mx-auto">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {resourceCategories.map((category) => (
-              <Button
+              <button
                 key={category}
-                variant="ghost"
                 onClick={() => setActiveTab(category)}
-                className={`relative text-base font-semibold px-4 py-2 rounded-full transition-colors duration-300
+                className={`px-4 py-2 border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] rounded-[3px] font-mono text-[11px] uppercase tracking-widest transition-colors duration-200
                   ${activeTab === category
-                    ? "text-[oklch(0.68_0.15_50)] bg-[oklch(0.68_0.15_50)]/10 hover:bg-[oklch(0.68_0.15_50)]/15"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                    ? "text-[#0A0A0A] dark:text-[#F7F6F3] border-[#0A0A0A] dark:border-[#F7F6F3]"
+                    : "text-[#737373] dark:text-[#A3A3A3] hover:text-[#0A0A0A] dark:hover:text-[#F7F6F3] hover:border-[#0A0A0A] dark:hover:border-[#F7F6F3]"
                   }`}
               >
                 {category}
-                {activeTab === category && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-[oklch(0.68_0.15_50)] rounded-full animate-fade-in-up" />
-                )}
-              </Button>
+              </button>
             ))}
           </div>
         </div>
       </section>
 
       {/* Resources Grid */}
-      <section className="relative bg-gradient-to-b from-background via-secondary/30 to-background py-12 md:py-16">
-        {/* Enhanced Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
-                            linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
-          backgroundSize: '48px 48px'
-        }} />
-
-        <div className="container-padding-x container mx-auto relative z-10">
+      <section className="relative bg-[#F7F6F3] dark:bg-[#0A0A0A] py-12 md:py-16">
+        <div className="container-padding-x container mx-auto">
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20 gap-4">
-              <Loader2 className="h-8 w-8 animate-spin text-[oklch(0.68_0.15_50)]" />
-              <p className="text-muted-foreground text-lg">Loading resources...</p>
+              <Loader2 className="h-8 w-8 animate-spin text-[#0A0A0A] dark:text-[#F7F6F3]" />
+              <p className="font-mono text-[11px] uppercase tracking-widest text-[#737373] dark:text-[#A3A3A3]">Loading resources...</p>
             </div>
           ) : error ? (
             <div className="flex flex-col items-center justify-center py-20 gap-4">
-              <p className="text-destructive text-lg">{error}</p>
-              <Button onClick={fetchAllResources} variant="outline">
+              <p className="text-[#0A0A0A] dark:text-[#F7F6F3] text-lg mb-4">{error}</p>
+              <button
+                onClick={fetchAllResources}
+                className="px-4 py-2 border border-[#E3E3E0] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] rounded-[3px] font-mono text-[11px] uppercase tracking-widest text-[#0A0A0A] dark:text-[#F7F6F3] hover:border-[#0A0A0A] dark:hover:border-[#F7F6F3] transition-colors"
+              >
                 Try Again
-              </Button>
+              </button>
             </div>
           ) : filteredResources.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-muted-foreground text-lg mb-2">No {activeTab.toLowerCase()} found.</p>
-              <p className="text-muted-foreground text-base md:text-lg">Check back soon for new content!</p>
+              <p className="text-[#0A0A0A] dark:text-[#F7F6F3] text-lg mb-2">No {activeTab.toLowerCase()} found.</p>
+              <p className="font-mono text-[11px] uppercase tracking-widest text-[#737373] dark:text-[#A3A3A3]">Check back soon for new content!</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
               {filteredResources.map((resource, index) => {
-                const animationDelay = index * 100;
-
                 return (
-                  <Card
+                  <div
                     key={`${resource.category}-${resource.slug}`}
-                    className="group relative bg-slate-200 overflow-hidden rounded-lg border border-border/50 hover:border-[oklch(0.68_0.15_50)]/40 shadow-md hover:shadow-lg transition-all duration-[2500ms] ease-out animate-fade-in-up"
-                    style={{
-                      animationDelay: `${animationDelay}ms`,
-                      animationFillMode: 'both'
-                    }}
+                    className="group relative bg-white dark:bg-[#141414] border border-[#E3E3E0] dark:border-[#2A2A2A] rounded-[3px] overflow-hidden hover:border-[#0A0A0A] dark:hover:border-[#F7F6F3] transition-colors duration-200"
                   >
-                    <CardContent className="flex flex-col gap-2.5 p-4">
+                    <div className="flex flex-col gap-3 p-5">
                       {/* Metadata */}
-                      <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-1">
+                      <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-widest text-[#737373] dark:text-[#A3A3A3]">
+                        <div className="flex items-center gap-1.5">
                           <Calendar className="h-3 w-3" />
                           <span>{resource.date}</span>
                         </div>
-                        <span>• {resource.readTime} min read</span>
+                        <span>•</span>
+                        <span>{resource.readTime} min read</span>
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-base font-bold text-foreground line-clamp-2 leading-snug group-hover:text-[oklch(0.68_0.15_50)] transition-colors duration-[2500ms] ease-out">
-                        {resource.title}
+                      <h3 className="font-display text-[18px] leading-[1.2] text-[#0A0A0A] dark:text-[#F7F6F3] line-clamp-2 group-hover:text-[#1A1AFF] dark:group-hover:text-[#1A1AFF] transition-colors duration-200">
+                        {typeof resource.title === 'string' && resource.title.includes('<') 
+                          ? resource.title.replace(/<[^>]*>/g, '').trim()
+                          : resource.title}
                       </h3>
 
-                      {/* Author/Source and Read Time */}
-                      <div className="flex items-center justify-between pt-2 border-t border-border/30">
+                      {/* Author/Source and Read More */}
+                      <div className="flex items-center justify-between pt-3 border-t border-[#E3E3E0] dark:border-[#2A2A2A]">
                         <div className="flex items-center gap-1.5">
-                          <User className="h-3 w-3 text-muted-foreground" />
-                          <span className="text-sm font-medium text-foreground">
+                          <User className="h-3 w-3 text-[#737373] dark:text-[#A3A3A3]" />
+                          <span className="font-mono text-[10px] uppercase tracking-widest text-[#737373] dark:text-[#A3A3A3]">
                             {resource.author || resource.source || 'FlexiBench Team'}
                           </span>
                         </div>
 
                         {/* Read More Link */}
                         <Link 
-                          href={`/resources/${resource.category.toLowerCase().replace(/\s+/g, '-')}/${resource.slug}`}
-                          className="text-sm font-semibold text-[oklch(0.68_0.15_50)] hover:text-[oklch(0.68_0.15_50)]/80 flex items-center gap-1 group/link transition-colors duration-[2500ms] ease-out"
+                          href={`/resources/${resource.category.toLowerCase().replace(/\s+/g, '-')}/${encodeURIComponent(resource.slug)}`}
+                          className="font-mono text-[10px] uppercase tracking-widest text-[#0A0A0A] dark:text-[#F7F6F3] hover:text-[#1A1AFF] dark:hover:text-[#1A1AFF] flex items-center gap-1.5 group/link transition-colors duration-200"
                         >
                           Read More
-                          <ArrowRight className="h-3 w-3 group-hover/link:translate-x-0.5 transition-transform duration-[2500ms] ease-out" />
+                          <ArrowRight className="h-3 w-3 group-hover/link:translate-x-0.5 transition-transform duration-200" />
                         </Link>
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 );
               })}
             </div>

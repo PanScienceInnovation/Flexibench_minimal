@@ -19,6 +19,7 @@ export const metadata: Metadata = {
       { url: '/fb-feviconlogo.png', type: 'image/png', sizes: '32x32' },
       { url: '/fb-feviconlogo.png', type: 'image/png', sizes: '16x16' },
     ],
+    shortcut: '/fb-feviconlogo.png',
     apple: '/fb-feviconlogo.png',
   },
 };
@@ -35,6 +36,7 @@ export default function RootLayout({
           <link rel="icon" href="/fb-feviconlogo.png" type="image/png" sizes="any" />
           <link rel="icon" href="/fb-feviconlogo.png" type="image/png" sizes="32x32" />
           <link rel="icon" href="/fb-feviconlogo.png" type="image/png" sizes="16x16" />
+          <link rel="shortcut icon" href="/fb-feviconlogo.png" type="image/png" />
           <link rel="apple-touch-icon" href="/fb-feviconlogo.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -48,7 +50,14 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange={false}
+          >
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </>
