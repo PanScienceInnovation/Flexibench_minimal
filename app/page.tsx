@@ -1,9 +1,43 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import { LpNavbar1 } from "@/components/pro-blocks/landing-page/lp-navbars/lp-navbar-1";
 import { HeroSection2 } from "@/components/pro-blocks/landing-page/hero-sections/hero-section-2";
 import { LogoSection10 } from "@/components/pro-blocks/landing-page/logo-sections/logo-section-7";
 import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
 import { ChatbotWidget } from "@/components/chatbot-widget";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://flexibench.io';
+
+export const metadata: Metadata = {
+  title: "Enterprise Data Annotation Platform",
+  description: "Modern multimodal annotation platform for AI model training data with quality workflows and integrated tooling. Transform your data annotation process with enterprise-grade tools.",
+  openGraph: {
+    title: "Flexibench — Enterprise Data Annotation Platform",
+    description: "Modern multimodal annotation platform for AI model training data with quality workflows and integrated tooling.",
+    type: "website",
+    url: siteUrl,
+    images: [
+      {
+        url: `${siteUrl}/fb-feviconlogo.png`,
+        width: 1200,
+        height: 630,
+        alt: "Flexibench Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Flexibench — Enterprise Data Annotation Platform",
+    description: "Modern multimodal annotation platform for AI model training data with quality workflows and integrated tooling.",
+    images: [`${siteUrl}/fb-feviconlogo.png`],
+  },
+  other: {
+    "chatbot:index": "true",
+    "chatbot:searchable": "true",
+    "chatbot:category": "homepage",
+    "chatbot:priority": "high",
+  },
+};
 
 // Lazy load below-the-fold sections for better performance
 const WhyFlexibenchSection = dynamic(
@@ -57,10 +91,31 @@ const FaqSection2 = dynamic(
 );
 
 export default function Page() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://flexibench.io';
+  
   return (
     <>
       {/* Chatbot Widget */}
       <ChatbotWidget />
+      
+      {/* Structured Data - BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+              }
+            ]
+          }),
+        }}
+      />
       
       <main id="main-content">
         <LpNavbar1 />
